@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		407A12A81832D06B00819225 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407A12A71832D06B00819225 /* Foundation.framework */; };
-		407A12AD1832D06B00819225 /* iOSSDK.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 407A12AC1832D06B00819225 /* iOSSDK.h */; };
-		407A12AF1832D06B00819225 /* iOSSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 407A12AE1832D06B00819225 /* iOSSDK.m */; };
+		407A12AD1832D06B00819225 /* Sqwiggle.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 407A12AC1832D06B00819225 /* Sqwiggle.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -19,18 +18,17 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				407A12AD1832D06B00819225 /* iOSSDK.h in CopyFiles */,
+				407A12AD1832D06B00819225 /* Sqwiggle.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		407A12A41832D06B00819225 /* libiOSSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiOSSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		407A12A41832D06B00819225 /* libSqwiggleSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSqwiggleSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		407A12A71832D06B00819225 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		407A12AB1832D06B00819225 /* iOSSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOSSDK-Prefix.pch"; sourceTree = "<group>"; };
-		407A12AC1832D06B00819225 /* iOSSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOSSDK.h; sourceTree = "<group>"; };
-		407A12AE1832D06B00819225 /* iOSSDK.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSSDK.m; sourceTree = "<group>"; };
+		407A12AB1832D06B00819225 /* SqwiggleSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SqwiggleSDK-Prefix.pch"; sourceTree = "<group>"; };
+		407A12AC1832D06B00819225 /* Sqwiggle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sqwiggle.h; sourceTree = "<group>"; };
 		407A12B51832D06B00819225 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		407A12B81832D06B00819225 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -50,7 +48,7 @@
 		407A129B1832D06B00819225 = {
 			isa = PBXGroup;
 			children = (
-				407A12A91832D06B00819225 /* iOSSDK */,
+				407A12A91832D06B00819225 /* Sqwiggle */,
 				407A12A61832D06B00819225 /* Frameworks */,
 				407A12A51832D06B00819225 /* Products */,
 			);
@@ -59,7 +57,7 @@
 		407A12A51832D06B00819225 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				407A12A41832D06B00819225 /* libiOSSDK.a */,
+				407A12A41832D06B00819225 /* libSqwiggleSDK.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -74,30 +72,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		407A12A91832D06B00819225 /* iOSSDK */ = {
+		407A12A91832D06B00819225 /* Sqwiggle */ = {
 			isa = PBXGroup;
 			children = (
-				407A12AC1832D06B00819225 /* iOSSDK.h */,
-				407A12AE1832D06B00819225 /* iOSSDK.m */,
+				407A12CE1832D72600819225 /* Settings */,
+				407A12AC1832D06B00819225 /* Sqwiggle.h */,
 				407A12AA1832D06B00819225 /* Supporting Files */,
 			);
+			name = Sqwiggle;
 			path = iOSSDK;
 			sourceTree = "<group>";
 		};
 		407A12AA1832D06B00819225 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				407A12AB1832D06B00819225 /* iOSSDK-Prefix.pch */,
+				407A12AB1832D06B00819225 /* SqwiggleSDK-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		407A12CE1832D72600819225 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		407A12A31832D06B00819225 /* iOSSDK */ = {
+		407A12A31832D06B00819225 /* SqwiggleSDK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 407A12C71832D06B00819225 /* Build configuration list for PBXNativeTarget "iOSSDK" */;
+			buildConfigurationList = 407A12C71832D06B00819225 /* Build configuration list for PBXNativeTarget "SqwiggleSDK" */;
 			buildPhases = (
 				407A12A01832D06B00819225 /* Sources */,
 				407A12A11832D06B00819225 /* Frameworks */,
@@ -107,9 +113,9 @@
 			);
 			dependencies = (
 			);
-			name = iOSSDK;
+			name = SqwiggleSDK;
 			productName = iOSSDK;
-			productReference = 407A12A41832D06B00819225 /* libiOSSDK.a */;
+			productReference = 407A12A41832D06B00819225 /* libSqwiggleSDK.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -121,7 +127,7 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Sqwiggle;
 			};
-			buildConfigurationList = 407A129F1832D06B00819225 /* Build configuration list for PBXProject "iOSSDK" */;
+			buildConfigurationList = 407A129F1832D06B00819225 /* Build configuration list for PBXProject "SqwiggleSDK" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -133,7 +139,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				407A12A31832D06B00819225 /* iOSSDK */,
+				407A12A31832D06B00819225 /* SqwiggleSDK */,
 			);
 		};
 /* End PBXProject section */
@@ -143,7 +149,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				407A12AF1832D06B00819225 /* iOSSDK.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,9 +230,9 @@
 			buildSettings = {
 				DSTROOT = /tmp/iOSSDK.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iOSSDK/iOSSDK-Prefix.pch";
+				GCC_PREFIX_HEADER = "iOSSDK/SqwiggleSDK-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SqwiggleSDK;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -237,9 +242,9 @@
 			buildSettings = {
 				DSTROOT = /tmp/iOSSDK.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iOSSDK/iOSSDK-Prefix.pch";
+				GCC_PREFIX_HEADER = "iOSSDK/SqwiggleSDK-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SqwiggleSDK;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -247,7 +252,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		407A129F1832D06B00819225 /* Build configuration list for PBXProject "iOSSDK" */ = {
+		407A129F1832D06B00819225 /* Build configuration list for PBXProject "SqwiggleSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				407A12C51832D06B00819225 /* Debug */,
@@ -256,13 +261,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		407A12C71832D06B00819225 /* Build configuration list for PBXNativeTarget "iOSSDK" */ = {
+		407A12C71832D06B00819225 /* Build configuration list for PBXNativeTarget "SqwiggleSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				407A12C81832D06B00819225 /* Debug */,
 				407A12C91832D06B00819225 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
