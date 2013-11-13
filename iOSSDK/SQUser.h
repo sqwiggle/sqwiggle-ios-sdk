@@ -11,7 +11,7 @@
 #import "SQObject.h"
 
 
-@interface User : SQObject
+@interface SQUser : SQObject
 
 @property (nonatomic, readonly) NSString *role;
 @property (nonatomic, readonly) enum MediaMode *mode;

@@ -15,20 +15,20 @@
 		4082A74E1833CD6B009FBC9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407A12B81832D06B00819225 /* UIKit.framework */; };
 		4082A7541833CD6B009FBC9B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4082A7521833CD6B009FBC9B /* InfoPlist.strings */; };
 		4082A7561833CD6B009FBC9B /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4082A7551833CD6B009FBC9B /* Tests.m */; };
-		409446DB18340727005C69B0 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446DA18340727005C69B0 /* User.m */; };
-		409446DC18340727005C69B0 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446DA18340727005C69B0 /* User.m */; };
-		409446DF183417F6005C69B0 /* Conversation.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446DE183417F6005C69B0 /* Conversation.m */; };
-		409446E0183417F6005C69B0 /* Conversation.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446DE183417F6005C69B0 /* Conversation.m */; };
-		409446E4183418E7005C69B0 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446E3183418E7005C69B0 /* Company.m */; };
-		409446E5183418E7005C69B0 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446E3183418E7005C69B0 /* Company.m */; };
-		409446E818341C41005C69B0 /* Invite.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446E718341C41005C69B0 /* Invite.m */; };
-		409446E918341C41005C69B0 /* Invite.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446E718341C41005C69B0 /* Invite.m */; };
-		409446EC18341D15005C69B0 /* Workroom.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446EB18341D15005C69B0 /* Workroom.m */; };
-		409446ED18341D15005C69B0 /* Workroom.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446EB18341D15005C69B0 /* Workroom.m */; };
-		409446F018342106005C69B0 /* StreamItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446EF18342106005C69B0 /* StreamItem.m */; };
-		409446F118342106005C69B0 /* StreamItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446EF18342106005C69B0 /* StreamItem.m */; };
-		409446F418342612005C69B0 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446F318342612005C69B0 /* Notification.m */; };
-		409446F518342612005C69B0 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446F318342612005C69B0 /* Notification.m */; };
+		409446DB18340727005C69B0 /* SQUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446DA18340727005C69B0 /* SQUser.m */; };
+		409446DC18340727005C69B0 /* SQUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446DA18340727005C69B0 /* SQUser.m */; };
+		409446DF183417F6005C69B0 /* SQConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446DE183417F6005C69B0 /* SQConversation.m */; };
+		409446E0183417F6005C69B0 /* SQConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446DE183417F6005C69B0 /* SQConversation.m */; };
+		409446E4183418E7005C69B0 /* SQCompany.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446E3183418E7005C69B0 /* SQCompany.m */; };
+		409446E5183418E7005C69B0 /* SQCompany.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446E3183418E7005C69B0 /* SQCompany.m */; };
+		409446E818341C41005C69B0 /* SQInvite.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446E718341C41005C69B0 /* SQInvite.m */; };
+		409446E918341C41005C69B0 /* SQInvite.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446E718341C41005C69B0 /* SQInvite.m */; };
+		409446EC18341D15005C69B0 /* SQWorkroom.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446EB18341D15005C69B0 /* SQWorkroom.m */; };
+		409446ED18341D15005C69B0 /* SQWorkroom.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446EB18341D15005C69B0 /* SQWorkroom.m */; };
+		409446F018342106005C69B0 /* SQStreamItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446EF18342106005C69B0 /* SQStreamItem.m */; };
+		409446F118342106005C69B0 /* SQStreamItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446EF18342106005C69B0 /* SQStreamItem.m */; };
+		409446F418342612005C69B0 /* SQNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446F318342612005C69B0 /* SQNotification.m */; };
+		409446F518342612005C69B0 /* SQNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446F318342612005C69B0 /* SQNotification.m */; };
 		409446F9183439DF005C69B0 /* SQObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446F8183439DF005C69B0 /* SQObject.m */; };
 		409446FA183439DF005C69B0 /* SQObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446F8183439DF005C69B0 /* SQObject.m */; };
 		40DC64831833CB300045B5F3 /* Sqwiggle.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DC64821833CB300045B5F3 /* Sqwiggle.m */; };
@@ -72,20 +72,20 @@
 		4082A7551833CD6B009FBC9B /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		4082A7571833CD6B009FBC9B /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		409446D71833E27E005C69B0 /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
-		409446D918340727005C69B0 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		409446DA18340727005C69B0 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		409446DD183417F6005C69B0 /* Conversation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conversation.h; sourceTree = "<group>"; };
-		409446DE183417F6005C69B0 /* Conversation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conversation.m; sourceTree = "<group>"; };
-		409446E2183418E7005C69B0 /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
-		409446E3183418E7005C69B0 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
-		409446E618341C41005C69B0 /* Invite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Invite.h; sourceTree = "<group>"; };
-		409446E718341C41005C69B0 /* Invite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Invite.m; sourceTree = "<group>"; };
-		409446EA18341D15005C69B0 /* Workroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workroom.h; sourceTree = "<group>"; };
-		409446EB18341D15005C69B0 /* Workroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workroom.m; sourceTree = "<group>"; };
-		409446EE18342106005C69B0 /* StreamItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamItem.h; sourceTree = "<group>"; };
-		409446EF18342106005C69B0 /* StreamItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamItem.m; sourceTree = "<group>"; };
-		409446F218342612005C69B0 /* Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notification.h; sourceTree = "<group>"; };
-		409446F318342612005C69B0 /* Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notification.m; sourceTree = "<group>"; };
+		409446D918340727005C69B0 /* SQUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQUser.h; sourceTree = "<group>"; };
+		409446DA18340727005C69B0 /* SQUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQUser.m; sourceTree = "<group>"; };
+		409446DD183417F6005C69B0 /* SQConversation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQConversation.h; sourceTree = "<group>"; };
+		409446DE183417F6005C69B0 /* SQConversation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQConversation.m; sourceTree = "<group>"; };
+		409446E2183418E7005C69B0 /* SQCompany.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQCompany.h; sourceTree = "<group>"; };
+		409446E3183418E7005C69B0 /* SQCompany.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQCompany.m; sourceTree = "<group>"; };
+		409446E618341C41005C69B0 /* SQInvite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQInvite.h; sourceTree = "<group>"; };
+		409446E718341C41005C69B0 /* SQInvite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQInvite.m; sourceTree = "<group>"; };
+		409446EA18341D15005C69B0 /* SQWorkroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQWorkroom.h; sourceTree = "<group>"; };
+		409446EB18341D15005C69B0 /* SQWorkroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQWorkroom.m; sourceTree = "<group>"; };
+		409446EE18342106005C69B0 /* SQStreamItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQStreamItem.h; sourceTree = "<group>"; };
+		409446EF18342106005C69B0 /* SQStreamItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQStreamItem.m; sourceTree = "<group>"; };
+		409446F218342612005C69B0 /* SQNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQNotification.h; sourceTree = "<group>"; };
+		409446F318342612005C69B0 /* SQNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQNotification.m; sourceTree = "<group>"; };
 		409446F718343878005C69B0 /* SQObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQObject.h; sourceTree = "<group>"; };
 		409446F8183439DF005C69B0 /* SQObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQObject.m; sourceTree = "<group>"; };
 		40DC64821833CB300045B5F3 /* Sqwiggle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sqwiggle.m; sourceTree = "<group>"; };
@@ -203,20 +203,20 @@
 			isa = PBXGroup;
 			children = (
 				409446F618343847005C69B0 /* Base Model */,
-				409446E2183418E7005C69B0 /* Company.h */,
-				409446E3183418E7005C69B0 /* Company.m */,
-				409446DD183417F6005C69B0 /* Conversation.h */,
-				409446DE183417F6005C69B0 /* Conversation.m */,
-				409446E618341C41005C69B0 /* Invite.h */,
-				409446E718341C41005C69B0 /* Invite.m */,
-				409446F218342612005C69B0 /* Notification.h */,
-				409446F318342612005C69B0 /* Notification.m */,
-				409446EE18342106005C69B0 /* StreamItem.h */,
-				409446EF18342106005C69B0 /* StreamItem.m */,
-				409446D918340727005C69B0 /* User.h */,
-				409446DA18340727005C69B0 /* User.m */,
-				409446EA18341D15005C69B0 /* Workroom.h */,
-				409446EB18341D15005C69B0 /* Workroom.m */,
+				409446E2183418E7005C69B0 /* SQCompany.h */,
+				409446E3183418E7005C69B0 /* SQCompany.m */,
+				409446DD183417F6005C69B0 /* SQConversation.h */,
+				409446DE183417F6005C69B0 /* SQConversation.m */,
+				409446E618341C41005C69B0 /* SQInvite.h */,
+				409446E718341C41005C69B0 /* SQInvite.m */,
+				409446F218342612005C69B0 /* SQNotification.h */,
+				409446F318342612005C69B0 /* SQNotification.m */,
+				409446EE18342106005C69B0 /* SQStreamItem.h */,
+				409446EF18342106005C69B0 /* SQStreamItem.m */,
+				409446D918340727005C69B0 /* SQUser.h */,
+				409446DA18340727005C69B0 /* SQUser.m */,
+				409446EA18341D15005C69B0 /* SQWorkroom.h */,
+				409446EB18341D15005C69B0 /* SQWorkroom.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -383,15 +383,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				409446F418342612005C69B0 /* Notification.m in Sources */,
-				409446E818341C41005C69B0 /* Invite.m in Sources */,
-				409446EC18341D15005C69B0 /* Workroom.m in Sources */,
-				409446DF183417F6005C69B0 /* Conversation.m in Sources */,
+				409446F418342612005C69B0 /* SQNotification.m in Sources */,
+				409446E818341C41005C69B0 /* SQInvite.m in Sources */,
+				409446EC18341D15005C69B0 /* SQWorkroom.m in Sources */,
+				409446DF183417F6005C69B0 /* SQConversation.m in Sources */,
 				409446F9183439DF005C69B0 /* SQObject.m in Sources */,
-				409446DB18340727005C69B0 /* User.m in Sources */,
+				409446DB18340727005C69B0 /* SQUser.m in Sources */,
 				40DC64831833CB300045B5F3 /* Sqwiggle.m in Sources */,
-				409446E4183418E7005C69B0 /* Company.m in Sources */,
-				409446F018342106005C69B0 /* StreamItem.m in Sources */,
+				409446E4183418E7005C69B0 /* SQCompany.m in Sources */,
+				409446F018342106005C69B0 /* SQStreamItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,15 +399,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				409446F518342612005C69B0 /* Notification.m in Sources */,
-				409446E918341C41005C69B0 /* Invite.m in Sources */,
-				409446ED18341D15005C69B0 /* Workroom.m in Sources */,
-				409446E0183417F6005C69B0 /* Conversation.m in Sources */,
+				409446F518342612005C69B0 /* SQNotification.m in Sources */,
+				409446E918341C41005C69B0 /* SQInvite.m in Sources */,
+				409446ED18341D15005C69B0 /* SQWorkroom.m in Sources */,
+				409446E0183417F6005C69B0 /* SQConversation.m in Sources */,
 				409446FA183439DF005C69B0 /* SQObject.m in Sources */,
-				409446DC18340727005C69B0 /* User.m in Sources */,
+				409446DC18340727005C69B0 /* SQUser.m in Sources */,
 				4082A7561833CD6B009FBC9B /* Tests.m in Sources */,
-				409446E5183418E7005C69B0 /* Company.m in Sources */,
-				409446F118342106005C69B0 /* StreamItem.m in Sources */,
+				409446E5183418E7005C69B0 /* SQCompany.m in Sources */,
+				409446F118342106005C69B0 /* SQStreamItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

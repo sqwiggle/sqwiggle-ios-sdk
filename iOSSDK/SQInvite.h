@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "SQObject.h"
-#import "User.h"
-#import "Company.h"
+#import "SQUser.h"
+#import "SQCompany.h"
 
 
 @interface Invite : SQObject
 
-@property (nonatomic, readonly) User *from;
-@property (nonatomic, readonly) Company *company;
+@property (nonatomic, readonly) SQUser *from;
+@property (nonatomic, readonly) SQCompany *company;
 @property (nonatomic, readonly) NSURL *avatar;
 @property (nonatomic, readonly) NSURL *url;
 

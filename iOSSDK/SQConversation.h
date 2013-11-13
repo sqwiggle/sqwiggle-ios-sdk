@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Workroom.h"
-#import "Company.h"
+#import "SQWorkroom.h"
+#import "SQCompany.h"
 
-@interface Conversation : SQObject
+@interface SQConversation : SQObject
 
-@property (nonatomic, readonly) Company *company;
-@property (nonatomic, readonly) Workroom *workroom;
+@property (nonatomic, readonly) SQCompany *company;
+@property (nonatomic, readonly) SQWorkroom *workroom;
 @property (nonatomic, readonly) id colorID;
 @property (nonatomic, readonly) NSArray *users;
 

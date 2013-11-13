@@ -1,13 +1,15 @@
 //
-//  User.m
+//  Notification.h
 //  SqwiggleSDK
 //
 //  Created by Cameron Webb on 11/13/13.
 //  Copyright (c) 2013 Sqwiggle. All rights reserved.
 //
 
-#import "User.h"
+#import <Foundation/Foundation.h>
+#import "SQObject.h"
 
-@implementation User
+
+@interface SQNotification : SQObject
 
 @end

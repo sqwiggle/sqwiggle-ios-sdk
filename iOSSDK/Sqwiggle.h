@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Company.h"
 
 @interface Sqwiggle : NSObject
 

@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "User.h"
+#import "SQUser.h"
 #import "SQObject.h"
 
-@interface Workroom : SQObject
+@interface SQWorkroom : SQObject
 
-@property (nonatomic, readonly) User *createdBy;
+@property (nonatomic, readonly) SQUser *createdBy;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSURL *url;
 

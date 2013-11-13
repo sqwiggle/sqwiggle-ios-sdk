@@ -1,13 +1,13 @@
 //
-//  Invite.m
+//  Notification.m
 //  SqwiggleSDK
 //
 //  Created by Cameron Webb on 11/13/13.
 //  Copyright (c) 2013 Sqwiggle. All rights reserved.
 //
 
-#import "Invite.h"
+#import "SQNotification.h"
 
-@implementation Invite
+@implementation SQNotification
 
 @end

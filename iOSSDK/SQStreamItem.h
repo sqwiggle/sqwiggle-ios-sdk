@@ -7,17 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Workroom.h"
+#import "SQWorkroom.h"
 #import "SQObject.h"
 
 
-@interface StreamItem : SQObject
+@interface SQStreamItem : SQObject
 
 @property (nonatomic, readonly) NSDate *createdAt;
 @property (nonatomic, readonly) NSDate *updatedAt;
-@property (nonatomic, readonly) Workroom *workRoom;
+@property (nonatomic, readonly) SQWorkroom *workRoom;
 @property (nonatomic, readonly) NSArray *mentions;
 @property (nonatomic, readonly) NSString *messagePlain;
-@property (nonatomic, readonly) User *user;
+@property (nonatomic, readonly) SQUser *user;
 
 @end
