@@ -9,11 +9,6 @@
 #import <Foundation/Foundation.h>
 
 
-
 @interface Sqwiggle : NSObject
-
-@property (nonatomic, readonly) NSString *accessToken;
-
-
 
 @end

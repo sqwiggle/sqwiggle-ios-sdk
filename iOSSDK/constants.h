@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Sqwiggle. All rights reserved.
 //
 
+#define SQWIGGLE_SDK_VERION @"0.0.1"
+
 #define SQWIGGLE_ACCESS_TOKEN @"ABCDEFGHI"
 
 #ifndef SQWIGGLE_ACCESS_TOKEN

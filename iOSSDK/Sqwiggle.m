@@ -12,6 +12,6 @@
 
 @implementation Sqwiggle
 
-@synthesize accessToken = _accessToken;
+
 
 @end

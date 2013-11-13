@@ -198,20 +198,20 @@
 		409446D8183405C7005C69B0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				409446D918340727005C69B0 /* User.h */,
-				409446DA18340727005C69B0 /* User.m */,
-				409446DD183417F6005C69B0 /* Conversation.h */,
-				409446DE183417F6005C69B0 /* Conversation.m */,
 				409446E2183418E7005C69B0 /* Company.h */,
 				409446E3183418E7005C69B0 /* Company.m */,
+				409446DD183417F6005C69B0 /* Conversation.h */,
+				409446DE183417F6005C69B0 /* Conversation.m */,
 				409446E618341C41005C69B0 /* Invite.h */,
 				409446E718341C41005C69B0 /* Invite.m */,
-				409446EA18341D15005C69B0 /* Workroom.h */,
-				409446EB18341D15005C69B0 /* Workroom.m */,
-				409446EE18342106005C69B0 /* StreamItem.h */,
-				409446EF18342106005C69B0 /* StreamItem.m */,
 				409446F218342612005C69B0 /* Notification.h */,
 				409446F318342612005C69B0 /* Notification.m */,
+				409446EE18342106005C69B0 /* StreamItem.h */,
+				409446EF18342106005C69B0 /* StreamItem.m */,
+				409446D918340727005C69B0 /* User.h */,
+				409446DA18340727005C69B0 /* User.m */,
+				409446EA18341D15005C69B0 /* Workroom.h */,
+				409446EB18341D15005C69B0 /* Workroom.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
