@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "SQObject.h"
 
-@interface User : NSObject
+
+@interface User : SQObject
 
 @property (nonatomic, readonly) int id;
 @property (nonatomic, readonly) NSString *role;

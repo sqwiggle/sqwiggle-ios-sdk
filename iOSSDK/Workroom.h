@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "User.h"
+#import "SQObject.h"
 
-@interface Workroom : NSObject
+@interface Workroom : SQObject
 
 @property (nonatomic, readonly) int id;
 @property (nonatomic, readonly) User *createdBy;

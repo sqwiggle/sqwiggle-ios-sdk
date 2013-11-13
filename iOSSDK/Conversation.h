@@ -10,7 +10,7 @@
 #import "Workroom.h"
 #import "Company.h"
 
-@interface Conversation : NSObject
+@interface Conversation : SQObject
 
 @property (nonatomic, readonly) int id;
 @property (nonatomic, readonly) Company *company;

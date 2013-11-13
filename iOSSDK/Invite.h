@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SQObject.h"
 #import "User.h"
 #import "Company.h"
 
-@interface Invite : NSObject
+
+@interface Invite : SQObject
 
 @property (nonatomic, readonly) int id;
 @property (nonatomic, readonly) User *from;

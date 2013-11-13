@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "Workroom.h"
+#import "SQObject.h"
 
-@interface StreamItem : NSObject
+
+@interface StreamItem : SQObject
 
 @property (nonatomic, readonly) int id;
 @property (nonatomic, readonly) NSDate *createdAt;

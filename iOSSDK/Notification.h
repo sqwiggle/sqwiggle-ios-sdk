@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SQObject.h"
 
-@interface Notification : NSObject
+
+@interface Notification : SQObject
 
 @end
