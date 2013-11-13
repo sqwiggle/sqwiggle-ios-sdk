@@ -27,8 +27,4 @@
 @property (nonatomic, readonly) Conversation *conversation;
 @property (nonatomic, readonly) UIImage *picture;
 
-//Converts Friendly Time Zone name to TimeZone object. See http://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html for more info on format.
--(void) setTimeZoneFromString:(NSString *) timeZoneName;
-
-
 @end
