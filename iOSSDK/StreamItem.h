@@ -16,5 +16,7 @@
 @property (nonatomic, readonly) NSDate *updatedAt;
 @property (nonatomic, readonly) Workroom *workRoom;
 @property (nonatomic, readonly) NSArray *mentions;
+@property (nonatomic, readonly) NSString *messagePlain;
+@property (nonatomic, readonly) User *user;
 
 @end
