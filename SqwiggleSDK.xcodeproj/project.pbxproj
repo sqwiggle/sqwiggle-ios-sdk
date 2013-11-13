@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		407A12A81832D06B00819225 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407A12A71832D06B00819225 /* Foundation.framework */; };
 		407A12AD1832D06B00819225 /* Sqwiggle.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 407A12AC1832D06B00819225 /* Sqwiggle.h */; };
+		40DC64831833CB300045B5F3 /* Sqwiggle.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DC64821833CB300045B5F3 /* Sqwiggle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,7 @@
 		407A12AC1832D06B00819225 /* Sqwiggle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sqwiggle.h; sourceTree = "<group>"; };
 		407A12B51832D06B00819225 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		407A12B81832D06B00819225 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		40DC64821833CB300045B5F3 /* Sqwiggle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sqwiggle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				407A12CE1832D72600819225 /* Settings */,
 				407A12AC1832D06B00819225 /* Sqwiggle.h */,
+				40DC64821833CB300045B5F3 /* Sqwiggle.m */,
 				407A12AA1832D06B00819225 /* Supporting Files */,
 			);
 			name = Sqwiggle;
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40DC64831833CB300045B5F3 /* Sqwiggle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
