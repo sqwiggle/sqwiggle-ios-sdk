@@ -12,6 +12,9 @@
 
 @implementation Sqwiggle
 
-
++(void) startSqwigglingWithToken:(NSString *) token
+{
+    
+}
 
 @end
