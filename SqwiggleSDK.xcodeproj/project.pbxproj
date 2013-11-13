@@ -29,6 +29,8 @@
 		409446F118342106005C69B0 /* StreamItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446EF18342106005C69B0 /* StreamItem.m */; };
 		409446F418342612005C69B0 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446F318342612005C69B0 /* Notification.m */; };
 		409446F518342612005C69B0 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446F318342612005C69B0 /* Notification.m */; };
+		409446F9183439DF005C69B0 /* SQObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446F8183439DF005C69B0 /* SQObject.m */; };
+		409446FA183439DF005C69B0 /* SQObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446F8183439DF005C69B0 /* SQObject.m */; };
 		40DC64831833CB300045B5F3 /* Sqwiggle.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DC64821833CB300045B5F3 /* Sqwiggle.m */; };
 		F4749172F0BC4930B021CDFD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B58624554946B38E21868F /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -84,6 +86,8 @@
 		409446EF18342106005C69B0 /* StreamItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamItem.m; sourceTree = "<group>"; };
 		409446F218342612005C69B0 /* Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notification.h; sourceTree = "<group>"; };
 		409446F318342612005C69B0 /* Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notification.m; sourceTree = "<group>"; };
+		409446F718343878005C69B0 /* SQObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQObject.h; sourceTree = "<group>"; };
+		409446F8183439DF005C69B0 /* SQObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQObject.m; sourceTree = "<group>"; };
 		40DC64821833CB300045B5F3 /* Sqwiggle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sqwiggle.m; sourceTree = "<group>"; };
 		49B58624554946B38E21868F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE77B0992983466A80B2EDDF /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,6 +202,7 @@
 		409446D8183405C7005C69B0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				409446F618343847005C69B0 /* BaseSqwiggleModel */,
 				409446E2183418E7005C69B0 /* Company.h */,
 				409446E3183418E7005C69B0 /* Company.m */,
 				409446DD183417F6005C69B0 /* Conversation.h */,
@@ -214,6 +219,15 @@
 				409446EB18341D15005C69B0 /* Workroom.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		409446F618343847005C69B0 /* BaseSqwiggleModel */ = {
+			isa = PBXGroup;
+			children = (
+				409446F718343878005C69B0 /* SQObject.h */,
+				409446F8183439DF005C69B0 /* SQObject.m */,
+			);
+			name = BaseSqwiggleModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,6 +387,7 @@
 				409446E818341C41005C69B0 /* Invite.m in Sources */,
 				409446EC18341D15005C69B0 /* Workroom.m in Sources */,
 				409446DF183417F6005C69B0 /* Conversation.m in Sources */,
+				409446F9183439DF005C69B0 /* SQObject.m in Sources */,
 				409446DB18340727005C69B0 /* User.m in Sources */,
 				40DC64831833CB300045B5F3 /* Sqwiggle.m in Sources */,
 				409446E4183418E7005C69B0 /* Company.m in Sources */,
@@ -388,6 +403,7 @@
 				409446E918341C41005C69B0 /* Invite.m in Sources */,
 				409446ED18341D15005C69B0 /* Workroom.m in Sources */,
 				409446E0183417F6005C69B0 /* Conversation.m in Sources */,
+				409446FA183439DF005C69B0 /* SQObject.m in Sources */,
 				409446DC18340727005C69B0 /* User.m in Sources */,
 				4082A7561833CD6B009FBC9B /* Tests.m in Sources */,
 				409446E5183418E7005C69B0 /* Company.m in Sources */,
