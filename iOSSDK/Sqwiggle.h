@@ -2,10 +2,6 @@
 //  Sqwiggle.h
 //  SqwiggleSDK
 //
-//
-//  NOTE: This resides in the SqwiggleSDK project folder, NOT libSqwiggle. K? K.
-//
-//
 //  Created by Cameron Webb on 11/12/13.
 //  Copyright (c) 2013 Sqwiggle. All rights reserved.
 //
@@ -14,7 +10,8 @@
 
 @interface Sqwiggle : NSObject
 
-//Authentication
+/** Authentication **/
+
 + (void) login;
 + (void) logOut;
 
