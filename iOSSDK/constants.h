@@ -6,8 +6,5 @@
 //  Copyright (c) 2013 Sqwiggle. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#define SQWIGGLE_URI_API @"https://api.sqwiggle.com"
 
-@protocol constants <NSObject>
-
-@end
