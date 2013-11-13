@@ -7,7 +7,13 @@
 //
 
 #import "Sqwiggle.h"
+#import <AFNetworking/AFNetworking.h>
+
 
 @implementation Sqwiggle
+
+@synthesize accessToken = _accessToken;
+
+
 
 @end

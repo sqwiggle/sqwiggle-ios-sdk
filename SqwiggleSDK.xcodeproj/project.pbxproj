@@ -15,6 +15,8 @@
 		4082A74E1833CD6B009FBC9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407A12B81832D06B00819225 /* UIKit.framework */; };
 		4082A7541833CD6B009FBC9B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4082A7521833CD6B009FBC9B /* InfoPlist.strings */; };
 		4082A7561833CD6B009FBC9B /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4082A7551833CD6B009FBC9B /* Tests.m */; };
+		409446DB18340727005C69B0 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446DA18340727005C69B0 /* User.m */; };
+		409446DC18340727005C69B0 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446DA18340727005C69B0 /* User.m */; };
 		40DC64831833CB300045B5F3 /* Sqwiggle.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DC64821833CB300045B5F3 /* Sqwiggle.m */; };
 		F4749172F0BC4930B021CDFD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B58624554946B38E21868F /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -56,6 +58,8 @@
 		4082A7551833CD6B009FBC9B /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		4082A7571833CD6B009FBC9B /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		409446D71833E27E005C69B0 /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
+		409446D918340727005C69B0 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		409446DA18340727005C69B0 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		40DC64821833CB300045B5F3 /* Sqwiggle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sqwiggle.m; sourceTree = "<group>"; };
 		49B58624554946B38E21868F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE77B0992983466A80B2EDDF /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +126,7 @@
 		407A12A91832D06B00819225 /* Sqwiggle */ = {
 			isa = PBXGroup;
 			children = (
+				409446D8183405C7005C69B0 /* Models */,
 				407A12AC1832D06B00819225 /* Sqwiggle.h */,
 				40DC64821833CB300045B5F3 /* Sqwiggle.m */,
 				407A12CE1832D72600819225 /* Config */,
@@ -164,6 +169,15 @@
 				4082A7571833CD6B009FBC9B /* Tests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		409446D8183405C7005C69B0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				409446D918340727005C69B0 /* User.h */,
+				409446DA18340727005C69B0 /* User.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				409446DB18340727005C69B0 /* User.m in Sources */,
 				40DC64831833CB300045B5F3 /* Sqwiggle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,6 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				409446DC18340727005C69B0 /* User.m in Sources */,
 				4082A7561833CD6B009FBC9B /* Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
