@@ -14,7 +14,6 @@
 
 @interface Invite : SQObject
 
-@property (nonatomic, readonly) int id;
 @property (nonatomic, readonly) User *from;
 @property (nonatomic, readonly) Company *company;
 @property (nonatomic, readonly) NSURL *avatar;

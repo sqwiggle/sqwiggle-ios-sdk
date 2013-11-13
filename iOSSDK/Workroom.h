@@ -12,7 +12,6 @@
 
 @interface Workroom : SQObject
 
-@property (nonatomic, readonly) int id;
 @property (nonatomic, readonly) User *createdBy;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSURL *url;

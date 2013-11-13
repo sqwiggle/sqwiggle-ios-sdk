@@ -13,7 +13,6 @@
 
 @interface StreamItem : SQObject
 
-@property (nonatomic, readonly) int id;
 @property (nonatomic, readonly) NSDate *createdAt;
 @property (nonatomic, readonly) NSDate *updatedAt;
 @property (nonatomic, readonly) Workroom *workRoom;

@@ -13,7 +13,6 @@
 
 @interface User : SQObject
 
-@property (nonatomic, readonly) int id;
 @property (nonatomic, readonly) NSString *role;
 @property (nonatomic, readonly) enum MediaMode *mode;
 @property (nonatomic, readonly) NSString *status;

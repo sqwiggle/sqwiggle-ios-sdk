@@ -10,6 +10,7 @@
 
 @interface SQObject : NSObject
 
+//Unique ID for SQObject
 @property (nonatomic, readonly) int id;
 
 @end

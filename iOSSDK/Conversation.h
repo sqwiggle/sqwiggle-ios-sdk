@@ -12,7 +12,6 @@
 
 @interface Conversation : SQObject
 
-@property (nonatomic, readonly) int id;
 @property (nonatomic, readonly) Company *company;
 @property (nonatomic, readonly) Workroom *workroom;
 @property (nonatomic, readonly) id colorID;
