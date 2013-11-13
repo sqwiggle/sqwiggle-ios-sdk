@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "Conversation.h"
 
 @interface User : NSObject
 
@@ -24,7 +23,6 @@
 @property (nonatomic, readonly) NSDate *createdAt;
 @property (nonatomic, readonly) NSDate *lastActiveAt;
 @property (nonatomic, readonly) NSURL *avatar;
-@property (nonatomic, readonly) Conversation *conversation;
 @property (nonatomic, readonly) UIImage *picture;
 
 @end

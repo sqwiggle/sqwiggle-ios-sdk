@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Workroom.h"
+#import "Company.h"
 
 @interface Conversation : NSObject
+
+@property (nonatomic, readonly) int id;
+@property (nonatomic, readonly) Company *company;
+@property (nonatomic, readonly) Workroom *workroom;
+@property (nonatomic, readonly) id colorID;
+@property (nonatomic, readonly) NSArray *users;
 
 @end
