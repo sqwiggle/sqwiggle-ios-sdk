@@ -23,6 +23,8 @@
 		409446E5183418E7005C69B0 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446E3183418E7005C69B0 /* Company.m */; };
 		409446E818341C41005C69B0 /* Invite.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446E718341C41005C69B0 /* Invite.m */; };
 		409446E918341C41005C69B0 /* Invite.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446E718341C41005C69B0 /* Invite.m */; };
+		409446EC18341D15005C69B0 /* Workroom.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446EB18341D15005C69B0 /* Workroom.m */; };
+		409446ED18341D15005C69B0 /* Workroom.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446EB18341D15005C69B0 /* Workroom.m */; };
 		40DC64831833CB300045B5F3 /* Sqwiggle.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DC64821833CB300045B5F3 /* Sqwiggle.m */; };
 		F4749172F0BC4930B021CDFD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B58624554946B38E21868F /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -72,6 +74,8 @@
 		409446E3183418E7005C69B0 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
 		409446E618341C41005C69B0 /* Invite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Invite.h; sourceTree = "<group>"; };
 		409446E718341C41005C69B0 /* Invite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Invite.m; sourceTree = "<group>"; };
+		409446EA18341D15005C69B0 /* Workroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workroom.h; sourceTree = "<group>"; };
+		409446EB18341D15005C69B0 /* Workroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workroom.m; sourceTree = "<group>"; };
 		40DC64821833CB300045B5F3 /* Sqwiggle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sqwiggle.m; sourceTree = "<group>"; };
 		49B58624554946B38E21868F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE77B0992983466A80B2EDDF /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +198,8 @@
 				409446E3183418E7005C69B0 /* Company.m */,
 				409446E618341C41005C69B0 /* Invite.h */,
 				409446E718341C41005C69B0 /* Invite.m */,
+				409446EA18341D15005C69B0 /* Workroom.h */,
+				409446EB18341D15005C69B0 /* Workroom.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -352,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				409446E818341C41005C69B0 /* Invite.m in Sources */,
+				409446EC18341D15005C69B0 /* Workroom.m in Sources */,
 				409446DF183417F6005C69B0 /* Conversation.m in Sources */,
 				409446DB18340727005C69B0 /* User.m in Sources */,
 				40DC64831833CB300045B5F3 /* Sqwiggle.m in Sources */,
@@ -364,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				409446E918341C41005C69B0 /* Invite.m in Sources */,
+				409446ED18341D15005C69B0 /* Workroom.m in Sources */,
 				409446E0183417F6005C69B0 /* Conversation.m in Sources */,
 				409446DC18340727005C69B0 /* User.m in Sources */,
 				4082A7561833CD6B009FBC9B /* Tests.m in Sources */,
