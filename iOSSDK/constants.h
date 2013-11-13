@@ -8,12 +8,6 @@
 
 #define SQWIGGLE_SDK_VERION @"0.0.1"
 
-#define SQWIGGLE_ACCESS_TOKEN @"ABCDEFGHI"
-
-#ifndef SQWIGGLE_ACCESS_TOKEN
-    #error @"SQWIGGLE_ACCESS_TOKEN is undefined"
-#endif
-
 #define SQWIGGLE_URI_API @"https://api.sqwiggle.com"
 
 enum MediaMode

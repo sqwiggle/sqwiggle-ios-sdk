@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "Company.h"
 
 @interface Sqwiggle : NSObject
+
++(void) startSqwigglingWithToken:(NSString *) token;
 
 @end
