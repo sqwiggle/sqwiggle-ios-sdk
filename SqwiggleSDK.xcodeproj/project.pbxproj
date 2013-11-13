@@ -202,7 +202,7 @@
 		409446D8183405C7005C69B0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				409446F618343847005C69B0 /* BaseSqwiggleModel */,
+				409446F618343847005C69B0 /* Base Model */,
 				409446E2183418E7005C69B0 /* Company.h */,
 				409446E3183418E7005C69B0 /* Company.m */,
 				409446DD183417F6005C69B0 /* Conversation.h */,
@@ -221,13 +221,13 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		409446F618343847005C69B0 /* BaseSqwiggleModel */ = {
+		409446F618343847005C69B0 /* Base Model */ = {
 			isa = PBXGroup;
 			children = (
 				409446F718343878005C69B0 /* SQObject.h */,
 				409446F8183439DF005C69B0 /* SQObject.m */,
 			);
-			name = BaseSqwiggleModel;
+			name = "Base Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
