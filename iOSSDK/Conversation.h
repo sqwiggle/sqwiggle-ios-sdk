@@ -1,14 +1,13 @@
 //
-//  User.m
+//  Conversation.h
 //  SqwiggleSDK
 //
 //  Created by Cameron Webb on 11/13/13.
 //  Copyright (c) 2013 Sqwiggle. All rights reserved.
 //
 
-#import "User.h"
+#import <Foundation/Foundation.h>
 
-@implementation User
-
+@interface Conversation : NSObject
 
 @end

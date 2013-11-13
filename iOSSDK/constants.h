@@ -8,3 +8,10 @@
 
 #define SQWIGGLE_URI_API @"https://api.sqwiggle.com"
 
+enum MediaMode
+{
+    AudioOnly,
+    VideoOnly,
+    AudioAndVideo
+};
+

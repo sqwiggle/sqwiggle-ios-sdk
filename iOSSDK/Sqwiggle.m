@@ -14,6 +14,9 @@
 
 @synthesize accessToken = _accessToken;
 
-
++(void) login
+{
+    
+}
 
 @end
