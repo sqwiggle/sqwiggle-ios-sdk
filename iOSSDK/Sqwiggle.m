@@ -17,4 +17,8 @@
     
 }
 
++(void) stopSqwiggling
+{
+    
+}
 @end
