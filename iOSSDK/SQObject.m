@@ -40,8 +40,14 @@
 
 -(NSDictionary *) dictionaryFormat
 {
-    NSLog(@"Dictionary Format has not been overriden for current object");
+    NSAssert(NO, @"Subclasses need to overwrite this method");
     return @{};
+}
+
+-(id) createObjectFromDictionary:(NSDictionary *) dictionary
+{
+    NSAssert(NO, @"Subclasses need to overwrite this method");
+    return nil;
 }
 
 @end
