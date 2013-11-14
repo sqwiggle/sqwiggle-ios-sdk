@@ -11,4 +11,15 @@
 @implementation SQObject
 @synthesize id = _id;
 
+-(void) save
+{
+#warning Not Implemented
+    
+}
+
+-(void) delete
+{
+#warning Not Implemented
+}
+
 @end
