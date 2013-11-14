@@ -10,4 +10,9 @@
 
 @implementation SQWorkroom
 
+-(NSDictionary *) modelDefinition
+{
+    return @{_createdByID : @"owner_id", _name: @"name",
+             _path : @"path"};
+}
 @end

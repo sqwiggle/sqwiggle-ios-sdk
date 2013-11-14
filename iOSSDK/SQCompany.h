@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) NSDate *createdAt;
 @property (nonatomic, readonly) NSNumber *ownerID;
 @property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) NSString *portalURL;
+@property (nonatomic, readonly) NSString *path;
 @property (nonatomic, readonly) NSDictionary *billing;
 @property (nonatomic, readonly) NSDictionary *security;
 

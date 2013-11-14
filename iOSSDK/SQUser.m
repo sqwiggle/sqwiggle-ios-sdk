@@ -10,12 +10,9 @@
 
 
 @interface SQUser ()
-//Helper method to handle media mode
 {
     NSNumber *_confirmed;
 }
-
--(NSDictionary *) modelDefinition;
 @end
 
 @implementation SQUser
