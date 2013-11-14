@@ -23,7 +23,10 @@
 //Deletes current object from API. If current object does not exist, nothing is done.
 -(void) delete;
 
-//Exports current object to dictionary. Needs to be overriden by each object.
+//Exports current object to dictionary. Needs to be overriden by each subclass.
 -(NSDictionary *) dictionaryFormat;
+
+//Imports dictionary and converts to object. Needs to be overriden by each subclass.
+-(id) createObjectFromDictionary:(NSDictionary *) dictionary;
 
 @end

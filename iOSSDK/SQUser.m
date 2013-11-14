@@ -10,4 +10,6 @@
 
 @implementation SQUser
 
+-(id) cre
+
 @end
