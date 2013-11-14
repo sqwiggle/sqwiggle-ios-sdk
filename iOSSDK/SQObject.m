@@ -44,7 +44,7 @@
     return @{};
 }
 
--(id) createObjectFromDictionary:(NSDictionary *) dictionary
+-(id) initObjectWithDictionary:(NSDictionary *)dictionary
 {
     NSAssert(NO, @"Subclasses need to overwrite this method");
     return nil;
