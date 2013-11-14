@@ -14,9 +14,10 @@
 
 @interface SQInvite : SQObject
 
-@property (nonatomic, readonly) SQUser *from;
-@property (nonatomic, readonly) SQCompany *company;
-@property (nonatomic, readonly) NSURL *avatar;
-@property (nonatomic, readonly) NSURL *url;
+@property (nonatomic, readonly) NSNumber *fromID;
+@property (nonatomic, readonly) NSDate *createdAt;
+@property (nonatomic, readonly) NSString *email;
+@property (nonatomic, readonly) NSString *avatar;
+@property (nonatomic, readonly) NSString *path;
 
 @end
