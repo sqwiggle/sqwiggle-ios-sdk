@@ -10,6 +10,10 @@
 #import <AFNetworking/AFNetworking.h>
 
 @interface SQObject : NSObject
+{
+    NSNumber *_id;
+    NSString *_relativeURL;
+}
 
 /* Properties */
 

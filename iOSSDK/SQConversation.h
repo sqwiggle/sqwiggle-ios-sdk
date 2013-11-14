@@ -12,8 +12,8 @@
 
 @interface SQConversation : SQObject
 
-@property (nonatomic, readonly) SQCompany *company;
-@property (nonatomic, readonly) SQWorkroom *workroom;
+@property (nonatomic, readonly) NSNumber *companyID;
+@property (nonatomic, readonly) NSNumber *workroomID;
 @property (nonatomic, readonly) NSNumber *colorID;
 @property (nonatomic, readonly) NSArray *users;
 

@@ -10,4 +10,10 @@
 
 @implementation SQConversation
 
+-(NSDictionary *) modelDefinition
+{
+    return @{_id: @"id", _companyID: @"company_id", _colorID: @"color_id",
+             _workroomID: @"workroom_id", _users: @"users"};
+}
+
 @end
