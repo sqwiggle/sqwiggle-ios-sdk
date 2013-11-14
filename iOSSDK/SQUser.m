@@ -8,12 +8,14 @@
 
 #import "SQUser.h"
 
+
 @interface SQUser ()
 //Helper method to handle media mode
--(enum MediaMode) modeForString:(NSString *)string;
+-(NSDictionary *) modelDefinition;
 @end
 
 @implementation SQUser
+
 
 /*@property (nonatomic, readonly) NSString *role;
  @property (nonatomic, readonly) enum MediaMode *mode;
@@ -27,6 +29,7 @@
  @property (nonatomic, readonly) NSDate *lastActiveAt;
  @property (nonatomic, readonly) NSURL *avatar;*/
 
+
 -(id) initObjectWithDictionary:(NSDictionary *)dictionary
 {
     self = [super init];
@@ -34,20 +37,19 @@
     if (self != nil)
     {
         _role = [dictionary objectForKey:@"role"];
-        _mode = [self modeForString:[dictionary objectForKey:@"mode"]];
+        _status = [dictionary objectForKey:@"status"];
+        _name = [dictionary objectForKey:@"name"];
         _email = [dictionary objectForKey:@"email"];
+        _confirmed = [dictionary objectForKey:@"confirmed"]
+        
     }
+    
+    return self;
 }
 
--(enum MediaMode) modeForString:(NSString *)string
+-(NSDictionary *) modelDefinition
 {
-    if ([string isEqualToString:@"audio"])
-        return AudioOnly;
-    else if ([string isEqualToString:@"video"])
-        return VideoOnly;
-    else if ([string isEqualToString:@"audio/video"])
-        return AudioAndVideo;
-    else
-        return None;
+    return @{_role : @"role", _mode: @"mode",
+            _status : @"status"};
 }
 @end

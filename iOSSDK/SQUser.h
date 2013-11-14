@@ -14,7 +14,7 @@
 @interface SQUser : SQObject
 
 @property (nonatomic, readonly) NSString *role;
-@property (nonatomic, readonly) enum MediaMode mode;
+@property (nonatomic, readonly) NSString *mode;
 @property (nonatomic, readonly) NSString *status;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSString *email;

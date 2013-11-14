@@ -10,15 +10,5 @@
 
 #define SQWIGGLE_URI_API @"https://api.sqwiggle.com"
 
-enum MediaMode
-{
-    AudioOnly,
-    VideoOnly,
-    AudioAndVideo,
-    None
-};
-
-#define SQWIGGLE_MEDIA_MODES NSDictionary dictionaryWithObjects"video": VideoOnly, @"audio": AudioOnly, @"audio/video": AudioAndVideo
-
 #define SQWIGGLE_RELATIVE_URLS @{@"SQUser": @"users", @"SQCompany": @"companies", \
                                 @"SQConversation": @"conversations", @"SQWorkroom": @"workrooms"}
