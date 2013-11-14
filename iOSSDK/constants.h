@@ -17,3 +17,5 @@ enum MediaMode
     AudioAndVideo
 };
 
+#define SQWIGGLE_RELATIVE_URLS @{@"SQUser": @"users", @"SQCompany": @"companies", \
+                                @"SQConversation": @"conversations", @"SQWorkroom": @"workrooms"}
