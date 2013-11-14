@@ -15,7 +15,7 @@
 -(void) save
 {
     #warning Not Implemented
-    NSString *url = [NSString stringWithFormat:@"%@/%@", SQWIGGLE_URI_API, _relativeURL];
+    NSString *url = [NSString stringWithFormat:@"%@/%@/%d", SQWIGGLE_URI_API, _relativeURL, _id];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager PUT:url parameters:[self dictionaryFormat] success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -28,10 +28,10 @@
 -(void) delete
 {
     #warning Not Implemented
-    NSString *url = [NSString stringWithFormat:@"%@/%@", SQWIGGLE_URI_API, _relativeURL];
+    NSString *url = [NSString stringWithFormat:@"%@/%@/%d", SQWIGGLE_URI_API, _relativeURL, _id];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager DELETE:url parameters:[self dictionaryFormat] success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager DELETE:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
