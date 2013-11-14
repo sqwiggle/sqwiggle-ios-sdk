@@ -13,13 +13,19 @@
 
 -(void) save
 {
-#warning Not Implemented
+    #warning Not Implemented
     
 }
 
 -(void) delete
 {
-#warning Not Implemented
+    #warning Not Implemented
+}
+
+-(NSDictionary *) dictionaryFormat
+{
+    NSLog(@"Dictionary Format has not been overriden for current object");
+    return @{};
 }
 
 @end
