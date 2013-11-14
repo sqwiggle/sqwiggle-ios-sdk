@@ -10,11 +10,19 @@
 
 @implementation SQObject
 @synthesize id = _id;
+@synthesize relativeURL = _relativeURL;
 
 -(void) save
 {
     #warning Not Implemented
+    NSString *url = [NSString stringWithFormat:@"%@/%@", SQWIGGLE_URI_API, _relativeURL];
     
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager PUT:url parameters:[self dictionaryFormat] success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
 }
 
 -(void) delete
