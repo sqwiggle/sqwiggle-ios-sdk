@@ -12,7 +12,7 @@
 #import "SQCompany.h"
 
 
-@interface Invite : SQObject
+@interface SQInvite : SQObject
 
 @property (nonatomic, readonly) SQUser *from;
 @property (nonatomic, readonly) SQCompany *company;

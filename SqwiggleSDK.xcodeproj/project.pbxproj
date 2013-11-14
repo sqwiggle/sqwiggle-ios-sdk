@@ -154,9 +154,9 @@
 		407A12A91832D06B00819225 /* Sqwiggle */ = {
 			isa = PBXGroup;
 			children = (
-				409446D8183405C7005C69B0 /* Models */,
 				407A12AC1832D06B00819225 /* Sqwiggle.h */,
 				40DC64821833CB300045B5F3 /* Sqwiggle.m */,
+				409446D8183405C7005C69B0 /* Models */,
 				407A12CE1832D72600819225 /* Config */,
 				407A12AA1832D06B00819225 /* Supporting Files */,
 			);
