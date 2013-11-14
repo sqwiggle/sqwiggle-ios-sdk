@@ -18,6 +18,8 @@
     
     if (self != nil)
     {
+        //Keys are set by names of classes in constants.h
+        _relativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:NSStringFromClass([self class])];
         [[self modelDefinition] enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
             key = [dictionary objectForKey:obj];
         }];
