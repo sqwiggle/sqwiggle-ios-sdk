@@ -28,6 +28,14 @@
 -(void) delete
 {
     #warning Not Implemented
+    NSString *url = [NSString stringWithFormat:@"%@/%@", SQWIGGLE_URI_API, _relativeURL];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager DELETE:url parameters:[self dictionaryFormat] success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
 }
 
 -(NSDictionary *) dictionaryFormat
