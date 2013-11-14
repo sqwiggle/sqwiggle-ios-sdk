@@ -14,7 +14,8 @@
 
 @property (nonatomic, readonly) SQCompany *company;
 @property (nonatomic, readonly) SQWorkroom *workroom;
-@property (nonatomic, readonly) id colorID;
+@property (nonatomic, readonly) NSNumber *colorID;
 @property (nonatomic, readonly) NSArray *users;
+
 
 @end

@@ -12,7 +12,7 @@
 @interface SQCompany : SQObject
 
 @property (nonatomic, readonly) NSDate *createdAt;
-@property (nonatomic, readonly) int ownerID;
+@property (nonatomic, readonly) NSNumber *ownerID;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSString *portalURL;
 @property (nonatomic, readonly) NSDictionary *billing;

@@ -11,6 +11,10 @@
 
 @interface SQUser ()
 //Helper method to handle media mode
+{
+    NSNumber *_confirmed;
+}
+
 -(NSDictionary *) modelDefinition;
 @end
 
@@ -30,26 +34,18 @@
  @property (nonatomic, readonly) NSURL *avatar;*/
 
 
--(id) initObjectWithDictionary:(NSDictionary *)dictionary
-{
-    self = [super init];
-    
-    if (self != nil)
-    {
-        _role = [dictionary objectForKey:@"role"];
-        _status = [dictionary objectForKey:@"status"];
-        _name = [dictionary objectForKey:@"name"];
-        _email = [dictionary objectForKey:@"email"];
-        _confirmed = [dictionary objectForKey:@"confirmed"]
-        
-    }
-    
-    return self;
-}
-
 -(NSDictionary *) modelDefinition
 {
     return @{_role : @"role", _mode: @"mode",
-            _status : @"status"};
+             _status : @"status", _name: @"name",
+             _email: @"email", _confirmed: @"confirmed",
+             _timeZone: @"timezone", _timeZoneOffset: @"time_zone_offset",
+             _createdAt: @"created_at", _lastActiveAt: @"last_active_at",
+             _avatar: @"avatar"};
+}
+
+-(BOOL) confirmed
+{
+    return [_confirmed boolValue];
 }
 @end

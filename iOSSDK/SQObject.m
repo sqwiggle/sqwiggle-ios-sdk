@@ -12,10 +12,38 @@
 @synthesize id = _id;
 @synthesize relativeURL = _relativeURL;
 
+-(id) initObjectWithDictionary:(NSDictionary *)dictionary
+{
+    self = [super init];
+    
+    if (self != nil)
+    {
+        [[self modelDefinition] enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+            key = [dictionary objectForKey:obj];
+        }];
+    }
+    
+    return self;
+}
+
+#pragma mark Override these SQObjectMethods
+-(NSDictionary *) dictionaryFormat
+{
+    NSAssert(NO, @"Subclasses need to overwrite this method");
+    return @{};
+}
+
+-(NSDictionary *) modelDefinition
+{
+    NSAssert(NO, @"Subclasses need to overwrite this method");
+    return @{};
+}
+
+#pragma mark Make life better methods
 -(void) save
 {
     #warning Not Implemented
-    NSString *url = [NSString stringWithFormat:@"%@/%@/%d", SQWIGGLE_URI_API, _relativeURL, _id];
+    NSString *url = [NSString stringWithFormat:@"%@/%@/%@", SQWIGGLE_URI_API, _relativeURL, _id];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager PUT:url parameters:[self dictionaryFormat] success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -28,7 +56,7 @@
 -(void) delete
 {
     #warning Not Implemented
-    NSString *url = [NSString stringWithFormat:@"%@/%@/%d", SQWIGGLE_URI_API, _relativeURL, _id];
+    NSString *url = [NSString stringWithFormat:@"%@/%@/%@", SQWIGGLE_URI_API, _relativeURL, _id];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager DELETE:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -36,18 +64,6 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
     }];
-}
-
--(NSDictionary *) dictionaryFormat
-{
-    NSAssert(NO, @"Subclasses need to overwrite this method");
-    return @{};
-}
-
--(id) initObjectWithDictionary:(NSDictionary *)dictionary
-{
-    NSAssert(NO, @"Subclasses need to overwrite this method");
-    return nil;
 }
 
 @end
