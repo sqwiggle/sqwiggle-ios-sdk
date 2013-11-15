@@ -8,17 +8,23 @@
 
 #import "Sqwiggle.h"
 #import <AFNetworking/AFNetworking.h>
+#define SqwiggleUser [SQUser class]
+#define SqwiggleCompany [SQCompany class]
+#define SqwiggleStreamItem [SQStreamItem class]
+#define SqwiggleWorkroom [SQWorkroom class]
 
 
 @implementation Sqwiggle
 
-+(void) startSqwigglingWithToken:(NSString *) token
++(id) retreiveItemsByType:(Class)type
 {
-    
+    [self retreiveByType:SqwiggleUser];
+    return nil;
 }
 
-+(void) stopSqwiggling
++(id) retreiveItemOfType:(Class)type byID:(NSNumber *)id
 {
-    
+    return nil;
 }
+
 @end

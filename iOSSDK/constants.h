@@ -11,4 +11,6 @@
 #define SQWIGGLE_URI_API @"https://api.sqwiggle.com"
 
 #define SQWIGGLE_RELATIVE_URLS @{@"SQUser": @"users", @"SQCompany": @"companies", \
-                                @"SQConversation": @"conversations", @"SQWorkroom": @"workrooms", @"SQInvite": @"invites"}
+                                @"SQConversation": @"conversations", @"SQWorkroom": @"workrooms",\
+                                @"SQInvite": @"invites", \
+                                @"SQStreamItems": @"stream_items"}

@@ -24,20 +24,9 @@
 //Removes Sqwiggle data from local device
 +(void) stopSqwiggling;
 
-/* User Methods */
-+(NSArray *) getUsers;
-+(SQUser *) getUserByID:(NSNumber *)id;
-
-/* Company Methods */
-+(SQCompany *) getCompany;
-
-/* Workroom Methods */
-+(NSArray *) getWorkrooms;
-+(SQWorkroom *) getWorkroomByID:(NSNumber *)id;
-
-/* Stream Methods */
-+(SQStreamItem *) getStreamItems;
-
+/* Retreival Methods */
++(id) retreiveByType:(Class)type;
++(id) retreiveItemOfType:(Class)type byID:(NSNumber *)id;
 
 
 @end
