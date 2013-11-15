@@ -8,17 +8,13 @@
 
 #import "Sqwiggle.h"
 #import <AFNetworking/AFNetworking.h>
-#define SqwiggleUser [SQUser class]
-#define SqwiggleCompany [SQCompany class]
-#define SqwiggleStreamItem [SQStreamItem class]
-#define SqwiggleWorkroom [SQWorkroom class]
+
 
 
 @implementation Sqwiggle
 
 +(id) retreiveItemsByType:(Class)type
 {
-    [self retreiveByType:SqwiggleUser];
     return nil;
 }
 

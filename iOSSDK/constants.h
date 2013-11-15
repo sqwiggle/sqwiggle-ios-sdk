@@ -14,3 +14,12 @@
                                 @"SQConversation": @"conversations", @"SQWorkroom": @"workrooms",\
                                 @"SQInvite": @"invites", \
                                 @"SQStreamItems": @"stream_items"}
+
+//Creating for Semantics sake
+#define SqwiggleType Class
+
+//More Semantics stuff
+#define SqwiggleUser [SQUser class]
+#define SqwiggleCompany [SQCompany class]
+#define SqwiggleStreamItem [SQStreamItem class]
+#define SqwiggleWorkroom [SQWorkroom class]

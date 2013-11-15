@@ -15,6 +15,15 @@
 #import "SQInvite.h"
 #import "SQConversation.h"
 
+//Creating for Semantics sake
+#define SqwiggleType Class
+
+//More Semantics stuff
+#define SqwiggleUser [SQUser class]
+#define SqwiggleCompany [SQCompany class]
+#define SqwiggleStreamItem [SQStreamItem class]
+#define SqwiggleWorkroom [SQWorkroom class]
+
 
 @interface Sqwiggle : NSObject
 
@@ -25,8 +34,8 @@
 +(void) stopSqwiggling;
 
 /* Retreival Methods */
-+(id) retreiveByType:(Class)type;
-+(id) retreiveItemOfType:(Class)type byID:(NSNumber *)id;
++(id) retreiveItemsOfType:(SqwiggleType)type;
++(id) retreiveItemOfType:(SqwiggleType)type byID:(NSNumber *)id;
 
 
 @end
