@@ -16,4 +16,9 @@
 //Removes Sqwiggle data from local device
 +(void) stopSqwiggling;
 
+/* User Methods */
++(void) getUsers;
++(void) getUserForID:(NSNumber)*id;
+
+
 @end
