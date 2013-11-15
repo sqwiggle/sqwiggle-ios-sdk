@@ -13,14 +13,29 @@
 
 @implementation Sqwiggle
 
-+(id) retreiveItemsByType:(Class)type
++(void) retrieveItemsOfType:(SqwiggleType)type
+                    success:(void (^)(NSArray *items))success
+                    failure:(void (^)(NSError *error))failure
 {
-    return nil;
+    [self retreiveItemOfType:type
+                        byID:nil
+                     success:success
+                     failure:failure];
 }
 
-+(id) retreiveItemOfType:(Class)type byID:(NSNumber *)id
++(void) retreiveItemOfType:(Class)type byID:(NSNumber *)ID
 {
-    return nil;
+    NSString *relativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:NSStringFromClass([self class])];
+     
+    NSString *url = [NSString stringWithFormat:@"%@/%@/%@", SQWIGGLE_URI_API,
+                     relativeURL, (ID ? ID : @"")];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager PUT:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
 }
 
 @end

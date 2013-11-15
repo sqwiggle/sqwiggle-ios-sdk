@@ -20,7 +20,7 @@
 
 -(NSDictionary *) modelDefinition
 {
-    return @{_id: @"id", _role : @"role", _mode: @"mode",
+    return @{_ID: @"id", _role : @"role", _mode: @"mode",
              _status : @"status", _name: @"name",
              _email: @"email", _confirmed: @"confirmed",
              _timeZone: @"time_zone", _timeZoneOffset: @"time_zone_offset",

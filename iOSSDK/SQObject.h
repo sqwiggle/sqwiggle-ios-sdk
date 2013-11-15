@@ -11,14 +11,14 @@
 
 @interface SQObject : NSObject
 {
-    NSNumber *_id;
+    NSNumber *_ID;
     NSString *_relativeURL;
 }
 
 /* Properties */
 
 //Unique ID
-@property (nonatomic, readonly) NSNumber *id;
+@property (nonatomic, readonly) NSNumber *ID;
 
 //Relative URL for object in API. NOTE: This must be overriden in each object.
 @property (nonatomic, readonly) NSString *relativeURL;

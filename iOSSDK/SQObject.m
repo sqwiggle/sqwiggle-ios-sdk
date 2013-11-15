@@ -9,7 +9,7 @@
 #import "SQObject.h"
 
 @implementation SQObject
-@synthesize id = _id;
+@synthesize ID = _ID;
 @synthesize relativeURL = _relativeURL;
 
 -(id) initObjectWithDictionary:(NSDictionary *)dictionary
@@ -45,7 +45,7 @@
 -(void) save
 {
     #warning Not Implemented
-    NSString *url = [NSString stringWithFormat:@"%@/%@/%@", SQWIGGLE_URI_API, _relativeURL, _id];
+    NSString *url = [NSString stringWithFormat:@"%@/%@/%@", SQWIGGLE_URI_API, _relativeURL, _ID];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager PUT:url parameters:[self dictionaryFormat] success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -58,7 +58,7 @@
 -(void) delete
 {
     #warning Not Implemented
-    NSString *url = [NSString stringWithFormat:@"%@/%@/%@", SQWIGGLE_URI_API, _relativeURL, _id];
+    NSString *url = [NSString stringWithFormat:@"%@/%@/%@", SQWIGGLE_URI_API, _relativeURL, _ID];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager DELETE:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {

@@ -34,8 +34,13 @@
 +(void) stopSqwiggling;
 
 /* Retreival Methods */
-+(id) retreiveItemsOfType:(SqwiggleType)type;
-+(id) retreiveItemOfType:(SqwiggleType)type byID:(NSNumber *)id;
++(void) retrieveItemsOfType:(SqwiggleType)type
+            success:(void (^)(NSArray *items))success
+            failure:(void (^)(NSError *error))failure;
+
++(void) retreiveItemOfType:(SqwiggleType)type byID:(NSNumber *)ID
+                   success:(void (^)(id item))success
+                   failure:(void (^)(NSError *error))failure;
 
 
 @end

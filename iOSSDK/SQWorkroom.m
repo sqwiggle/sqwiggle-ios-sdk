@@ -12,7 +12,7 @@
 
 -(NSDictionary *) modelDefinition
 {
-    return @{_id: @"id", _createdByID : @"owner_id", _name: @"name",
+    return @{_ID: @"id", _createdByID : @"owner_id", _name: @"name",
              _path : @"path"};
 }
 @end
