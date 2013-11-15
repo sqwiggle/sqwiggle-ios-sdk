@@ -23,7 +23,10 @@
                      failure:failure];
 }
 
-+(void) retreiveItemOfType:(Class)type byID:(NSNumber *)ID
++(void) retreiveItemOfType:(Class)type
+                      byID:(NSNumber *)ID
+                   success:(void (^)(id item))success
+                   failure:(void (^)(NSError *error))failure
 {
     NSString *relativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:NSStringFromClass([self class])];
      
@@ -31,7 +34,7 @@
                      relativeURL, (ID ? ID : @"")];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager PUT:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
