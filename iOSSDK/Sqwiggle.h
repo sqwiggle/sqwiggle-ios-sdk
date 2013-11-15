@@ -7,6 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SQCompany.h"
+#import "SQUser.h"
+#import "SQStreamItem.h"
+#import "SQWorkroom.h"
+#import "SQNotification.h"
+#import "SQInvite.h"
+#import "SQConversation.h"
+
 
 @interface Sqwiggle : NSObject
 
@@ -17,8 +25,19 @@
 +(void) stopSqwiggling;
 
 /* User Methods */
-+(void) getUsers;
-+(void) getUserForID:(NSNumber)*id;
++(NSArray *) getUsers;
++(SQUser *) getUserByID:(NSNumber *)id;
+
+/* Company Methods */
++(SQCompany *) getCompany;
+
+/* Workroom Methods */
++(NSArray *) getWorkrooms;
++(SQWorkroom *) getWorkroomByID:(NSNumber *)id;
+
+/* Stream Methods */
++(SQStreamItem *) getStreamItems;
+
 
 
 @end
