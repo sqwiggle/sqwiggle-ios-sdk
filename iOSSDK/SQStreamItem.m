@@ -10,4 +10,11 @@
 
 @implementation SQStreamItem
 
+-(NSDictionary *) modelDefinition
+{
+    return @{_id: @"id", _updatedAt : @"updated_at", _createdAt: @"created_at",
+             _workRoomID : @"workroom_id", _mentions: @"mentions",
+             _messagePlain: @"message_plain", _userID: @"user_id"};
+}
+
 @end

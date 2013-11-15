@@ -23,10 +23,9 @@
 //Relative URL for object in API. NOTE: This must be overriden in each object.
 @property (nonatomic, readonly) NSString *relativeURL;
 
-
 /* Methods */
 
-//Imports dictionary and converts to object. Model needs to be defined before executing.
+//Takes dictionary and converts to object. Model needs to be defined before executing.
 -(id) initObjectWithDictionary:(NSDictionary *)dictionary;
 
 //Saves current object on API. If current object does not exist, it will be created automatically.
