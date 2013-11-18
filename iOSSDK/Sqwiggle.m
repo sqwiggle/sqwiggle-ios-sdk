@@ -9,16 +9,13 @@
 #import "Sqwiggle.h"
 #import <AFNetworking/AFNetworking.h>
 
-#define SQWIGGLE_USERNAME_KEY @"SQWIGGLE_USERNAME_KEY"
-#define SQWIGGLE_PW_KEY @"SQWIGGLE_PW_KEY"
+#define SQWIGGLE_AUTH_KEY @"SQWIGGLE_USERNAME_KEY"
 
 @interface Sqwiggle ()
 
 /* Private Method Declaration */
-+(NSString *) getUserName;
-+(NSString *) getPassword;
-+(void) setUserName:(NSString *)userName;
-+(void) setPassword:(NSString *)password;
++(NSString *) getAuthHeader;
++(void) setAuthHeader:(NSString *)authHeader;
 
 @end
 
@@ -27,7 +24,9 @@
 +(void) startSqwigglingWithUsername:(NSString *) username
                            password:(NSString *) password
 {
+
     
+
 }
 
 +(void) stopSqwiggling
@@ -79,27 +78,16 @@
 }
 
 #pragma mark private methods
-+(NSString *) getUserName
-{
-    return [[NSUserDefaults standardUserDefaults] objectForKey:SQWIGGLE_USERNAME_KEY];
-}
-+(NSString *) getPassword
-{
-    return [[NSUserDefaults standardUserDefaults] objectForKey:SQWIGGLE_PW_KEY];
-}
 
-+(void) setUserName:(NSString *)userName
++(NSString *) getAuthHeader
 {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:userName
-                 forKey:SQWIGGLE_USERNAME_KEY];
-    [defaults synchronize];
+    return [[NSUserDefaults standardUserDefaults] objectForKey:SQWIGGLE_AUTH_KEY];
 }
-+(void) setPassword:(NSString *)password
++(void) setAuthHeader:(NSString *)authHeader
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:password
-                 forKey:SQWIGGLE_USERNAME_KEY];
+    [defaults setObject:authHeader
+                 forKey:SQWIGGLE_AUTH_KEY];
     [defaults synchronize];
 }
 
