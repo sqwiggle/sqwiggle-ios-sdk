@@ -9,9 +9,29 @@
 #import "Sqwiggle.h"
 #import <AFNetworking/AFNetworking.h>
 
+@interface Sqwiggle ()
+{
+    NSString *_userName;
+    NSString *_password;
+}
 
++(void) setUserName:(NSString *)userName;
++(void) setPassword:(NSString *)password;
+
+@end
 
 @implementation Sqwiggle
+
++(void) startSqwigglingWithUsername:(NSString *) username
+                           password:(NSString *) password
+{
+    
+}
+
++(void) stopSqwiggling
+{
+    
+}
 
 +(void) retrieveItemsOfType:(SqwiggleType)type
                     success:(void (^)(NSArray *items))success
