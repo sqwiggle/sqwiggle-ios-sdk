@@ -21,9 +21,9 @@
 
 //More Semantics stuff
 #define SQWIGGLE_USER_TYPE [SQUser class]
-#define SqwiggleCompany [SQCompany class]
-#define SqwiggleStreamItem [SQStreamItem class]
-#define SqwiggleWorkroom [SQWorkroom class]
+#define SQWIGGLE_COMPANY_TYPE [SQCompany class]
+#define SQWIGGLE_STREAMITEM_TYPE [SQStreamItem class]
+#define SQWIGGLE_WORKROOM_TYPE [SQWorkroom class]
 
 
 @interface Sqwiggle : NSObject

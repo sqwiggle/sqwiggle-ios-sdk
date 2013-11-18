@@ -13,7 +13,7 @@
 #define SQWIGGLE_RELATIVE_URLS @{@"SQUser": @"users", @"SQCompany": @"companies", \
                                 @"SQConversation": @"conversations", @"SQWorkroom": @"workrooms",\
                                 @"SQInvite": @"invites", \
-                                @"SQStreamItems": @"stream_items"}
+                                @"SQStreamItem": @"stream"}
 
 //Creating for Semantics sake
 #define SqwiggleType Class

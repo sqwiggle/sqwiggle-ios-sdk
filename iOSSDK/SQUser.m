@@ -20,7 +20,6 @@
 
 -(NSDictionary *) modelDefinition
 {
-    NSLog(@"OH GODWHY");
     return @{@"_ID": @"id", @"_role" : @"role", @"_mode": @"mode",
              @"_status" : @"status", @"_name": @"name",
              @"_email": @"email", @"_confirmed": @"confirmed",

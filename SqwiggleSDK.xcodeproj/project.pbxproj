@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		27E95DAD21A14677830B5D91 /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE77B0992983466A80B2EDDF /* libPods-Tests.a */; };
 		40224CF3183A792C0024AE77 /* Sqwiggle.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DC64821833CB300045B5F3 /* Sqwiggle.m */; };
+		40224CF7183AD2360024AE77 /* Sqwiggle+TestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40224CF6183AD2360024AE77 /* Sqwiggle+TestHelper.m */; };
 		407A12A81832D06B00819225 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407A12A71832D06B00819225 /* Foundation.framework */; };
 		407A12AD1832D06B00819225 /* Sqwiggle.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 407A12AC1832D06B00819225 /* Sqwiggle.h */; };
 		4082A74C1833CD6B009FBC9B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407A12B51832D06B00819225 /* XCTest.framework */; };
@@ -62,6 +63,8 @@
 /* Begin PBXFileReference section */
 		00B2A893D1EF4F8FBE9661D6 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		40224CF4183A7AE90024AE77 /* TestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHelper.h; sourceTree = "<group>"; };
+		40224CF5183AD2360024AE77 /* Sqwiggle+TestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Sqwiggle+TestHelper.h"; sourceTree = "<group>"; };
+		40224CF6183AD2360024AE77 /* Sqwiggle+TestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Sqwiggle+TestHelper.m"; sourceTree = "<group>"; };
 		407A12A41832D06B00819225 /* libSqwiggleSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSqwiggleSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		407A12A71832D06B00819225 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		407A12AB1832D06B00819225 /* SqwiggleSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SqwiggleSDK-Prefix.pch"; sourceTree = "<group>"; };
@@ -188,6 +191,8 @@
 				4082A7551833CD6B009FBC9B /* Tests.m */,
 				40224CF4183A7AE90024AE77 /* TestHelper.h */,
 				4082A7501833CD6B009FBC9B /* Supporting Files */,
+				40224CF5183AD2360024AE77 /* Sqwiggle+TestHelper.h */,
+				40224CF6183AD2360024AE77 /* Sqwiggle+TestHelper.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -403,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40224CF3183A792C0024AE77 /* Sqwiggle.m in Sources */,
+				40224CF7183AD2360024AE77 /* Sqwiggle+TestHelper.m in Sources */,
 				409446F518342612005C69B0 /* SQNotification.m in Sources */,
 				409446E918341C41005C69B0 /* SQInvite.m in Sources */,
 				409446ED18341D15005C69B0 /* SQWorkroom.m in Sources */,

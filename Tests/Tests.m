@@ -45,19 +45,49 @@
 
 - (void)testGetUser
 {
+    [self testAuth];
+    
     StartBlock();
-    [Sqwiggle startSqwigglingWithUsername:TEST_EMAIL password:TEST_PASSWORD success:^(BOOL resp) {
-        EndBlock();
-    } failure:^(NSError *error) {
-        EndBlock();
-    }];
-    
-    WaitUntilBlockCompletes();
-    
     waitingForBlock = YES;
     
     [Sqwiggle retreiveItemOfType:SQWIGGLE_USER_TYPE byID:nil success:^(id item) {
         EndBlock();
+        XCTAssertTrue(YES, @"Did succeed");
+    } failure:^(NSError *error) {
+        EndBlock();
+        XCTFail(@"Error returned for test %@", error);
+    }];
+    
+    WaitUntilBlockCompletes();
+}
+
+-(void)testGetWorkrooms
+{
+    [self testAuth];
+    StartBlock();
+    waitingForBlock = YES;
+    
+    [Sqwiggle retreiveItemOfType:SQWIGGLE_WORKROOM_TYPE byID:nil success:^(id item) {
+        EndBlock();
+        XCTAssertTrue(YES, @"Did succeed");
+    } failure:^(NSError *error) {
+        EndBlock();
+        XCTFail(@"Error returned for test %@", error);
+    }];
+    
+    WaitUntilBlockCompletes();
+}
+
+- (void)testGetStreamItems
+{
+    [self testAuth];
+    
+    StartBlock();
+    waitingForBlock = YES;
+    
+    [Sqwiggle retreiveItemOfType:SQWIGGLE_STREAMITEM_TYPE byID:nil success:^(id item) {
+        EndBlock();
+        NSLog(@"%@", item);
         XCTAssertTrue(YES, @"Did succeed");
     } failure:^(NSError *error) {
         EndBlock();

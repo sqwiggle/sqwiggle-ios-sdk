@@ -26,6 +26,12 @@
                             success:(void (^)(BOOL resp))success
                             failure:(void (^)(NSError *error))failure
 {
+    if ([self getAuthHeader])
+    {
+        success(true);
+        return;
+    }
+    
     NSString *url = @"http://dev.sqwiggle.com/api/v1/users/auth";
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *authInfo = @{@"email": username, @"password": password};
@@ -70,6 +76,7 @@
     [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:[self getAuthHeader]
                                                               password:@"x"];
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"%@", responseObject);
         if (!ID)
         {
             NSMutableArray *responseObjects = [NSMutableArray new];
