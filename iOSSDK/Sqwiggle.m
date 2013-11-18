@@ -23,7 +23,7 @@
                      failure:failure];
 }
 
-+(void) retreiveItemOfType:(Class)type
++(void) retreiveItemOfType:(SqwiggleType)type
                       byID:(NSNumber *)ID
                    success:(void (^)(id item))success
                    failure:(void (^)(NSError *error))failure
@@ -35,7 +35,8 @@
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
+        NSDictionary *objectDefinition = [type performSelector:@selector(modelDefinition)];
+        [type performSelector:@selector(objectWithDictionary:) withObject:objectDefinition];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
     }];

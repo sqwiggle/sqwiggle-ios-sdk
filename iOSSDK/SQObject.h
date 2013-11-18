@@ -28,6 +28,9 @@
 //Takes dictionary and converts to object. Model needs to be defined before executing.
 -(id) initObjectWithDictionary:(NSDictionary *)dictionary;
 
+//Short-hand version of initObjectWithDictionary
++(id) objectWithDictionary:(NSDictionary *)dictionary;
+
 //Saves current object on API. If current object does not exist, it will be created automatically.
 -(void) save;
 

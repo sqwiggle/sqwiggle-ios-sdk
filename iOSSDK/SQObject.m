@@ -28,6 +28,12 @@
     return self;
 }
 
+//Short-hand init
++(id) objectWithDictionary:(NSDictionary *)dictionary
+{
+    return [[self alloc] initObjectWithDictionary:dictionary];
+}
+
 #pragma mark Override these SQObjectMethods
 -(NSDictionary *) dictionaryFormat
 {

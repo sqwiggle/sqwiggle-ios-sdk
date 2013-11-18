@@ -38,7 +38,8 @@
             success:(void (^)(NSArray *items))success
             failure:(void (^)(NSError *error))failure;
 
-+(void) retreiveItemOfType:(SqwiggleType)type byID:(NSNumber *)ID
++(void) retreiveItemOfType:(SqwiggleType)type
+                      byID:(NSNumber *)ID
                    success:(void (^)(id item))success
                    failure:(void (^)(NSError *error))failure;
 
