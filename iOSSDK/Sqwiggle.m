@@ -56,11 +56,25 @@
                      relativeURL, (ID ? ID : @"")];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
+    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:@"rwAx4yqBcNvoyjLsjMKL"
+                                                              password:@"x"];
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSDictionary *objectDefinition = [type performSelector:@selector(modelDefinition)];
-        [type performSelector:@selector(objectWithDictionary:) withObject:objectDefinition];
+        if (!ID)
+        {
+            NSMutableArray *responseObjects = [NSMutableArray new];
+            [responseObject each:^(id object) {
+                [responseObjects push:[type objectWithDictionary:object]];
+            }];
+            success(responseObjects);
+        }
+        else
+        {
+            success([type performSelector:@selector(objectWithDictionary:)
+                               withObject:responseObject]);
+        }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
+        failure(error);
     }];
 }
 

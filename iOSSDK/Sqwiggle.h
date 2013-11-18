@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SQObject.h"
 #import "SQCompany.h"
 #import "SQUser.h"
 #import "SQStreamItem.h"
@@ -19,6 +20,7 @@
 #define SqwiggleType Class
 
 //More Semantics stuff
+#define SQWIGGLE_USER_TYPE [SQUser class]
 #define SqwiggleCompany [SQCompany class]
 #define SqwiggleStreamItem [SQStreamItem class]
 #define SqwiggleWorkroom [SQWorkroom class]

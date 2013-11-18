@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "Sqwiggle.h"
 
 @interface Tests : XCTestCase
 
@@ -26,9 +27,18 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testGetUser
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    StartBlock();
+    [Sqwiggle retreiveItemOfType:SQWIGGLE_USER_TYPE byID:nil success:^(id item) {
+        EndBlock();
+        XCTAssertTrue(YES, @"Did succeed");
+    } failure:^(NSError *error) {
+        EndBlock();
+        XCTFail(@"Error returned for test %@", error);
+    }];
+    
+    WaitUntilBlockCompletes();
 }
 
 @end

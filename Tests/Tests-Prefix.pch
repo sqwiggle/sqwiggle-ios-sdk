@@ -7,4 +7,7 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import "constants.h"
+    #import <ObjectiveSugar/ObjectiveSugar.h>
+    #import "TestHelper.h"
 #endif

@@ -15,23 +15,21 @@
 -(id) initObjectWithDictionary:(NSDictionary *)dictionary
 {
     self = [super init];
-    
     if (self != nil)
     {
         //Keys are set by names of classes in constants.h
         _relativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:NSStringFromClass([self class])];
         [[self modelDefinition] each:^(id key, id value){
-            key = [dictionary objectForKey:value];
+            [self setValue:[dictionary objectForKey:value] forKey:key];
         }];
     }
-    
     return self;
 }
 
 //Short-hand init
 +(id) objectWithDictionary:(NSDictionary *)dictionary
 {
-    return [[self alloc] initObjectWithDictionary:dictionary];
+    return [[[self class] alloc] initObjectWithDictionary:dictionary];
 }
 
 #pragma mark Override these SQObjectMethods

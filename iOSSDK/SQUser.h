@@ -22,7 +22,7 @@
 @property (nonatomic, readonly) NSNumber *timeZoneOffset;
 @property (nonatomic, readonly) NSDate *createdAt;
 @property (nonatomic, readonly) NSDate *lastActiveAt;
-@property (nonatomic, readonly) NSURL *avatar;
+@property (nonatomic, readonly) NSString *avatar;
 
 //Needed to do as helper method because bool doesn't have a ns counterpart.
 -(BOOL) confirmed;
