@@ -23,15 +23,26 @@
 
 +(void) startSqwigglingWithUsername:(NSString *) username
                            password:(NSString *) password
+                            success:(void (^)(BOOL resp))success
+                            failure:(void (^)(NSError *error))failure
 {
-
+    NSString *url = @"http://dev.sqwiggle.com/api/v1/users/auth";
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *authInfo = @{@"email": username, @"password": password};
     
+    [manager POST:url parameters:authInfo
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             [self setAuthHeader:[responseObject objectForKey:@"auth_token"]];
+             success(YES);
 
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        failure(error);
+    }];
 }
 
 +(void) stopSqwiggling
 {
-    
+    [self setAuthHeader:nil];
 }
 
 +(void) retrieveItemsOfType:(SqwiggleType)type
@@ -56,7 +67,7 @@
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
-    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:@"rwAx4yqBcNvoyjLsjMKL"
+    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:[self getAuthHeader]
                                                               password:@"x"];
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (!ID)

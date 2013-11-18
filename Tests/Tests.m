@@ -8,6 +8,8 @@
 
 #import <XCTest/XCTest.h>
 #import "Sqwiggle.h"
+#define TEST_EMAIL @"luke+1@sqwiggle.com"
+#define TEST_PASSWORD @"password"
 
 @interface Tests : XCTestCase
 
@@ -24,12 +26,36 @@
 - (void)tearDown
 {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
+    [Sqwiggle stopSqwiggling];
     [super tearDown];
+}
+
+- (void)testAuth
+{
+    StartBlock();
+    [Sqwiggle startSqwigglingWithUsername:TEST_EMAIL password:TEST_PASSWORD success:^(BOOL resp) {
+        EndBlock();
+    } failure:^(NSError *error) {
+        EndBlock();
+        XCTFail(@"Error returned for test %@", error);
+    }];
+    
+    WaitUntilBlockCompletes();
 }
 
 - (void)testGetUser
 {
     StartBlock();
+    [Sqwiggle startSqwigglingWithUsername:TEST_EMAIL password:TEST_PASSWORD success:^(BOOL resp) {
+        EndBlock();
+    } failure:^(NSError *error) {
+        EndBlock();
+    }];
+    
+    WaitUntilBlockCompletes();
+    
+    waitingForBlock = YES;
+    
     [Sqwiggle retreiveItemOfType:SQWIGGLE_USER_TYPE byID:nil success:^(id item) {
         EndBlock();
         XCTAssertTrue(YES, @"Did succeed");

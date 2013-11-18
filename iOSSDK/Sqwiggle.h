@@ -30,7 +30,9 @@
 
 //Initializes Sqwiggle API Session Locally.
 +(void) startSqwigglingWithUsername:(NSString *) username
-                           password:(NSString *) password;
+                           password:(NSString *) password
+                            success:(void (^)(BOOL resp))success
+                            failure:(void (^)(NSError *error))failure;
 
 //Removes Sqwiggle data from local device
 +(void) stopSqwiggling;
