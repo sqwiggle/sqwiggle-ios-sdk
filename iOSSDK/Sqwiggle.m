@@ -17,7 +17,7 @@
                     success:(void (^)(NSArray *items))success
                     failure:(void (^)(NSError *error))failure
 {
-    [self retreiveItemOfType:type
+    [self retreiveItemOfType:SqwiggleUser
                         byID:nil
                      success:success
                      failure:failure];
@@ -28,8 +28,8 @@
                    success:(void (^)(id item))success
                    failure:(void (^)(NSError *error))failure
 {
-    NSString *relativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:NSStringFromClass([self class])];
-     
+    NSString *relativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:NSStringFromClass(type)];
+    
     NSString *url = [NSString stringWithFormat:@"%@/%@/%@", SQWIGGLE_URI_API,
                      relativeURL, (ID ? ID : @"")];
     

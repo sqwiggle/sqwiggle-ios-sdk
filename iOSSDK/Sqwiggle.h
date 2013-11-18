@@ -19,7 +19,6 @@
 #define SqwiggleType Class
 
 //More Semantics stuff
-#define SqwiggleUser [SQUser class]
 #define SqwiggleCompany [SQCompany class]
 #define SqwiggleStreamItem [SQStreamItem class]
 #define SqwiggleWorkroom [SQWorkroom class]
@@ -27,8 +26,9 @@
 
 @interface Sqwiggle : NSObject
 
-//Initializes Sqwiggle API Session. If token is valid, currentCompany is set via API request
-+(void) startSqwigglingWithToken:(NSString *) token;
+//Initializes Sqwiggle API Session Locally.
++(void) startSqwigglingWithUsername:(NSString *) username
+                           password:(NSString *) password;
 
 //Removes Sqwiggle data from local device
 +(void) stopSqwiggling;
