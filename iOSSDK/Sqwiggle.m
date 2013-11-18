@@ -9,12 +9,14 @@
 #import "Sqwiggle.h"
 #import <AFNetworking/AFNetworking.h>
 
-@interface Sqwiggle ()
-{
-    NSString *_userName;
-    NSString *_password;
-}
+#define SQWIGGLE_USERNAME_KEY @"SQWIGGLE_USERNAME_KEY"
+#define SQWIGGLE_PW_KEY @"SQWIGGLE_PW_KEY"
 
+@interface Sqwiggle ()
+
+/* Private Method Declaration */
++(NSString *) getUserName;
++(NSString *) getPassword;
 +(void) setUserName:(NSString *)userName;
 +(void) setPassword:(NSString *)password;
 
@@ -60,6 +62,31 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
     }];
+}
+
+#pragma mark private methods
++(NSString *) getUserName
+{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:SQWIGGLE_USERNAME_KEY];
+}
++(NSString *) getPassword
+{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:SQWIGGLE_PW_KEY];
+}
+
++(void) setUserName:(NSString *)userName
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:userName
+                 forKey:SQWIGGLE_USERNAME_KEY];
+    [defaults synchronize];
+}
++(void) setPassword:(NSString *)password
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:password
+                 forKey:SQWIGGLE_USERNAME_KEY];
+    [defaults synchronize];
 }
 
 @end
