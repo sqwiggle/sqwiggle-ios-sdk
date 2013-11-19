@@ -74,17 +74,18 @@
 }
 +(void) retreiveItemOfType:(SQWIGGLE_TYPE)type
                       byID:(NSNumber *)ID
-            filteredByType:(SQWIGGLE_TYPE)filter
+            filteredByType:(SQWIGGLE_TYPE)filterType
                     withID:filterID
              withAuthToken:(NSString *)auth
                    success:(void (^)(id item))success
                    failure:(void (^)(NSError *error))failure
 {
     {
-        NSString *relativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:NSStringFromClass(type)];
+        NSString *relativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:NSStringFromClass(filterType)];
+        NSString *secondaryRelativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:NSStringFromClass(type)];
         
-        NSString *url = [NSString stringWithFormat:@"%@/%@/%@", SQWIGGLE_URI_API,
-                         relativeURL, (ID ? ID : @"")];
+        NSString *url = [NSString stringWithFormat:@"%@/%@/%@/%@/%@", SQWIGGLE_URI_API,
+                         relativeURL, ID, secondaryRelativeURL, (ID ? ID : @"")];
         
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
