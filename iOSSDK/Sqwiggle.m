@@ -14,8 +14,8 @@
 @interface Sqwiggle ()
 
 /* Private Method Declaration */
-+(NSString *) getAuthHeader;
-+(void) setAuthHeader:(NSString *)authHeader;
++(NSString *) authToken;
++(void) setAuthToken:(NSString *)authToken;
 
 @end
 
@@ -39,7 +39,7 @@
     
     [manager POST:url parameters:authInfo
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             [self setAuthHeader:[responseObject objectForKey:tokenKey]];
+             [self setAuthToken:[responseObject objectForKey:tokenKey]];
              success(YES);
 
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -49,16 +49,62 @@
 
 +(void) stopSqwiggling
 {
-    [self setAuthHeader:nil];
+    [self setAuthToken:nil];
 }
 
-#pragma mark User Methods
+#pragma mark User Helper Methods
 
 +(void) getAllUsers:(void (^)(NSArray *users))success
             failure:(void (^)(NSError *error))failure
 {
-
+    [SQJuggernaut retreiveItemsOfType:SQWIGGLE_USER_TYPE
+                        withAuthToken:[self authToken]
+                              success:success
+                              failure:failure];
 }
+
++(void) getUserWithID:(NSNumber *)ID success:(void (^)(SQUser *))success failure:(void (^)(NSError *))failure
+{
+    [SQJuggernaut retreiveItemOfType:SQWIGGLE_USER_TYPE
+                                byID:ID
+                       withAuthToken:[self authToken]
+                             success:success
+                             failure:failure];
+}
+
+#pragma mark Workroom Help Methods
+
++(void) getAllWorkrooms:(void (^)(NSArray *))success
+                failure:(void (^)(NSError *))failure
+{
+    [SQJuggernaut retreiveItemsOfType:SQWIGGLE_WORKROOM_TYPE
+                        withAuthToken:[self authToken]
+                              success:success
+                              failure:failure];
+}
+
++(void) getWorkroomWithID:(NSNumber *)ID
+                  success:(void (^)(SQWorkroom *))success
+                  failure:(void (^)(NSError *))failure
+{
+    [SQJuggernaut retreiveItemOfType:SQWIGGLE_WORKROOM_TYPE
+                                byID:ID
+                       withAuthToken:[self authToken]
+                             success:success
+                             failure:failure];
+}
+
++(void) getStreamItemsWithWorkroomID:(NSNumber *)ID
+                             success:(void (^)(NSArray *))success
+                             failure:(void (^)(NSError *))failure
+{
+    [SQJuggernaut retreiveItemsOfType:SQWIGGLE_STREAMITEM_TYPE
+     filteredByType:SQWIGGLE_WORKROOM_TYPE withID:ID
+                       withAuthToken:[self authToken]
+                             success:success
+                             failure:failure];
+}
+
 
 #pragma mark private methods
 

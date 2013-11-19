@@ -58,16 +58,16 @@
 }
 
 +(void) retreiveItemsOfType:(SQWIGGLE_TYPE)type
-                       byID:(NSNumber *)ID
              filteredByType:(SQWIGGLE_TYPE)filterType
+                     withID:(NSNumber *)filterID
               withAuthToken:(NSString *)auth
-                    success:(void (^)(NSArray *))success
-                    failure:(void (^)(NSError *))failure
+                    success:(void (^)(NSArray *items))success
+                    failure:(void (^)(NSError *error))failure
 {
     [self retreiveItemOfType:type
-                        byID:ID
+                        byID:nil
               filteredByType:filterType
-                      withID:nil
+                      withID:filterID
                withAuthToken:(NSString *)auth
                      success:success
                      failure:failure];

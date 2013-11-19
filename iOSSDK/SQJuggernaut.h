@@ -36,15 +36,15 @@
                    failure:(void (^)(NSError *error))failure;
 
 +(void) retreiveItemsOfType:(SQWIGGLE_TYPE)type
-                       byID:(NSNumber *)ID
-             filteredByType:(SQWIGGLE_TYPE)filter
+             filteredByType:(SQWIGGLE_TYPE)filterType
+                     withID:(NSNumber *)filterID
               withAuthToken:(NSString *)auth
                     success:(void (^)(NSArray *items))success
                     failure:(void (^)(NSError *error))failure;
 
 +(void) retreiveItemOfType:(SQWIGGLE_TYPE)type
                       byID:(NSNumber *)ID
-            filteredByType:(SQWIGGLE_TYPE)filter
+            filteredByType:(SQWIGGLE_TYPE)filterType
                     withID:filterID
              withAuthToken:(NSString *)auth
                    success:(void (^)(id item))success
