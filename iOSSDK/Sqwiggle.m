@@ -26,14 +26,14 @@
                             success:(void (^)(BOOL resp))success
                             failure:(void (^)(NSError *error))failure
 {
-    static NSString *tokenKey = @"token";
+    static NSString *tokenKey = @"auth_token";
     if ([self authToken])
     {
         success(true);
         return;
     }
     
-    NSString *url = @"http://api.sqwiggle.com/auth/token";
+    NSString *url = @"http://sqwiggle.com/api/v1/users/auth";
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *authInfo = @{@"email": username, @"password": password};
     
