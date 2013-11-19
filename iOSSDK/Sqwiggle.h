@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <ObjectiveSugar/ObjectiveSugar.h>
 #import "SQObject.h"
 #import "SQCompany.h"
 #import "SQUser.h"

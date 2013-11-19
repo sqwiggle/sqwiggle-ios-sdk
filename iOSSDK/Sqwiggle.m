@@ -55,7 +55,7 @@
                     success:(void (^)(NSArray *items))success
                     failure:(void (^)(NSError *error))failure
 {
-    [self retreiveItemOfType:SqwiggleUser
+    [self retreiveItemOfType:type
                         byID:nil
                      success:success
                      failure:failure];

@@ -11,9 +11,7 @@ PODS:
     - AFNetworking/Security
     - AFNetworking/Serialization
   - AFNetworking/NSURLSession (2.0.2):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
+    - AFNetworking/NSURLConnection
   - AFNetworking/Reachability (2.0.2)
   - AFNetworking/Security (2.0.2)
   - AFNetworking/Serialization (2.0.2)
@@ -28,7 +26,7 @@ DEPENDENCIES:
   - OHHTTPStubs (~> 3.0.2)
 
 SPEC CHECKSUMS:
-  AFNetworking: 22de50ae71ab1c4859773f61068d6fcd1d8f9a4d
+  AFNetworking: e663917201cdb73f4ad2ba239ad35be8dc9a1e3c
   ObjectiveSugar: 81337e36790b5a157ee6ccdcf65c91393ca5d900
   OHHTTPStubs: 7be864a1c40c6a5007fe3e8679c109ca45590803
 

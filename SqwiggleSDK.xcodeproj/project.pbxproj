@@ -10,6 +10,15 @@
 		27E95DAD21A14677830B5D91 /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE77B0992983466A80B2EDDF /* libPods-Tests.a */; };
 		40224CF3183A792C0024AE77 /* Sqwiggle.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DC64821833CB300045B5F3 /* Sqwiggle.m */; };
 		40224CF7183AD2360024AE77 /* Sqwiggle+TestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40224CF6183AD2360024AE77 /* Sqwiggle+TestHelper.m */; };
+		40224D36183AE6840024AE77 /* SQObject.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 409446F718343878005C69B0 /* SQObject.h */; };
+		40224D37183AE6840024AE77 /* SQCompany.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 409446E2183418E7005C69B0 /* SQCompany.h */; };
+		40224D38183AE6840024AE77 /* SQConversation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 409446DD183417F6005C69B0 /* SQConversation.h */; };
+		40224D39183AE6840024AE77 /* SQInvite.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 409446E618341C41005C69B0 /* SQInvite.h */; };
+		40224D3A183AE6840024AE77 /* SQNotification.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 409446F218342612005C69B0 /* SQNotification.h */; };
+		40224D3B183AE6840024AE77 /* SQStreamItem.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 409446EE18342106005C69B0 /* SQStreamItem.h */; };
+		40224D3C183AE6840024AE77 /* SQUser.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 409446D918340727005C69B0 /* SQUser.h */; };
+		40224D3D183AE6840024AE77 /* SQWorkroom.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 409446EA18341D15005C69B0 /* SQWorkroom.h */; };
+		40224D3E183AE6840024AE77 /* SQConstants.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40224D34183AE46F0024AE77 /* SQConstants.h */; };
 		407A12A81832D06B00819225 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407A12A71832D06B00819225 /* Foundation.framework */; };
 		407A12AD1832D06B00819225 /* Sqwiggle.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 407A12AC1832D06B00819225 /* Sqwiggle.h */; };
 		4082A74C1833CD6B009FBC9B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407A12B51832D06B00819225 /* XCTest.framework */; };
@@ -51,9 +60,18 @@
 		407A12A21832D06B00819225 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
+			dstPath = "${PRODUCT_NAME}-build";
 			dstSubfolderSpec = 16;
 			files = (
+				40224D36183AE6840024AE77 /* SQObject.h in CopyFiles */,
+				40224D37183AE6840024AE77 /* SQCompany.h in CopyFiles */,
+				40224D38183AE6840024AE77 /* SQConversation.h in CopyFiles */,
+				40224D39183AE6840024AE77 /* SQInvite.h in CopyFiles */,
+				40224D3A183AE6840024AE77 /* SQNotification.h in CopyFiles */,
+				40224D3B183AE6840024AE77 /* SQStreamItem.h in CopyFiles */,
+				40224D3C183AE6840024AE77 /* SQUser.h in CopyFiles */,
+				40224D3D183AE6840024AE77 /* SQWorkroom.h in CopyFiles */,
+				40224D3E183AE6840024AE77 /* SQConstants.h in CopyFiles */,
 				407A12AD1832D06B00819225 /* Sqwiggle.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,6 +83,7 @@
 		40224CF4183A7AE90024AE77 /* TestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHelper.h; sourceTree = "<group>"; };
 		40224CF5183AD2360024AE77 /* Sqwiggle+TestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Sqwiggle+TestHelper.h"; sourceTree = "<group>"; };
 		40224CF6183AD2360024AE77 /* Sqwiggle+TestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Sqwiggle+TestHelper.m"; sourceTree = "<group>"; };
+		40224D34183AE46F0024AE77 /* SQConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQConstants.h; sourceTree = "<group>"; };
 		407A12A41832D06B00819225 /* libSqwiggleSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSqwiggleSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		407A12A71832D06B00819225 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		407A12AB1832D06B00819225 /* SqwiggleSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SqwiggleSDK-Prefix.pch"; sourceTree = "<group>"; };
@@ -76,7 +95,6 @@
 		4082A7531833CD6B009FBC9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4082A7551833CD6B009FBC9B /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		4082A7571833CD6B009FBC9B /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		409446D71833E27E005C69B0 /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
 		409446D918340727005C69B0 /* SQUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQUser.h; sourceTree = "<group>"; };
 		409446DA18340727005C69B0 /* SQUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQUser.m; sourceTree = "<group>"; };
 		409446DD183417F6005C69B0 /* SQConversation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQConversation.h; sourceTree = "<group>"; };
@@ -180,7 +198,7 @@
 		407A12CE1832D72600819225 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				409446D71833E27E005C69B0 /* constants.h */,
+				40224D34183AE46F0024AE77 /* SQConstants.h */,
 			);
 			name = Config;
 			sourceTree = "<group>";
@@ -460,6 +478,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CONFIGURATION_BUILD_DIR = "$(BUILT_PRODUCTS_DIR)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -498,6 +517,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CONFIGURATION_BUILD_DIR = "$(BUILT_PRODUCTS_DIR)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;

@@ -6,6 +6,4 @@
 
 #ifdef __OBJC__
     #import <Foundation/Foundation.h>
-    #import "constants.h"
-    #import <ObjectiveSugar/ObjectiveSugar.h>
 #endif
