@@ -51,7 +51,7 @@
     [self setAuthHeader:nil];
 }
 
-+(void) retrieveItemsOfType:(SqwiggleType)type
++(void) retrieveItemsOfType:(SQWIGGLE_TYPE)type
                     success:(void (^)(NSArray *items))success
                     failure:(void (^)(NSError *error))failure
 {
@@ -61,7 +61,7 @@
                      failure:failure];
 }
 
-+(void) retreiveItemOfType:(SqwiggleType)type
++(void) retreiveItemOfType:(SQWIGGLE_TYPE)type
                       byID:(NSNumber *)ID
                    success:(void (^)(id item))success
                    failure:(void (^)(NSError *error))failure

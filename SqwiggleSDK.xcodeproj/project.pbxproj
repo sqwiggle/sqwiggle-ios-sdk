@@ -84,6 +84,18 @@
 		40224CF5183AD2360024AE77 /* Sqwiggle+TestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Sqwiggle+TestHelper.h"; sourceTree = "<group>"; };
 		40224CF6183AD2360024AE77 /* Sqwiggle+TestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Sqwiggle+TestHelper.m"; sourceTree = "<group>"; };
 		40224D34183AE46F0024AE77 /* SQConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQConstants.h; sourceTree = "<group>"; };
+		40224D54183B067F0024AE77 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		40224D57183B067F0024AE77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		40224D58183B067F0024AE77 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		40224D59183B067F0024AE77 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		40224D5C183B067F0024AE77 /* Sqwiggle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sqwiggle-Info.plist"; sourceTree = "<group>"; };
+		40224D5E183B067F0024AE77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		40224D60183B067F0024AE77 /* Sqwiggle-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sqwiggle-Prefix.pch"; sourceTree = "<group>"; };
+		40224D61183B067F0024AE77 /* Sqwiggle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sqwiggle.h; sourceTree = "<group>"; };
+		40224D62183B067F0024AE77 /* Sqwiggle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sqwiggle.m; sourceTree = "<group>"; };
+		40224D70183B067F0024AE77 /* SqwiggleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SqwiggleTests-Info.plist"; sourceTree = "<group>"; };
+		40224D72183B067F0024AE77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		40224D74183B067F0024AE77 /* SqwiggleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SqwiggleTests.m; sourceTree = "<group>"; };
 		407A12A41832D06B00819225 /* libSqwiggleSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSqwiggleSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		407A12A71832D06B00819225 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		407A12AB1832D06B00819225 /* SqwiggleSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SqwiggleSDK-Prefix.pch"; sourceTree = "<group>"; };
@@ -141,11 +153,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40224D56183B067F0024AE77 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				40224D57183B067F0024AE77 /* Foundation.framework */,
+				40224D58183B067F0024AE77 /* CoreData.framework */,
+				40224D59183B067F0024AE77 /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		40224D5A183B067F0024AE77 /* Sqwiggle */ = {
+			isa = PBXGroup;
+			children = (
+				40224D61183B067F0024AE77 /* Sqwiggle.h */,
+				40224D62183B067F0024AE77 /* Sqwiggle.m */,
+				40224D5B183B067F0024AE77 /* Supporting Files */,
+			);
+			path = Sqwiggle;
+			sourceTree = "<group>";
+		};
+		40224D5B183B067F0024AE77 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				40224D5C183B067F0024AE77 /* Sqwiggle-Info.plist */,
+				40224D5D183B067F0024AE77 /* InfoPlist.strings */,
+				40224D60183B067F0024AE77 /* Sqwiggle-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		40224D6E183B067F0024AE77 /* SqwiggleTests */ = {
+			isa = PBXGroup;
+			children = (
+				40224D74183B067F0024AE77 /* SqwiggleTests.m */,
+				40224D6F183B067F0024AE77 /* Supporting Files */,
+			);
+			path = SqwiggleTests;
+			sourceTree = "<group>";
+		};
+		40224D6F183B067F0024AE77 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				40224D70183B067F0024AE77 /* SqwiggleTests-Info.plist */,
+				40224D71183B067F0024AE77 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		407A129B1832D06B00819225 = {
 			isa = PBXGroup;
 			children = (
 				407A12A91832D06B00819225 /* Sqwiggle */,
 				4082A74F1833CD6B009FBC9B /* Tests */,
+				40224D5A183B067F0024AE77 /* Sqwiggle */,
+				40224D6E183B067F0024AE77 /* SqwiggleTests */,
 				407A12A61832D06B00819225 /* Frameworks */,
 				407A12A51832D06B00819225 /* Products */,
 				00B2A893D1EF4F8FBE9661D6 /* Pods.xcconfig */,
@@ -170,6 +232,8 @@
 				407A12B81832D06B00819225 /* UIKit.framework */,
 				49B58624554946B38E21868F /* libPods.a */,
 				BE77B0992983466A80B2EDDF /* libPods-Tests.a */,
+				40224D54183B067F0024AE77 /* Cocoa.framework */,
+				40224D56183B067F0024AE77 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -308,7 +372,7 @@
 				ORGANIZATIONNAME = Sqwiggle;
 				TargetAttributes = {
 					4082A74A1833CD6B009FBC9B = {
-						TestTargetID = 407A12A31832D06B00819225;
+						TestTargetID = 40224D52183B067F0024AE77;
 					};
 				};
 			};
@@ -450,6 +514,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		40224D5D183B067F0024AE77 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40224D5E183B067F0024AE77 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		40224D71183B067F0024AE77 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40224D72183B067F0024AE77 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		4082A7521833CD6B009FBC9B /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -528,6 +608,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -566,6 +647,7 @@
 			baseConfigurationReference = BFD097FBA5D048878F38FADA /* Pods-Tests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Sqwiggle.framework/Versions/A/Sqwiggle";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -579,6 +661,7 @@
 				);
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				VALID_ARCHS = "arm64 armv7 armv7s i386";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -589,6 +672,7 @@
 			baseConfigurationReference = BFD097FBA5D048878F38FADA /* Pods-Tests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Sqwiggle.framework/Versions/A/Sqwiggle";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -598,6 +682,7 @@
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				VALID_ARCHS = "arm64 armv7 armv7s i386";
 				WRAPPER_EXTENSION = xctest;
 			};

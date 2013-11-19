@@ -18,7 +18,7 @@
 #import "SQConversation.h"
 
 //Creating for Semantics sake
-#define SqwiggleType Class
+#define SQWIGGLE_TYPE Class
 
 //More Semantics stuff
 #define SQWIGGLE_USER_TYPE [SQUser class]
@@ -39,11 +39,11 @@
 +(void) stopSqwiggling;
 
 /* Retreival Methods */
-+(void) retrieveItemsOfType:(SqwiggleType)type
++(void) retrieveItemsOfType:(SQWIGGLE_TYPE)type
             success:(void (^)(NSArray *items))success
             failure:(void (^)(NSError *error))failure;
 
-+(void) retreiveItemOfType:(SqwiggleType)type
++(void) retreiveItemOfType:(SQWIGGLE_TYPE)type
                       byID:(NSNumber *)ID
                    success:(void (^)(id item))success
                    failure:(void (^)(NSError *error))failure;
