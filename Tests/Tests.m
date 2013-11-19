@@ -50,7 +50,7 @@
     StartBlock();
     waitingForBlock = YES;
     
-    [Sqwiggle retreiveItemOfType:SQWIGGLE_USER_TYPE byID:nil success:^(id item) {
+    [Sqwiggle getAllUsers:^(id item) {
         EndBlock();
         XCTAssertTrue(YES, @"Did succeed");
     } failure:^(NSError *error) {
@@ -67,7 +67,7 @@
     StartBlock();
     waitingForBlock = YES;
     
-    [Sqwiggle retreiveItemOfType:SQWIGGLE_WORKROOM_TYPE byID:nil success:^(id item) {
+    [Sqwiggle getAllWorkrooms:^(id item) {
         EndBlock();
         XCTAssertTrue(YES, @"Did succeed");
     } failure:^(NSError *error) {
@@ -85,14 +85,15 @@
     StartBlock();
     waitingForBlock = YES;
     
-    [Sqwiggle retreiveItemOfType:SQWIGGLE_STREAMITEM_TYPE byID:nil success:^(id item) {
-        EndBlock();
-        NSLog(@"%@", item);
-        XCTAssertTrue(YES, @"Did succeed");
-    } failure:^(NSError *error) {
-        EndBlock();
-        XCTFail(@"Error returned for test %@", error);
-    }];
+    [Sqwiggle getStreamItemsWithWorkroomID:[NSNumber numberWithInt:61]
+                                   success:^(NSArray *items) {
+                                       EndBlock();
+                                       NSLog(@"%@", items);
+                                       XCTAssertTrue(YES, @"Did succeed");
+                                   } failure:^(NSError *error) {
+                                       EndBlock();
+                                       XCTFail(@"Error returned for test %@", error);
+                                   }];
     
     WaitUntilBlockCompletes();
 }
