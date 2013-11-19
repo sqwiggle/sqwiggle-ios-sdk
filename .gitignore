@@ -22,3 +22,5 @@ Pods
 
 #VIM
 *.swp
+
+/SqwiggleSDK-build/
