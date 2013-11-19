@@ -42,8 +42,8 @@
 		409446F518342612005C69B0 /* SQNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446F318342612005C69B0 /* SQNotification.m */; };
 		409446F9183439DF005C69B0 /* SQObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446F8183439DF005C69B0 /* SQObject.m */; };
 		409446FA183439DF005C69B0 /* SQObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446F8183439DF005C69B0 /* SQObject.m */; };
-		40AF0656183BBA840092882B /* SQDynamicMappingRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 40AF0655183BBA840092882B /* SQDynamicMappingRequest.m */; };
-		40AF0657183BBA840092882B /* SQDynamicMappingRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 40AF0655183BBA840092882B /* SQDynamicMappingRequest.m */; };
+		40AF0656183BBA840092882B /* SQJuggernaut.m in Sources */ = {isa = PBXBuildFile; fileRef = 40AF0655183BBA840092882B /* SQJuggernaut.m */; };
+		40AF0657183BBA840092882B /* SQJuggernaut.m in Sources */ = {isa = PBXBuildFile; fileRef = 40AF0655183BBA840092882B /* SQJuggernaut.m */; };
 		40DC64831833CB300045B5F3 /* Sqwiggle.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DC64821833CB300045B5F3 /* Sqwiggle.m */; };
 		F4749172F0BC4930B021CDFD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B58624554946B38E21868F /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -125,8 +125,8 @@
 		409446F318342612005C69B0 /* SQNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQNotification.m; sourceTree = "<group>"; };
 		409446F718343878005C69B0 /* SQObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQObject.h; sourceTree = "<group>"; };
 		409446F8183439DF005C69B0 /* SQObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQObject.m; sourceTree = "<group>"; };
-		40AF0654183BBA840092882B /* SQDynamicMappingRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQDynamicMappingRequest.h; sourceTree = "<group>"; };
-		40AF0655183BBA840092882B /* SQDynamicMappingRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQDynamicMappingRequest.m; sourceTree = "<group>"; };
+		40AF0654183BBA840092882B /* SQJuggernaut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQJuggernaut.h; sourceTree = "<group>"; };
+		40AF0655183BBA840092882B /* SQJuggernaut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQJuggernaut.m; sourceTree = "<group>"; };
 		40DC64821833CB300045B5F3 /* Sqwiggle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sqwiggle.m; sourceTree = "<group>"; };
 		49B58624554946B38E21868F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE77B0992983466A80B2EDDF /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -328,8 +328,8 @@
 		40AF0658183BBA890092882B /* Dynamic Mapping */ = {
 			isa = PBXGroup;
 			children = (
-				40AF0654183BBA840092882B /* SQDynamicMappingRequest.h */,
-				40AF0655183BBA840092882B /* SQDynamicMappingRequest.m */,
+				40AF0654183BBA840092882B /* SQJuggernaut.h */,
+				40AF0655183BBA840092882B /* SQJuggernaut.m */,
 			);
 			name = "Dynamic Mapping";
 			sourceTree = "<group>";
@@ -487,7 +487,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40AF0656183BBA840092882B /* SQDynamicMappingRequest.m in Sources */,
+				40AF0656183BBA840092882B /* SQJuggernaut.m in Sources */,
 				409446F418342612005C69B0 /* SQNotification.m in Sources */,
 				409446E818341C41005C69B0 /* SQInvite.m in Sources */,
 				409446EC18341D15005C69B0 /* SQWorkroom.m in Sources */,
@@ -510,7 +510,7 @@
 				409446E918341C41005C69B0 /* SQInvite.m in Sources */,
 				409446ED18341D15005C69B0 /* SQWorkroom.m in Sources */,
 				409446E0183417F6005C69B0 /* SQConversation.m in Sources */,
-				40AF0657183BBA840092882B /* SQDynamicMappingRequest.m in Sources */,
+				40AF0657183BBA840092882B /* SQJuggernaut.m in Sources */,
 				409446FA183439DF005C69B0 /* SQObject.m in Sources */,
 				409446DC18340727005C69B0 /* SQUser.m in Sources */,
 				4082A7561833CD6B009FBC9B /* Tests.m in Sources */,

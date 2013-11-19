@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Sqwiggle. All rights reserved.
 //
 
-#import "SQDynamicMappingRequest.h"
+#import "SQJuggernaut.h"
 
-@implementation SQDynamicMappingRequest
+@implementation SQJuggernaut
 
 +(void) retreiveItemsOfType:(SQWIGGLE_TYPE)type
               withAuthToken:(NSString *)auth

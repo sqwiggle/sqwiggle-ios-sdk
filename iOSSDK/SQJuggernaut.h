@@ -21,7 +21,7 @@
 #define SQWIGGLE_STREAMITEM_TYPE [SQStreamItem class]
 #define SQWIGGLE_WORKROOM_TYPE [SQWorkroom class]
 
-@interface SQDynamicMappingRequest : NSObject
+@interface SQJuggernaut : NSObject
 
 /* Retreival Methods */
 +(void) retreiveItemsOfType:(SQWIGGLE_TYPE)type

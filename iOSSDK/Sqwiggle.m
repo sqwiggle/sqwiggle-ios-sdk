@@ -8,6 +8,7 @@
 
 #import "Sqwiggle.h"
 #import <AFNetworking/AFNetworking.h>
+#import "SQJuggernaut.h"
 
 #define SQWIGGLE_AUTH_KEY @"SQWIGGLE_USERNAME_KEY"
 @interface Sqwiggle ()
@@ -49,6 +50,14 @@
 +(void) stopSqwiggling
 {
     [self setAuthHeader:nil];
+}
+
+#pragma mark User Methods
+
++(void) getAllUsers:(void (^)(NSArray *users))success
+            failure:(void (^)(NSError *error))failure
+{
+
 }
 
 #pragma mark private methods
