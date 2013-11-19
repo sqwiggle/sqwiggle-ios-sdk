@@ -32,7 +32,7 @@
         return;
     }
     
-    NSString *url = @"http://dev.sqwiggle.com/api/v1/users/auth";
+    NSString *url = @"http://dev.sqwiggle.com/auth/token";
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *authInfo = @{@"email": username, @"password": password};
     
