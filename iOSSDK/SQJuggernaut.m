@@ -84,13 +84,12 @@
         
         NSString *url = [NSString stringWithFormat:@"%@/%@/%@/%@/%@", SQWIGGLE_URI_API,
                          relativeURL, filterID, secondaryRelativeURL, (ID ? ID : @"")];
-        NSLog(@"%@ url", url);
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
+        [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
         [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:auth
                                                                   password:@"x"];
         [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSLog(@"%@", responseObject);
             if (!ID)
             {
                 NSMutableArray *responseObjects = [NSMutableArray new];

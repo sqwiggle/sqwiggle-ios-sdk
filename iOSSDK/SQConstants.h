@@ -8,10 +8,10 @@
 
 #define SQWIGGLE_SDK_VERION @"0.0.1"
 
-#define SQWIGGLE_URI_API @"https://sqwiggle-api.herokuapp.com"
+#define SQWIGGLE_URI_API @"https://www.sqwiggle.com/api/v1/"
 
 #define SQWIGGLE_RELATIVE_URLS @{@"SQUser": @"users", @"SQCompany": @"companies", \
-                                @"SQConversation": @"conversations", @"SQWorkroom": @"workrooms",\
+                                @"SQConversation": @"conversations", @"SQWorkroom": @"rooms",\
                                 @"SQInvite": @"invites", \
                                 @"SQStreamItem": @"stream"}
 
