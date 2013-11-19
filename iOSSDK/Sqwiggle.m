@@ -27,7 +27,7 @@
                             failure:(void (^)(NSError *error))failure
 {
     static NSString *tokenKey = @"token";
-    if ([self getAuthHeader])
+    if ([self authToken])
     {
         success(true);
         return;
@@ -99,7 +99,8 @@
                              failure:(void (^)(NSError *))failure
 {
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_STREAMITEM_TYPE
-     filteredByType:SQWIGGLE_WORKROOM_TYPE withID:ID
+                       filteredByType:SQWIGGLE_WORKROOM_TYPE
+                               withID:ID
                        withAuthToken:[self authToken]
                              success:success
                              failure:failure];
@@ -108,15 +109,15 @@
 
 #pragma mark private methods
 
-+(NSString *) getAuthHeader
++(NSString *) authToken
 {
     return [[NSUserDefaults standardUserDefaults] objectForKey:SQWIGGLE_AUTH_KEY];
 }
 
-+(void) setAuthHeader:(NSString *)authHeader
++(void) setAuthToken:(NSString *)authToken
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:authHeader
+    [defaults setObject:authToken
                  forKey:SQWIGGLE_AUTH_KEY];
     [defaults synchronize];
 }

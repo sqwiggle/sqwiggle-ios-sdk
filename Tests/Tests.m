@@ -92,7 +92,7 @@
                                        XCTAssertTrue(YES, @"Did succeed");
                                    } failure:^(NSError *error) {
                                        EndBlock();
-                                       XCTFail(@"Error returned for test %@", error);
+                                    XCTFail(@"Error returned for test %@", error);
                                    }];
     
     WaitUntilBlockCompletes();
