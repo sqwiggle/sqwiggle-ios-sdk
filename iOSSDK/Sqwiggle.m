@@ -10,7 +10,6 @@
 #import <AFNetworking/AFNetworking.h>
 
 #define SQWIGGLE_AUTH_KEY @"SQWIGGLE_USERNAME_KEY"
-
 @interface Sqwiggle ()
 
 /* Private Method Declaration */
@@ -26,19 +25,20 @@
                             success:(void (^)(BOOL resp))success
                             failure:(void (^)(NSError *error))failure
 {
+    static NSString *tokenKey = @"token";
     if ([self getAuthHeader])
     {
         success(true);
         return;
     }
     
-    NSString *url = @"http://dev.sqwiggle.com/auth/token";
+    NSString *url = @"http://api.sqwiggle.com/auth/token";
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *authInfo = @{@"email": username, @"password": password};
     
     [manager POST:url parameters:authInfo
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             [self setAuthHeader:[responseObject objectForKey:@"auth_token"]];
+             [self setAuthHeader:[responseObject objectForKey:tokenKey]];
              success(YES);
 
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
