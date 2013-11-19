@@ -43,8 +43,16 @@
             success:(void (^)(NSArray *items))success
             failure:(void (^)(NSError *error))failure;
 
+
 +(void) retreiveItemOfType:(SQWIGGLE_TYPE)type
                       byID:(NSNumber *)ID
+                   success:(void (^)(id item))success
+                   failure:(void (^)(NSError *error))failure;
+
++(void) retreiveItemOfType:(SQWIGGLE_TYPE)type
+                      byID:(NSNumber *)ID
+            filteredByType:(SQWIGGLE_TYPE)filter
+                    withID:filterID
                    success:(void (^)(id item))success
                    failure:(void (^)(NSError *error))failure;
 
