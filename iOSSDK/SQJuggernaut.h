@@ -30,7 +30,7 @@
                     failure:(void (^)(NSError *error))failure;
 
 +(void) retreiveItemOfType:(SQWIGGLE_TYPE)type
-                      byID:(NSNumber *)ID
+                      byID:(id)ID
              withAuthToken:(NSString *)auth
                    success:(void (^)(id item))success
                    failure:(void (^)(NSError *error))failure;
@@ -43,7 +43,7 @@
                     failure:(void (^)(NSError *error))failure;
 
 +(void) retreiveItemOfType:(SQWIGGLE_TYPE)type
-                      byID:(NSNumber *)ID
+                      byID:(id)ID
             filteredByType:(SQWIGGLE_TYPE)filterType
                     withID:filterID
              withAuthToken:(NSString *)auth

@@ -11,7 +11,7 @@
 @implementation SQJuggernaut
 
 +(void) retreiveItemsOfType:(SQWIGGLE_TYPE)type
-              withAuthToken:(NSString *)auth
+              withAuthToken:(id)auth
                     success:(void (^)(NSArray *items))success
                     failure:(void (^)(NSError *error))failure
 {
@@ -23,7 +23,7 @@
 }
 
 +(void) retreiveItemOfType:(SQWIGGLE_TYPE)type
-                      byID:(NSNumber *)ID
+                      byID:(id)ID
              withAuthToken:(NSString *)auth
                    success:(void (^)(id item))success
                    failure:(void (^)(NSError *error))failure
