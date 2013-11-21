@@ -13,16 +13,18 @@
 
 @interface SQUser : SQObject
 
-@property (nonatomic, readonly) NSString *role;
-@property (nonatomic, readonly) NSString *mode;
-@property (nonatomic, readonly) NSString *status;
-@property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) NSString *email;
-@property (nonatomic, readonly) NSTimeZone *timeZone;
-@property (nonatomic, readonly) NSNumber *timeZoneOffset;
-@property (nonatomic, readonly) NSDate *createdAt;
-@property (nonatomic, readonly) NSDate *lastActiveAt;
-@property (nonatomic, readonly) NSString *avatar;
+@property (nonatomic, retain) NSString *role;
+@property (nonatomic, retain) NSString *mode;
+@property (nonatomic, retain) NSString *status;
+@property (nonatomic, retain) NSNumber *workRoomID;
+@property (nonatomic, retain) NSNumber *companyID;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *email;
+@property (nonatomic, retain) NSTimeZone *timeZone;
+@property (nonatomic, retain) NSNumber *timeZoneOffset;
+@property (nonatomic, retain) NSDate *createdAt;
+@property (nonatomic, retain) NSDate *lastActiveAt;
+@property (nonatomic, retain) NSString *avatar;
 
 //Needed to do as helper method because bool doesn't have a ns counterpart.
 -(BOOL) confirmed;

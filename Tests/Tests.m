@@ -43,23 +43,23 @@
     WaitUntilBlockCompletes();
 }
 
-- (void)testGetUser
-{
-    [self testAuth];
-    
-    StartBlock();
-    waitingForBlock = YES;
-    
-    [Sqwiggle getAllUsers:^(id item) {
-        EndBlock();
-        XCTAssertTrue(YES, @"Did succeed");
-    } failure:^(NSError *error) {
-        EndBlock();
-        XCTFail(@"Error returned for test %@", error);
-    }];
-    
-    WaitUntilBlockCompletes();
-}
+//- (void)testGetUser
+//{
+//    [self testAuth];
+//    
+//    StartBlock();
+//    waitingForBlock = YES;
+//    
+//    [Sqwiggle getAllUsers:^(id item) {
+//        EndBlock();
+//        XCTAssertTrue(YES, @"Did succeed");
+//    } failure:^(NSError *error) {
+//        EndBlock();
+//        XCTFail(@"Error returned for test %@", error);
+//    }];
+//    
+//    WaitUntilBlockCompletes();
+//}
 
 -(void)testGetWorkrooms
 {

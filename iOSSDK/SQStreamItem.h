@@ -13,11 +13,12 @@
 
 @interface SQStreamItem : SQObject
 
-@property (nonatomic, readonly) NSDate *createdAt;
+@property (nonatomic, retain) NSDate *createdAt;
 @property (nonatomic, readonly) NSDate *updatedAt;
 @property (nonatomic, readonly) NSNumber *workRoomID;
 @property (nonatomic, readonly) NSArray *mentions;
-@property (nonatomic, readonly) NSString *messagePlain;
+@property (nonatomic, retain) NSString *message;
 @property (nonatomic, readonly) NSNumber *userID;
+@property (nonatomic, retain)  NSDictionary *user;
 
 @end

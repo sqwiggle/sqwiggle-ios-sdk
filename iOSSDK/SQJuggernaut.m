@@ -30,12 +30,10 @@
 {
     NSString *relativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:NSStringFromClass(type)];
     
-    NSString *url = [NSString stringWithFormat:@"%@/%@/%@", SQWIGGLE_URI_API,
-                     relativeURL, (ID ? ID : @"")];
+    NSString *url = [NSString stringWithFormat:@"%@/%@/%@?auth_token=%@", SQWIGGLE_URI_API,
+                     relativeURL, (ID ? ID : @""), auth];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
-    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:auth
-                                                              password:@"x"];
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (!ID)
         {
@@ -82,13 +80,11 @@
         NSString *relativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:NSStringFromClass(filterType)];
         NSString *secondaryRelativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:NSStringFromClass(type)];
         
-        NSString *url = [NSString stringWithFormat:@"%@/%@/%@/%@/%@", SQWIGGLE_URI_API,
-                         relativeURL, filterID, secondaryRelativeURL, (ID ? ID : @"")];
+        NSString *url = [NSString stringWithFormat:@"%@/%@/%@/%@/%@?auth_token=%@", SQWIGGLE_URI_API,
+                         relativeURL, filterID, secondaryRelativeURL, (ID ? ID : @""), auth];
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
         [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
-        [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:auth
-                                                                  password:@"x"];
         [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
             if (!ID)
             {

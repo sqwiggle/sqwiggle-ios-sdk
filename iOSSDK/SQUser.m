@@ -32,4 +32,5 @@
 {
     return [_confirmed boolValue];
 }
+
 @end

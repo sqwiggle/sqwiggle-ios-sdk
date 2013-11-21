@@ -24,12 +24,14 @@
 //Initializes Sqwiggle API Session Locally.
 +(void) startSqwigglingWithUsername:(NSString *) username
                            password:(NSString *) password
-                            success:(void (^)(BOOL resp))success
+                            success:(void (^)(SQUser *user))success
                             failure:(void (^)(NSError *error))failure;
 
 //Removes Sqwiggle data from local device
 +(void) stopSqwiggling;
 
+//Checks to see if valid authentication token exists
++(BOOL) isLoggedIn;
 
 /* User Methods */
 
@@ -59,5 +61,6 @@
                              success:(void (^)(NSArray *user))success
                              failure:(void (^)(NSError *error))failure;
 
-
++(NSString *) authToken;
++(SQUser *) currentUser;
 @end

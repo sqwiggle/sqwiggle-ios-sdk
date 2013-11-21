@@ -48,7 +48,7 @@
 #pragma mark Make life better methods
 -(void) save
 {
-    #warning Not Implemented
+    
     NSString *url = [NSString stringWithFormat:@"%@/%@/%@", SQWIGGLE_URI_API, _relativeURL, _ID];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -70,6 +70,28 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
     }];
+}
+
+- (void)encodeWithCoder:(NSCoder *)coder {
+    NSMutableDictionary *encodeDictionary = [NSMutableDictionary new];
+    [[self modelDefinition] each:^(id key, id value) {
+        if ([self valueForKey:key] != nil)
+            [encodeDictionary setObject:[self valueForKey:key] forKey:key];
+    }];
+    [coder encodeObject:encodeDictionary forKey:NSStringFromClass([self class])];
+
+}
+
+- (id)initWithCoder:(NSCoder *)coder {
+    self = [[[self class] alloc] init];
+    if (self != nil)
+    {
+        NSDictionary *stored = [coder decodeObjectForKey:NSStringFromClass([self class])];
+        [[self modelDefinition] each:^(id key, id value) {
+            [self setValue:[stored objectForKey:key] forKey:key];
+        }];
+    }
+    return self;
 }
 
 @end

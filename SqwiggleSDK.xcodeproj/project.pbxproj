@@ -10,15 +10,6 @@
 		27E95DAD21A14677830B5D91 /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE77B0992983466A80B2EDDF /* libPods-Tests.a */; };
 		40224CF3183A792C0024AE77 /* Sqwiggle.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DC64821833CB300045B5F3 /* Sqwiggle.m */; };
 		40224CF7183AD2360024AE77 /* Sqwiggle+TestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40224CF6183AD2360024AE77 /* Sqwiggle+TestHelper.m */; };
-		40224D36183AE6840024AE77 /* SQObject.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 409446F718343878005C69B0 /* SQObject.h */; };
-		40224D37183AE6840024AE77 /* SQCompany.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 409446E2183418E7005C69B0 /* SQCompany.h */; };
-		40224D38183AE6840024AE77 /* SQConversation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 409446DD183417F6005C69B0 /* SQConversation.h */; };
-		40224D39183AE6840024AE77 /* SQInvite.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 409446E618341C41005C69B0 /* SQInvite.h */; };
-		40224D3A183AE6840024AE77 /* SQNotification.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 409446F218342612005C69B0 /* SQNotification.h */; };
-		40224D3B183AE6840024AE77 /* SQStreamItem.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 409446EE18342106005C69B0 /* SQStreamItem.h */; };
-		40224D3C183AE6840024AE77 /* SQUser.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 409446D918340727005C69B0 /* SQUser.h */; };
-		40224D3D183AE6840024AE77 /* SQWorkroom.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 409446EA18341D15005C69B0 /* SQWorkroom.h */; };
-		40224D3E183AE6840024AE77 /* SQConstants.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 40224D34183AE46F0024AE77 /* SQConstants.h */; };
 		407A12A81832D06B00819225 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407A12A71832D06B00819225 /* Foundation.framework */; };
 		407A12AD1832D06B00819225 /* Sqwiggle.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 407A12AC1832D06B00819225 /* Sqwiggle.h */; };
 		4082A74C1833CD6B009FBC9B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407A12B51832D06B00819225 /* XCTest.framework */; };
@@ -45,7 +36,6 @@
 		40AF0656183BBA840092882B /* SQJuggernaut.m in Sources */ = {isa = PBXBuildFile; fileRef = 40AF0655183BBA840092882B /* SQJuggernaut.m */; };
 		40AF0657183BBA840092882B /* SQJuggernaut.m in Sources */ = {isa = PBXBuildFile; fileRef = 40AF0655183BBA840092882B /* SQJuggernaut.m */; };
 		40DC64831833CB300045B5F3 /* Sqwiggle.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DC64821833CB300045B5F3 /* Sqwiggle.m */; };
-		F4749172F0BC4930B021CDFD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B58624554946B38E21868F /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,15 +55,6 @@
 			dstPath = "${PRODUCT_NAME}-build";
 			dstSubfolderSpec = 16;
 			files = (
-				40224D36183AE6840024AE77 /* SQObject.h in CopyFiles */,
-				40224D37183AE6840024AE77 /* SQCompany.h in CopyFiles */,
-				40224D38183AE6840024AE77 /* SQConversation.h in CopyFiles */,
-				40224D39183AE6840024AE77 /* SQInvite.h in CopyFiles */,
-				40224D3A183AE6840024AE77 /* SQNotification.h in CopyFiles */,
-				40224D3B183AE6840024AE77 /* SQStreamItem.h in CopyFiles */,
-				40224D3C183AE6840024AE77 /* SQUser.h in CopyFiles */,
-				40224D3D183AE6840024AE77 /* SQWorkroom.h in CopyFiles */,
-				40224D3E183AE6840024AE77 /* SQConstants.h in CopyFiles */,
 				407A12AD1832D06B00819225 /* Sqwiggle.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,7 +109,6 @@
 		40AF0654183BBA840092882B /* SQJuggernaut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQJuggernaut.h; sourceTree = "<group>"; };
 		40AF0655183BBA840092882B /* SQJuggernaut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQJuggernaut.m; sourceTree = "<group>"; };
 		40DC64821833CB300045B5F3 /* Sqwiggle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sqwiggle.m; sourceTree = "<group>"; };
-		49B58624554946B38E21868F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE77B0992983466A80B2EDDF /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD097FBA5D048878F38FADA /* Pods-Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.xcconfig"; path = "Pods/Pods-Tests.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,7 +119,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				407A12A81832D06B00819225 /* Foundation.framework in Frameworks */,
-				F4749172F0BC4930B021CDFD /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,7 +213,6 @@
 				407A12A71832D06B00819225 /* Foundation.framework */,
 				407A12B51832D06B00819225 /* XCTest.framework */,
 				407A12B81832D06B00819225 /* UIKit.framework */,
-				49B58624554946B38E21868F /* libPods.a */,
 				BE77B0992983466A80B2EDDF /* libPods-Tests.a */,
 				40224D54183B067F0024AE77 /* Cocoa.framework */,
 				40224D56183B067F0024AE77 /* Other Frameworks */,
@@ -649,10 +627,11 @@
 				DSTROOT = /tmp/iOSSDK.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOSSDK/SqwiggleSDK-Prefix.pch";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = SqwiggleSDK;
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "arm64 armv7 armv7s i386";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -663,10 +642,11 @@
 				DSTROOT = /tmp/iOSSDK.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOSSDK/SqwiggleSDK-Prefix.pch";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = SqwiggleSDK;
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "arm64 armv7 armv7s i386";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};

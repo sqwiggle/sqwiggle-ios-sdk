@@ -14,7 +14,46 @@
 {
     return @{@"_ID": @"id", @"_updatedAt" : @"updated_at", @"_createdAt": @"created_at",
              @"_workRoomID" : @"workroom_id", @"_mentions": @"mentions",
-             @"_messagePlain": @"message", @"_userID": @"user_id"};
+             @"_message": @"message", @"user": @"user"};
+}
+
+-(void) save
+{
+    
+    /*var item = new Sqwiggle.Model.StreamItem({
+     message: message,
+     company_id: Sqwiggle.company.id,
+     created_at: (new Date().toISOString()),
+     user: {
+     id: this.model.id,
+     name: this.model.get('name'),
+     avatar: this.model.get('avatar')
+     }
+     });*/
+    
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    
+
+    
+    [params setObject:@{@"user": _user} forKey:@"user"];
+    [params setObject:_message forKey:@"message"];
+    [params setObject:_createdAt forKey:@"created_at"];
+    [params setObject:@1 forKey:@"workroom_id"];
+    [params setObject:@1 forKey:@"company_id"];
+    
+    NSString *auth = [[NSUserDefaults standardUserDefaults] objectForKey:@"SQWIGGLE_USERNAME_KEY"];
+    _relativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:NSStringFromClass([self class])];
+
+    NSString *url = [NSString stringWithFormat:@"%@%@?auth_token=%@", SQWIGGLE_URI_API, _relativeURL, auth];
+    NSLog(@"%@", url);
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager POST:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Gottt heeeee");
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@" darn %@", error);
+    }];
 }
 
 @end
