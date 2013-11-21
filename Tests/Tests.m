@@ -49,11 +49,10 @@
     StartBlock();
     waitingForBlock = YES;
     
-    [Sqwiggle getUserWithID:nil
-                    success:^(SQUser *user) {
-                        NSLog(@"%@", user);
+    [Sqwiggle getCurrentUser:^(SQUser *user)
+    {
                         EndBlock();
-                        XCTAssertTrue(YES, @"Did succeed");
+                        XCTAssertTrue(user.ID, @"Did succeed");
                   } failure:^(NSError *error) {
                         EndBlock();
                         XCTFail(@"Error returned for test %@", error);

@@ -36,13 +36,6 @@
     NSDictionary *authInfo = @{@"email": username, @"password": password};
     [manager POST:url parameters:authInfo
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//             SQUser *user = [[SQUser alloc] init];
-//             user.roomID = [[responseObject objectForKey:@"user"] objectForKey:@"room_id"];
-//             user.companyID = [[responseObject objectForKey:@"user"] objectForKey:@"company_id"];
-//             user.ID = [[responseObject objectForKey:@"user"] objectForKey:@"id"];
-//             user.name = [[responseObject objectForKey:@"user"] objectForKey:@"name"];
-//             user.avatar = [[responseObject objectForKey:@"user"] objectForKey:@"avatar"];
-//             [self setCurrentUser:user];
              
              [self setAuthToken:[responseObject objectForKey:tokenKey]];
              success(YES);
