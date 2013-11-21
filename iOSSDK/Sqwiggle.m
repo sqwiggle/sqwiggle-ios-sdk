@@ -43,6 +43,7 @@
 //             user.name = [[responseObject objectForKey:@"user"] objectForKey:@"name"];
 //             user.avatar = [[responseObject objectForKey:@"user"] objectForKey:@"avatar"];
 //             [self setCurrentUser:user];
+             
              [self setAuthToken:[responseObject objectForKey:tokenKey]];
              success(YES);
 

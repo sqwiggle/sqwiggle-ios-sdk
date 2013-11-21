@@ -32,6 +32,7 @@
     
     NSString *url = [NSString stringWithFormat:@"%@/%@/%@?auth_token=%@", SQWIGGLE_URI_API,
                      relativeURL, (ID ? ID : @""), auth];
+    NSLog(@"%@", url);
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {

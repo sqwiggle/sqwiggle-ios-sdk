@@ -13,13 +13,13 @@
 #import "SQObject.h"
 
 //Creating for Semantics sake
-#define SQWIGGLE_TYPE Class
+#define SQWIGGLE_TYPE NSString*
 
 //More Semantics stuff
-#define SQWIGGLE_USER_TYPE [SQUser class]
-#define SQWIGGLE_COMPANY_TYPE [SQCompany class]
-#define SQWIGGLE_STREAMITEM_TYPE [SQStreamItem class]
-#define SQWIGGLE_ROOM_TYPE [SQRoom class]
+#define SQWIGGLE_USER_TYPE @"SQUser"
+#define SQWIGGLE_COMPANY_TYPE @"SQCompany"
+#define SQWIGGLE_STREAMITEM_TYPE @"SQStreamItem"
+#define SQWIGGLE_ROOM_TYPE @"SQRoom"
 
 @interface SQJuggernaut : NSObject
 
@@ -49,5 +49,13 @@
              withAuthToken:(NSString *)auth
                    success:(void (^)(id item))success
                    failure:(void (^)(NSError *error))failure;
+
++(void) retreiveItemFromString:(NSString *)type
+                      byID:(NSNumber *)ID
+            filteredByType:(SQWIGGLE_TYPE)filterType
+                    withID:filterID
+             withAuthToken:(NSString *)auth
+                   success:(void (^)(id item))success
+                       failure:(void (^)(NSError *error))failure;
 
 @end

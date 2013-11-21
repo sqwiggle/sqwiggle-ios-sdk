@@ -43,6 +43,24 @@
     WaitUntilBlockCompletes();
 }
 
+-(void) testGetCurrentUser
+{
+    [self testAuth];
+    StartBlock();
+    waitingForBlock = YES;
+    
+    [Sqwiggle getUserWithID:nil
+                    success:^(SQUser *user) {
+                        NSLog(@"%@", user);
+                        EndBlock();
+                        XCTAssertTrue(YES, @"Did succeed");
+                  } failure:^(NSError *error) {
+                        EndBlock();
+                        XCTFail(@"Error returned for test %@", error);
+    }];
+    
+    WaitUntilBlockCompletes();
+}
 -(void)testGetRooms
 {
     [self testAuth];
@@ -70,7 +88,6 @@
     [Sqwiggle getStreamItemsForRoomID:@1
                                    success:^(NSArray *items) {
                                        EndBlock();
-                                       NSLog(@"%@", items);
                                        XCTAssertTrue(YES, @"Did succeed");
                                    } failure:^(NSError *error) {
                                        EndBlock();
