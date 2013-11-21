@@ -33,7 +33,7 @@
 - (void)testAuth
 {
     StartBlock();
-    [Sqwiggle startSqwigglingWithUsername:TEST_EMAIL password:TEST_PASSWORD success:^(SQUser *user) {
+    [Sqwiggle startSqwigglingWithUsername:TEST_EMAIL password:TEST_PASSWORD success:^(BOOL signedIn) {
         EndBlock();
     } failure:^(NSError *error) {
         EndBlock();

@@ -25,26 +25,26 @@
 
 +(void) startSqwigglingWithUsername:(NSString *) username
                            password:(NSString *) password
-                            success:(void (^)(SQUser *user))success
+                            success:(void (^)(BOOL signedIn))success
                             failure:(void (^)(NSError *error))failure
 {
     static NSString *tokenKey = @"token";
 
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSString *url = NSStringWithFormat(@"%@/auth/token", SQWIGGLE_URI_API);
     NSDictionary *authInfo = @{@"email": username, @"password": password};
-    [manager POST:SQWIGGLE_URI_API parameters:authInfo
+    [manager POST:url parameters:authInfo
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             SQUser *user = [[SQUser alloc] init];
-             NSLog(@"%@ usser", responseObject);
-             user.roomID = [[responseObject objectForKey:@"user"] objectForKey:@"room_id"];
-             user.companyID = [[responseObject objectForKey:@"user"] objectForKey:@"company_id"];
-             user.ID = [[responseObject objectForKey:@"user"] objectForKey:@"id"];
-             user.name = [[responseObject objectForKey:@"user"] objectForKey:@"name"];
-             user.avatar = [[responseObject objectForKey:@"user"] objectForKey:@"avatar"];
-             [self setCurrentUser:user];
+//             SQUser *user = [[SQUser alloc] init];
+//             user.roomID = [[responseObject objectForKey:@"user"] objectForKey:@"room_id"];
+//             user.companyID = [[responseObject objectForKey:@"user"] objectForKey:@"company_id"];
+//             user.ID = [[responseObject objectForKey:@"user"] objectForKey:@"id"];
+//             user.name = [[responseObject objectForKey:@"user"] objectForKey:@"name"];
+//             user.avatar = [[responseObject objectForKey:@"user"] objectForKey:@"avatar"];
+//             [self setCurrentUser:user];
              [self setAuthToken:[responseObject objectForKey:tokenKey]];
-             success(user);
+             success(YES);
 
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 
