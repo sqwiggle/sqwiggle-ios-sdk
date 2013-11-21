@@ -1,5 +1,5 @@
 //
-//  Workroom.h
+//  Room.h
 //  SqwiggleSDK
 //
 //  Created by Cameron Webb on 11/13/13.

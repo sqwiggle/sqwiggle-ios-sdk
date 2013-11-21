@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSString *role;
 @property (nonatomic, retain) NSString *mode;
 @property (nonatomic, retain) NSString *status;
-@property (nonatomic, retain) NSNumber *workRoomID;
+@property (nonatomic, retain) NSNumber *roomID;
 @property (nonatomic, retain) NSNumber *companyID;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *email;

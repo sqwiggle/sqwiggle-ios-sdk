@@ -43,13 +43,13 @@
     WaitUntilBlockCompletes();
 }
 
--(void)testGetWorkrooms
+-(void)testGetRooms
 {
     [self testAuth];
     StartBlock();
     waitingForBlock = YES;
     
-    [Sqwiggle getAllWorkrooms:^(id item) {
+    [Sqwiggle getAllRooms:^(id item) {
         EndBlock();
         XCTAssertTrue(YES, @"Did succeed");
     } failure:^(NSError *error) {
@@ -67,7 +67,7 @@
     StartBlock();
     waitingForBlock = YES;
     
-    [Sqwiggle getStreamItemsWithWorkroomID:[NSNumber numberWithInt:61]
+    [Sqwiggle getStreamItemsForRoomID:@1
                                    success:^(NSArray *items) {
                                        EndBlock();
                                        NSLog(@"%@", items);

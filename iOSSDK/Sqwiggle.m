@@ -36,7 +36,7 @@
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              SQUser *user = [[SQUser alloc] init];
              NSLog(@"%@ usser", responseObject);
-             user.workRoomID = [[responseObject objectForKey:@"user"] objectForKey:@"workroom_id"];
+             user.roomID = [[responseObject objectForKey:@"user"] objectForKey:@"room_id"];
              user.companyID = [[responseObject objectForKey:@"user"] objectForKey:@"company_id"];
              user.ID = [[responseObject objectForKey:@"user"] objectForKey:@"id"];
              user.name = [[responseObject objectForKey:@"user"] objectForKey:@"name"];
