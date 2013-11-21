@@ -28,7 +28,7 @@
                    success:(void (^)(id item))success
                    failure:(void (^)(NSError *error))failure
 {
-    NSString *relativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:NSStringFromClass(type)];
+    NSString *relativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:type];
     
     NSString *url = [NSString stringWithFormat:@"%@/%@/%@?auth_token=%@", SQWIGGLE_URI_API,
                      relativeURL, (ID ? ID : @""), auth];
@@ -40,7 +40,7 @@
         {
             NSMutableArray *responseObjects = [NSMutableArray new];
             [responseObject each:^(id object) {
-                [responseObjects push:[type objectWithDictionary:object]];
+                [responseObjects push:[NSClassFromString(type) objectWithDictionary:object]];
             }];
             success(responseObjects);
         }
@@ -78,8 +78,8 @@
                    failure:(void (^)(NSError *error))failure
 {
     {
-        NSString *relativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:NSStringFromClass(filterType)];
-        NSString *secondaryRelativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:NSStringFromClass(type)];
+        NSString *relativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:filterType];
+        NSString *secondaryRelativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:type];
         
         NSString *url = [NSString stringWithFormat:@"%@/%@/%@/%@/%@?auth_token=%@", SQWIGGLE_URI_API,
                          relativeURL, filterID, secondaryRelativeURL, (ID ? ID : @""), auth];
@@ -91,7 +91,7 @@
             {
                 NSMutableArray *responseObjects = [NSMutableArray new];
                 [responseObject each:^(id object) {
-                    [responseObjects push:[type objectWithDictionary:object]];
+                    [responseObjects push:[NSClassFromString(type) objectWithDictionary:object]];
                 }];
                 success(responseObjects);
             }

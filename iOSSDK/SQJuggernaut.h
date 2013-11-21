@@ -50,12 +50,4 @@
                    success:(void (^)(id item))success
                    failure:(void (^)(NSError *error))failure;
 
-+(void) retreiveItemFromString:(NSString *)type
-                      byID:(NSNumber *)ID
-            filteredByType:(SQWIGGLE_TYPE)filterType
-                    withID:filterID
-             withAuthToken:(NSString *)auth
-                   success:(void (^)(id item))success
-                       failure:(void (^)(NSError *error))failure;
-
 @end
