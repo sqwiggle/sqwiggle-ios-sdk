@@ -9,6 +9,7 @@
 #import "SQJuggernaut.h"
 
 @implementation SQJuggernaut
+#warning I bet you $10 you can reduce the functions
 
 +(void) retreiveItemsOfType:(SQWIGGLE_TYPE)type
               withAuthToken:(id)auth
@@ -32,7 +33,6 @@
     
     NSString *url = [NSString stringWithFormat:@"%@/%@/%@?auth_token=%@", SQWIGGLE_URI_API,
                      relativeURL, (ID ? ID : @""), auth];
-    NSLog(@"%@", url);
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -83,6 +83,7 @@
         
         NSString *url = [NSString stringWithFormat:@"%@/%@/%@/%@/%@?auth_token=%@", SQWIGGLE_URI_API,
                          relativeURL, filterID, secondaryRelativeURL, (ID ? ID : @""), auth];
+        
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
         [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];

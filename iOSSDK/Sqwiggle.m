@@ -65,6 +65,16 @@
 }
 #pragma mark User Helper Methods
 
++(void) getCurrentUser:(void (^)(SQUser *user))success
+               failure:(void (^)(NSError *error))failure
+{
+    [SQJuggernaut retreiveItemOfType:SQWIGGLE_USER_TYPE
+                                byID:@"me"
+                       withAuthToken:[self authToken]
+                             success:success
+                             failure:failure];
+}
+
 +(void) getAllUsers:(void (^)(NSArray *users))success
             failure:(void (^)(NSError *error))failure
 {

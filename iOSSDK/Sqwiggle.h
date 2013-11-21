@@ -35,15 +35,18 @@
 
 /* User Methods */
 
-//Gets all users associated with authenticated user.
-+(void) getAllUsers:(void (^)(NSArray *users))success
-            failure:(void (^)(NSError *error))failure;
+//Gets authenticated user
++(void) getCurrentUser:(void (^)(SQUser *user))success
+               failure:(void (^)(NSError *error))failure;
 
 //Gets all users associated with authenticated user.
 +(void) getUserWithID:(NSNumber *)ID
               success:(void (^)(SQUser *user))success
             failure:(void (^)(NSError *error))failure;
-
+                        
+//Gets all users associated with authenticated user.
++(void) getAllUsers:(void (^)(NSArray *users))success
+                             failure:(void (^)(NSError *error))failure;
 
 /* Room Methods */
 
