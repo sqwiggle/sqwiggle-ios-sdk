@@ -7,6 +7,7 @@
 //
 
 #import "SQJuggernaut.h"
+#define SUPER_SECRET_PASSWORD @"x"
 
 @implementation SQJuggernaut
 #warning I bet you $10 you can reduce the functions
@@ -31,11 +32,13 @@
 {
     NSString *relativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:type];
     
-    NSString *url = [NSString stringWithFormat:@"%@/%@/%@?auth_token=%@", SQWIGGLE_URI_API,
-                     relativeURL, (ID ? ID : @""), auth];
+    NSString *url = [NSString stringWithFormat:@"%@/%@/%@", SQWIGGLE_URI_API,
+                     relativeURL, (ID ? ID : @"")];
+    NSLog(@"%@", url);
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
     [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
+    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:auth password:SUPER_SECRET_PASSWORD];
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (!ID)
         {
@@ -82,12 +85,13 @@
         NSString *relativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:filterType];
         NSString *secondaryRelativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:type];
         
-        NSString *url = [NSString stringWithFormat:@"%@/%@/%@/%@/%@?auth_token=%@", SQWIGGLE_URI_API,
-                         relativeURL, filterID, secondaryRelativeURL, (ID ? ID : @""), auth];
+        NSString *url = [NSString stringWithFormat:@"%@/%@/%@/%@/%@", SQWIGGLE_URI_API,
+                         relativeURL, filterID, secondaryRelativeURL, (ID ? ID : @"")];
         
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
         [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
+        [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:auth password:SUPER_SECRET_PASSWORD];
         [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
             if (!ID)
             {
