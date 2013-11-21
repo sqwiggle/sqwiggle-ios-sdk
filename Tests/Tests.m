@@ -60,6 +60,22 @@
     
     WaitUntilBlockCompletes();
 }
+-(void) testGetAllUsers
+{
+    [self testAuth];
+    StartBlock();
+    waitingForBlock = YES;
+    [Sqwiggle getAllUsers:^(NSArray *users)
+     {
+         EndBlock();
+         XCTAssertTrue(users.count > 0, @"Did succeed");
+     } failure:^(NSError *error) {
+         EndBlock();
+         XCTFail(@"Error returned for test %@", error);
+     }];
+    
+    WaitUntilBlockCompletes();
+}
 -(void)testGetRooms
 {
     [self testAuth];

@@ -64,7 +64,10 @@
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_USER_TYPE
                                 byID:@"me"
                        withAuthToken:[self authToken]
-                             success:success
+                             success:^(id item) {
+                                 [Sqwiggle setCurrentUser:item];
+                                 success(item);
+                             }
                              failure:failure];
 }
 

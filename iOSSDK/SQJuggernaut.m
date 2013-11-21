@@ -46,7 +46,7 @@
         }
         else
         {
-            success([type performSelector:@selector(objectWithDictionary:)
+            success([NSClassFromString(type) performSelector:@selector(objectWithDictionary:)
                                withObject:responseObject]);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -98,7 +98,7 @@
             }
             else
             {
-                success([type performSelector:@selector(objectWithDictionary:)
+                success([NSClassFromString(type) performSelector:@selector(objectWithDictionary:)
                                    withObject:responseObject]);
             }
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

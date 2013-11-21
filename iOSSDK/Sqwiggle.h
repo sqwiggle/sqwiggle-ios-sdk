@@ -35,6 +35,9 @@
 
 /* User Methods */
 
+//Current user, stored locally. If nil, call getCurrentUser and currentUser will be automatically updated
++(SQUser *) currentUser;
+
 //Gets authenticated user
 +(void) getCurrentUser:(void (^)(SQUser *user))success
                failure:(void (^)(NSError *error))failure;
