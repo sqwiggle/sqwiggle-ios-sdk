@@ -20,19 +20,7 @@
 -(void) save
 {
     
-    /*var item = new Sqwiggle.Model.StreamItem({
-     message: message,
-     company_id: Sqwiggle.company.id,
-     created_at: (new Date().toISOString()),
-     user: {
-     id: this.model.id,
-     name: this.model.get('name'),
-     avatar: this.model.get('avatar')
-     }
-     });*/
-    
     NSMutableDictionary *params = [NSMutableDictionary new];
-    
 
     
     [params setObject:@{@"user": _user} forKey:@"user"];
