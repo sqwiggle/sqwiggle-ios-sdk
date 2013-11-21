@@ -8,6 +8,7 @@
 
 #define SQWIGGLE_SDK_VERION @"0.0.1"
 
+#warning change depending on environment
 #define SQWIGGLE_URI_API @"https://sqwiggle-api.herokuapp.com"
 
 #define SQWIGGLE_RELATIVE_URLS @{@"SQUser": @"users", @"SQCompany": @"companies", \

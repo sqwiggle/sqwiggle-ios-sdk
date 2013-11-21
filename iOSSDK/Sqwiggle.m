@@ -15,6 +15,8 @@
 @interface Sqwiggle ()
 
 /* Private Method Declaration */
++(SQUser *) currentUser;
++(NSString *) authToken;
 +(void) setAuthToken:(NSString *)authToken;
 +(void) setCurrentUser:(SQUser *)currentUser;
 @end
@@ -26,13 +28,12 @@
                             success:(void (^)(SQUser *user))success
                             failure:(void (^)(NSError *error))failure
 {
-    static NSString *tokenKey = @"auth_token";
+    static NSString *tokenKey = @"token";
 
     
-    NSString *url = @"https://www.sqwiggle.com/api/v1/users/auth.json";
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *authInfo = @{@"email": username, @"password": password};
-    [manager POST:url parameters:authInfo
+    [manager POST:SQWIGGLE_URI_API parameters:authInfo
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              SQUser *user = [[SQUser alloc] init];
              NSLog(@"%@ usser", responseObject);
