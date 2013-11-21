@@ -33,7 +33,7 @@
 - (void)testAuth
 {
     StartBlock();
-    [Sqwiggle startSqwigglingWithUsername:TEST_EMAIL password:TEST_PASSWORD success:^(BOOL resp) {
+    [Sqwiggle startSqwigglingWithUsername:TEST_EMAIL password:TEST_PASSWORD success:^(SQUser *user) {
         EndBlock();
     } failure:^(NSError *error) {
         EndBlock();
@@ -42,24 +42,6 @@
     
     WaitUntilBlockCompletes();
 }
-
-//- (void)testGetUser
-//{
-//    [self testAuth];
-//    
-//    StartBlock();
-//    waitingForBlock = YES;
-//    
-//    [Sqwiggle getAllUsers:^(id item) {
-//        EndBlock();
-//        XCTAssertTrue(YES, @"Did succeed");
-//    } failure:^(NSError *error) {
-//        EndBlock();
-//        XCTFail(@"Error returned for test %@", error);
-//    }];
-//    
-//    WaitUntilBlockCompletes();
-//}
 
 -(void)testGetWorkrooms
 {
