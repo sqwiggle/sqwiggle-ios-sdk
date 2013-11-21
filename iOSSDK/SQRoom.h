@@ -10,7 +10,7 @@
 #import "SQUser.h"
 #import "SQObject.h"
 
-@interface SQWorkroom : SQObject
+@interface SQRoom : SQObject
 
 @property (nonatomic, readonly) NSNumber *createdByID;
 @property (nonatomic, readonly) NSString *name;

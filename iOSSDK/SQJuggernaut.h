@@ -19,7 +19,7 @@
 #define SQWIGGLE_USER_TYPE [SQUser class]
 #define SQWIGGLE_COMPANY_TYPE [SQCompany class]
 #define SQWIGGLE_STREAMITEM_TYPE [SQStreamItem class]
-#define SQWIGGLE_WORKROOM_TYPE [SQWorkroom class]
+#define SQWIGGLE_ROOM_TYPE [SQRoom class]
 
 @interface SQJuggernaut : NSObject
 

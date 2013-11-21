@@ -25,8 +25,8 @@
 		409446E5183418E7005C69B0 /* SQCompany.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446E3183418E7005C69B0 /* SQCompany.m */; };
 		409446E818341C41005C69B0 /* SQInvite.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446E718341C41005C69B0 /* SQInvite.m */; };
 		409446E918341C41005C69B0 /* SQInvite.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446E718341C41005C69B0 /* SQInvite.m */; };
-		409446EC18341D15005C69B0 /* SQWorkroom.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446EB18341D15005C69B0 /* SQWorkroom.m */; };
-		409446ED18341D15005C69B0 /* SQWorkroom.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446EB18341D15005C69B0 /* SQWorkroom.m */; };
+		409446EC18341D15005C69B0 /* SQRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446EB18341D15005C69B0 /* SQRoom.m */; };
+		409446ED18341D15005C69B0 /* SQRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446EB18341D15005C69B0 /* SQRoom.m */; };
 		409446F018342106005C69B0 /* SQStreamItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446EF18342106005C69B0 /* SQStreamItem.m */; };
 		409446F118342106005C69B0 /* SQStreamItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446EF18342106005C69B0 /* SQStreamItem.m */; };
 		409446F418342612005C69B0 /* SQNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446F318342612005C69B0 /* SQNotification.m */; };
@@ -98,8 +98,8 @@
 		409446E3183418E7005C69B0 /* SQCompany.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQCompany.m; sourceTree = "<group>"; };
 		409446E618341C41005C69B0 /* SQInvite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQInvite.h; sourceTree = "<group>"; };
 		409446E718341C41005C69B0 /* SQInvite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQInvite.m; sourceTree = "<group>"; };
-		409446EA18341D15005C69B0 /* SQWorkroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQWorkroom.h; sourceTree = "<group>"; };
-		409446EB18341D15005C69B0 /* SQWorkroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQWorkroom.m; sourceTree = "<group>"; };
+		409446EA18341D15005C69B0 /* SQRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQRoom.h; sourceTree = "<group>"; };
+		409446EB18341D15005C69B0 /* SQRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQRoom.m; sourceTree = "<group>"; };
 		409446EE18342106005C69B0 /* SQStreamItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQStreamItem.h; sourceTree = "<group>"; };
 		409446EF18342106005C69B0 /* SQStreamItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQStreamItem.m; sourceTree = "<group>"; };
 		409446F218342612005C69B0 /* SQNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQNotification.h; sourceTree = "<group>"; };
@@ -288,8 +288,8 @@
 				409446EF18342106005C69B0 /* SQStreamItem.m */,
 				409446D918340727005C69B0 /* SQUser.h */,
 				409446DA18340727005C69B0 /* SQUser.m */,
-				409446EA18341D15005C69B0 /* SQWorkroom.h */,
-				409446EB18341D15005C69B0 /* SQWorkroom.m */,
+				409446EA18341D15005C69B0 /* SQRoom.h */,
+				409446EB18341D15005C69B0 /* SQRoom.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -468,7 +468,7 @@
 				40AF0656183BBA840092882B /* SQJuggernaut.m in Sources */,
 				409446F418342612005C69B0 /* SQNotification.m in Sources */,
 				409446E818341C41005C69B0 /* SQInvite.m in Sources */,
-				409446EC18341D15005C69B0 /* SQWorkroom.m in Sources */,
+				409446EC18341D15005C69B0 /* SQRoom.m in Sources */,
 				409446DF183417F6005C69B0 /* SQConversation.m in Sources */,
 				409446F9183439DF005C69B0 /* SQObject.m in Sources */,
 				409446DB18340727005C69B0 /* SQUser.m in Sources */,
@@ -486,7 +486,7 @@
 				40224CF7183AD2360024AE77 /* Sqwiggle+TestHelper.m in Sources */,
 				409446F518342612005C69B0 /* SQNotification.m in Sources */,
 				409446E918341C41005C69B0 /* SQInvite.m in Sources */,
-				409446ED18341D15005C69B0 /* SQWorkroom.m in Sources */,
+				409446ED18341D15005C69B0 /* SQRoom.m in Sources */,
 				409446E0183417F6005C69B0 /* SQConversation.m in Sources */,
 				40AF0657183BBA840092882B /* SQJuggernaut.m in Sources */,
 				409446FA183439DF005C69B0 /* SQObject.m in Sources */,

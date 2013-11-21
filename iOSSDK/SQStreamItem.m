@@ -14,7 +14,7 @@
 {
     return @{@"_ID": @"id", @"_updatedAt" : @"updated_at", @"_createdAt": @"created_at",
              @"_workRoomID" : @"workroom_id", @"_mentions": @"mentions",
-             @"_message": @"message", @"user": @"user"};
+             @"_message": @"message", @"_user": @"user"};
 }
 
 -(void) save
@@ -22,12 +22,11 @@
     
     NSMutableDictionary *params = [NSMutableDictionary new];
 
-    
     [params setObject:@{@"user": _user} forKey:@"user"];
     [params setObject:_message forKey:@"message"];
     [params setObject:_createdAt forKey:@"created_at"];
-    [params setObject:@1 forKey:@"workroom_id"];
-    [params setObject:@1 forKey:@"company_id"];
+    [params setObject:_workRoomID forKey:@"workroom_id"];
+    [params setObject:_companyID forKey:@"company_id"];
     
     NSString *auth = [[NSUserDefaults standardUserDefaults] objectForKey:@"SQWIGGLE_USERNAME_KEY"];
     _relativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:NSStringFromClass([self class])];
@@ -43,5 +42,4 @@
         NSLog(@" darn %@", error);
     }];
 }
-
 @end

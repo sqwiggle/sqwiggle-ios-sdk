@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "Sqwiggle.h"
-#define TEST_EMAIL @"luke+1@sqwiggle.com"
+#define TEST_EMAIL @"cameron@sqwiggle.com"
 #define TEST_PASSWORD @"password"
 
 @interface Tests : XCTestCase

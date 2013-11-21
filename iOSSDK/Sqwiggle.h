@@ -12,7 +12,7 @@
 #import "SQCompany.h"
 #import "SQUser.h"
 #import "SQStreamItem.h"
-#import "SQWorkroom.h"
+#import "SQRoom.h"
 #import "SQNotification.h"
 #import "SQInvite.h"
 #import "SQConversation.h"
@@ -45,22 +45,19 @@
             failure:(void (^)(NSError *error))failure;
 
 
-/* Workroom Methods */
+/* Room Methods */
 
-//Gets all workrooms associated with authenticated user.
-+(void) getAllWorkrooms:(void (^)(NSArray *workrooms))success
+//Gets all rooms associated with authenticated user.
++(void) getAllRooms:(void (^)(NSArray *rooms))success
                 failure:(void (^)(NSError *error))failure;
 
 //Gets all users associated with authenticated user.
-+(void) getWorkroomWithID:(NSNumber *)ID
-              success:(void (^)(SQWorkroom *user))success
++(void) getRoomWithID:(NSNumber *)ID
+              success:(void (^)(SQRoom *user))success
               failure:(void (^)(NSError *error))failure;
 
-//Gets all StreamItems associated with WorkroomID
-+(void) getStreamItemsWithWorkroomID:(NSNumber *)ID
+//Gets all StreamItems associated with RoomID
++(void) getStreamItemsForRoomID:(NSNumber *)ID
                              success:(void (^)(NSArray *user))success
                              failure:(void (^)(NSError *error))failure;
-
-+(NSString *) authToken;
-+(SQUser *) currentUser;
 @end

@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Sqwiggle. All rights reserved.
 //
 
-#import "SQWorkroom.h"
+#import "SQRoom.h"
 
-@implementation SQWorkroom
+@implementation SQRoom
 
 -(NSDictionary *) modelDefinition
 {

@@ -54,6 +54,7 @@
 +(void) stopSqwiggling
 {
     [self setAuthToken:nil];
+    [self setCurrentUser:nil];
 }
 
 +(BOOL) isLoggedIn
@@ -80,34 +81,34 @@
                              failure:failure];
 }
 
-#pragma mark Workroom Help Methods
+#pragma mark Room Help Methods
 
-+(void) getAllWorkrooms:(void (^)(NSArray *))success
++(void) getAllRooms:(void (^)(NSArray *))success
                 failure:(void (^)(NSError *))failure
 {
-    [SQJuggernaut retreiveItemsOfType:SQWIGGLE_WORKROOM_TYPE
+    [SQJuggernaut retreiveItemsOfType:SQWIGGLE_ROOM_TYPE
                         withAuthToken:[self authToken]
                               success:success
                               failure:failure];
 }
 
-+(void) getWorkroomWithID:(NSNumber *)ID
-                  success:(void (^)(SQWorkroom *))success
++(void) getRoomWithID:(NSNumber *)ID
+                  success:(void (^)(SQRoom *))success
                   failure:(void (^)(NSError *))failure
 {
-    [SQJuggernaut retreiveItemOfType:SQWIGGLE_WORKROOM_TYPE
+    [SQJuggernaut retreiveItemOfType:SQWIGGLE_ROOM_TYPE
                                 byID:ID
                        withAuthToken:[self authToken]
                              success:success
                              failure:failure];
 }
 
-+(void) getStreamItemsWithWorkroomID:(NSNumber *)ID
++(void) getStreamItemsForRoomID:(NSNumber *)ID
                              success:(void (^)(NSArray *))success
                              failure:(void (^)(NSError *))failure
 {
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_STREAMITEM_TYPE
-                       filteredByType:SQWIGGLE_WORKROOM_TYPE
+                       filteredByType:SQWIGGLE_ROOM_TYPE
                                withID:ID
                        withAuthToken:[self authToken]
                              success:success
