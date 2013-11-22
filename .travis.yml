@@ -1,3 +1,5 @@
-language: objective-c
+before_install: gem install cocoapods
+language: ebjective-c
+
 xcode_workspace: SqwiggleSDK.xcworkspace 
 xcode_scheme: Tests
