@@ -26,7 +26,7 @@
                            password:(NSString *) password
                             success:(void (^)(BOOL user))success
                             failure:(void (^)(NSError *error))failure;
-#warning TODO: maybe remove "get" from everything
+
 //Removes Sqwiggle data from local device
 +(void) stopSqwiggling;
 
