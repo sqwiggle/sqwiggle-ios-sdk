@@ -3,5 +3,8 @@ notifications:
 
 rvm: 1.9.3
 language: objective-c
+before_install:
+    - brew update
+    - brew uninstall xctool && brew install xctool --HEAD
 
-script: xctool -workspace SqwiggleSDK.xcworkspace -scheme iOSSDK test -test-sdk iphonesimulator ONLY_ACTIVE_ARCH=YES
+script: xctool -workspace SqwiggleSDK.xcworkspace -scheme 'iOSSDK' -sdk iphonesimulator -configuration Release test -test-sdk iphonesimulator
