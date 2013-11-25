@@ -5,4 +5,4 @@ rvm: 1.9.3
 language: objective-c
 
 xcode_workspace: SqwiggleSDK.xcworkspace 
-xcode_scheme: Tests
+xcode_scheme: iOSSDK
