@@ -58,7 +58,7 @@
 }
 #pragma mark User Helper Methods
 
-+(void) getCurrentUser:(void (^)(SQUser *user))success
++(void) currentUserForSession:(void (^)(SQUser *user))success
                failure:(void (^)(NSError *error))failure
 {
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_USER_TYPE
@@ -71,7 +71,7 @@
                              failure:failure];
 }
 
-+(void) getAllUsers:(void (^)(NSArray *users))success
++(void) allUsers:(void (^)(NSArray *users))success
             failure:(void (^)(NSError *error))failure
 {
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_USER_TYPE
@@ -80,7 +80,7 @@
                               failure:failure];
 }
 
-+(void) getUserWithID:(NSNumber *)ID success:(void (^)(SQUser *))success failure:(void (^)(NSError *))failure
++(void) userWithID:(NSNumber *)ID success:(void (^)(SQUser *))success failure:(void (^)(NSError *))failure
 {
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_USER_TYPE
                                 byID:ID
@@ -91,7 +91,7 @@
 
 #pragma mark Room Help Methods
 
-+(void) getAllRooms:(void (^)(NSArray *))success
++(void) allRooms:(void (^)(NSArray *))success
                 failure:(void (^)(NSError *))failure
 {
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_ROOM_TYPE
@@ -100,7 +100,7 @@
                               failure:failure];
 }
 
-+(void) getRoomWithID:(NSNumber *)ID
++(void) roomWithID:(NSNumber *)ID
                   success:(void (^)(SQRoom *))success
                   failure:(void (^)(NSError *))failure
 {
@@ -111,7 +111,7 @@
                              failure:failure];
 }
 
-+(void) getStreamItemsForRoomID:(NSNumber *)ID
++(void) streamItemsForRoomID:(NSNumber *)ID
                              success:(void (^)(NSArray *))success
                              failure:(void (^)(NSError *))failure
 {

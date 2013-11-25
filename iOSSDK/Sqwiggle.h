@@ -39,31 +39,31 @@
 +(SQUser *) currentUser;
 
 //Gets authenticated user
-+(void) getCurrentUser:(void (^)(SQUser *user))success
-               failure:(void (^)(NSError *error))failure;
++(void) currentUserForSession:(void (^)(SQUser *user))success
+                      failure:(void (^)(NSError *error))failure;
 
 //Gets all users associated with authenticated user.
-+(void) getUserWithID:(NSNumber *)ID
-              success:(void (^)(SQUser *user))success
-            failure:(void (^)(NSError *error))failure;
++(void) userWithID:(NSNumber *)ID
+           success:(void (^)(SQUser *user))success
+           failure:(void (^)(NSError *error))failure;
                         
 //Gets all users associated with authenticated user.
-+(void) getAllUsers:(void (^)(NSArray *users))success
-                             failure:(void (^)(NSError *error))failure;
++(void) allUsers:(void (^)(NSArray *users))success
+         failure:(void (^)(NSError *error))failure;
 
 /* Room Methods */
 
 //Gets all rooms associated with authenticated user.
-+(void) getAllRooms:(void (^)(NSArray *rooms))success
-                failure:(void (^)(NSError *error))failure;
++(void) allRooms:(void (^)(NSArray *rooms))success
+         failure:(void (^)(NSError *error))failure;
 
 //Gets all users associated with authenticated user.
-+(void) getRoomWithID:(NSNumber *)ID
-              success:(void (^)(SQRoom *user))success
-              failure:(void (^)(NSError *error))failure;
++(void) roomWithID:(NSNumber *)ID
+           success:(void (^)(SQRoom *user))success
+           failure:(void (^)(NSError *error))failure;
 
 //Gets all StreamItems associated with RoomID
-+(void) getStreamItemsForRoomID:(NSNumber *)ID
-                             success:(void (^)(NSArray *user))success
-                             failure:(void (^)(NSError *error))failure;
++(void) streamItemsForRoomID:(NSNumber *)ID
+                     success:(void (^)(NSArray *user))success
+                     failure:(void (^)(NSError *error))failure;
 @end

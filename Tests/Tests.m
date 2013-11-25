@@ -49,7 +49,7 @@
     StartBlock();
     waitingForBlock = YES;
     
-    [Sqwiggle getCurrentUser:^(SQUser *user)
+    [Sqwiggle currentUserForSession:^(SQUser *user)
     {
                         EndBlock();
                         XCTAssertTrue(user.ID, @"Did succeed");
@@ -65,7 +65,7 @@
     [self testAuth];
     StartBlock();
     waitingForBlock = YES;
-    [Sqwiggle getAllUsers:^(NSArray *users)
+    [Sqwiggle allUsers:^(NSArray *users)
      {
          EndBlock();
          XCTAssertTrue(users.count > 0, @"Did succeed");
@@ -82,7 +82,7 @@
     StartBlock();
     waitingForBlock = YES;
     
-    [Sqwiggle getAllRooms:^(id item) {
+    [Sqwiggle allRooms:^(id item) {
         EndBlock();
         XCTAssertTrue(YES, @"Did succeed");
     } failure:^(NSError *error) {
@@ -127,7 +127,7 @@
     StartBlock();
     waitingForBlock = YES;
     
-    [Sqwiggle getStreamItemsForRoomID:@1
+    [Sqwiggle streamItemsForRoomID:@1
                                    success:^(NSArray *items) {
                                        EndBlock();
                                        XCTAssertTrue(YES, @"Did succeed");
