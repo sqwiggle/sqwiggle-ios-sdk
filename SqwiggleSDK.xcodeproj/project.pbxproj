@@ -36,6 +36,7 @@
 		40AF0656183BBA840092882B /* SQJuggernaut.m in Sources */ = {isa = PBXBuildFile; fileRef = 40AF0655183BBA840092882B /* SQJuggernaut.m */; };
 		40AF0657183BBA840092882B /* SQJuggernaut.m in Sources */ = {isa = PBXBuildFile; fileRef = 40AF0655183BBA840092882B /* SQJuggernaut.m */; };
 		40DC64831833CB300045B5F3 /* Sqwiggle.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DC64821833CB300045B5F3 /* Sqwiggle.m */; };
+		AEB72E66D37E4E4A831FBF41 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D47E91C25AFE40128D776D3A /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		40DC64821833CB300045B5F3 /* Sqwiggle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sqwiggle.m; sourceTree = "<group>"; };
 		BE77B0992983466A80B2EDDF /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD097FBA5D048878F38FADA /* Pods-Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.xcconfig"; path = "Pods/Pods-Tests.xcconfig"; sourceTree = "<group>"; };
+		D47E91C25AFE40128D776D3A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				407A12A81832D06B00819225 /* Foundation.framework in Frameworks */,
+				AEB72E66D37E4E4A831FBF41 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +219,7 @@
 				BE77B0992983466A80B2EDDF /* libPods-Tests.a */,
 				40224D54183B067F0024AE77 /* Cocoa.framework */,
 				40224D56183B067F0024AE77 /* Other Frameworks */,
+				D47E91C25AFE40128D776D3A /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -539,7 +543,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -577,7 +580,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PODS_ROOT = "${SRCROOT}/Pods";
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "arm64 armv7 armv7s i386";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -585,7 +588,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -618,7 +620,7 @@
 				PODS_ROOT = "${SRCROOT}/Pods";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "arm64 armv7 armv7s i386";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -633,7 +635,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = SqwiggleSDK;
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "arm64 armv7 armv7s i386";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -648,7 +650,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = SqwiggleSDK;
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "arm64 armv7 armv7s i386";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -656,7 +658,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BFD097FBA5D048878F38FADA /* Pods-Tests.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -673,7 +674,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				VALID_ARCHS = "arm64 armv7 armv7s i386";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -682,7 +683,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BFD097FBA5D048878F38FADA /* Pods-Tests.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -695,7 +695,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				VALID_ARCHS = "arm64 armv7 armv7s i386";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
