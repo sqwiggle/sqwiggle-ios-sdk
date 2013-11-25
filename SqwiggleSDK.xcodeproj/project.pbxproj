@@ -577,6 +577,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PODS_ROOT = "${SRCROOT}/Pods";
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "arm64 armv7 armv7s i386";
 			};
 			name = Debug;
 		};
@@ -617,6 +618,7 @@
 				PODS_ROOT = "${SRCROOT}/Pods";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s i386";
 			};
 			name = Release;
 		};
@@ -631,7 +633,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = SqwiggleSDK;
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "arm64 armv7 armv7s";
+				VALID_ARCHS = "arm64 armv7 armv7s i386";
 			};
 			name = Debug;
 		};
@@ -646,7 +648,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = SqwiggleSDK;
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "arm64 armv7 armv7s";
+				VALID_ARCHS = "arm64 armv7 armv7s i386";
 			};
 			name = Release;
 		};
@@ -671,7 +673,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				VALID_ARCHS = "arm64 armv7 armv7s";
+				VALID_ARCHS = "arm64 armv7 armv7s i386";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -693,7 +695,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				VALID_ARCHS = "arm64 armv7 armv7s";
+				VALID_ARCHS = "arm64 armv7 armv7s i386";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
