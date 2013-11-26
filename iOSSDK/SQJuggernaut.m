@@ -7,6 +7,8 @@
 //
 
 #import "SQJuggernaut.h"
+#import "SQObject.h"
+
 #define SUPER_SECRET_PASSWORD @"x"
 
 @implementation SQJuggernaut

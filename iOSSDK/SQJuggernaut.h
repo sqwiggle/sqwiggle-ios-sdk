@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <AFNetworking/AFNetworking.h>
-#import <ObjectiveSugar/ObjectiveSugar.h>
 #import "SQConstants.h"
-#import "SQObject.h"
+
+@class AFHTTPRequestOperation;
+@class AFURLConnectionOperation;
+@class AFURLSessionManager;
 
 //Creating for Semantics sake
 #define SQWIGGLE_TYPE NSString*

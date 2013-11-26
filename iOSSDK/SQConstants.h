@@ -17,3 +17,4 @@
                                 @"SQStreamItem": @"stream"}
 
 #import <ObjectiveSugar/ObjectiveSugar.h>
+#import <AFNetworking/AFNetworking.h>

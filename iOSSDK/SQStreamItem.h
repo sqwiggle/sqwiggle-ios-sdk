@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "SQRoom.h"
-#import "SQObject.h"
 
 
 @interface SQStreamItem : SQObject
