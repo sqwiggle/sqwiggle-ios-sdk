@@ -10,8 +10,9 @@
 #import <OHHTTPStubs/OHHTTPStubs.h>
 #import <OHHTTPStubs/OHHTTPStubsResponse+JSON.h>
 #import "Sqwiggle.h"
+#import "ResponseFactory.h"
 #define TEST_EMAIL @"cameron@sqwiggle.com"
-#define TEST_PASSWORD @"password"
+#define TEST_PASSWORD @"HAHAHAHA"
 
 @interface Tests : XCTestCase
 
@@ -58,9 +59,9 @@
     [self testAuth];
     StartBlock();
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-        return [request.URL.relativePath isEqualToString:@"/auth/token"];
+        return [request.URL.relativePath isEqualToString:@"/users/me"];
     } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
-        return [[OHHTTPStubsResponse responseWithJSONObject:@{@"token": @"ROYGBIV"} statusCode:200 headers:nil]
+        return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeUserResponse] statusCode:200 headers:nil]
                 requestTime:1.0 responseTime:1.0];
     }];
     waitingForBlock = YES;
