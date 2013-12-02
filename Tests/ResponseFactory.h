@@ -12,5 +12,7 @@
 
 +(NSDictionary *) fakeUserResponse;
 +(NSDictionary *) fakeUsers;
++(NSDictionary *) fakeRooms;
++(NSDictionary *) fakeStreamItems;
 
 @end

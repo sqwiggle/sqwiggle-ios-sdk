@@ -103,6 +103,12 @@
 {
     [self testAuth];
     StartBlock();
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return [request.URL.relativePath isEqualToString:@"/rooms"];
+    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+        return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeRooms] statusCode:200 headers:nil]
+                requestTime:1.0 responseTime:1.0];
+    }];
     waitingForBlock = YES;
     
     [Sqwiggle allRooms:^(id item) {
@@ -121,6 +127,13 @@
     [self testAuth];
     
     StartBlock();
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return [request.URL.relativePath containsString:@"rooms"] &&
+        [request.URL.relativePath containsString:@"messages"];
+    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+        return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeStreamItems] statusCode:200 headers:nil]
+                requestTime:1.0 responseTime:1.0];
+    }];
     waitingForBlock = YES;
     
     [Sqwiggle streamItemsForRoomID:@1
