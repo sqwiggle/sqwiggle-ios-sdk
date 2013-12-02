@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.homepage     = "http://www.sqwiggle.com"
   s.license      = 'MIT'
   s.author       = { "Cameron Webb" => "cameron@sqwiggle.com" }
-  s.source       = { :git => "git@github.com:sqwiggle/sqwiggle-ios-sdk.git", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/sqwiggle/sqwiggle-ios-sdk.git", :tag => s.version.to_s }
 
   s.ios.deployment_target = '6.0'
   s.requires_arc = true
