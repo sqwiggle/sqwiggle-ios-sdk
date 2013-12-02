@@ -39,7 +39,7 @@
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         return [request.URL.relativePath isEqualToString:@"/auth/token"];
     } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
-        return [[OHHTTPStubsResponse responseWithJSONObject:@{} statusCode:200 headers:nil]
+        return [[OHHTTPStubsResponse responseWithJSONObject:@{@"token": @"ROYGBIV"} statusCode:200 headers:nil]
                 requestTime:1.0 responseTime:1.0];
     }];
     
