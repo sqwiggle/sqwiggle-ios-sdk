@@ -81,6 +81,12 @@
 {
     [self testAuth];
     StartBlock();
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return [request.URL.relativePath isEqualToString:@"/users"];
+    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+        return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeUsers] statusCode:200 headers:nil]
+                requestTime:1.0 responseTime:1.0];
+    }];
     waitingForBlock = YES;
     [Sqwiggle allUsers:^(NSArray *users)
      {

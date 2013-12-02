@@ -11,5 +11,6 @@
 @interface ResponseFactory : NSObject
 
 +(NSDictionary *) fakeUserResponse;
++(NSDictionary *) fakeUsers;
 
 @end
