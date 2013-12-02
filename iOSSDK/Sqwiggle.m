@@ -7,7 +7,6 @@
 //
 
 #import "Sqwiggle.h"
-#import <AFNetworking/AFNetworking.h>
 #import "SQJuggernaut.h"
 
 #define SQWIGGLE_AUTH_KEY @"SQWIGGLE_USERNAME_KEY"

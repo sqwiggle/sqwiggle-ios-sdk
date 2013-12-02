@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SQObject.h"
 #import "SQUser.h"
 #import "SQCompany.h"
 

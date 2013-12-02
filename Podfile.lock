@@ -21,7 +21,7 @@ PODS:
   - OHHTTPStubs (3.0.2)
 
 DEPENDENCIES:
-  - AFNetworking (~> 2.0.2)
+  - AFNetworking (~> 2.0.3)
   - ObjectiveSugar (~> 0.9)
   - OHHTTPStubs (~> 3.0.2)
 

@@ -7,9 +7,12 @@
 //
 
 #import <XCTest/XCTest.h>
+#import <OHHTTPStubs/OHHTTPStubs.h>
+#import <OHHTTPStubs/OHHTTPStubsResponse+JSON.h>
 #import "Sqwiggle.h"
+#import "ResponseFactory.h"
 #define TEST_EMAIL @"cameron@sqwiggle.com"
-#define TEST_PASSWORD @"password"
+#define TEST_PASSWORD @"HAHAHAHA"
 
 @interface Tests : XCTestCase
 
@@ -26,13 +29,21 @@
 - (void)tearDown
 {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [Sqwiggle stopSqwiggling];
     [super tearDown];
+    [Sqwiggle stopSqwiggling];
+    [OHHTTPStubs removeAllStubs];
 }
 
 - (void)testAuth
 {
     StartBlock();
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return [request.URL.relativePath isEqualToString:@"/auth/token"];
+    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+        return [[OHHTTPStubsResponse responseWithJSONObject:@{@"token": @"ROYGBIV"} statusCode:200 headers:nil]
+                requestTime:1.0 responseTime:1.0];
+    }];
+    
     [Sqwiggle startSqwigglingWithUsername:TEST_EMAIL password:TEST_PASSWORD success:^(BOOL signedIn) {
         EndBlock();
     } failure:^(NSError *error) {
@@ -47,6 +58,12 @@
 {
     [self testAuth];
     StartBlock();
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return [request.URL.relativePath isEqualToString:@"/users/me"];
+    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+        return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeUserResponse] statusCode:200 headers:nil]
+                requestTime:1.0 responseTime:1.0];
+    }];
     waitingForBlock = YES;
     
     [Sqwiggle currentUserForSession:^(SQUser *user)
@@ -64,6 +81,12 @@
 {
     [self testAuth];
     StartBlock();
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return [request.URL.relativePath isEqualToString:@"/users"];
+    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+        return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeUsers] statusCode:200 headers:nil]
+                requestTime:1.0 responseTime:1.0];
+    }];
     waitingForBlock = YES;
     [Sqwiggle allUsers:^(NSArray *users)
      {
@@ -80,6 +103,12 @@
 {
     [self testAuth];
     StartBlock();
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return [request.URL.relativePath isEqualToString:@"/rooms"];
+    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+        return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeRooms] statusCode:200 headers:nil]
+                requestTime:1.0 responseTime:1.0];
+    }];
     waitingForBlock = YES;
     
     [Sqwiggle allRooms:^(id item) {
@@ -93,38 +122,18 @@
     WaitUntilBlockCompletes();
 }
 
-//-(void)testGetRoom
-//{
-//    [self testAuth];
-//    StartBlock();
-//    waitingForBlock = YES;
-//    
-//    [Sqwiggle getAllRooms:^(id items) {
-//        SQRoom* tempRoom = [(NSArray *)items first];
-//        //I know, it looks janky.
-//        [Sqwiggle getRoomWithID:tempRoom.ID
-//                        success:^(SQRoom *room) {
-//                            EndBlock();
-//                            XCTAssertTrue(room.ID, @"Did succeed");
-//                        } failure:^(NSError *error) {
-//                            NSLog(@"%@", error);
-//                            EndBlock();
-//                            XCTFail(@"Error returned for test %@", error);
-//                        }];
-//    } failure:^(NSError *error) {
-//        EndBlock();
-//        XCTFail(@"Error returned for test %@", error);
-//    }];
-//    
-//    WaitUntilBlockCompletes();
-//}
-
-
 - (void)testGetStreamItems
 {
     [self testAuth];
     
     StartBlock();
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return [request.URL.relativePath containsString:@"rooms"] &&
+        [request.URL.relativePath containsString:@"messages"];
+    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+        return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeStreamItems] statusCode:200 headers:nil]
+                requestTime:1.0 responseTime:1.0];
+    }];
     waitingForBlock = YES;
     
     [Sqwiggle streamItemsForRoomID:@1

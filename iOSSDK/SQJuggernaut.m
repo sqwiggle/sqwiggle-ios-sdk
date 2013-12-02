@@ -7,6 +7,8 @@
 //
 
 #import "SQJuggernaut.h"
+#import "SQObject.h"
+
 #define SUPER_SECRET_PASSWORD @"x"
 
 @implementation SQJuggernaut
@@ -73,6 +75,7 @@
                      success:success
                      failure:failure];
 }
+
 +(void) retreiveItemOfType:(SQWIGGLE_TYPE)type
                       byID:(NSNumber *)ID
             filteredByType:(SQWIGGLE_TYPE)filterType

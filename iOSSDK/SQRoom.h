@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "SQUser.h"
-#import "SQObject.h"
 
 @interface SQRoom : SQObject
 
