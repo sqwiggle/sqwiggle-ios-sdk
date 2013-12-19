@@ -82,6 +82,7 @@
 
 }
 
+//Handy override function to make sure our stuff can be stored offline :)
 - (id)initWithCoder:(NSCoder *)coder {
     self = [[[self class] alloc] init];
     if (self != nil)
@@ -93,5 +94,10 @@
     }
     return self;
 }
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"%@ - ID: %@", [self class], self.ID];
+}
+
 
 @end

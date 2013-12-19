@@ -14,7 +14,6 @@
 		407A12AD1832D06B00819225 /* Sqwiggle.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 407A12AC1832D06B00819225 /* Sqwiggle.h */; };
 		4082A74C1833CD6B009FBC9B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407A12B51832D06B00819225 /* XCTest.framework */; };
 		4082A74D1833CD6B009FBC9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407A12A71832D06B00819225 /* Foundation.framework */; };
-		4082A74E1833CD6B009FBC9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407A12B81832D06B00819225 /* UIKit.framework */; };
 		4082A7541833CD6B009FBC9B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4082A7521833CD6B009FBC9B /* InfoPlist.strings */; };
 		4082A7561833CD6B009FBC9B /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4082A7551833CD6B009FBC9B /* Tests.m */; };
 		409446DB18340727005C69B0 /* SQUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446DA18340727005C69B0 /* SQUser.m */; };
@@ -133,7 +132,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4082A74C1833CD6B009FBC9B /* XCTest.framework in Frameworks */,
-				4082A74E1833CD6B009FBC9B /* UIKit.framework in Frameworks */,
 				4082A74D1833CD6B009FBC9B /* Foundation.framework in Frameworks */,
 				27E95DAD21A14677830B5D91 /* libPods-Tests.a in Frameworks */,
 			);

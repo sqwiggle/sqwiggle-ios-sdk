@@ -11,6 +11,8 @@
 
 #define SQWIGGLE_AUTH_KEY @"SQWIGGLE_USERNAME_KEY"
 #define SQWIGGLE_CURRENT_USER @"SQWIGGLE_CURRENT_USER"
+#define SQWIGGLE_USER_ROOMS @"SQWIGGLE_CURRENT_ROOMS"
+
 @interface Sqwiggle ()
 
 /* Private Method Declaration */
@@ -35,7 +37,6 @@
     NSDictionary *authInfo = @{@"email": username, @"password": password};
     [manager POST:url parameters:authInfo
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             
              [self setAuthToken:[responseObject objectForKey:tokenKey]];
              success(YES);
 
@@ -88,14 +89,18 @@
                              failure:failure];
 }
 
-#pragma mark Room Help Methods
+#pragma mark Room Helper Methods
 
 +(void) allRooms:(void (^)(NSArray *))success
                 failure:(void (^)(NSError *))failure
 {
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_ROOM_TYPE
                         withAuthToken:[self authToken]
-                              success:success
+                              success:^(NSArray *items) {
+                                  //storing rooms for quicker access
+                                  [Sqwiggle setCurrentUserRooms:items];
+                                  success(items);
+                              }
                               failure:failure];
 }
 
@@ -122,14 +127,12 @@
                              failure:failure];
 }
 
-
-#pragma mark private methods
-
 +(NSString *) authToken
 {
     return [[NSUserDefaults standardUserDefaults] objectForKey:SQWIGGLE_AUTH_KEY];
 }
 
+#pragma mark private methods
 +(void) setAuthToken:(NSString *)authToken
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -137,6 +140,7 @@
                  forKey:SQWIGGLE_AUTH_KEY];
     [defaults synchronize];
 }
+
 
 +(SQUser *) currentUser
 {
@@ -150,5 +154,19 @@
                  forKey:SQWIGGLE_CURRENT_USER];
     [defaults synchronize];
 }
+
++(NSArray *) currentUserRooms
+{
+    return (NSArray *) [NSKeyedUnarchiver unarchiveObjectWithData:[[NSUserDefaults standardUserDefaults] objectForKey:SQWIGGLE_USER_ROOMS]];
+}
+
++(void) setCurrentUserRooms:(NSArray *)rooms
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:rooms]
+                 forKey:SQWIGGLE_USER_ROOMS];
+    [defaults synchronize];
+}
+
 
 @end

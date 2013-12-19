@@ -17,7 +17,6 @@
 @property (nonatomic, retain) NSString *mode;
 @property (nonatomic, retain) NSString *status;
 @property (nonatomic, retain) NSNumber *roomID;
-@property (nonatomic, retain) NSNumber *companyID;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *email;
 @property (nonatomic, retain) NSTimeZone *timeZone;
@@ -25,6 +24,8 @@
 @property (nonatomic, retain) NSDate *createdAt;
 @property (nonatomic, retain) NSDate *lastActiveAt;
 @property (nonatomic, retain) NSString *avatar;
+@property (nonatomic, retain) UIImage *currentStill;
+@property (nonatomic) id company;
 
 //Needed to do as helper method because bool doesn't have a ns counterpart.
 -(BOOL) confirmed;

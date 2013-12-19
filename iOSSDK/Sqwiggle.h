@@ -33,10 +33,16 @@
 //Checks to see if valid authentication token exists
 +(BOOL) isLoggedIn;
 
+//Current authentication token
++(NSString *) authToken;
+
 /* User Methods */
 
 //Current user, stored locally. If nil, call getCurrentUser and currentUser will be automatically updated
 +(SQUser *) currentUser;
+
+//Current rooms, stored locally. If nil, call allRooms and the variable will be automatically updated.
++(NSArray *) currentUserRooms;
 
 //Gets authenticated user
 +(void) currentUserForSession:(void (^)(SQUser *user))success
