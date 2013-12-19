@@ -48,7 +48,6 @@
 #pragma mark Make life better methods
 -(void) save
 {
-    
     NSString *url = [NSString stringWithFormat:@"%@/%@/%@", SQWIGGLE_URI_API, _relativeURL, _ID];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
