@@ -12,12 +12,12 @@
 
 @interface SQStreamItem : SQObject
 
-@property (nonatomic, retain) NSDate *createdAt;
-@property (nonatomic, retain) NSDate *updatedAt;
-@property (nonatomic, retain) NSNumber *roomID;
-@property (nonatomic, retain) NSNumber *companyID;
-@property (nonatomic, retain) NSArray *mentions;
-@property (nonatomic, retain) NSString *message;
-@property (nonatomic, retain) SQUser *user;
+@property (nonatomic, strong) NSDate *createdAt;
+@property (nonatomic, strong) NSDate *updatedAt;
+@property (nonatomic, strong) NSNumber *roomID;
+@property (nonatomic, strong) NSNumber *companyID;
+@property (nonatomic, strong) NSArray *mentions;
+@property (nonatomic, strong) NSString *message;
+@property (nonatomic, strong) SQUser *user;
 
 @end

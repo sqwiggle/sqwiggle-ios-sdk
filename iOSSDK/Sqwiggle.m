@@ -41,7 +41,7 @@
              success(YES);
 
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-
+        NSLog(@"ugh error %@", error);
         failure(error);
     }];
 }

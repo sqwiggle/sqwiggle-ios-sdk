@@ -1,5 +1,5 @@
 //
-//  constants.h
+//  SQConstants.h
 //  SqwiggleSDK
 //
 //  Created by Cameron Webb on 11/13/13.
@@ -8,13 +8,17 @@
 
 #define SQWIGGLE_SDK_VERION @"0.0.1"
 
-#warning change depending on environment
+#define ENVIRONMENT_PRODUCTION @"production"
+
+#define APP_ENVIRONMENT ENVIRONMENT_PRODUCTION
+
 #define SQWIGGLE_URI_API @"https://api.sqwiggle.com"
 
 #define SQWIGGLE_RELATIVE_URLS @{@"SQUser": @"users", @"SQCompany": @"companies", \
                                 @"SQConversation": @"conversations", @"SQRoom": @"rooms",\
                                 @"SQInvite": @"invites", \
-                                @"SQStreamItem": @"messages"}
+                                @"SQStreamItem": @"messages",\
+                                @"SQConfig": @"info"}
 
 #import <ObjectiveSugar/ObjectiveSugar.h>
 #import <AFNetworking/AFNetworking.h>

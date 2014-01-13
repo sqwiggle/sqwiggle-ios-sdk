@@ -12,10 +12,11 @@
 
 @interface SQConversation : SQObject
 
-@property (nonatomic, readonly) NSNumber *companyID;
-@property (nonatomic, readonly) NSNumber *roomID;
-@property (nonatomic, readonly) NSNumber *colorID;
-@property (nonatomic, readonly) NSArray *users;
+@property (nonatomic, strong) NSNumber *companyID;
+@property (nonatomic, strong) NSNumber *roomID;
+@property (nonatomic, strong) NSNumber *colorID;
+@property (nonatomic, strong) NSArray *participatingUsers;
 
+-(BOOL) containsUser:(SQUser *)user;
 
 @end

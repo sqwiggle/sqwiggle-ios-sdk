@@ -9,8 +9,6 @@
 #import "SQJuggernaut.h"
 #import "SQObject.h"
 
-#define SUPER_SECRET_PASSWORD @"x"
-
 @implementation SQJuggernaut
 #warning I bet you $10 you can reduce the functions
 

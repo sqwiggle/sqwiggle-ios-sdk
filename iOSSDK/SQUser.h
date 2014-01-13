@@ -13,18 +13,18 @@
 
 @interface SQUser : SQObject
 
-@property (nonatomic, retain) NSString *role;
-@property (nonatomic, retain) NSString *mode;
-@property (nonatomic, retain) NSString *status;
-@property (nonatomic, retain) NSNumber *roomID;
-@property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSString *email;
-@property (nonatomic, retain) NSTimeZone *timeZone;
-@property (nonatomic, retain) NSNumber *timeZoneOffset;
-@property (nonatomic, retain) NSDate *createdAt;
-@property (nonatomic, retain) NSDate *lastActiveAt;
-@property (nonatomic, retain) NSString *avatar;
-@property (nonatomic, retain) UIImage *currentStill;
+@property (nonatomic, strong) NSString *role;
+@property (nonatomic, strong) NSString *mode;
+@property (nonatomic, strong) NSString *status;
+@property (nonatomic, strong) NSNumber *roomID;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *email;
+@property (nonatomic, strong) NSTimeZone *timeZone;
+@property (nonatomic, strong) NSNumber *timeZoneOffset;
+@property (nonatomic, strong) NSDate *createdAt;
+@property (nonatomic, strong) NSDate *lastActiveAt;
+@property (nonatomic, strong) NSString *avatar;
+@property (nonatomic, strong) UIImage *currentStill;
 @property (nonatomic) id company;
 
 //Needed to do as helper method because bool doesn't have a ns counterpart.

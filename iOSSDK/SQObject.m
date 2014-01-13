@@ -20,7 +20,7 @@
         //Keys are set by names of classes in constants.h
         _relativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:NSStringFromClass([self class])];
         [[self modelDefinition] each:^(id key, id value){
-            [self setValue:[dictionary objectForKey:value] forKey:key];
+            [self setValue:[dictionary valueForKeyPath:value] forKey:key];
         }];
     }
     return self;
@@ -48,6 +48,7 @@
 #pragma mark Make life better methods
 -(void) save
 {
+#warning Not Implemented
     NSString *url = [NSString stringWithFormat:@"%@/%@/%@", SQWIGGLE_URI_API, _relativeURL, _ID];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];

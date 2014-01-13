@@ -22,6 +22,9 @@
 #define SQWIGGLE_STREAMITEM_TYPE @"SQStreamItem"
 #define SQWIGGLE_ROOM_TYPE @"SQRoom"
 
+#define SUPER_SECRET_PASSWORD @"x"
+
+
 @interface SQJuggernaut : NSObject
 
 /* Retreival Methods */
