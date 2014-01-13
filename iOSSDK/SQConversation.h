@@ -12,7 +12,7 @@
 
 @interface SQConversation : SQObject
 
-@property (nonatomic, strong) NSNumber *companyID;
+@property (nonatomic, readonly) NSNumber *companyID;
 @property (nonatomic, strong) NSNumber *roomID;
 @property (nonatomic, strong) NSNumber *colorID;
 @property (nonatomic, strong) NSArray *participatingUsers;

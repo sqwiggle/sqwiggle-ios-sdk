@@ -18,7 +18,7 @@
 /* Properties */
 
 //Unique ID
-@property (nonatomic, strong) NSNumber *ID;
+@property (nonatomic, readonly) NSNumber *ID;
 
 //Relative URL for object in API. NOTE: This must be overriden in each object.
 @property (nonatomic, readonly) NSString *relativeURL;

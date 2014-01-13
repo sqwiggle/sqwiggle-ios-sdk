@@ -115,7 +115,7 @@
                              failure:failure];
 }
 
-+(void) streamItemsForRoomID:(NSNumber *)ID
++(void) messagesForRoomID:(NSNumber *)ID
                              success:(void (^)(NSArray *))success
                              failure:(void (^)(NSError *))failure
 {

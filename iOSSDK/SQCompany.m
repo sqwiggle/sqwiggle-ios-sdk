@@ -8,6 +8,17 @@
 
 #import "SQCompany.h"
 
+@interface SQCompany ()
+{
+    NSDate *_createdAt;
+    NSNumber *_ownerID;
+    NSString *_name;
+    NSString *_path;
+    NSDictionary *_billing;
+    NSDictionary *_security;
+}
+@end
+
 @implementation SQCompany
 
 -(NSDictionary *) modelDefinition

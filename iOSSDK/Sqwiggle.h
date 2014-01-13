@@ -68,10 +68,10 @@
            success:(void (^)(SQRoom *user))success
            failure:(void (^)(NSError *error))failure;
 
-//Gets all StreamItems associated with RoomID
-+(void) streamItemsForRoomID:(NSNumber *)ID
-                     success:(void (^)(NSArray *user))success
-                     failure:(void (^)(NSError *error))failure;
+//Gets all Messages associated with RoomID
++(void) messagesForRoomID:(NSNumber *)ID
+                  success:(void (^)(NSArray *user))success
+                  failure:(void (^)(NSError *error))failure;
 
 
 @end
