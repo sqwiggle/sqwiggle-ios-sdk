@@ -7,6 +7,7 @@
 //
 
 #import "SQObject.h"
+#import "Sqwiggle.h"
 
 @implementation SQObject
 @synthesize ID = _ID;
@@ -48,11 +49,14 @@
 #pragma mark Make life better methods
 -(void) save
 {
-#warning Not Implemented
     NSString *url = [NSString stringWithFormat:@"%@/%@/%@", SQWIGGLE_URI_API, _relativeURL, _ID];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager PUT:url parameters:[self dictionaryFormat] success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
+    [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
+    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:[Sqwiggle authToken] password:SUPER_SECRET_PASSWORD];
+    [manager PUT:url parameters:[self dictionaryFormat]
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         

@@ -36,4 +36,5 @@
 {
     return [_animated boolValue];
 }
+
 @end

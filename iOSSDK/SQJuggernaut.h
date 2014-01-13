@@ -13,17 +13,6 @@
 @class AFURLConnectionOperation;
 @class AFURLSessionManager;
 
-//Creating for Semantics sake
-#define SQWIGGLE_TYPE NSString*
-
-//More Semantics stuff
-#define SQWIGGLE_USER_TYPE @"SQUser"
-#define SQWIGGLE_ORGANIZATION_TYPE @"SQOrganization"
-#define SQWIGGLE_MESSAGE_TYPE @"SQMessage"
-#define SQWIGGLE_ROOM_TYPE @"SQRoom"
-
-#define SUPER_SECRET_PASSWORD @"x"
-
 
 @interface SQJuggernaut : NSObject
 

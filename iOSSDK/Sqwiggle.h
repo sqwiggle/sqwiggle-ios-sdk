@@ -43,31 +43,31 @@
 //Current rooms, stored locally. If nil, call allRooms and the variable will be automatically updated.
 +(NSArray *) currentUserRooms;
 
-//Gets authenticated user
+//Retreives authenticated user
 +(void) currentUserForSession:(void (^)(SQUser *user))success
                       failure:(void (^)(NSError *error))failure;
 
-//Gets all users associated with authenticated user.
+//Retreives all users associated with authenticated user.
 +(void) userWithID:(NSNumber *)ID
            success:(void (^)(SQUser *user))success
            failure:(void (^)(NSError *error))failure;
                         
-//Gets all users associated with authenticated user.
+//Retreives all users associated with authenticated user.
 +(void) allUsers:(void (^)(NSArray *users))success
          failure:(void (^)(NSError *error))failure;
 
 /* Room Methods */
 
-//Gets all rooms associated with authenticated user.
+//Retreives all rooms associated with authenticated user.
 +(void) allRooms:(void (^)(NSArray *rooms))success
          failure:(void (^)(NSError *error))failure;
 
-//Gets all users associated with authenticated user.
+//Retreives all users associated with authenticated user.
 +(void) roomWithID:(NSNumber *)ID
            success:(void (^)(SQRoom *user))success
            failure:(void (^)(NSError *error))failure;
 
-//Gets all Messages associated with RoomID
+//Retreives all Messages associated with RoomID
 +(void) messagesForRoomID:(NSNumber *)ID
                   success:(void (^)(NSArray *user))success
                   failure:(void (^)(NSError *error))failure;
