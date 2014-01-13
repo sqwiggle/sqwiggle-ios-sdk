@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) NSDate *createdAt;
 @property (nonatomic, readonly) NSDate *updatedAt;
 @property (nonatomic, readonly) NSNumber *roomID;
-@property (nonatomic, readonly) NSNumber *companyID;
+@property (nonatomic, readonly) NSNumber *organziationID;
 @property (nonatomic, readonly) NSArray *mentions;
 @property (nonatomic, readonly) NSString *message;
 @property (nonatomic, readonly) SQUser *user;

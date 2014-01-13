@@ -20,6 +20,12 @@
 @end
 
 @implementation SQOrganization
+@synthesize createdAt = _createdAt;
+@synthesize ownerID = _ownerID;
+@synthesize name = _name;
+@synthesize path = _path;
+@synthesize billing = _billing;
+@synthesize security = _security;
 
 -(NSDictionary *) modelDefinition
 {

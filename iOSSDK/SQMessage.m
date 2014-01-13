@@ -8,7 +8,27 @@
 
 #import "SQMessage.h"
 
+@interface SQMessage ()
+{
+    NSDate *_createdAt;
+    NSDate *_updatedAt;
+    NSNumber *_roomID;
+    NSNumber *_organziationID;
+    NSArray *_mentions;
+    NSString *_message;
+    SQUser *_user;
+}
+
+@end
+
 @implementation SQMessage
+@synthesize createdAt = _createdAt;
+@synthesize updatedAt = _updatedAt;
+@synthesize roomID = _roomID;
+@synthesize organziationID = _organziationID;
+@synthesize mentions = _mentions;
+@synthesize message = _message;
+@synthesize user;
 
 -(NSDictionary *) modelDefinition
 {
@@ -19,14 +39,13 @@
 
 -(void) save
 {
-    
     NSMutableDictionary *params = [NSMutableDictionary new];
 
     [params setObject:@{@"user": _user} forKey:@"user"];
     [params setObject:_message forKey:@"message"];
     [params setObject:_createdAt forKey:@"created_at"];
     [params setObject:_roomID forKey:@"room_id"];
-    [params setObject:_companyID forKey:@"company_id"];
+    [params setObject:_organziationID forKey:@"organization_id"];
     
     NSString *auth = [[NSUserDefaults standardUserDefaults] objectForKey:@"SQWIGGLE_USERNAME_KEY"];
     _relativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:NSStringFromClass([self class])];

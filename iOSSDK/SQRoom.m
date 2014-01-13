@@ -8,7 +8,20 @@
 
 #import "SQRoom.h"
 
+@interface SQRoom ()
+{
+    NSNumber *_createdByID;
+    NSString *_name;
+    NSString *_path;
+    NSNumber *_userCount;
+}
+@end
+
 @implementation SQRoom
+@synthesize createdByID = _createdByID;
+@synthesize name = _name;
+@synthesize path = _path;
+@synthesize userCount;
 
 -(NSDictionary *) modelDefinition
 {

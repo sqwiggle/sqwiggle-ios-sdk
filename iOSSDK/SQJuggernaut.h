@@ -18,7 +18,7 @@
 
 //More Semantics stuff
 #define SQWIGGLE_USER_TYPE @"SQUser"
-#define SQWIGGLE_COMPANY_TYPE @"SQCompany"
+#define SQWIGGLE_ORGANIZATION_TYPE @"SQOrganization"
 #define SQWIGGLE_MESSAGE_TYPE @"SQMessage"
 #define SQWIGGLE_ROOM_TYPE @"SQRoom"
 
