@@ -17,7 +17,7 @@
     self = [super init];
     if (self != nil)
     {
-        //Keys are set by names of classes in constants.h
+        //Keys are set by names of classes in SQConstants
         _relativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:NSStringFromClass([self class])];
         [[self modelDefinition] each:^(id key, id value){
             [self setValue:[dictionary valueForKeyPath:value] forKey:key];

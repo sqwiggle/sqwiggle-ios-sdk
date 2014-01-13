@@ -136,7 +136,7 @@
     }];
     waitingForBlock = YES;
     
-    [Sqwiggle streamItemsForRoomID:@1
+    [Sqwiggle messagesForRoomID:@1
                                    success:^(NSArray *items) {
                                        EndBlock();
                                        XCTAssertTrue(YES, @"Did succeed");

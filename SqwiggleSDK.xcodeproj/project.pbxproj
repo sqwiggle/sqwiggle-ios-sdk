@@ -32,6 +32,8 @@
 		409446FA183439DF005C69B0 /* SQObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446F8183439DF005C69B0 /* SQObject.m */; };
 		40AF0656183BBA840092882B /* SQJuggernaut.m in Sources */ = {isa = PBXBuildFile; fileRef = 40AF0655183BBA840092882B /* SQJuggernaut.m */; };
 		40AF0657183BBA840092882B /* SQJuggernaut.m in Sources */ = {isa = PBXBuildFile; fileRef = 40AF0655183BBA840092882B /* SQJuggernaut.m */; };
+		40AF7B0618848B0100E65B9B /* SQAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 40AF7B0518848B0100E65B9B /* SQAttachment.m */; };
+		40AF7B0718848B0100E65B9B /* SQAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 40AF7B0518848B0100E65B9B /* SQAttachment.m */; };
 		40B20F15184CE5C1008006C3 /* ResponseFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B20F14184CE5C1008006C3 /* ResponseFactory.m */; };
 		40DC64831833CB300045B5F3 /* Sqwiggle.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DC64821833CB300045B5F3 /* Sqwiggle.m */; };
 		AEB72E66D37E4E4A831FBF41 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D47E91C25AFE40128D776D3A /* libPods.a */; };
@@ -105,6 +107,8 @@
 		409446F8183439DF005C69B0 /* SQObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQObject.m; sourceTree = "<group>"; };
 		40AF0654183BBA840092882B /* SQJuggernaut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQJuggernaut.h; sourceTree = "<group>"; };
 		40AF0655183BBA840092882B /* SQJuggernaut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQJuggernaut.m; sourceTree = "<group>"; };
+		40AF7B0418848B0100E65B9B /* SQAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQAttachment.h; sourceTree = "<group>"; };
+		40AF7B0518848B0100E65B9B /* SQAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQAttachment.m; sourceTree = "<group>"; };
 		40B20F13184CE5C1008006C3 /* ResponseFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseFactory.h; sourceTree = "<group>"; };
 		40B20F14184CE5C1008006C3 /* ResponseFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseFactory.m; sourceTree = "<group>"; };
 		40DC64821833CB300045B5F3 /* Sqwiggle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sqwiggle.m; sourceTree = "<group>"; };
@@ -279,18 +283,20 @@
 			isa = PBXGroup;
 			children = (
 				409446F618343847005C69B0 /* Base Model */,
-				409446E2183418E7005C69B0 /* SQOrganization.h */,
-				409446E3183418E7005C69B0 /* SQOrganization.m */,
+				40AF7B0418848B0100E65B9B /* SQAttachment.h */,
+				40AF7B0518848B0100E65B9B /* SQAttachment.m */,
 				409446DD183417F6005C69B0 /* SQConversation.h */,
 				409446DE183417F6005C69B0 /* SQConversation.m */,
 				409446E618341C41005C69B0 /* SQInvite.h */,
 				409446E718341C41005C69B0 /* SQInvite.m */,
 				409446EE18342106005C69B0 /* SQMessage.h */,
 				409446EF18342106005C69B0 /* SQMessage.m */,
-				409446D918340727005C69B0 /* SQUser.h */,
-				409446DA18340727005C69B0 /* SQUser.m */,
+				409446E2183418E7005C69B0 /* SQOrganization.h */,
+				409446E3183418E7005C69B0 /* SQOrganization.m */,
 				409446EA18341D15005C69B0 /* SQRoom.h */,
 				409446EB18341D15005C69B0 /* SQRoom.m */,
+				409446D918340727005C69B0 /* SQUser.h */,
+				409446DA18340727005C69B0 /* SQUser.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -472,6 +478,7 @@
 				409446DF183417F6005C69B0 /* SQConversation.m in Sources */,
 				409446F9183439DF005C69B0 /* SQObject.m in Sources */,
 				409446DB18340727005C69B0 /* SQUser.m in Sources */,
+				40AF7B0618848B0100E65B9B /* SQAttachment.m in Sources */,
 				40DC64831833CB300045B5F3 /* Sqwiggle.m in Sources */,
 				409446E4183418E7005C69B0 /* SQOrganization.m in Sources */,
 				409446F018342106005C69B0 /* SQMessage.m in Sources */,
@@ -485,6 +492,7 @@
 				40224CF3183A792C0024AE77 /* Sqwiggle.m in Sources */,
 				40224CF7183AD2360024AE77 /* Sqwiggle+TestHelper.m in Sources */,
 				409446E918341C41005C69B0 /* SQInvite.m in Sources */,
+				40AF7B0718848B0100E65B9B /* SQAttachment.m in Sources */,
 				409446ED18341D15005C69B0 /* SQRoom.m in Sources */,
 				409446E0183417F6005C69B0 /* SQConversation.m in Sources */,
 				40AF0657183BBA840092882B /* SQJuggernaut.m in Sources */,
