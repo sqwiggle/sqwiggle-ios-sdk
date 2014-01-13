@@ -9,7 +9,20 @@
 #import "SQConversation.h"
 #import "Sqwiggle.h"
 
+@interface SQConversation ()
+{
+    NSNumber *_companyID;
+    NSNumber *_roomID;
+    NSNumber *_colorID;
+    NSArray *_participatingUsers;
+}
+@end
+
 @implementation SQConversation
+@synthesize companyID = _companyID;
+@synthesize roomID = _roomID;
+@synthesize colorID = _colorID;
+@synthesize participatingUsers = _participatingUsers;
 
 -(NSDictionary *) modelDefinition
 {

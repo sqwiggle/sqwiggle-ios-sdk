@@ -11,7 +11,7 @@
 #import "SQObject.h"
 #import "SQCompany.h"
 #import "SQUser.h"
-#import "SQStreamItem.h"
+#import "SQMessage.h"
 #import "SQRoom.h"
 #import "SQNotification.h"
 #import "SQInvite.h"
