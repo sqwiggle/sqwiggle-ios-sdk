@@ -20,8 +20,8 @@
 		409446DC18340727005C69B0 /* SQUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446DA18340727005C69B0 /* SQUser.m */; };
 		409446DF183417F6005C69B0 /* SQConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446DE183417F6005C69B0 /* SQConversation.m */; };
 		409446E0183417F6005C69B0 /* SQConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446DE183417F6005C69B0 /* SQConversation.m */; };
-		409446E4183418E7005C69B0 /* SQCompany.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446E3183418E7005C69B0 /* SQCompany.m */; };
-		409446E5183418E7005C69B0 /* SQCompany.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446E3183418E7005C69B0 /* SQCompany.m */; };
+		409446E4183418E7005C69B0 /* SQOrganization.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446E3183418E7005C69B0 /* SQOrganization.m */; };
+		409446E5183418E7005C69B0 /* SQOrganization.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446E3183418E7005C69B0 /* SQOrganization.m */; };
 		409446E818341C41005C69B0 /* SQInvite.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446E718341C41005C69B0 /* SQInvite.m */; };
 		409446E918341C41005C69B0 /* SQInvite.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446E718341C41005C69B0 /* SQInvite.m */; };
 		409446EC18341D15005C69B0 /* SQRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 409446EB18341D15005C69B0 /* SQRoom.m */; };
@@ -93,8 +93,8 @@
 		409446DA18340727005C69B0 /* SQUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQUser.m; sourceTree = "<group>"; };
 		409446DD183417F6005C69B0 /* SQConversation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQConversation.h; sourceTree = "<group>"; };
 		409446DE183417F6005C69B0 /* SQConversation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQConversation.m; sourceTree = "<group>"; };
-		409446E2183418E7005C69B0 /* SQCompany.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQCompany.h; sourceTree = "<group>"; };
-		409446E3183418E7005C69B0 /* SQCompany.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQCompany.m; sourceTree = "<group>"; };
+		409446E2183418E7005C69B0 /* SQOrganization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQOrganization.h; sourceTree = "<group>"; };
+		409446E3183418E7005C69B0 /* SQOrganization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQOrganization.m; sourceTree = "<group>"; };
 		409446E618341C41005C69B0 /* SQInvite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQInvite.h; sourceTree = "<group>"; };
 		409446E718341C41005C69B0 /* SQInvite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQInvite.m; sourceTree = "<group>"; };
 		409446EA18341D15005C69B0 /* SQRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQRoom.h; sourceTree = "<group>"; };
@@ -279,8 +279,8 @@
 			isa = PBXGroup;
 			children = (
 				409446F618343847005C69B0 /* Base Model */,
-				409446E2183418E7005C69B0 /* SQCompany.h */,
-				409446E3183418E7005C69B0 /* SQCompany.m */,
+				409446E2183418E7005C69B0 /* SQOrganization.h */,
+				409446E3183418E7005C69B0 /* SQOrganization.m */,
 				409446DD183417F6005C69B0 /* SQConversation.h */,
 				409446DE183417F6005C69B0 /* SQConversation.m */,
 				409446E618341C41005C69B0 /* SQInvite.h */,
@@ -473,7 +473,7 @@
 				409446F9183439DF005C69B0 /* SQObject.m in Sources */,
 				409446DB18340727005C69B0 /* SQUser.m in Sources */,
 				40DC64831833CB300045B5F3 /* Sqwiggle.m in Sources */,
-				409446E4183418E7005C69B0 /* SQCompany.m in Sources */,
+				409446E4183418E7005C69B0 /* SQOrganization.m in Sources */,
 				409446F018342106005C69B0 /* SQMessage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,7 +491,7 @@
 				409446FA183439DF005C69B0 /* SQObject.m in Sources */,
 				409446DC18340727005C69B0 /* SQUser.m in Sources */,
 				4082A7561833CD6B009FBC9B /* Tests.m in Sources */,
-				409446E5183418E7005C69B0 /* SQCompany.m in Sources */,
+				409446E5183418E7005C69B0 /* SQOrganization.m in Sources */,
 				40B20F15184CE5C1008006C3 /* ResponseFactory.m in Sources */,
 				409446F118342106005C69B0 /* SQMessage.m in Sources */,
 			);

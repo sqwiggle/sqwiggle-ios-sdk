@@ -119,7 +119,7 @@
                              success:(void (^)(NSArray *))success
                              failure:(void (^)(NSError *))failure
 {
-    [SQJuggernaut retreiveItemsOfType:SQWIGGLE_STREAMITEM_TYPE
+    [SQJuggernaut retreiveItemsOfType:SQWIGGLE_MESSAGE_TYPE
                        filteredByType:SQWIGGLE_ROOM_TYPE
                                withID:ID
                        withAuthToken:[self authToken]

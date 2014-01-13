@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "SQObject.h"
 
-@interface SQCompany : SQObject
+@interface SQOrganization : SQObject
 
 @property (nonatomic, readonly) NSDate *createdAt;
 @property (nonatomic, readonly) NSNumber *ownerID;

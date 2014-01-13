@@ -9,11 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <ObjectiveSugar/ObjectiveSugar.h>
 #import "SQObject.h"
-#import "SQCompany.h"
+#import "SQOrganization.h"
 #import "SQUser.h"
 #import "SQMessage.h"
 #import "SQRoom.h"
-#import "SQNotification.h"
 #import "SQInvite.h"
 #import "SQConversation.h"
 

@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Sqwiggle. All rights reserved.
 //
 
-#import "SQCompany.h"
+#import "SQOrganization.h"
 
-@interface SQCompany ()
+@interface SQOrganization ()
 {
     NSDate *_createdAt;
     NSNumber *_ownerID;
@@ -19,7 +19,7 @@
 }
 @end
 
-@implementation SQCompany
+@implementation SQOrganization
 
 -(NSDictionary *) modelDefinition
 {

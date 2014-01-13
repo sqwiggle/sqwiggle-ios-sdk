@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SQUser.h"
-#import "SQCompany.h"
+#import "SQOrganization.h"
 
 
 @interface SQInvite : SQObject
