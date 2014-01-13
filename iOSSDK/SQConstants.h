@@ -17,7 +17,7 @@
 #define SQWIGGLE_RELATIVE_URLS @{@"SQUser": @"users", @"SQCompany": @"companies", \
                                 @"SQConversation": @"conversations", @"SQRoom": @"rooms",\
                                 @"SQInvite": @"invites", \
-                                @"SQStreamItem": @"messages"}
+                                @"SQMessage": @"messages"}
 
 #import <ObjectiveSugar/ObjectiveSugar.h>
 #import <AFNetworking/AFNetworking.h>

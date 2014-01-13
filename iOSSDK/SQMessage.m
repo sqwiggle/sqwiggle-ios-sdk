@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Sqwiggle. All rights reserved.
 //
 
-#import "SQStreamItem.h"
+#import "SQMessage.h"
 
-@implementation SQStreamItem
+@implementation SQMessage
 
 -(NSDictionary *) modelDefinition
 {

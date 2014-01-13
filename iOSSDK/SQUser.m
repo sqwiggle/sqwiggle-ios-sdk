@@ -12,11 +12,35 @@
 @interface SQUser ()
 {
     NSNumber *_confirmed;
+    NSString *_role;
+    NSString *_mode;
+    NSString *_status;
+    NSNumber *_roomID;
+    NSString *_name;
+    NSString *_email;
+    NSTimeZone *_timeZone;
+    NSNumber *_timeZoneOffset;
+    NSDate *_createdAt;
+    NSDate *_lastActiveAt;
+    NSString *_avatar;
+    id _company;
 }
 @end
 
 @implementation SQUser
 
+@synthesize role = _role;
+@synthesize mode = _mode;
+@synthesize status = _status;
+@synthesize roomID = _roomID;
+@synthesize name = _name;
+@synthesize email = _email;
+@synthesize timeZone = _timeZone;
+@synthesize timeZoneOffset = _timeZoneOffset;
+@synthesize createdAt = _createdAt;
+@synthesize lastActiveAt = _lastActiveAt;
+@synthesize avatar = _avatar;
+@synthesize company = _company;
 
 -(NSDictionary *) modelDefinition
 {
