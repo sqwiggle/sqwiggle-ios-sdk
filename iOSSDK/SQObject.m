@@ -49,6 +49,7 @@
 #pragma mark Make life better methods
 -(void) save
 {
+    #warning Not Fully Implemented
     NSString *url = [NSString stringWithFormat:@"%@/%@/%@", SQWIGGLE_URI_API, _relativeURL, _ID];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -67,7 +68,7 @@
 
 -(void) delete
 {
-    #warning Not Implemented
+    #warning Not Fully Implemented
     NSString *url = [NSString stringWithFormat:@"%@/%@/%@", SQWIGGLE_URI_API, _relativeURL, _ID];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];

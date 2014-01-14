@@ -80,7 +80,9 @@
                               failure:failure];
 }
 
-+(void) userWithID:(NSNumber *)ID success:(void (^)(SQUser *))success failure:(void (^)(NSError *))failure
++(void) userWithID:(NSNumber *)ID
+           success:(void (^)(SQUser *))success
+           failure:(void (^)(NSError *))failure
 {
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_USER_TYPE
                                 byID:ID
@@ -92,7 +94,7 @@
 #pragma mark Room Helper Methods
 
 +(void) allRooms:(void (^)(NSArray *))success
-                failure:(void (^)(NSError *))failure
+         failure:(void (^)(NSError *))failure
 {
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_ROOM_TYPE
                         withAuthToken:[self authToken]
@@ -122,6 +124,27 @@
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_MESSAGE_TYPE
                        filteredByType:SQWIGGLE_ROOM_TYPE
                                withID:ID
+                       withAuthToken:[self authToken]
+                             success:success
+                             failure:failure];
+}
+
+#pragma mark Organization Methods
++(void) allOrganizations:(void (^)(NSArray *))success
+                 failure:(void (^)(NSError *))failure
+{
+    [SQJuggernaut retreiveItemsOfType:SQWIGGLE_ORGANIZATION_TYPE
+                        withAuthToken:[self authToken]
+                              success:success
+                              failure:failure];
+}
+
++(void) organizationWithID:(NSNumber *)ID
+                   success:(void (^)(SQOrganization *))success
+                   failure:(void (^)(NSError *))failure
+{
+    [SQJuggernaut retreiveItemOfType:SQWIGGLE_ORGANIZATION_TYPE
+                                byID:ID
                        withAuthToken:[self authToken]
                              success:success
                              failure:failure];
