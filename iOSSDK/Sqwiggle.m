@@ -150,6 +150,26 @@
                              failure:failure];
 }
 
+#pragma mark Conversation Methods
++(void) allConversations:(void (^)(NSArray *))success
+                 failure:(void (^)(NSError *))failure
+{
+    [SQJuggernaut retreiveItemsOfType:SQWIGGLE_CONVERSATION_TYPE
+                        withAuthToken:[self authToken]
+                              success:success
+                              failure:failure];
+}
+
++(void) conversationWithID:(NSNumber *)ID success:(void (^)(SQConversation *))success failure:(void (^)(NSError *))failure
+{
+    [SQJuggernaut retreiveItemOfType:SQWIGGLE_CONVERSATION_TYPE
+                                byID:ID
+                       withAuthToken:[self authToken]
+                             success:success
+                             failure:failure];
+}
+
+
 +(NSString *) authToken
 {
     return [[NSUserDefaults standardUserDefaults] objectForKey:SQWIGGLE_AUTH_KEY];
