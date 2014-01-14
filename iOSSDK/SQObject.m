@@ -54,8 +54,10 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
     [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
-    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:[Sqwiggle authToken] password:SUPER_SECRET_PASSWORD];
-    [manager PUT:url parameters:[self dictionaryFormat]
+    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:[Sqwiggle authToken]
+                                                              password:SUPER_SECRET_PASSWORD];
+    [manager PUT:url
+      parameters:[self dictionaryFormat]
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

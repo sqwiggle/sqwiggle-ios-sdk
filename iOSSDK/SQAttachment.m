@@ -32,6 +32,14 @@
 @synthesize createdAt = _createdAt;
 @synthesize updatedAt = _updatedAt;
 
+-(NSDictionary *) modelDefinition
+{
+    return @{@"_ID": @"id", @"_animated" : @"animated", @"_type": @"type",
+             @"_url" : @"url", @"_title": @"title", @"_description": @"description",
+             @"_image": @"image", @"_status": @"status", @"_createdAt": @"created_at",
+             @"_updatedAt" : @"updated_at"};
+}
+
 -(BOOL) animated
 {
     return [_animated boolValue];
