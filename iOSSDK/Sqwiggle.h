@@ -18,7 +18,7 @@
 
 @interface Sqwiggle : NSObject
 
-/* Sqwiggle Session Methods */
+#pragma Sqwiggle Session Methods
 
 //Initializes Sqwiggle API Session Locally.
 +(void) startSqwigglingWithUsername:(NSString *) username
@@ -35,7 +35,7 @@
 //Current authentication token
 +(NSString *) authToken;
 
-/* User Methods */
+#pragma mark User Methods
 
 //Current user, stored locally. If nil, call getCurrentUser and currentUser will be automatically updated
 +(SQUser *) currentUser;
@@ -56,7 +56,8 @@
 +(void) allUsers:(void (^)(NSArray *users))success
          failure:(void (^)(NSError *error))failure;
 
-/* Room Methods */
+
+#pragma mark Room Methods
 
 //Retreives all rooms associated with authenticated user.
 +(void) allRooms:(void (^)(NSArray *rooms))success
@@ -64,7 +65,7 @@
 
 //Retreives all users associated with authenticated user.
 +(void) roomWithID:(NSNumber *)ID
-           success:(void (^)(SQRoom *user))success
+           success:(void (^)(SQRoom *room))success
            failure:(void (^)(NSError *error))failure;
 
 //Retreives all Messages associated with RoomID
@@ -72,5 +73,56 @@
                   success:(void (^)(NSArray *user))success
                   failure:(void (^)(NSError *error))failure;
 
+
+#pragma mark Organization Methods
+/*
+ * Returns a list of all organizations the current token has access to. 
+ * At this time each user can only belong to a single organization and 
+ * all API requests are scoped by a single organization.
+ */
++(void) allOrganizations:(void (^)(NSArray *rooms))success
+                 failure:(void (^)(NSError *error))failure;
+
+/* 
+ * Retrieves the details of any organization that the token has access to. 
+ * At this time each user can only belong to a single organization and 
+ * all API requests are scoped by a single organization.
+ */
++(void) organizationWithID:(NSNumber *)ID
+                   success:(void (^)(SQOrganization *organization))success
+                   failure:(void (^)(NSError *error))failure;
+
+
+#pragma mark Conversation Methods
+/*
+ * Returns a list of all conversations within the organization
+ * associated with the provided token. This includes both finished and ongoing.
+ */
++(void) allConversations:(void (^)(NSArray *rooms))success
+                 failure:(void (^)(NSError *error))failure;
+
+/*
+ * Retrieves the details of a specific conversation provided the conversation is accessible 
+ * via the provided token. Supply a conversation ID and Sqwiggle will return the 
+ * corresponding conversation information.
+ */
++(void) conversationWithID:(NSNumber *)ID
+                   success:(void (^)(SQConversation *conversation))success
+                   failure:(void (^)(NSError *error))failure;
+
+#pragma mark Invite Methods
+/* 
+ * Returns a list of all outstanging invites in the current organization. 
+ */
++(void) allInvites:(void (^)(NSArray *rooms))success
+           failure:(void (^)(NSError *error))failure;
+
+/*
+ * Retrieves the details of any invite that has been previously created. 
+ * Supply an invite ID to get details of the invite.
+ */
++(void) inviteWithID:(NSNumber *)ID
+                   success:(void (^)(SQInvite *invite))success
+                   failure:(void (^)(NSError *error))failure;
 
 @end
