@@ -169,6 +169,26 @@
                              failure:failure];
 }
 
+#pragma mark Invite Methods
++(void) allInvites:(void (^)(NSArray *))success
+           failure:(void (^)(NSError *))failure
+{
+    [SQJuggernaut retreiveItemsOfType:SQWIGGLE_INVITE_TYPE
+                        withAuthToken:[self authToken]
+                              success:success
+                              failure:failure];
+}
+
++(void) inviteWithID:(NSNumber *)ID
+             success:(void (^)(SQInvite *))success
+             failure:(void (^)(NSError *))failure
+{
+    [SQJuggernaut retreiveItemOfType:SQWIGGLE_INVITE_TYPE
+                                byID:ID
+                       withAuthToken:[self authToken]
+                             success:success
+                             failure:failure];
+}
 
 +(NSString *) authToken
 {
