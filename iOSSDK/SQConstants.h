@@ -10,6 +10,11 @@
 
 #define ENVIRONMENT_PRODUCTION @"production"
 
+#define APP_ENVIRONMENT ENVIRONMENT_PRODUCTION
+#define SQWIGGLE_ENDPOINTS @{ENVIRONMENT_PRODUCTION: @"https://api.sqwiggle.com"}
+
+#define SQWIGGLE_URI_API SQWIGGLE_ENDPOINTS[APP_ENVIRONMENT]
+
 //Creating for Semantics sake
 #define SQWIGGLE_TYPE NSString*
 
@@ -23,10 +28,6 @@
 #define SQWIGGLE_CONVERSATION_TYPE @"SQConversation"
 
 #define SUPER_SECRET_PASSWORD @"x"
-
-#define APP_ENVIRONMENT ENVIRONMENT_PRODUCTION
-
-#define SQWIGGLE_URI_API @"https://api.sqwiggle.com"
 
 #define SQWIGGLE_RELATIVE_URLS @{SQWIGGLE_USER_TYPE: @"users", \
                                 SQWIGGLE_ORGANIZATION_TYPE: @"organizations", \

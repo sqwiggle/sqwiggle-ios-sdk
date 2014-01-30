@@ -34,6 +34,7 @@
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *url = NSStringWithFormat(@"%@/auth/token", SQWIGGLE_URI_API);
+    NSLog(@"%@ %@", username, password);
     NSDictionary *authInfo = @{@"email": username, @"password": password};
     [manager POST:url parameters:authInfo
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -190,6 +191,7 @@
                              failure:failure];
 }
 
+#pragma Session Method
 +(NSString *) authToken
 {
     return [[NSUserDefaults standardUserDefaults] objectForKey:SQWIGGLE_AUTH_KEY];

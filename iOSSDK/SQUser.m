@@ -15,6 +15,7 @@
     NSString *_role;
     NSString *_mode;
     NSString *_status;
+    NSString *_message;
     NSNumber *_roomID;
     NSString *_name;
     NSString *_email;
@@ -32,6 +33,7 @@
 @synthesize role = _role;
 @synthesize mode = _mode;
 @synthesize status = _status;
+@synthesize message = _message;
 @synthesize roomID = _roomID;
 @synthesize name = _name;
 @synthesize email = _email;
@@ -44,17 +46,24 @@
 
 -(NSDictionary *) modelDefinition
 {
-    return @{@"_ID": @"id", @"_role" : @"role", @"_mode": @"mode",
+    return @{@"_ID": @"id", @"_role" : @"role",
              @"_status" : @"status", @"_name": @"name",
              @"_email": @"email", @"_confirmed": @"confirmed",
              @"_timeZone": @"time_zone", @"_timeZoneOffset": @"time_zone_offset",
              @"_createdAt": @"created_at", @"_lastActiveAt": @"last_active_at",
-             @"_avatar": @"avatar", @"_company": @"company" };
+             @"_avatar": @"avatar", @"_company": @"company", @"_message": @"message" };
 }
 
 -(BOOL) confirmed
 {
     return [_confirmed boolValue];
 }
+
+-(BOOL) isEqual:(id)object
+{
+    NSLog(@"%@ object %@ self", self.ID, ((SQUser *)object).ID);
+    return [self.ID isEqualToNumber:((SQUser *)object).ID];
+}
+
 
 @end

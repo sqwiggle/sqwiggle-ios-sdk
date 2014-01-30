@@ -20,7 +20,8 @@
     {
         //Keys are set by names of classes in SQConstants
         _relativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:NSStringFromClass([self class])];
-        [[self modelDefinition] each:^(id key, id value){
+        [[self modelDefinition] each:^(id key, id value)
+        {
             [self setValue:[dictionary valueForKeyPath:value] forKey:key];
         }];
     }
@@ -33,13 +34,21 @@
     return [[[self class] alloc] initObjectWithDictionary:dictionary];
 }
 
-#pragma mark Override these SQObjectMethods
 -(NSDictionary *) dictionaryFormat
 {
-    NSAssert(NO, @"Subclasses need to overwrite this method");
-    return @{};
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
+    
+    [[self modelDefinition] each:^(id key, id value)
+     {
+         //Not gonna map item if it's null
+         if([self valueForKeyPath:key])
+             [dictionary setObject:[self valueForKeyPath:key] forKey:value];
+     }];
+    
+    return dictionary;
 }
 
+#pragma mark Override these SQObjectMethods
 -(NSDictionary *) modelDefinition
 {
     NSAssert(NO, @"Subclasses need to overwrite this method");
@@ -60,19 +69,6 @@
     [manager PUT:url
       parameters:[self dictionaryFormat]
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-    }];
-}
-
--(void) delete
-{
-    #warning Not Fully Implemented
-    NSString *url = [NSString stringWithFormat:@"%@/%@/%@", SQWIGGLE_URI_API, _relativeURL, _ID];
-    
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager DELETE:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         

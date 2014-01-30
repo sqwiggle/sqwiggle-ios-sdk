@@ -18,7 +18,7 @@
 /* Properties */
 
 //Unique ID
-@property (nonatomic, readonly) NSNumber *ID;
+@property (nonatomic, strong) NSNumber *ID;
 
 //Relative URL for object in API. NOTE: This must be overriden in each object.
 @property (nonatomic, readonly) NSString *relativeURL;
@@ -31,7 +31,7 @@
 //Short-hand version of initObjectWithDictionary
 +(id) objectWithDictionary:(NSDictionary *)dictionary;
 
-//Exports current object to dictionary. Needs to be overriden by each subclass.
+//Exports current object to dictionary. Yes, that easy.
 -(NSDictionary *) dictionaryFormat;
 
 //Returns mapping of variables to api keys.

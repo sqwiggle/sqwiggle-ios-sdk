@@ -56,4 +56,14 @@
     return users;
 }
 
+-(UIColor *) color
+{
+    return COLOR_DEFS[_colorID];
+}
+
+-(BOOL) isEqual:(id)object
+{
+    NSLog(@"%@ object %@ self", self.ID, ((SQConversation *)object).ID);
+    return [self.ID isEqualToNumber:((SQConversation *)object).ID];
+}
 @end

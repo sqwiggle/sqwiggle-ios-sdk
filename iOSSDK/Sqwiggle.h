@@ -59,11 +59,17 @@
 
 #pragma mark Room Methods
 
-//Retreives all rooms associated with authenticated user.
+/*
+ * Returns a list of all rooms in the current organization. 
+ * The rooms are returned in sorted alphabetical order by default.
+ */
 +(void) allRooms:(void (^)(NSArray *rooms))success
          failure:(void (^)(NSError *error))failure;
 
-//Retreives all users associated with authenticated user.
+/* 
+ * Retrieves the details of any room that the token has access to. 
+ * Supply a room ID and Sqwiggle will return the corresponding room details.
+ */
 +(void) roomWithID:(NSNumber *)ID
            success:(void (^)(SQRoom *room))success
            failure:(void (^)(NSError *error))failure;
@@ -98,7 +104,7 @@
  * Returns a list of all conversations within the organization
  * associated with the provided token. This includes both finished and ongoing.
  */
-+(void) allConversations:(void (^)(NSArray *rooms))success
++(void) allConversations:(void (^)(NSArray *conversations))success
                  failure:(void (^)(NSError *error))failure;
 
 /*
