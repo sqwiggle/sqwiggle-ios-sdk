@@ -3,5 +3,5 @@
 Sqwiggle SDK for iOS
 ================
 
-Documentation coming soon
+Documentation coming soon. Code is a Work in Progress, but feel free to start playing around if you wish!
 
