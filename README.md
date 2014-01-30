@@ -3,5 +3,5 @@
 Sqwiggle SDK for iOS
 ================
 
-Usage:
+Documentation coming soon
 
