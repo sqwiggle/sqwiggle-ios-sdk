@@ -131,4 +131,14 @@
                    success:(void (^)(SQInvite *invite))success
                    failure:(void (^)(NSError *error))failure;
 
+
+#pragma mark Configuration Methods
+
+/*
+ * Returns configuration information for Sqwiggle clients, such as where to store file uploads, 
+ * limits, ice servers and other misc details that are required.
+ */ 
++(void) configurationInfoForCurrentSession:(void (^)(NSMutableDictionary *))success
+                                   failure:(NSError *) failure;
+
 @end

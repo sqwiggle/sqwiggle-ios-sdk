@@ -10,6 +10,8 @@
 		27E95DAD21A14677830B5D91 /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE77B0992983466A80B2EDDF /* libPods-Tests.a */; };
 		40224CF3183A792C0024AE77 /* Sqwiggle.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DC64821833CB300045B5F3 /* Sqwiggle.m */; };
 		40224CF7183AD2360024AE77 /* Sqwiggle+TestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40224CF6183AD2360024AE77 /* Sqwiggle+TestHelper.m */; };
+		4026789D189EB1DB00BA781C /* SQConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4026789C189EB1DB00BA781C /* SQConfiguration.m */; };
+		4026789E189EB1DB00BA781C /* SQConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4026789C189EB1DB00BA781C /* SQConfiguration.m */; };
 		407A12A81832D06B00819225 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407A12A71832D06B00819225 /* Foundation.framework */; };
 		407A12AD1832D06B00819225 /* Sqwiggle.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 407A12AC1832D06B00819225 /* Sqwiggle.h */; };
 		4082A74C1833CD6B009FBC9B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407A12B51832D06B00819225 /* XCTest.framework */; };
@@ -80,6 +82,8 @@
 		40224D70183B067F0024AE77 /* SqwiggleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SqwiggleTests-Info.plist"; sourceTree = "<group>"; };
 		40224D72183B067F0024AE77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		40224D74183B067F0024AE77 /* SqwiggleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SqwiggleTests.m; sourceTree = "<group>"; };
+		4026789B189EB1DB00BA781C /* SQConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQConfiguration.h; sourceTree = "<group>"; };
+		4026789C189EB1DB00BA781C /* SQConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQConfiguration.m; sourceTree = "<group>"; };
 		407A12A41832D06B00819225 /* libSqwiggleSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSqwiggleSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		407A12A71832D06B00819225 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		407A12AB1832D06B00819225 /* SqwiggleSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SqwiggleSDK-Prefix.pch"; sourceTree = "<group>"; };
@@ -297,6 +301,8 @@
 				409446EB18341D15005C69B0 /* SQRoom.m */,
 				409446D918340727005C69B0 /* SQUser.h */,
 				409446DA18340727005C69B0 /* SQUser.m */,
+				4026789B189EB1DB00BA781C /* SQConfiguration.h */,
+				4026789C189EB1DB00BA781C /* SQConfiguration.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -482,6 +488,7 @@
 				40DC64831833CB300045B5F3 /* Sqwiggle.m in Sources */,
 				409446E4183418E7005C69B0 /* SQOrganization.m in Sources */,
 				409446F018342106005C69B0 /* SQMessage.m in Sources */,
+				4026789D189EB1DB00BA781C /* SQConfiguration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +506,7 @@
 				409446FA183439DF005C69B0 /* SQObject.m in Sources */,
 				409446DC18340727005C69B0 /* SQUser.m in Sources */,
 				4082A7561833CD6B009FBC9B /* Tests.m in Sources */,
+				4026789E189EB1DB00BA781C /* SQConfiguration.m in Sources */,
 				409446E5183418E7005C69B0 /* SQOrganization.m in Sources */,
 				40B20F15184CE5C1008006C3 /* ResponseFactory.m in Sources */,
 				409446F118342106005C69B0 /* SQMessage.m in Sources */,

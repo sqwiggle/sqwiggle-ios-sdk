@@ -31,14 +31,13 @@
 {
     static NSString *tokenKey = @"token";
 
-    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *url = NSStringWithFormat(@"%@/auth/token", SQWIGGLE_URI_API);
-    NSLog(@"%@ %@", username, password);
     NSDictionary *authInfo = @{@"email": username, @"password": password};
     [manager POST:url parameters:authInfo
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              [self setAuthToken:[responseObject objectForKey:tokenKey]];
+             NSLog(@"%@ auth token", responseObject);
              success(YES);
 
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -189,6 +188,14 @@
                        withAuthToken:[self authToken]
                              success:success
                              failure:failure];
+}
+
+#pragma mark Configuration Methods
+
++(void) configurationInfoForCurrentSession:(void (^)(NSMutableDictionary *))success
+                                   failure:(NSError *) failure
+{
+    
 }
 
 #pragma Session Method
