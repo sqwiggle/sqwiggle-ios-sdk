@@ -14,7 +14,7 @@
 
 +(void) retreiveItemsOfType:(SQWIGGLE_TYPE)type
               withAuthToken:(id)auth
-                    success:(void (^)(NSArray *items))success
+                    success:(void (^)(id items))success
                     failure:(void (^)(NSError *error))failure
 {
     [self retreiveItemOfType:type

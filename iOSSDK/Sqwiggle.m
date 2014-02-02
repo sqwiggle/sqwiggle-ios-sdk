@@ -193,9 +193,12 @@
 #pragma mark Configuration Methods
 
 +(void) configurationInfoForCurrentSession:(void (^)(NSMutableDictionary *))success
-                                   failure:(NSError *) failure
+                                   failure:(void (^)(NSError *))failure
 {
-    
+    [SQJuggernaut retreiveItemsOfType:SQWIGGLE_INVITE_TYPE
+                        withAuthToken:[self authToken]
+                              success:success
+                              failure:failure];
 }
 
 #pragma Session Method

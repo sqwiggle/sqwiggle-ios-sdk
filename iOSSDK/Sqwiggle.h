@@ -139,6 +139,6 @@
  * limits, ice servers and other misc details that are required.
  */ 
 +(void) configurationInfoForCurrentSession:(void (^)(NSMutableDictionary *))success
-                                   failure:(NSError *) failure;
+                                   failure:(void (^)(NSError *error))failure;
 
 @end

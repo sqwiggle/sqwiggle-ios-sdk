@@ -19,7 +19,7 @@
 /* Retreival Methods */
 +(void) retreiveItemsOfType:(SQWIGGLE_TYPE)type
               withAuthToken:(NSString *)auth
-                    success:(void (^)(NSArray *items))success
+                    success:(void (^)(id items))success
                     failure:(void (^)(NSError *error))failure;
 
 +(void) retreiveItemOfType:(SQWIGGLE_TYPE)type
