@@ -16,6 +16,7 @@
 #import "SQInvite.h"
 #import "SQConversation.h"
 #import "SQConfiguration.h"
+#import "SQAttachment.h"
 
 @interface Sqwiggle : NSObject
 
@@ -38,6 +39,7 @@
 //Current authentication token
 +(NSString *) authToken;
 
+
 #pragma mark User Methods
 
 //Current user, stored locally. If nil, call getCurrentUser and currentUser will be automatically updated
@@ -59,6 +61,10 @@
 +(void) allUsers:(void (^)(NSArray *users))success
          failure:(void (^)(NSError *error))failure;
 
+#pragma mark Attachment Methods
++(void) getAttachmentByID:(NSNumber *)ID
+                  success:(void (^)(SQAttachment *attachment))success
+                  failure:(void (^)(NSError *error))failure;
 
 #pragma mark Room Methods
 
@@ -118,6 +124,7 @@
 +(void) conversationWithID:(NSNumber *)ID
                    success:(void (^)(SQConversation *conversation))success
                    failure:(void (^)(NSError *error))failure;
+
 
 #pragma mark Invite Methods
 /* 
