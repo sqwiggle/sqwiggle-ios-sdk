@@ -61,10 +61,24 @@
 +(void) allUsers:(void (^)(NSArray *users))success
          failure:(void (^)(NSError *error))failure;
 
+
 #pragma mark Attachment Methods
+/*
+ * Updates the specified attachment by setting the values of the parameters passed. 
+ * Note that changes made via the API will be immediately reflected in the interface of all connected clients.
+ */
 +(void) getAttachmentByID:(NSNumber *)ID
                   success:(void (^)(SQAttachment *attachment))success
                   failure:(void (^)(NSError *error))failure;
+
+/*
+ * Returns a list of all attachments in the current organization. 
+ * The attachments are returned in reverse date order by default.
+ */
++(void) allAttachmentsWithLimit:(NSNumber *)limit
+                        success:(void (^)(NSArray *rooms))success
+                        failure:(void (^)(NSError *error))failure;
+
 
 #pragma mark Room Methods
 

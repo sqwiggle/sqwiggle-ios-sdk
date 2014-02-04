@@ -97,6 +97,18 @@
                              failure:failure];
 }
 
+#pragma mark Attachment Methods
++(void) getAttachmentByID:(NSNumber *)ID
+                  success:(void (^)(SQAttachment *attachment))success
+                  failure:(void (^)(NSError *error))failure
+{
+    [SQJuggernaut retreiveItemOfType:SQWIGGLE_ATTACHMENT_TYPE
+                                byID:ID
+                       withAuthToken:[self authToken]
+                             success:success
+                             failure:failure];
+}
+
 #pragma mark Room Helper Methods
 
 +(void) allRooms:(void (^)(NSArray *))success
