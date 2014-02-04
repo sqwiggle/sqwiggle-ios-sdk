@@ -15,6 +15,7 @@
 #import "SQRoom.h"
 #import "SQInvite.h"
 #import "SQConversation.h"
+#import "SQConfiguration.h"
 
 @interface Sqwiggle : NSObject
 
@@ -25,6 +26,8 @@
                            password:(NSString *) password
                             success:(void (^)(BOOL user))success
                             failure:(void (^)(NSError *error))failure;
+
++(void) startSqwigglingWithAuthenticationToken:(NSString *)authToken;
 
 //Removes Sqwiggle data from local device
 +(void) stopSqwiggling;
@@ -138,7 +141,7 @@
  * Returns configuration information for Sqwiggle clients, such as where to store file uploads, 
  * limits, ice servers and other misc details that are required.
  */ 
-+(void) configurationInfoForCurrentSession:(void (^)(NSMutableDictionary *))success
++(void) configurationInfoForCurrentSession:(void (^)(SQConfiguration *))success
                                    failure:(void (^)(NSError *error))failure;
 
 @end

@@ -34,7 +34,6 @@
     
     NSString *url = [NSString stringWithFormat:@"%@/%@/%@", SQWIGGLE_URI_API,
                      relativeURL, (ID ? ID : @"")];
-    NSLog(@"%@", url);
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
     [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
@@ -43,10 +42,19 @@
         if (!ID)
         {
             NSMutableArray *responseObjects = [NSMutableArray new];
-            [responseObject each:^(id object) {
-                [responseObjects push:[NSClassFromString(type) objectWithDictionary:object]];
-            }];
-            success(responseObjects);
+            
+            if ([responseObject respondsToSelector:@selector(objectForKey:)])
+            {
+                success([NSClassFromString(type) objectWithDictionary:responseObject]);
+            }
+            
+            else
+            {
+                [responseObject each:^(id object) {
+                    [responseObjects push:[NSClassFromString(type) objectWithDictionary:object]];
+                }];
+                success(responseObjects);
+            }
         }
         else
         {

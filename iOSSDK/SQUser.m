@@ -61,7 +61,6 @@
 
 -(BOOL) isEqual:(id)object
 {
-    NSLog(@"%@ object %@ self", self.ID, ((SQUser *)object).ID);
     return [self.ID isEqualToNumber:((SQUser *)object).ID];
 }
 

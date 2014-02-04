@@ -12,7 +12,7 @@
 {
     NSMutableArray *_iceServers;
     NSMutableDictionary *_storage;
-    NSNumber *_maxUploadFilesize;
+    NSString *_maxUploadFilesize;
 }
 
 @end

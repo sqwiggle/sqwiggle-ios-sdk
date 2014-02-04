@@ -13,6 +13,8 @@
 #define SQWIGGLE_CURRENT_USER @"SQWIGGLE_CURRENT_USER"
 #define SQWIGGLE_USER_ROOMS @"SQWIGGLE_CURRENT_ROOMS"
 
+#define ME @"me"
+
 @interface Sqwiggle ()
 
 /* Private Method Declaration */
@@ -37,13 +39,17 @@
     [manager POST:url parameters:authInfo
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              [self setAuthToken:[responseObject objectForKey:tokenKey]];
-             NSLog(@"%@ auth token", responseObject);
              success(YES);
 
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"ugh error %@", error);
         failure(error);
     }];
+}
+
++(void) startSqwigglingWithAuthenticationToken:(NSString *)authToken
+{
+    [self setAuthToken:authToken];
 }
 
 +(void) stopSqwiggling
@@ -62,7 +68,7 @@
                failure:(void (^)(NSError *error))failure
 {
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_USER_TYPE
-                                byID:@"me"
+                                byID:ME
                        withAuthToken:[self authToken]
                              success:^(id item) {
                                  [Sqwiggle setCurrentUser:item];
@@ -192,10 +198,10 @@
 
 #pragma mark Configuration Methods
 
-+(void) configurationInfoForCurrentSession:(void (^)(NSMutableDictionary *))success
++(void) configurationInfoForCurrentSession:(void (^)(SQConfiguration *))success
                                    failure:(void (^)(NSError *))failure
 {
-    [SQJuggernaut retreiveItemsOfType:SQWIGGLE_INVITE_TYPE
+    [SQJuggernaut retreiveItemsOfType:SQWIGGLE_CONFIGURATION_TYPE
                         withAuthToken:[self authToken]
                               success:success
                               failure:failure];
