@@ -28,7 +28,7 @@
 
 +(NSDictionary *) fakeRooms
 {
-    NSString *resp = @"[{\"id\":1,\"user_id\":10,\"name\":\"\",\"created_at\":\"2013-07-06T20:26:59Z\",\"path\":\"\",\"user_count\":5},{\"id\":1398,\"user_id\":12,\"name\":\"Marketing\",\"created_at\":\"2013-08-19T20:34:24Z\",\"path\":\"marketing\",\"user_count\":0},{\"id\":2,\"user_id\":10,\"name\":\"Meetings\",\"created_at\":\"2013-07-06T20:36:37Z\",\"path\":\"meetings\",\"user_count\":0},{\"id\":128,\"user_id\":2,\"name\":\"San Francisco\",\"created_at\":\"2013-07-08T17:51:03Z\",\"path\":\"sanfrancisco\",\"user_count\":0},{\"id\":1405,\"user_id\":10145,\"name\":\"Social Leverage \",\"created_at\":\"2013-08-20T04:23:43Z\",\"path\":\"socialleverage\",\"user_count\":0}]";
+    NSString *resp = @"[{\"id\":4159,\"user_id\":15551,\"name\":\"CamDizzle-Test\",\"created_at\":\"2013-12-09T21:05:52Z\",\"path\":\"\",\"user_count\":0},{\"id\":6371,\"user_id\":12466,\"name\":\"CatPhanzOnlyLOLOLOL\",\"created_at\":\"2014-02-05T22:06:03Z\",\"path\":\"catphanzonlylololol\",\"user_count\":0},{\"id\":6372,\"user_id\":12466,\"name\":\"SavetheCheese\",\"created_at\":\"2014-02-05T22:06:10Z\",\"path\":\"savethecheese\",\"user_count\":0}]";
     NSData *data = [resp dataUsingEncoding:NSUTF8StringEncoding];
     return [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 }
