@@ -122,7 +122,7 @@
     WaitUntilBlockCompletes();
 }
 
-- (void)testGetStreamItems
+- (void)testGetMessages
 {
     [self testAuth];
     
@@ -137,13 +137,13 @@
     waitingForBlock = YES;
     
     [Sqwiggle messagesForRoomID:@1
-                                   success:^(NSArray *items) {
-                                       EndBlock();
-                                       XCTAssertTrue(YES, @"Did succeed");
-                                   } failure:^(NSError *error) {
-                                       EndBlock();
-                                    XCTFail(@"Error returned for test %@", error);
-                                   }];
+                        success:^(NSArray *items) {
+                           EndBlock();
+                           XCTAssertTrue(YES, @"Did succeed");
+                        } failure:^(NSError *error) {
+                           EndBlock();
+                        XCTFail(@"Error returned for test %@", error);
+                        }];
     
     WaitUntilBlockCompletes();
 }

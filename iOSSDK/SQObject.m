@@ -15,17 +15,26 @@
 
 -(id) initObjectWithDictionary:(NSDictionary *)dictionary
 {
-    self = [super init];
+    if (!self)
+        self = [super init];
+    
     if (self != nil)
     {
         //Keys are set by names of classes in SQConstants
-        _relativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:NSStringFromClass([self class])];
-        [[self modelDefinition] each:^(id key, id value)
-        {
-            [self setValue:[dictionary valueForKeyPath:value] forKey:key];
-        }];
+        [self mapObject:self withValues:dictionary];
     }
     return self;
+}
+
+-(id) mapObject:(id)object withValues:(NSDictionary *)dictionary
+{
+    _relativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:NSStringFromClass([object class])];
+    [[object modelDefinition] each:^(id key, id value)
+     {
+         [object setValue:[dictionary valueForKeyPath:value] forKey:key];
+     }];
+    
+    return object;
 }
 
 //Short-hand init
@@ -56,9 +65,48 @@
 }
 
 #pragma mark Make life better methods
--(void) save
+-(void) save:(void (^)(id object))success
+     failure:(void (^)(NSError *error))failure
 {
-    #warning Not Fully Implemented
+    NSString *url;
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
+    [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
+    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:[Sqwiggle authToken]
+                                                              password:SUPER_SECRET_PASSWORD];
+    if (_ID)
+    {
+        url = [NSString stringWithFormat:@"%@/%@/%@", SQWIGGLE_URI_API, _relativeURL, _ID];
+        [manager PUT:url
+          parameters:[self dictionaryFormat]
+             success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                 success(responseObject);
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            failure(failure);
+        }];
+    }
+    else
+    {
+        //No ID. Let's attempt to create a new one.
+        url = [NSString stringWithFormat:@"%@/%@", SQWIGGLE_URI_API, _relativeURL];
+        [manager POST:url
+          parameters:[self dictionaryFormat]
+             success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                 [self mapObject:self withValues:responseObject];
+                 success(responseObject);
+                 
+             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                 failure(failure);
+             }];
+    }
+    
+}
+
+-(void) delete:(void (^)(void))success
+       failure:(void (^)(NSError *error))failure
+{
     NSString *url = [NSString stringWithFormat:@"%@/%@/%@", SQWIGGLE_URI_API, _relativeURL, _ID];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -66,15 +114,15 @@
     [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
     [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:[Sqwiggle authToken]
                                                               password:SUPER_SECRET_PASSWORD];
-    [manager PUT:url
+    [manager DELETE:url
       parameters:[self dictionaryFormat]
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-    }];
+             success();
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             failure(failure);
+         }];
 }
-
+#pragma mark NSObject methods for storage/etc
 - (void)encodeWithCoder:(NSCoder *)coder {
     NSMutableDictionary *encodeDictionary = [NSMutableDictionary new];
     [[self modelDefinition] each:^(id key, id value) {
@@ -98,6 +146,7 @@
     return self;
 }
 
+#pragma mark SQObject Description method
 - (NSString *)description {
     return [NSString stringWithFormat:@"%@ - ID: %@", [self class], self.ID];
 }

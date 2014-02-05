@@ -37,4 +37,19 @@
 //Returns mapping of variables to api keys.
 -(NSDictionary *) modelDefinition;
 
+#pragma mark API State Methods
+/* 
+ * Updates current object or saves new one in database.
+ * Note that changes made via the API will be immediately reflected in the interface
+ * of all connected clients.
+ */
+-(void) save:(void (^)(id object))success
+     failure:(void (^)(NSError *error))failure;
+
+/*
+ * Removes object.
+ */
+-(void) delete:(void (^)(void))success
+       failure:(void (^)(NSError *error))failure;
+
 @end

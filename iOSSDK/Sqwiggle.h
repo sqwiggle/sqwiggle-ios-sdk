@@ -75,9 +75,8 @@
  * Returns a list of all attachments in the current organization. 
  * The attachments are returned in reverse date order by default.
  */
-+(void) allAttachmentsWithLimit:(NSNumber *)limit
-                        success:(void (^)(NSArray *rooms))success
-                        failure:(void (^)(NSError *error))failure;
++(void) allAttachments:(void (^)(NSArray *))success
+               failure:(void (^)(NSError *))failure;
 
 
 #pragma mark Room Methods

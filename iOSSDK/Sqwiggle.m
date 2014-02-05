@@ -13,13 +13,11 @@
 #define SQWIGGLE_CURRENT_USER @"SQWIGGLE_CURRENT_USER"
 #define SQWIGGLE_USER_ROOMS @"SQWIGGLE_CURRENT_ROOMS"
 
-#define ME @"me"
+
 
 @interface Sqwiggle ()
 
 /* Private Method Declaration */
-+(SQUser *) currentUser;
-+(NSString *) authToken;
 +(void) setAuthToken:(NSString *)authToken;
 +(void) setCurrentUser:(SQUser *)currentUser;
 @end
@@ -32,17 +30,17 @@
                             failure:(void (^)(NSError *error))failure
 {
     static NSString *tokenKey = @"token";
-
+    static NSString *emailKey = @"email";
+    static NSString *passwordKey = @"password";
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSString *url = NSStringWithFormat(@"%@/auth/token", SQWIGGLE_URI_API);
-    NSDictionary *authInfo = @{@"email": username, @"password": password};
+    NSDictionary *authInfo = @{emailKey: username, passwordKey: password};
     [manager POST:url parameters:authInfo
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              [self setAuthToken:[responseObject objectForKey:tokenKey]];
              success(YES);
-
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"ugh error %@", error);
         failure(error);
     }];
 }
@@ -67,8 +65,10 @@
 +(void) currentUserForSession:(void (^)(SQUser *user))success
                failure:(void (^)(NSError *error))failure
 {
+    static NSString *me = @"me";
+    
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_USER_TYPE
-                                byID:ME
+                                byID:me
                        withAuthToken:[self authToken]
                              success:^(id item) {
                                  [Sqwiggle setCurrentUser:item];
@@ -98,6 +98,15 @@
 }
 
 #pragma mark Attachment Methods
++(void) allAttachments:(void (^)(NSArray *))success
+               failure:(void (^)(NSError *))failure
+{
+    [SQJuggernaut retreiveItemsOfType:SQWIGGLE_ATTACHMENT_TYPE
+                        withAuthToken:[self authToken]
+                              success:success
+                              failure:failure];
+}
+
 +(void) getAttachmentByID:(NSNumber *)ID
                   success:(void (^)(SQAttachment *attachment))success
                   failure:(void (^)(NSError *error))failure
