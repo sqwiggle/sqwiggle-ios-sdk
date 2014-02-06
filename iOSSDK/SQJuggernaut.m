@@ -12,7 +12,8 @@
 @implementation SQJuggernaut
 
 +(void) retreiveItemsOfType:(SQWIGGLE_TYPE)type
-              authToken:(id)auth
+                  authToken:(id)auth
+                 parameters:(NSDictionary *)parameters
                     success:(void (^)(id items))success
                     failure:(void (^)(NSError *error))failure
 {
@@ -25,6 +26,7 @@
 
 +(void) retreiveItemOfType:(SQWIGGLE_TYPE)type
                       byID:(id)ID
+                parameters:(NSDictionary *)parameters
              authToken:(NSString *)auth
                    success:(void (^)(id item))success
                    failure:(void (^)(NSError *error))failure
@@ -37,7 +39,7 @@
     [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
     [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
     [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:auth password:SUPER_SECRET_PASSWORD];
-    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (!ID)
         {
             NSMutableArray *responseObjects = [NSMutableArray new];
