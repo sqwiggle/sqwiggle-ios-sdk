@@ -200,6 +200,7 @@
                   success:(void (^)(NSArray *))success
                   failure:(void (^)(NSError *))failure
 {
+    //Yep, this is hacky with messages for room, but gets the job done
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_ROOM_TYPE
                                 byID:NSStringWithFormat(@"%@/messages", ID)
                            parameters:@{@"limit": (limit ? limit : @""), \

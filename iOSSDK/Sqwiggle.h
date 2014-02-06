@@ -22,7 +22,9 @@
 
 #pragma Sqwiggle Session Methods
 
-//Initializes Sqwiggle API Session Locally.
+/*
+ * Initializes Sqwiggle API Session Locally.
+ */
 +(void) startSqwigglingWithUsername:(NSString *) username
                            password:(NSString *) password
                             success:(void (^)(BOOL user))success
@@ -30,38 +32,57 @@
 
 +(void) startSqwigglingWithAuthenticationToken:(NSString *)authToken;
 
-//Removes Sqwiggle data from local device
+/*
+ * Removes Sqwiggle data from local device
+ */
 +(void) stopSqwiggling;
 
-//Checks to see if valid authentication token exists
+/*
+ * Checks to see if valid authentication token exists
+ */
 +(BOOL) isLoggedIn;
 
-//Current authentication token
+/*
+ * Current authentication token
+ */
 +(NSString *) authToken;
 
 
 #pragma mark User Methods
 
-//Current user, stored locally. If nil, call getCurrentUser and currentUser will be automatically updated
+/*
+ * Current user, stored locally. If nil, call getCurrentUser and currentUser will be automatically updated
+ */
 +(SQUser *) currentUser;
 
-//Current rooms, stored locally. If nil, call allRooms and the variable will be automatically updated.
+/*
+ *Current rooms, stored locally. If nil, call allRooms and the variable will be automatically updated.
+ */
 +(NSArray *) currentUserRooms;
 
-//Retreives authenticated user, if authentication with username/pw has been used.
+/*
+ * Retreives authenticated user, if authentication with username/pw has been used.
+ */
 +(void) currentUserForSession:(void (^)(SQUser *user))success
                       failure:(void (^)(NSError *error))failure;
 
-//Retreives specific user.
+/*
+ * Retreives specific user.
+ */
 +(void) userWithID:(NSNumber *)ID
            success:(void (^)(SQUser *user))success
            failure:(void (^)(NSError *error))failure;
                         
-//Retreives all users accessible via current authenticated session.
+/* 
+ * Retreives all users accessible via current authenticated session.
+ */
 +(void) allUsers:(void (^)(NSArray *users))success
          failure:(void (^)(NSError *error))failure;
 
-//Retreives all users accessible via current authenticated session with the option to limit # of objects return.
+/*
+ * Retreives all users accessible via current authenticated session with the option to limit # of objects return.
+ * Able to limit number of items returned, as well as being able to set page number.
+ */
 +(void) allUsersWithLimit:(NSNumber *)limit
             andPageNumber:(NSNumber *) pageNumber
                   success:(void (^)(NSArray *users))success
@@ -86,6 +107,7 @@
 
 /*
  * Returns a list of all attachments in the current organization. 
+ * Able to limit number of items returned, as well as being able to set page number.
  * The attachments are returned in reverse date order by default.
  */
 +(void) allAttachmentsWithLimit:(NSNumber *)limit
@@ -113,17 +135,24 @@
 /*
  * Returns a list of all rooms in the current organization. 
  * The rooms are returned in sorted alphabetical order by default.
+ * Able to limit number of items returned, as well as being able to set page number.
  */
 +(void) allRoomsWithLimit:(NSNumber *)limit
             andPageNumber:(NSNumber *) pageNumber
                   success:(void (^)(NSArray *))success
                   failure:(void (^)(NSError *))failure;
 
-//Retreives all Messages associated with RoomID
+/*
+ * Retreives all Messages associated with RoomID
+ */
 +(void) messagesForRoomID:(NSNumber *)ID
                   success:(void (^)(NSArray *user))success
                   failure:(void (^)(NSError *error))failure;
 
+/*
+ * Retreives all Messages associated with RoomID
+ * Able to limit number of items returned, as well as being able to set page number.
+ */
 +(void) messagesForRoomID:(NSNumber *)ID
                 withLimit:(NSNumber *)limit
             andPageNumber:(NSNumber *) pageNumber
@@ -131,13 +160,23 @@
                   failure:(void (^)(NSError *))failure;
 
 #pragma mark Message Methods
+/*
+ * Retreives specific message for session.
+ */
 +(void) messageWithID:(NSNumber *)ID
               success:(void (^)(SQMessage *room))success
               failure:(void (^)(NSError *error))failure;
 
+/*
+ * Retreives all Messages for session
+ */
 +(void) allMessages:(void (^)(NSArray *))success
             failure:(void (^)(NSError *))failure;
 
+/*
+ * Retreives all Messages for session
+ * Able to limit number of items returned, as well as being able to set page number.
+ */
 +(void) allMessagesWithLimit:(NSNumber *)limit
                andPageNumber:(NSNumber *) pageNumber
                      success:(void (^)(NSArray *))success
@@ -171,6 +210,7 @@
 /*
  * Returns a list of all conversations within the organization
  * associated with the provided token. This includes both finished and ongoing.
+ * Able to limit number of items returned, as well as being able to set page number.
  */
 +(void) allConversationsWithLimit:(NSNumber *)limit
                     andPageNumber:(NSNumber *) pageNumber
@@ -196,6 +236,7 @@
 
 /*
  * Returns a list of all outstanging invites in the current organization.
+ * Able to limit number of items returned, as well as being able to set page number.
  */
 +(void) allInvitesWithLimit:(NSNumber *)limit
               andPageNumber:(NSNumber *) pageNumber
