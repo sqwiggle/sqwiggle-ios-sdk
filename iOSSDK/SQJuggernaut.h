@@ -18,15 +18,15 @@
 
 /* Retreival Methods */
 +(void) retreiveItemsOfType:(SQWIGGLE_TYPE)type
-                  authToken:(id)auth
                  parameters:(NSDictionary *)parameters
+                  authToken:(id)auth
                     success:(void (^)(id items))success
                     failure:(void (^)(NSError *error))failure;
 
 +(void) retreiveItemOfType:(SQWIGGLE_TYPE)type
                       byID:(id)ID
-                 authToken:(NSString *)auth
                 parameters:(NSDictionary *)parameters
+                 authToken:(NSString *)auth
                    success:(void (^)(id item))success
                    failure:(void (^)(NSError *error))failure;
 

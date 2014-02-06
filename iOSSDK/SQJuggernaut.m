@@ -19,7 +19,8 @@
 {
     [self retreiveItemOfType:type
                         byID:nil
-               authToken:auth
+                  parameters:parameters
+                   authToken:auth
                      success:success
                      failure:failure];
 }
@@ -27,7 +28,7 @@
 +(void) retreiveItemOfType:(SQWIGGLE_TYPE)type
                       byID:(id)ID
                 parameters:(NSDictionary *)parameters
-             authToken:(NSString *)auth
+                 authToken:(NSString *)auth
                    success:(void (^)(id item))success
                    failure:(void (^)(NSError *error))failure
 {

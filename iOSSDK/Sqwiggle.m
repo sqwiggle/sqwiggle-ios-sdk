@@ -14,7 +14,6 @@
 #define SQWIGGLE_USER_ROOMS @"SQWIGGLE_CURRENT_ROOMS"
 
 
-
 @interface Sqwiggle ()
 
 /* Private Method Declaration */
@@ -69,6 +68,7 @@
     
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_USER_TYPE
                                 byID:me
+                          parameters:nil
                        authToken:[self authToken]
                              success:^(id item) {
                                  [Sqwiggle setCurrentUser:item];
@@ -78,10 +78,23 @@
 }
 
 +(void) allUsers:(void (^)(NSArray *users))success
-            failure:(void (^)(NSError *error))failure
+         failure:(void (^)(NSError *error))failure
+{
+    [self allUsersWithLimit:nil
+              andPageNumber:nil
+                    success:success
+                    failure:failure];
+}
+
++(void) allUsersWithLimit:(NSNumber *)limit
+            andPageNumber:(NSNumber *) pageNumber
+                  success:(void (^)(NSArray *users))success
+                  failure:(void (^)(NSError *error))failure
 {
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_USER_TYPE
-                        authToken:[self authToken]
+                           parameters: @{@"limit": (limit ? limit : @""), \
+                                         @"page": (pageNumber ? pageNumber : @"")}
+                            authToken:[self authToken]
                               success:success
                               failure:failure];
 }
@@ -92,6 +105,7 @@
 {
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_USER_TYPE
                                 byID:ID
+                          parameters:nil
                        authToken:[self authToken]
                              success:success
                              failure:failure];

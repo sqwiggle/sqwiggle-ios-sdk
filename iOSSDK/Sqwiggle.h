@@ -48,18 +48,24 @@
 //Current rooms, stored locally. If nil, call allRooms and the variable will be automatically updated.
 +(NSArray *) currentUserRooms;
 
-//Retreives authenticated user
+//Retreives authenticated user, if authentication with username/pw has been used.
 +(void) currentUserForSession:(void (^)(SQUser *user))success
                       failure:(void (^)(NSError *error))failure;
 
-//Retreives all users associated with authenticated user.
+//Retreives specific user.
 +(void) userWithID:(NSNumber *)ID
            success:(void (^)(SQUser *user))success
            failure:(void (^)(NSError *error))failure;
                         
-//Retreives all users associated with authenticated user.
+//Retreives all users accessible via current authenticated session.
 +(void) allUsers:(void (^)(NSArray *users))success
          failure:(void (^)(NSError *error))failure;
+
+//Retreives all users accessible via current authenticated session with the option to limit # of objects return.
++(void) allUsersWithLimit:(NSNumber *)limit
+            andPageNumber:(NSNumber *) pageNumber
+                  success:(void (^)(NSArray *users))success
+                  failure:(void (^)(NSError *error))failure;
 
 
 #pragma mark Attachment Methods
