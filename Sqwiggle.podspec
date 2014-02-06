@@ -1,14 +1,8 @@
-#
-# Be sure to run `pod spec lint NAME.podspec' to ensure this is a
-# valid spec and remove all comments before submitting the spec.
-#
-# To learn more about the attributes see http://docs.cocoapods.org/specification.html
-#
 Pod::Spec.new do |s|
   s.name         = "Sqwiggle"
   s.version      = "0.1.0"
-  s.summary      = "A short description of Sqwiggle."
-  s.homepage     = "http://www.sqwiggle.com"
+  s.summary      = "Objective-C Wrapper for Sqwiggle API"
+  s.homepage     = "https://www.sqwiggle.com"
   s.license      = 'MIT'
   s.author       = { "Cameron Webb" => "cameron@sqwiggle.com" }
   s.source       = { :git => "https://github.com/sqwiggle/sqwiggle-ios-sdk.git", :tag => s.version.to_s }
