@@ -107,9 +107,9 @@
                               failure:failure];
 }
 
-+(void) getAttachmentByID:(NSNumber *)ID
-                  success:(void (^)(SQAttachment *attachment))success
-                  failure:(void (^)(NSError *error))failure
++(void) attachmentByID:(NSNumber *)ID
+               success:(void (^)(SQAttachment *attachment))success
+               failure:(void (^)(NSError *error))failure
 {
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_ATTACHMENT_TYPE
                                 byID:ID
@@ -171,6 +171,17 @@
                    failure:(void (^)(NSError *))failure
 {
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_ORGANIZATION_TYPE
+                                byID:ID
+                       withAuthToken:[self authToken]
+                             success:success
+                             failure:failure];
+}
+#pragma mark Message Methods
++(void) messageWithID:(NSNumber *)ID
+              success:(void (^)(SQMessage *room))success
+              failure:(void (^)(NSError *error))failure
+{
+    [SQJuggernaut retreiveItemOfType:SQWIGGLE_MESSAGE_TYPE
                                 byID:ID
                        withAuthToken:[self authToken]
                              success:success

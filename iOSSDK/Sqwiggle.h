@@ -67,9 +67,9 @@
  * Updates the specified attachment by setting the values of the parameters passed. 
  * Note that changes made via the API will be immediately reflected in the interface of all connected clients.
  */
-+(void) getAttachmentByID:(NSNumber *)ID
-                  success:(void (^)(SQAttachment *attachment))success
-                  failure:(void (^)(NSError *error))failure;
++(void) attachmentByID:(NSNumber *)ID
+               success:(void (^)(SQAttachment *attachment))success
+               failure:(void (^)(NSError *error))failure;
 
 /*
  * Returns a list of all attachments in the current organization. 
@@ -100,6 +100,11 @@
 +(void) messagesForRoomID:(NSNumber *)ID
                   success:(void (^)(NSArray *user))success
                   failure:(void (^)(NSError *error))failure;
+#pragma mark Message Methods
++(void) messageWithID:(NSNumber *)ID
+              success:(void (^)(SQMessage *room))success
+              failure:(void (^)(NSError *error))failure;
+
 
 
 #pragma mark Organization Methods
