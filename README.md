@@ -2,9 +2,6 @@
 
 Sqwiggle SDK for iOS
 ================
-
-Documentation coming soon. Code is a Work in Progress, but feel free to start playing around if you wish!
-
 This is an Objective-C wrapper for the Sqwiggle API. Right now, we only support iOS, but in a short while we'll officially add support for Mac OS X as well.
 
 Installation
