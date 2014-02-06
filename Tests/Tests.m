@@ -131,7 +131,7 @@
         return [request.URL.relativePath containsString:@"rooms"] &&
         [request.URL.relativePath containsString:@"messages"];
     } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
-        return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeStreamItems] statusCode:200 headers:nil]
+        return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeMessages] statusCode:200 headers:nil]
                 requestTime:1.0 responseTime:1.0];
     }];
     waitingForBlock = YES;
