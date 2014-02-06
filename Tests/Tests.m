@@ -122,14 +122,37 @@
     WaitUntilBlockCompletes();
 }
 
+- (void)testGetMessage
+{
+    [self testAuth];
+    
+    StartBlock();
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return [request.URL.relativePath containsString:@"messages"];
+    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+        return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeMessage] statusCode:200 headers:nil]
+                requestTime:1.0 responseTime:1.0];
+    }];
+    waitingForBlock = YES;
+    
+    [Sqwiggle messageWithID:@1
+                        success:^(SQMessage *message) {
+                            EndBlock();
+                            XCTAssertTrue(YES, @"Did succeed");
+                        } failure:^(NSError *error) {
+                            EndBlock();
+                            XCTFail(@"Error returned for test %@", error);
+                        }];
+    
+    WaitUntilBlockCompletes();
+}
 - (void)testGetMessages
 {
     [self testAuth];
     
     StartBlock();
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-        return [request.URL.relativePath containsString:@"rooms"] &&
-        [request.URL.relativePath containsString:@"messages"];
+        return [request.URL.relativePath containsString:@"messages"];
     } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
         return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeMessages] statusCode:200 headers:nil]
                 requestTime:1.0 responseTime:1.0];
@@ -144,6 +167,57 @@
                            EndBlock();
                         XCTFail(@"Error returned for test %@", error);
                         }];
+    
+    WaitUntilBlockCompletes();
+}
+
+-(void)testAttachment
+{
+    [self testAuth];
+    
+    StartBlock();
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return [request.URL.relativePath containsString:@"rooms"] &&
+        [request.URL.relativePath containsString:@"messages"];
+    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+        return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeAttachment] statusCode:200 headers:nil]
+                requestTime:1.0 responseTime:1.0];
+    }];
+    waitingForBlock = YES;
+    
+    [Sqwiggle attachmentByID:@1 success:^(SQAttachment *attachment) {
+        EndBlock();
+        XCTAssertTrue(YES, @"Did succeed");
+    } failure:^(NSError *error) {
+        EndBlock();
+        XCTFail(@"Error returned for test %@", error);
+    }];
+    
+    WaitUntilBlockCompletes();
+}
+
+-(void)testConversation
+{
+    //fakeConversation
+    [self testAuth];
+    
+    StartBlock();
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return [request.URL.relativePath containsString:@"rooms"] &&
+        [request.URL.relativePath containsString:@"messages"];
+    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+        return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeAttachment] statusCode:200 headers:nil]
+                requestTime:1.0 responseTime:1.0];
+    }];
+    waitingForBlock = YES;
+    
+    [Sqwiggle attachmentByID:@1 success:^(SQAttachment *attachment) {
+        EndBlock();
+        XCTAssertTrue(YES, @"Did succeed");
+    } failure:^(NSError *error) {
+        EndBlock();
+        XCTFail(@"Error returned for test %@", error);
+    }];
     
     WaitUntilBlockCompletes();
 }

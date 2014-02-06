@@ -148,6 +148,7 @@
                              success:(void (^)(NSArray *))success
                              failure:(void (^)(NSError *))failure
 {
+#warning needs to be updated for parameter-based structure
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_MESSAGE_TYPE
                        filteredByType:SQWIGGLE_ROOM_TYPE
                                withID:ID
