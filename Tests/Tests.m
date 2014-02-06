@@ -209,7 +209,7 @@
     }];
     waitingForBlock = YES;
     
-    [Sqwiggle attachmentByID:@1 success:^(SQAttachment *attachment) {
+    [Sqwiggle conversationWithID:@1 success:^(SQConversation *attachment) {
         EndBlock();
         XCTAssertTrue(YES, @"Did succeed");
     } failure:^(NSError *error) {
@@ -217,6 +217,30 @@
         XCTFail(@"Error returned for test %@", error);
     }];
     
+    WaitUntilBlockCompletes();
+}
+
+-(void)testConversations
+{
+    //fakeConversation
+    [self testAuth];
+    
+    StartBlock();
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return [request.URL.relativePath containsString:@"conversations"];
+    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+        return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeConversations] statusCode:200 headers:nil]
+                requestTime:1.0 responseTime:1.0];
+    }];
+    waitingForBlock = YES;
+    
+    [Sqwiggle allConversations:^(NSArray *conversations) {
+        EndBlock();
+        XCTAssertTrue(YES, @"Did succeed");
+    } failure:^(NSError *error) {
+        EndBlock();
+        XCTFail(@"Error returned for test %@", error);
+    }];
     WaitUntilBlockCompletes();
 }
 
