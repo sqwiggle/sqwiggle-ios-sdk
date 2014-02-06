@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <ObjectiveSugar/ObjectiveSugar.h>
-#import "SQObject.h"
 #import "SQOrganization.h"
 #import "SQUser.h"
 #import "SQMessage.h"
