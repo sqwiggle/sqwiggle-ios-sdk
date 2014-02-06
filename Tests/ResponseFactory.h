@@ -13,11 +13,12 @@
 +(NSDictionary *) fakeUserResponse;
 +(NSDictionary *) fakeUsers;
 +(NSDictionary *) fakeRooms;
++(NSDictionary *) fakeMessage;
 +(NSDictionary *) fakeMessages;
 +(NSDictionary *) fakeAttachment;
 +(NSDictionary *) fakeConversation;
-+(NSDictionary *) fakeInvite;
-+(NSDictionary *) fakeOrganization;
++(NSDictionary *) fakeConversations;
++(NSDictionary *) fakeOrganizations;
 +(NSDictionary *) fakeConfiguration;
 
 @end
