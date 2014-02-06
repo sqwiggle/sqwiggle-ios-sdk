@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Sqwiggle. All rights reserved.
 //
 
-#define SQWIGGLE_SDK_VERION @"0.0.1"
+#define SQWIGGLE_SDK_VERION @"0.1.0"
 
 #define ENVIRONMENT_PRODUCTION @"production"
 
