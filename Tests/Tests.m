@@ -146,7 +146,7 @@
     
     WaitUntilBlockCompletes();
 }
-- (void)testGetMessages
+- (void)testGetAllMessages
 {
     [self testAuth];
     
@@ -177,8 +177,7 @@
     
     StartBlock();
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-        return [request.URL.relativePath containsString:@"rooms"] &&
-        [request.URL.relativePath containsString:@"messages"];
+        return [request.URL.relativePath containsString:@"attachments"];
     } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
         return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeAttachment] statusCode:200 headers:nil]
                 requestTime:1.0 responseTime:1.0];
@@ -203,10 +202,9 @@
     
     StartBlock();
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-        return [request.URL.relativePath containsString:@"rooms"] &&
-        [request.URL.relativePath containsString:@"messages"];
+        return [request.URL.relativePath containsString:@"conversations"];
     } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
-        return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeAttachment] statusCode:200 headers:nil]
+        return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeConversation] statusCode:200 headers:nil]
                 requestTime:1.0 responseTime:1.0];
     }];
     waitingForBlock = YES;
@@ -220,6 +218,28 @@
     }];
     
     WaitUntilBlockCompletes();
+}
+
+-(void)testGetAllInvites
+{
+    [self testAuth];
+    
+    StartBlock();
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return [request.URL.relativePath containsString:@"invites"];
+    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+        return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeAttachment] statusCode:200 headers:nil]
+                requestTime:1.0 responseTime:1.0];
+    }];
+    waitingForBlock = YES;
+    
+    [Sqwiggle allInvites:^(NSArray *invites) {
+        EndBlock();
+        XCTAssertTrue(YES, @"Did succeed");
+    } failure:^(NSError *error) {
+        EndBlock();
+        XCTFail(@"Error returned for test %@", error);
+    }];
 }
 
 @end

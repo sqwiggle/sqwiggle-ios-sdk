@@ -18,28 +18,13 @@
 
 /* Retreival Methods */
 +(void) retreiveItemsOfType:(SQWIGGLE_TYPE)type
-              withAuthToken:(NSString *)auth
+              authToken:(NSString *)auth
                     success:(void (^)(id items))success
                     failure:(void (^)(NSError *error))failure;
 
 +(void) retreiveItemOfType:(SQWIGGLE_TYPE)type
                       byID:(id)ID
-             withAuthToken:(NSString *)auth
-                   success:(void (^)(id item))success
-                   failure:(void (^)(NSError *error))failure;
-
-+(void) retreiveItemsOfType:(SQWIGGLE_TYPE)type
-             filteredByType:(SQWIGGLE_TYPE)filterType
-                     withID:(NSNumber *)filterID
-              withAuthToken:(NSString *)auth
-                    success:(void (^)(NSArray *items))success
-                    failure:(void (^)(NSError *error))failure;
-
-+(void) retreiveItemOfType:(SQWIGGLE_TYPE)type
-                      byID:(id)ID
-            filteredByType:(SQWIGGLE_TYPE)filterType
-                    withID:filterID
-             withAuthToken:(NSString *)auth
+             authToken:(NSString *)auth
                    success:(void (^)(id item))success
                    failure:(void (^)(NSError *error))failure;
 

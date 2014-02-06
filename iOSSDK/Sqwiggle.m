@@ -69,7 +69,7 @@
     
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_USER_TYPE
                                 byID:me
-                       withAuthToken:[self authToken]
+                       authToken:[self authToken]
                              success:^(id item) {
                                  [Sqwiggle setCurrentUser:item];
                                  success(item);
@@ -81,7 +81,7 @@
             failure:(void (^)(NSError *error))failure
 {
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_USER_TYPE
-                        withAuthToken:[self authToken]
+                        authToken:[self authToken]
                               success:success
                               failure:failure];
 }
@@ -92,7 +92,7 @@
 {
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_USER_TYPE
                                 byID:ID
-                       withAuthToken:[self authToken]
+                       authToken:[self authToken]
                              success:success
                              failure:failure];
 }
@@ -102,7 +102,7 @@
                failure:(void (^)(NSError *))failure
 {
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_ATTACHMENT_TYPE
-                        withAuthToken:[self authToken]
+                        authToken:[self authToken]
                               success:success
                               failure:failure];
 }
@@ -113,7 +113,7 @@
 {
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_ATTACHMENT_TYPE
                                 byID:ID
-                       withAuthToken:[self authToken]
+                       authToken:[self authToken]
                              success:success
                              failure:failure];
 }
@@ -124,7 +124,7 @@
          failure:(void (^)(NSError *))failure
 {
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_ROOM_TYPE
-                        withAuthToken:[self authToken]
+                        authToken:[self authToken]
                               success:^(NSArray *items) {
                                   //storing rooms for quicker access
                                   [Sqwiggle setCurrentUserRooms:items];
@@ -139,7 +139,7 @@
 {
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_ROOM_TYPE
                                 byID:ID
-                       withAuthToken:[self authToken]
+                       authToken:[self authToken]
                              success:success
                              failure:failure];
 }
@@ -162,7 +162,7 @@
                  failure:(void (^)(NSError *))failure
 {
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_ORGANIZATION_TYPE
-                        withAuthToken:[self authToken]
+                        authToken:[self authToken]
                               success:success
                               failure:failure];
 }
@@ -173,7 +173,7 @@
 {
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_ORGANIZATION_TYPE
                                 byID:ID
-                       withAuthToken:[self authToken]
+                       authToken:[self authToken]
                              success:success
                              failure:failure];
 }
@@ -184,7 +184,7 @@
 {
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_MESSAGE_TYPE
                                 byID:ID
-                       withAuthToken:[self authToken]
+                       authToken:[self authToken]
                              success:success
                              failure:failure];
 }
@@ -194,7 +194,7 @@
                  failure:(void (^)(NSError *))failure
 {
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_CONVERSATION_TYPE
-                        withAuthToken:[self authToken]
+                        authToken:[self authToken]
                               success:success
                               failure:failure];
 }
@@ -203,7 +203,7 @@
 {
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_CONVERSATION_TYPE
                                 byID:ID
-                       withAuthToken:[self authToken]
+                       authToken:[self authToken]
                              success:success
                              failure:failure];
 }
@@ -213,7 +213,7 @@
            failure:(void (^)(NSError *))failure
 {
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_INVITE_TYPE
-                        withAuthToken:[self authToken]
+                        authToken:[self authToken]
                               success:success
                               failure:failure];
 }
@@ -224,7 +224,7 @@
 {
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_INVITE_TYPE
                                 byID:ID
-                       withAuthToken:[self authToken]
+                       authToken:[self authToken]
                              success:success
                              failure:failure];
 }
@@ -235,7 +235,7 @@
                                    failure:(void (^)(NSError *))failure
 {
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_CONFIGURATION_TYPE
-                        withAuthToken:[self authToken]
+                        authToken:[self authToken]
                               success:success
                               failure:failure];
 }
