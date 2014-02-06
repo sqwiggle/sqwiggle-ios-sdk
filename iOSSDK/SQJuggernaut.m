@@ -12,8 +12,8 @@
 @implementation SQJuggernaut
 
 +(void) retreiveItemsOfType:(SQWIGGLE_TYPE)type
-                  authToken:(id)auth
                  parameters:(NSDictionary *)parameters
+                  authToken:(id)auth
                     success:(void (^)(id items))success
                     failure:(void (^)(NSError *error))failure
 {

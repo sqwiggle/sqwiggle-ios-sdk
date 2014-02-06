@@ -59,7 +59,7 @@
 {
     return [self authToken] != nil;
 }
-#pragma mark User Helper Methods
+#pragma mark User Methods
 
 +(void) currentUserForSession:(void (^)(SQUser *user))success
                failure:(void (^)(NSError *error))failure
@@ -106,7 +106,7 @@
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_USER_TYPE
                                 byID:ID
                           parameters:nil
-                       authToken:[self authToken]
+                           authToken:[self authToken]
                              success:success
                              failure:failure];
 }
@@ -115,10 +115,23 @@
 +(void) allAttachments:(void (^)(NSArray *))success
                failure:(void (^)(NSError *))failure
 {
+    [self allAttachmentsWithLimit:nil
+                    andPageNumber:nil
+                          success:success
+                          failure:failure];
+}
+
++(void) allAttachmentsWithLimit:(NSNumber *)limit
+                  andPageNumber:(NSNumber *)pageNumber
+                        success:(void (^)(NSArray *))success
+                        failure:(void (^)(NSError *))failure
+{
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_ATTACHMENT_TYPE
-                        authToken:[self authToken]
-                              success:success
-                              failure:failure];
+                           parameters: @{@"limit": (limit ? limit : @""), \
+                                        @"page": (pageNumber ? pageNumber : @"")}
+                           authToken:[self authToken]
+                             success:success
+                             failure:failure];
 }
 
 +(void) attachmentByID:(NSNumber *)ID
@@ -127,48 +140,73 @@
 {
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_ATTACHMENT_TYPE
                                 byID:ID
+                          parameters:nil
                        authToken:[self authToken]
                              success:success
                              failure:failure];
 }
 
-#pragma mark Room Helper Methods
+#pragma mark Room Methods
+
++(void) roomWithID:(NSNumber *)ID
+           success:(void (^)(SQRoom *))success
+           failure:(void (^)(NSError *))failure
+{
+    [SQJuggernaut retreiveItemOfType:SQWIGGLE_ROOM_TYPE
+                                byID:ID
+                          parameters: nil
+                           authToken:[self authToken]
+                             success:success
+                             failure:failure];
+}
 
 +(void) allRooms:(void (^)(NSArray *))success
          failure:(void (^)(NSError *))failure
 {
+    [self allRoomsWithLimit:nil
+              andPageNumber:nil
+                    success:success
+                    failure:failure];
+}
+
++(void) allRoomsWithLimit:(NSNumber *)limit
+            andPageNumber:(NSNumber *) pageNumber
+                  success:(void (^)(NSArray *))success
+                  failure:(void (^)(NSError *))failure
+{
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_ROOM_TYPE
-                        authToken:[self authToken]
-                              success:^(NSArray *items) {
-                                  //storing rooms for quicker access
-                                  [Sqwiggle setCurrentUserRooms:items];
-                                  success(items);
-                              }
+                           parameters:@{@"limit": (limit ? limit : @""), \
+                                        @"page": (pageNumber ? pageNumber : @"")}
+                            authToken:[self authToken]
+                              success:success
                               failure:failure];
 }
 
-+(void) roomWithID:(NSNumber *)ID
-                  success:(void (^)(SQRoom *))success
-                  failure:(void (^)(NSError *))failure
-{
-    [SQJuggernaut retreiveItemOfType:SQWIGGLE_ROOM_TYPE
-                                byID:ID
-                       authToken:[self authToken]
-                             success:success
-                             failure:failure];
-}
 
 +(void) messagesForRoomID:(NSNumber *)ID
                              success:(void (^)(NSArray *))success
                              failure:(void (^)(NSError *))failure
 {
-#warning needs to be updated for parameter-based structure
-    [SQJuggernaut retreiveItemsOfType:SQWIGGLE_MESSAGE_TYPE
-                       filteredByType:SQWIGGLE_ROOM_TYPE
-                               withID:ID
-                       withAuthToken:[self authToken]
-                             success:success
-                             failure:failure];
+    [self messagesForRoomID:ID
+                  withLimit:nil
+              andPageNumber:nil
+                    success:success
+                    failure:failure];
+}
+
++(void) messagesForRoomID:(NSNumber *)ID
+                withLimit:(NSNumber *)limit
+            andPageNumber:(NSNumber *) pageNumber
+                  success:(void (^)(NSArray *))success
+                  failure:(void (^)(NSError *))failure
+{
+    [SQJuggernaut retreiveItemOfType:SQWIGGLE_ROOM_TYPE
+                                byID:NSStringWithFormat(@"%@/messages", ID)
+                           parameters:@{@"limit": (limit ? limit : @""), \
+                                        @"page": (pageNumber ? pageNumber : @"")}
+                            authToken:[self authToken]
+                              success:success
+                              failure:failure];
 }
 
 #pragma mark Organization Methods
@@ -176,7 +214,8 @@
                  failure:(void (^)(NSError *))failure
 {
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_ORGANIZATION_TYPE
-                        authToken:[self authToken]
+                           parameters:nil
+                            authToken:[self authToken]
                               success:success
                               failure:failure];
 }
@@ -187,7 +226,8 @@
 {
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_ORGANIZATION_TYPE
                                 byID:ID
-                       authToken:[self authToken]
+                          parameters:nil
+                           authToken:[self authToken]
                              success:success
                              failure:failure];
 }
@@ -198,50 +238,105 @@
 {
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_MESSAGE_TYPE
                                 byID:ID
-                       authToken:[self authToken]
+                          parameters:nil
+                           authToken:[self authToken]
                              success:success
                              failure:failure];
+}
+
++(void) allMessages:(void (^)(NSArray *))success
+            failure:(void (^)(NSError *))failure
+{
+    [self allMessagesWithLimit:nil
+                 andPageNumber:nil
+                       success:success
+                       failure:failure];
+}
+
++(void) allMessagesWithLimit:(NSNumber *)limit
+               andPageNumber:(NSNumber *)pageNumber
+                     success:(void (^)(NSArray *))success
+                     failure:(void (^)(NSError *))failure
+{
+    [SQJuggernaut retreiveItemsOfType:SQWIGGLE_MESSAGE_TYPE
+                           parameters:@{@"limit": (limit ? limit : @""), \
+                                        @"page": (pageNumber ? pageNumber : @"")}
+                            authToken:[self authToken]
+                              success:success
+                              failure:failure];
 }
 
 #pragma mark Conversation Methods
-+(void) allConversations:(void (^)(NSArray *))success
-                 failure:(void (^)(NSError *))failure
-{
-    [SQJuggernaut retreiveItemsOfType:SQWIGGLE_CONVERSATION_TYPE
-                        authToken:[self authToken]
-                              success:success
-                              failure:failure];
-}
-
-+(void) conversationWithID:(NSNumber *)ID success:(void (^)(SQConversation *))success failure:(void (^)(NSError *))failure
++(void) conversationWithID:(NSNumber *)ID
+                   success:(void (^)(SQConversation *))success
+                   failure:(void (^)(NSError *))failure
 {
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_CONVERSATION_TYPE
                                 byID:ID
-                       authToken:[self authToken]
+                          parameters: nil
+                           authToken:[self authToken]
                              success:success
                              failure:failure];
 }
 
-#pragma mark Invite Methods
-+(void) allInvites:(void (^)(NSArray *))success
-           failure:(void (^)(NSError *))failure
++(void) allConversations:(void (^)(NSArray *))success
+                 failure:(void (^)(NSError *))failure
 {
-    [SQJuggernaut retreiveItemsOfType:SQWIGGLE_INVITE_TYPE
-                        authToken:[self authToken]
+    [self allConversationsWithLimit:nil
+                      andPageNumber:nil
+                            success:success
+                            failure:failure];
+}
+
++(void) allConversationsWithLimit:(NSNumber *)limit
+                    andPageNumber:(NSNumber *)pageNumber
+                          success:(void (^)(NSArray *))success
+                          failure:(void (^)(NSError *))failure
+{
+    [SQJuggernaut retreiveItemsOfType:SQWIGGLE_CONVERSATION_TYPE
+                           parameters:@{@"limit": (limit ? limit : @""), \
+                                        @"page": (pageNumber ? pageNumber : @"")}
+                            authToken:[self authToken]
                               success:success
                               failure:failure];
 }
 
+#pragma mark Invite Methods
 +(void) inviteWithID:(NSNumber *)ID
              success:(void (^)(SQInvite *))success
              failure:(void (^)(NSError *))failure
 {
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_INVITE_TYPE
                                 byID:ID
-                       authToken:[self authToken]
+                          parameters:nil
+                           authToken:[self authToken]
                              success:success
                              failure:failure];
 }
+
++(void) allInvites:(void (^)(NSArray *))success
+           failure:(void (^)(NSError *))failure
+{
+    [self allInvitesWithLimit:nil
+                andPageNumber:nil
+                      success:success
+                      failure:failure];
+}
+
++(void) allInvitesWithLimit:(NSNumber *)limit
+              andPageNumber:(NSNumber *)pageNumber
+                    success:(void (^)(NSArray *))success
+                    failure:(void (^)(NSError *))failure
+{
+    [SQJuggernaut retreiveItemsOfType:SQWIGGLE_INVITE_TYPE
+                           parameters:@{@"limit": (limit ? limit : @""), \
+                                        @"page": (pageNumber ? pageNumber : @"")}
+                            authToken:[self authToken]
+                              success:success
+                              failure:failure];
+}
+
+
 
 #pragma mark Configuration Methods
 
@@ -249,6 +344,7 @@
                                    failure:(void (^)(NSError *))failure
 {
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_CONFIGURATION_TYPE
+                           parameters:nil
                         authToken:[self authToken]
                               success:success
                               failure:failure];

@@ -78,52 +78,84 @@
                failure:(void (^)(NSError *error))failure;
 
 /*
- * Returns a list of all attachments in the current organization. 
+ * Returns a list of all attachments in the current organization.
  * The attachments are returned in reverse date order by default.
  */
 +(void) allAttachments:(void (^)(NSArray *))success
                failure:(void (^)(NSError *))failure;
 
+/*
+ * Returns a list of all attachments in the current organization. 
+ * The attachments are returned in reverse date order by default.
+ */
++(void) allAttachmentsWithLimit:(NSNumber *)limit
+                  andPageNumber:(NSNumber *) pageNumber
+                        success:(void (^)(NSArray *))success
+                        failure:(void (^)(NSError *))failure;
+
 
 #pragma mark Room Methods
-
 /*
- * Returns a list of all rooms in the current organization. 
- * The rooms are returned in sorted alphabetical order by default.
- */
-+(void) allRooms:(void (^)(NSArray *rooms))success
-         failure:(void (^)(NSError *error))failure;
-
-/* 
- * Retrieves the details of any room that the token has access to. 
+ * Retrieves the details of any room that the token has access to.
  * Supply a room ID and Sqwiggle will return the corresponding room details.
  */
 +(void) roomWithID:(NSNumber *)ID
            success:(void (^)(SQRoom *room))success
            failure:(void (^)(NSError *error))failure;
 
+/*
+ * Returns a list of all rooms in the current organization.
+ * The rooms are returned in sorted alphabetical order by default.
+ */
++(void) allRooms:(void (^)(NSArray *))success
+         failure:(void (^)(NSError *))failure;
+
+/*
+ * Returns a list of all rooms in the current organization. 
+ * The rooms are returned in sorted alphabetical order by default.
+ */
++(void) allRoomsWithLimit:(NSNumber *)limit
+            andPageNumber:(NSNumber *) pageNumber
+                  success:(void (^)(NSArray *))success
+                  failure:(void (^)(NSError *))failure;
+
 //Retreives all Messages associated with RoomID
 +(void) messagesForRoomID:(NSNumber *)ID
                   success:(void (^)(NSArray *user))success
                   failure:(void (^)(NSError *error))failure;
+
++(void) messagesForRoomID:(NSNumber *)ID
+                withLimit:(NSNumber *)limit
+            andPageNumber:(NSNumber *) pageNumber
+                  success:(void (^)(NSArray *))success
+                  failure:(void (^)(NSError *))failure;
+
 #pragma mark Message Methods
 +(void) messageWithID:(NSNumber *)ID
               success:(void (^)(SQMessage *room))success
               failure:(void (^)(NSError *error))failure;
 
++(void) allMessages:(void (^)(NSArray *))success
+            failure:(void (^)(NSError *))failure;
+
++(void) allMessagesWithLimit:(NSNumber *)limit
+               andPageNumber:(NSNumber *) pageNumber
+                     success:(void (^)(NSArray *))success
+                     failure:(void (^)(NSError *))failure;
 
 
 #pragma mark Organization Methods
 /*
- * Returns a list of all organizations the current token has access to. 
- * At this time each user can only belong to a single organization and 
+ * Returns a list of all organizations the current token has access to.
+ * At this time each user can only belong to a single organization and
  * all API requests are scoped by a single organization.
  */
-+(void) allOrganizations:(void (^)(NSArray *rooms))success
-                 failure:(void (^)(NSError *error))failure;
+
++(void) allOrganizations:(void (^)(NSArray *))success
+                 failure:(void (^)(NSError *))failure;
 
 /* 
- * Retrieves the details of any organization that the token has access to. 
+ * Retrieves the details of an organization that the token has access to.
  * At this time each user can only belong to a single organization and 
  * all API requests are scoped by a single organization.
  */
@@ -133,12 +165,17 @@
 
 
 #pragma mark Conversation Methods
++(void) allConversations:(void (^)(NSArray *conversations))success
+                 failure:(void (^)(NSError *error))failure;
+
 /*
  * Returns a list of all conversations within the organization
  * associated with the provided token. This includes both finished and ongoing.
  */
-+(void) allConversations:(void (^)(NSArray *conversations))success
-                 failure:(void (^)(NSError *error))failure;
++(void) allConversationsWithLimit:(NSNumber *)limit
+                    andPageNumber:(NSNumber *) pageNumber
+                          success:(void (^)(NSArray *))success
+                          failure:(void (^)(NSError *))failure;
 
 /*
  * Retrieves the details of a specific conversation provided the conversation is accessible 
@@ -158,12 +195,20 @@
            failure:(void (^)(NSError *error))failure;
 
 /*
- * Retrieves the details of any invite that has been previously created. 
+ * Returns a list of all outstanging invites in the current organization.
+ */
++(void) allInvitesWithLimit:(NSNumber *)limit
+              andPageNumber:(NSNumber *) pageNumber
+                    success:(void (^)(NSArray *))success
+                    failure:(void (^)(NSError *))failure;
+
+/*
+ * Retrieves the details of any invite that has been previously created.
  * Supply an invite ID to get details of the invite.
  */
 +(void) inviteWithID:(NSNumber *)ID
-                   success:(void (^)(SQInvite *invite))success
-                   failure:(void (^)(NSError *error))failure;
+             success:(void (^)(SQInvite *invite))success
+             failure:(void (^)(NSError *error))failure;
 
 
 #pragma mark Configuration Methods
