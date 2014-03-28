@@ -66,10 +66,10 @@
 
 /* Begin PBXFileReference section */
 		00B2A893D1EF4F8FBE9661D6 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		40140E9A18E6305500BEAB07 /* SQConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQConstants.h; sourceTree = "<group>"; };
 		40224CF4183A7AE90024AE77 /* TestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHelper.h; sourceTree = "<group>"; };
 		40224CF5183AD2360024AE77 /* Sqwiggle+TestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Sqwiggle+TestHelper.h"; sourceTree = "<group>"; };
 		40224CF6183AD2360024AE77 /* Sqwiggle+TestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Sqwiggle+TestHelper.m"; sourceTree = "<group>"; };
-		40224D34183AE46F0024AE77 /* SQConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQConstants.h; sourceTree = "<group>"; };
 		40224D54183B067F0024AE77 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		40224D57183B067F0024AE77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		40224D58183B067F0024AE77 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -254,7 +254,7 @@
 		407A12CE1832D72600819225 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				40224D34183AE46F0024AE77 /* SQConstants.h */,
+				40140E9A18E6305500BEAB07 /* SQConstants.h */,
 			);
 			name = Config;
 			sourceTree = "<group>";
