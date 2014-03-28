@@ -24,8 +24,8 @@
 /*
  * Initializes Sqwiggle API Session Locally.
  */
-+(void) startSqwigglingWithUsername:(NSString *) username
-                           password:(NSString *) password
++(void) startSqwigglingWithUsername:(NSString *)username
+                           password:(NSString *)password
                             success:(void (^)(BOOL user))success
                             failure:(void (^)(NSError *error))failure;
 
