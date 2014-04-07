@@ -24,7 +24,8 @@
 @property (nonatomic, readonly) NSNumber *roomID;
 @property (nonatomic, readonly) NSNumber *colorID;
 @property (nonatomic, readonly) UIColor *color;
-@property (nonatomic, readonly) NSArray *participatingUsers;
+// participatingUsers setter and getter methods are declared for KVC compliance.
+@property (nonatomic, readonly) NSArray *participatingUsersContainer;
 
 //Checks to see if given user is in conversation
 -(BOOL) containsUser:(SQUser *)user;

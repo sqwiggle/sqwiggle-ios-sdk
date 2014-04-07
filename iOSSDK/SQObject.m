@@ -10,14 +10,12 @@
 #import "Sqwiggle.h"
 
 @interface SQObject ()
-{
-    NSString *_urlEndpoint;
-}
+
+@property (nonatomic, copy) NSString *urlEndpoint;
+
 @end
 
 @implementation SQObject
-@synthesize ID = _ID;
-@synthesize relativeURL = _relativeURL;
 
 -(id) initObjectWithDictionary:(NSDictionary *)dictionary
 {

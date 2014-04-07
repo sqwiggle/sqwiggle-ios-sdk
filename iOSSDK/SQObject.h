@@ -10,10 +10,6 @@
 #import "SQConstants.h"
 
 @interface SQObject : NSObject
-{
-    NSNumber *_ID;
-    NSString *_relativeURL;
-}
 
 /* Properties */
 
