@@ -36,12 +36,12 @@
     NSString *url = NSStringWithFormat(@"%@/auth/token", SQWIGGLE_URI_API);
     NSDictionary *authInfo = @{emailKey: username, passwordKey: password};
     [manager POST:url parameters:authInfo
-         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             [self setAuthToken:[responseObject objectForKey:tokenKey]];
-             success(YES);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        failure(error);
-    }];
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              [self setAuthToken:[responseObject objectForKey:tokenKey]];
+              success(YES);
+          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              failure(error);
+          }];
 }
 
 +(void) startSqwigglingWithAuthenticationToken:(NSString *)authToken
@@ -62,14 +62,14 @@
 #pragma mark User Methods
 
 +(void) currentUserForSession:(void (^)(SQUser *user))success
-               failure:(void (^)(NSError *error))failure
+                      failure:(void (^)(NSError *error))failure
 {
     static NSString *me = @"me";
     
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_USER_TYPE
                                 byID:me
                           parameters:nil
-                       authToken:[self authToken]
+                           authToken:[self authToken]
                              success:^(id item) {
                                  [Sqwiggle setCurrentUser:item];
                                  success(item);
@@ -128,10 +128,10 @@
 {
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_ATTACHMENT_TYPE
                            parameters: @{@"limit": (limit ? limit : @""), \
-                                        @"page": (pageNumber ? pageNumber : @"")}
-                           authToken:[self authToken]
-                             success:success
-                             failure:failure];
+                                         @"page": (pageNumber ? pageNumber : @"")}
+                            authToken:[self authToken]
+                              success:success
+                              failure:failure];
 }
 
 +(void) attachmentByID:(NSNumber *)ID
@@ -141,7 +141,7 @@
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_ATTACHMENT_TYPE
                                 byID:ID
                           parameters:nil
-                       authToken:[self authToken]
+                           authToken:[self authToken]
                              success:success
                              failure:failure];
 }
@@ -184,8 +184,8 @@
 
 
 +(void) messagesForRoomID:(NSNumber *)ID
-                             success:(void (^)(NSArray *))success
-                             failure:(void (^)(NSError *))failure
+                  success:(void (^)(NSArray *))success
+                  failure:(void (^)(NSError *))failure
 {
     [self messagesForRoomID:ID
                   withLimit:nil
@@ -203,11 +203,11 @@
     //Yep, this is hacky with messages for room, but gets the job done
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_ROOM_TYPE
                                 byID:NSStringWithFormat(@"%@/messages", ID)
-                           parameters:@{@"limit": (limit ? limit : @""), \
-                                        @"page": (pageNumber ? pageNumber : @"")}
-                            authToken:[self authToken]
-                              success:success
-                              failure:failure];
+                          parameters:@{@"limit": (limit ? limit : @""), \
+                                       @"page": (pageNumber ? pageNumber : @"")}
+                           authToken:[self authToken]
+                             success:success
+                             failure:failure];
 }
 
 #pragma mark Organization Methods
@@ -346,7 +346,7 @@
 {
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_CONFIGURATION_TYPE
                            parameters:nil
-                        authToken:[self authToken]
+                            authToken:[self authToken]
                               success:success
                               failure:failure];
 }
