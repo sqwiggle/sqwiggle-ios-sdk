@@ -75,11 +75,6 @@
 		40224D57183B067F0024AE77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		40224D58183B067F0024AE77 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		40224D59183B067F0024AE77 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		40224D5C183B067F0024AE77 /* Sqwiggle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sqwiggle-Info.plist"; sourceTree = "<group>"; };
-		40224D5E183B067F0024AE77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		40224D60183B067F0024AE77 /* Sqwiggle-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sqwiggle-Prefix.pch"; sourceTree = "<group>"; };
-		40224D61183B067F0024AE77 /* Sqwiggle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sqwiggle.h; sourceTree = "<group>"; };
-		40224D62183B067F0024AE77 /* Sqwiggle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sqwiggle.m; sourceTree = "<group>"; };
 		40224D70183B067F0024AE77 /* SqwiggleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SqwiggleTests-Info.plist"; sourceTree = "<group>"; };
 		40224D72183B067F0024AE77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		40224D74183B067F0024AE77 /* SqwiggleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SqwiggleTests.m; sourceTree = "<group>"; };
@@ -157,26 +152,6 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		40224D5A183B067F0024AE77 /* Sqwiggle */ = {
-			isa = PBXGroup;
-			children = (
-				40224D61183B067F0024AE77 /* Sqwiggle.h */,
-				40224D62183B067F0024AE77 /* Sqwiggle.m */,
-				40224D5B183B067F0024AE77 /* Supporting Files */,
-			);
-			path = Sqwiggle;
-			sourceTree = "<group>";
-		};
-		40224D5B183B067F0024AE77 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				40224D5C183B067F0024AE77 /* Sqwiggle-Info.plist */,
-				40224D5D183B067F0024AE77 /* InfoPlist.strings */,
-				40224D60183B067F0024AE77 /* Sqwiggle-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		40224D6E183B067F0024AE77 /* SqwiggleTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,7 +175,6 @@
 			children = (
 				407A12A91832D06B00819225 /* Sqwiggle */,
 				4082A74F1833CD6B009FBC9B /* Tests */,
-				40224D5A183B067F0024AE77 /* Sqwiggle */,
 				40224D6E183B067F0024AE77 /* SqwiggleTests */,
 				407A12A61832D06B00819225 /* Frameworks */,
 				407A12A51832D06B00819225 /* Products */,
@@ -528,14 +502,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		40224D5D183B067F0024AE77 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				40224D5E183B067F0024AE77 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		40224D71183B067F0024AE77 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
