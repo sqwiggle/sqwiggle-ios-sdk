@@ -40,7 +40,7 @@
 		 // Validate incoming object. NSNull objects should not be stored.
 		 id incomingObject = [dictionary valueForKeyPath:value];
 		 if ([self isValidObject:incomingObject])
-			 [object setValue:[dictionary valueForKeyPath:value] forKey:key];
+			 [object setValue:incomingObject forKey:key];
      }];
     
     return object;
@@ -48,7 +48,7 @@
 
 - (BOOL)isValidObject:(id)object
 {
-	if ([object isKindOfClass:[NSNull class]])
+	if (!object || [object isKindOfClass:[NSNull class]])
 		return NO;
 	
 	return YES;
