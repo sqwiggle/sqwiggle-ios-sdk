@@ -37,28 +37,4 @@
              @"_message": @"message", @"_user": @"user"};
 }
 
--(void) save
-{
-    NSMutableDictionary *params = [NSMutableDictionary new];
-
-    [params setObject:@{@"user": _user} forKey:@"user"];
-    [params setObject:_message forKey:@"message"];
-    [params setObject:_createdAt forKey:@"created_at"];
-    [params setObject:_roomID forKey:@"room_id"];
-    [params setObject:_organziationID forKey:@"organization_id"];
-    
-    NSString *auth = [[NSUserDefaults standardUserDefaults] objectForKey:@"SQWIGGLE_USERNAME_KEY"];
-    _relativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:NSStringFromClass([self class])];
-
-    NSString *url = [NSString stringWithFormat:@"%@%@?auth_token=%@", SQWIGGLE_URI_API, _relativeURL, auth];
-    NSLog(@"%@", url);
-    
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager POST:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Gottt heeeee");
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@" darn %@", error);
-    }];
-}
 @end
