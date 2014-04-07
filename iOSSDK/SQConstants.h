@@ -6,11 +6,7 @@
 //  Copyright (c) 2013 Sqwiggle. All rights reserved.
 //
 
-#define SQWIGGLE_SDK_VERION @"0.1.1"
-
-#define ENVIRONMENT_PRODUCTION @"production"
-
-#define APP_ENVIRONMENT ENVIRONMENT_PRODUCTION
+#define SQWIGGLE_SDK_VERION @"0.1.2"
 
 //Creating for Semantics sake
 #define SQWIGGLE_TYPE NSString*
