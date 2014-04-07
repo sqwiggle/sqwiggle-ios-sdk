@@ -34,7 +34,7 @@
 {
     NSString *relativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:type];
     
-    NSString *url = [NSString stringWithFormat:@"%@/%@/%@", SQWIGGLE_URI_API,
+    NSString *url = [NSString stringWithFormat:@"%@/%@/%@", [self currentAPIEndpoint],
                      relativeURL, (ID ? ID : @"")];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
@@ -68,5 +68,16 @@
     }];
 }
 
++(void) setAPIEndpoint:(NSString *)endpoint
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:endpoint forKey:ENDPOINT_KEY];
+    [defaults synchronize];
+}
+
++(NSString *) currentAPIEndpoint
+{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:ENDPOINT_KEY];
+}
 
 @end

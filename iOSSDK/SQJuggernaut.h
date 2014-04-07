@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "SQConstants.h"
 
+#define ENDPOINT_KEY @"SQJUGGARNAUT_ENDPOINT_KEY"
+
 @class AFHTTPRequestOperation;
 @class AFURLConnectionOperation;
 @class AFURLSessionManager;
@@ -29,5 +31,15 @@
                  authToken:(NSString *)auth
                    success:(void (^)(id item))success
                    failure:(void (^)(NSError *error))failure;
+
+/*
+ * Sets current API Endpoint you are using.
+ */
++(void) setAPIEndpoint:(NSString *)endpoint;
+
+/*
+ * Returns current API endpoint used in class.
+ */
++(NSString *) currentAPIEndpoint;
 
 @end

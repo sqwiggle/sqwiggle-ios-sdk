@@ -13,8 +13,7 @@
 #define SQWIGGLE_CURRENT_USER @"SQWIGGLE_CURRENT_USER"
 #define SQWIGGLE_USER_ROOMS @"SQWIGGLE_CURRENT_ROOMS"
 
-#define SQWIGGLE_ENDPOINT_KEY @"SQWIGGLE_ENDPOINT_KEY"
-
+#define SQWIGGLE_ENVIRONMENT_PRODUCTION @"https://api.sqwiggle.com"
 
 @interface Sqwiggle ()
 
@@ -34,8 +33,13 @@
     static NSString *emailKey = @"email";
     static NSString *passwordKey = @"password";
     
+    if ([self currentAPIEndpoint])
+    {
+        [SQJuggernaut setAPIEndpoint:SQWIGGLE_ENVIRONMENT_PRODUCTION];
+    }
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSString *url = NSStringWithFormat(@"%@/auth/token", SQWIGGLE_URI_API);
+    NSString *url = NSStringWithFormat(@"%@/auth/token", [self currentAPIEndpoint]);
     NSDictionary *authInfo = @{emailKey: username, passwordKey: password};
     [manager POST:url parameters:authInfo
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -51,16 +55,14 @@
     [self setAuthToken:authToken];
 }
 
-+(void) updateAPIEndpoint:(NSString *)endpoint
++(void) setAPIEndpoint:(NSString *)endpoint
 {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:endpoint forKey:SQWIGGLE_ENDPOINT_KEY];
-    [defaults synchronize];
+    [SQJuggernaut setAPIEndpoint:endpoint];
 }
 
 +(NSString *) currentAPIEndpoint
 {
-    return [[NSUserDefaults standardUserDefaults] objectForKey:SQWIGGLE_ENDPOINT_KEY];
+    return [SQJuggernaut currentAPIEndpoint];
 }
 
 +(void) stopSqwiggling

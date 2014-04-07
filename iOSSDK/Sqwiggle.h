@@ -39,17 +39,6 @@
  */
 +(void) stopSqwiggling;
 
-/* 
- * Update current Sqwiggle API Endpoint you are using. Generally you will
- * never need to call this. 
- */
-+(void) updateAPIEndpoint:(NSString *)endpoint;
-
-/*
- * Returns current API endpoint used in SDK.
- */
-+(NSString *) currentAPIEndpoint;
-
 /*
  * Checks to see if valid authentication token exists
  */
@@ -272,5 +261,18 @@
  */ 
 +(void) configurationInfoForCurrentSession:(void (^)(SQConfiguration *))success
                                    failure:(void (^)(NSError *error))failure;
+
+#pragma mark Debug Methods
+/*
+ * Update current Sqwiggle API Endpoint you are using. Generally you will
+ * never need to call this.
+ */
++(void) setAPIEndpoint:(NSString *)endpoint;
+
+/*
+ * Returns current API endpoint used in SDK.
+ */
++(NSString *) currentAPIEndpoint;
+
 
 @end
