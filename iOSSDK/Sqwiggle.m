@@ -13,6 +13,8 @@
 #define SQWIGGLE_CURRENT_USER @"SQWIGGLE_CURRENT_USER"
 #define SQWIGGLE_USER_ROOMS @"SQWIGGLE_CURRENT_ROOMS"
 
+#define SQWIGGLE_ENDPOINT_KEY @"SQWIGGLE_ENDPOINT_KEY"
+
 
 @interface Sqwiggle ()
 
@@ -47,6 +49,18 @@
 +(void) startSqwigglingWithAuthenticationToken:(NSString *)authToken
 {
     [self setAuthToken:authToken];
+}
+
++(void) updateAPIEndpoint:(NSString *)endpoint
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:endpoint forKey:SQWIGGLE_ENDPOINT_KEY];
+    [defaults synchronize];
+}
+
++(NSString *) currentAPIEndpoint
+{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:SQWIGGLE_ENDPOINT_KEY];
 }
 
 +(void) stopSqwiggling
