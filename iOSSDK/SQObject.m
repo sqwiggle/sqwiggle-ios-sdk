@@ -9,6 +9,12 @@
 #import "SQObject.h"
 #import "Sqwiggle.h"
 
+@interface SQObject ()
+{
+    NSString *_urlEndpoint;
+}
+@end
+
 @implementation SQObject
 @synthesize ID = _ID;
 @synthesize relativeURL = _relativeURL;
@@ -77,7 +83,7 @@
                                                               password:SUPER_SECRET_PASSWORD];
     if (_ID)
     {
-        url = [NSString stringWithFormat:@"%@/%@/%@", SQWIGGLE_URI_API, _relativeURL, _ID];
+        url = [NSString stringWithFormat:@"%@/%@/%@", [Sqwiggle currentAPIEndpoint], _relativeURL, _ID];
         [manager PUT:url
           parameters:[self dictionaryFormat]
              success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -90,7 +96,7 @@
     else
     {
         //No ID. Let's attempt to create a new one.
-        url = [NSString stringWithFormat:@"%@/%@", SQWIGGLE_URI_API, _relativeURL];
+        url = [NSString stringWithFormat:@"%@/%@", [Sqwiggle currentAPIEndpoint], _relativeURL];
         [manager POST:url
           parameters:[self dictionaryFormat]
              success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -107,7 +113,7 @@
 -(void) delete:(void (^)(void))success
        failure:(void (^)(NSError *error))failure
 {
-    NSString *url = [NSString stringWithFormat:@"%@/%@/%@", SQWIGGLE_URI_API, _relativeURL, _ID];
+    NSString *url = [NSString stringWithFormat:@"%@/%@/%@", [Sqwiggle currentAPIEndpoint], _relativeURL, _ID];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
