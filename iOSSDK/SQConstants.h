@@ -28,6 +28,7 @@ SQWIGGLE_ORGANIZATION_TYPE: @"organizations", \
 SQWIGGLE_CONVERSATION_TYPE: @"conversations",\
 SQWIGGLE_ROOM_TYPE: @"rooms",\
 SQWIGGLE_INVITE_TYPE: @"invites", \
+SQWIGGLE_ATTACHMENT_TYPE : @"attachments", \
 SQWIGGLE_MESSAGE_TYPE: @"messages",\
 SQWIGGLE_CONFIGURATION_TYPE: @"info/configuration"}
 
