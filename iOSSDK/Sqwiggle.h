@@ -22,13 +22,16 @@
 #pragma Sqwiggle Session Methods
 
 /*
- * Initializes Sqwiggle API Session Locally.
+ * Initializes Sqwiggle API Session locally with username/password.
  */
 +(void) startSqwigglingWithUsername:(NSString *)username
                            password:(NSString *)password
                             success:(void (^)(BOOL user))success
                             failure:(void (^)(NSError *error))failure;
 
+/*
+ * Initializes Sqwiggle API Session locally with API Key.
+ */
 +(void) startSqwigglingWithAuthenticationToken:(NSString *)authToken;
 
 /*
