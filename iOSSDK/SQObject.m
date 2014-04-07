@@ -37,10 +37,21 @@
     _relativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:NSStringFromClass([object class])];
     [[object modelDefinition] each:^(id key, id value)
      {
-         [object setValue:[dictionary valueForKeyPath:value] forKey:key];
+		 // Validate incoming object. NSNull objects should not be stored.
+		 id incomingObject = [dictionary valueForKeyPath:value];
+		 if ([self isValidObject:incomingObject])
+			 [object setValue:[dictionary valueForKeyPath:value] forKey:key];
      }];
     
     return object;
+}
+
+- (BOOL)isValidObject:(id)object
+{
+	if ([object isKindOfClass:[NSNull class]])
+		return NO;
+	
+	return YES;
 }
 
 //Short-hand init
