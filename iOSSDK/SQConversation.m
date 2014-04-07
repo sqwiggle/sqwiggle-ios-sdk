@@ -9,30 +9,18 @@
 #import "SQConversation.h"
 #import "Sqwiggle.h"
 
-@interface SQConversation ()
-{
-    NSNumber *_organziationID;
-    NSNumber *_roomID;
-    NSNumber *_colorID;
-    NSArray *_participatingUsers;
-}
-@end
 
 @implementation SQConversation
-@synthesize organziationID = _organziationID;
-@synthesize roomID = _roomID;
-@synthesize colorID = _colorID;
-@synthesize participatingUsers = _participatingUsers;
 
 -(NSDictionary *) modelDefinition
 {
-    return @{@"_ID": @"id", @"_colorID": @"color_id",
-             @"_roomID": @"room_id", @"_participatingUsers": @"participating"};
+    return @{@"ID": @"id", @"colorID": @"color_id",
+             @"roomID": @"room_id", @"participatingUsers": @"participating"};
 }
 
 -(BOOL) containsUser:(SQUser *)user;
 {
-    for (id rawUser in _participatingUsers) {
+    for (id rawUser in self.participatingUsers) {
         SQUser *currentUser = [SQUser objectWithDictionary:rawUser];
         if ([user.ID isEqualToNumber:currentUser.ID])
         {
@@ -47,7 +35,7 @@
 {
     NSMutableArray *users = [@[] mutableCopy];
     
-    for (id user in _participatingUsers)
+    for (id user in _participatingUsersContainer)
     {
         SQUser *participant = [SQUser objectWithDictionary:user];
         [users addObject:participant];
@@ -55,6 +43,12 @@
     
     return users;
 }
+
+- (void)setParticipatingUsers:(NSArray *)participatingUsers
+{
+	_participatingUsersContainer = participatingUsers;
+}
+
 
 -(UIColor *) color
 {

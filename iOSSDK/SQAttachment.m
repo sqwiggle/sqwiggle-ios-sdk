@@ -8,29 +8,14 @@
 
 #import "SQAttachment.h"
 
-@interface SQAttachment ()
-{
-    NSString *_url;
-    NSString *_title;
-    NSString *_description;
-    NSString *_image;
-    NSString *_status;
-}
-@end
 
 @implementation SQAttachment
-@synthesize url = _url;
-@synthesize title = _title;
-@synthesize description = _description;
-@synthesize image = _image;
-@synthesize status = _status;
-
 
 -(NSDictionary *) modelDefinition
 {
-    return @{@"_ID": @"id", @"_url" : @"url", @"_title": @"title",
-             @"_description": @"description",
-             @"_image": @"image", @"_status": @"status"};
+    return @{@"ID": @"id", @"url" : @"url", @"title": @"title",
+             @"description": @"description",
+             @"image": @"image", @"status": @"status"};
 }
 
 @end
