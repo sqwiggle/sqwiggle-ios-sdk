@@ -33,7 +33,7 @@
     static NSString *emailKey = @"email";
     static NSString *passwordKey = @"password";
     
-    if ([self currentAPIEndpoint])
+    if (![self currentAPIEndpoint])
     {
         [SQJuggernaut setAPIEndpoint:SQWIGGLE_ENVIRONMENT_PRODUCTION];
     }
