@@ -10,7 +10,7 @@ This is an Objective-C wrapper for the Sqwiggle API. Right now, we only support 
 Installation
 ---------------
 If you use [Cocoapods](http://cocoapods.org/), simply the following to your Podfile:<br />
-  <code>pod 'Sqwiggle', '~> 0.1.0'</code>
+  <code>pod 'Sqwiggle', '~> 0.1.2'</code>
     
 More information
 ---------------
