@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Sqwiggle"
-  s.version      = "0.1.2"
+  s.version      = "0.1.3"
   s.summary      = "Objective-C Wrapper for Sqwiggle API"
   s.homepage     = "https://www.sqwiggle.com"
   s.license      = 'MIT'
