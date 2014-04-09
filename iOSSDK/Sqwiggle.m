@@ -283,6 +283,20 @@
                               failure:failure];
 }
 
+
++ (void)sendMessage:(NSString*)message
+			 roomID:(uint)roomID
+			success:(void (^)(id responseObject))success
+			failure:(void (^)(NSError *error))failure
+{
+	[SQJuggernaut sendItemOfType:SQWIGGLE_MESSAGE_TYPE
+					  parameters:@{ @"room_id" : @(roomID),
+									@"text" : message }
+					   authToken:[self authToken]
+						 success:success
+						 failure:failure];
+}
+
 #pragma mark Conversation Methods
 +(void) conversationWithID:(NSNumber *)ID
                    success:(void (^)(SQConversation *))success

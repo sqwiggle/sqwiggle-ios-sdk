@@ -187,6 +187,18 @@ typedef void (^failureResponse)(NSError *error);
                      success:(void (^)(NSArray *messages))success
                      failure:(failureResponse)failure;
 
+/*! 
+ *	Sends a message to the room with the given room ID.
+ *	@param message The message to send.
+ *	@param roomID The room ID
+ *	@param success A block object to be executed when the request operation finishes successfully. This block has no return value and takes one argument: the response object
+ *	@param A block object to be executed when the request operation finishes unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data. This block has no return value and takes a one arguments: the error
+ */
++ (void)sendMessage:(NSString*)message
+			 roomID:(uint)roomID
+			success:(void (^)(id responseObject))success
+			failure:(void (^)(NSError *error))failure;
+
 
 #pragma mark Organization Methods
 /*
