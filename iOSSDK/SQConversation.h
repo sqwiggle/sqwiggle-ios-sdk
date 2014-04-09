@@ -29,5 +29,7 @@
 
 //Checks to see if given user is in conversation
 -(BOOL) containsUser:(SQUser *)user;
+-(NSArray *) participatingUsers;
+-(void) setParticipatingUsers:(NSArray *)participatingUsers;
 
 @end
