@@ -17,6 +17,10 @@
 #import "SQConfiguration.h"
 #import "SQAttachment.h"
 
+
+typedef void (^failureResponse)(NSError *error);
+
+
 @interface Sqwiggle : NSObject
 
 #pragma Sqwiggle Session Methods
@@ -27,7 +31,7 @@
 +(void) startSqwigglingWithUsername:(NSString *)username
                            password:(NSString *)password
                             success:(void (^)(BOOL user))success
-                            failure:(void (^)(NSError *error))failure;
+                            failure:(failureResponse)failure;
 
 /*
  * Initializes Sqwiggle API Session locally with API Key.
@@ -65,20 +69,20 @@
  * Retreives authenticated user, if authentication with username/pw has been used.
  */
 +(void) currentUserForSession:(void (^)(SQUser *user))success
-                      failure:(void (^)(NSError *error))failure;
+                      failure:(failureResponse)failure;
 
 /*
  * Retreives specific user.
  */
 +(void) userWithID:(NSNumber *)ID
            success:(void (^)(SQUser *user))success
-           failure:(void (^)(NSError *error))failure;
+           failure:(failureResponse)failure;
                         
 /* 
  * Retreives all users accessible via current authenticated session.
  */
 +(void) allUsers:(void (^)(NSArray *users))success
-         failure:(void (^)(NSError *error))failure;
+         failure:(failureResponse)failure;
 
 /*
  * Retreives all users accessible via current authenticated session with the option to limit # of objects return.
@@ -87,7 +91,7 @@
 +(void) allUsersWithLimit:(NSNumber *)limit
             andPageNumber:(NSNumber *) pageNumber
                   success:(void (^)(NSArray *users))success
-                  failure:(void (^)(NSError *error))failure;
+                  failure:(failureResponse)failure;
 
 
 #pragma mark Attachment Methods
@@ -97,14 +101,14 @@
  */
 +(void) attachmentByID:(NSNumber *)ID
                success:(void (^)(SQAttachment *attachment))success
-               failure:(void (^)(NSError *error))failure;
+               failure:(failureResponse)failure;
 
 /*
  * Returns a list of all attachments in the current organization.
  * The attachments are returned in reverse date order by default.
  */
-+(void) allAttachments:(void (^)(NSArray *))success
-               failure:(void (^)(NSError *))failure;
++(void) allAttachments:(void (^)(NSArray *attachments))success
+               failure:(failureResponse)failure;
 
 /*
  * Returns a list of all attachments in the current organization. 
@@ -113,8 +117,8 @@
  */
 +(void) allAttachmentsWithLimit:(NSNumber *)limit
                   andPageNumber:(NSNumber *) pageNumber
-                        success:(void (^)(NSArray *))success
-                        failure:(void (^)(NSError *))failure;
+                        success:(void (^)(NSArray *attachments))success
+                        failure:(failureResponse)failure;
 
 
 #pragma mark Room Methods
@@ -124,14 +128,14 @@
  */
 +(void) roomWithID:(NSNumber *)ID
            success:(void (^)(SQRoom *room))success
-           failure:(void (^)(NSError *error))failure;
+           failure:(failureResponse)failure;
 
 /*
  * Returns a list of all rooms in the current organization.
  * The rooms are returned in sorted alphabetical order by default.
  */
-+(void) allRooms:(void (^)(NSArray *))success
-         failure:(void (^)(NSError *))failure;
++(void) allRooms:(void (^)(NSArray *rooms))success
+         failure:(failureResponse)failure;
 
 /*
  * Returns a list of all rooms in the current organization. 
@@ -140,15 +144,15 @@
  */
 +(void) allRoomsWithLimit:(NSNumber *)limit
             andPageNumber:(NSNumber *) pageNumber
-                  success:(void (^)(NSArray *))success
-                  failure:(void (^)(NSError *))failure;
+                  success:(void (^)(NSArray *rooms))success
+                  failure:(failureResponse)failure;
 
 /*
  * Retreives all Messages associated with RoomID
  */
 +(void) messagesForRoomID:(NSNumber *)ID
                   success:(void (^)(NSArray *user))success
-                  failure:(void (^)(NSError *error))failure;
+                  failure:(failureResponse)failure;
 
 /*
  * Retreives all Messages associated with RoomID
@@ -157,8 +161,8 @@
 +(void) messagesForRoomID:(NSNumber *)ID
                 withLimit:(NSNumber *)limit
             andPageNumber:(NSNumber *) pageNumber
-                  success:(void (^)(NSArray *))success
-                  failure:(void (^)(NSError *))failure;
+                  success:(void (^)(NSArray *messages))success
+                  failure:(failureResponse)failure;
 
 #pragma mark Message Methods
 /*
@@ -166,13 +170,13 @@
  */
 +(void) messageWithID:(NSNumber *)ID
               success:(void (^)(SQMessage *room))success
-              failure:(void (^)(NSError *error))failure;
+              failure:(failureResponse)failure;
 
 /*
  * Retreives all Messages for session
  */
-+(void) allMessages:(void (^)(NSArray *))success
-            failure:(void (^)(NSError *))failure;
++(void) allMessages:(void (^)(NSArray *messages))success
+            failure:(failureResponse)failure;
 
 /*
  * Retreives all Messages for session
@@ -180,8 +184,8 @@
  */
 +(void) allMessagesWithLimit:(NSNumber *)limit
                andPageNumber:(NSNumber *) pageNumber
-                     success:(void (^)(NSArray *))success
-                     failure:(void (^)(NSError *))failure;
+                     success:(void (^)(NSArray *messages))success
+                     failure:(failureResponse)failure;
 
 
 #pragma mark Organization Methods
@@ -191,8 +195,8 @@
  * all API requests are scoped by a single organization.
  */
 
-+(void) allOrganizations:(void (^)(NSArray *))success
-                 failure:(void (^)(NSError *))failure;
++(void) allOrganizations:(void (^)(NSArray *organizations))success
+                 failure:(failureResponse)failure;
 
 /* 
  * Retrieves the details of an organization that the token has access to.
@@ -201,12 +205,12 @@
  */
 +(void) organizationWithID:(NSNumber *)ID
                    success:(void (^)(SQOrganization *organization))success
-                   failure:(void (^)(NSError *error))failure;
+                   failure:(failureResponse)failure;
 
 
 #pragma mark Conversation Methods
 +(void) allConversations:(void (^)(NSArray *conversations))success
-                 failure:(void (^)(NSError *error))failure;
+                 failure:(failureResponse)failure;
 
 /*
  * Returns a list of all conversations within the organization
@@ -215,8 +219,8 @@
  */
 +(void) allConversationsWithLimit:(NSNumber *)limit
                     andPageNumber:(NSNumber *) pageNumber
-                          success:(void (^)(NSArray *))success
-                          failure:(void (^)(NSError *))failure;
+                          success:(void (^)(NSArray *conversations))success
+                          failure:(failureResponse)failure;
 
 /*
  * Retrieves the details of a specific conversation provided the conversation is accessible 
@@ -225,7 +229,7 @@
  */
 +(void) conversationWithID:(NSNumber *)ID
                    success:(void (^)(SQConversation *conversation))success
-                   failure:(void (^)(NSError *error))failure;
+                   failure:(failureResponse)failure;
 
 
 #pragma mark Invite Methods
@@ -233,16 +237,16 @@
  * Returns a list of all outstanging invites in the current organization. 
  */
 +(void) allInvites:(void (^)(NSArray *rooms))success
-           failure:(void (^)(NSError *error))failure;
+           failure:(failureResponse)failure;
 
 /*
- * Returns a list of all outstanging invites in the current organization.
+ * Returns a list of all outstanding invites in the current organization.
  * Able to limit number of items returned, as well as being able to set page number.
  */
 +(void) allInvitesWithLimit:(NSNumber *)limit
               andPageNumber:(NSNumber *) pageNumber
-                    success:(void (^)(NSArray *))success
-                    failure:(void (^)(NSError *))failure;
+                    success:(void (^)(NSArray *invites))success
+                    failure:(failureResponse)failure;
 
 /*
  * Retrieves the details of any invite that has been previously created.
@@ -250,7 +254,7 @@
  */
 +(void) inviteWithID:(NSNumber *)ID
              success:(void (^)(SQInvite *invite))success
-             failure:(void (^)(NSError *error))failure;
+             failure:(failureResponse)failure;
 
 
 #pragma mark Configuration Methods
@@ -260,7 +264,7 @@
  * limits, ice servers and other misc details that are required.
  */ 
 +(void) configurationInfoForCurrentSession:(void (^)(SQConfiguration *))success
-                                   failure:(void (^)(NSError *error))failure;
+                                   failure:(failureResponse)failure;
 
 #pragma mark Debug Methods
 /*

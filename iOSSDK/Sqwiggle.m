@@ -27,7 +27,7 @@
 +(void) startSqwigglingWithUsername:(NSString *) username
                            password:(NSString *) password
                             success:(void (^)(BOOL signedIn))success
-                            failure:(void (^)(NSError *error))failure
+                            failure:(failureResponse)failure
 {
     static NSString *tokenKey = @"token";
     static NSString *emailKey = @"email";
@@ -78,7 +78,7 @@
 #pragma mark User Methods
 
 +(void) currentUserForSession:(void (^)(SQUser *user))success
-                      failure:(void (^)(NSError *error))failure
+                      failure:(failureResponse)failure
 {
     static NSString *me = @"me";
     
@@ -94,7 +94,7 @@
 }
 
 +(void) allUsers:(void (^)(NSArray *users))success
-         failure:(void (^)(NSError *error))failure
+         failure:(failureResponse)failure
 {
     [self allUsersWithLimit:nil
               andPageNumber:nil
@@ -105,7 +105,7 @@
 +(void) allUsersWithLimit:(NSNumber *)limit
             andPageNumber:(NSNumber *) pageNumber
                   success:(void (^)(NSArray *users))success
-                  failure:(void (^)(NSError *error))failure
+                  failure:(failureResponse)failure
 {
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_USER_TYPE
                            parameters: @{@"limit": (limit ? limit : @""), \
@@ -117,7 +117,7 @@
 
 +(void) userWithID:(NSNumber *)ID
            success:(void (^)(SQUser *))success
-           failure:(void (^)(NSError *))failure
+           failure:(failureResponse)failure
 {
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_USER_TYPE
                                 byID:ID
@@ -129,7 +129,7 @@
 
 #pragma mark Attachment Methods
 +(void) allAttachments:(void (^)(NSArray *))success
-               failure:(void (^)(NSError *))failure
+               failure:(failureResponse)failure
 {
     [self allAttachmentsWithLimit:nil
                     andPageNumber:nil
@@ -140,7 +140,7 @@
 +(void) allAttachmentsWithLimit:(NSNumber *)limit
                   andPageNumber:(NSNumber *)pageNumber
                         success:(void (^)(NSArray *))success
-                        failure:(void (^)(NSError *))failure
+                        failure:(failureResponse)failure
 {
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_ATTACHMENT_TYPE
                            parameters: @{@"limit": (limit ? limit : @""), \
@@ -152,7 +152,7 @@
 
 +(void) attachmentByID:(NSNumber *)ID
                success:(void (^)(SQAttachment *attachment))success
-               failure:(void (^)(NSError *error))failure
+               failure:(failureResponse)failure
 {
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_ATTACHMENT_TYPE
                                 byID:ID
@@ -166,7 +166,7 @@
 
 +(void) roomWithID:(NSNumber *)ID
            success:(void (^)(SQRoom *))success
-           failure:(void (^)(NSError *))failure
+           failure:(failureResponse)failure
 {
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_ROOM_TYPE
                                 byID:ID
@@ -177,7 +177,7 @@
 }
 
 +(void) allRooms:(void (^)(NSArray *))success
-         failure:(void (^)(NSError *))failure
+         failure:(failureResponse)failure
 {
     [self allRoomsWithLimit:nil
               andPageNumber:nil
@@ -188,7 +188,7 @@
 +(void) allRoomsWithLimit:(NSNumber *)limit
             andPageNumber:(NSNumber *) pageNumber
                   success:(void (^)(NSArray *))success
-                  failure:(void (^)(NSError *))failure
+                  failure:(failureResponse)failure
 {
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_ROOM_TYPE
                            parameters:@{@"limit": (limit ? limit : @""), \
@@ -201,7 +201,7 @@
 
 +(void) messagesForRoomID:(NSNumber *)ID
                   success:(void (^)(NSArray *))success
-                  failure:(void (^)(NSError *))failure
+                  failure:(failureResponse)failure
 {
     [self messagesForRoomID:ID
                   withLimit:nil
@@ -214,7 +214,7 @@
                 withLimit:(NSNumber *)limit
             andPageNumber:(NSNumber *) pageNumber
                   success:(void (^)(NSArray *))success
-                  failure:(void (^)(NSError *))failure
+                  failure:(failureResponse)failure
 {
     //Yep, this is hacky with messages for room, but gets the job done
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_ROOM_TYPE
@@ -228,7 +228,7 @@
 
 #pragma mark Organization Methods
 +(void) allOrganizations:(void (^)(NSArray *))success
-                 failure:(void (^)(NSError *))failure
+                 failure:(failureResponse)failure
 {
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_ORGANIZATION_TYPE
                            parameters:nil
@@ -239,7 +239,7 @@
 
 +(void) organizationWithID:(NSNumber *)ID
                    success:(void (^)(SQOrganization *))success
-                   failure:(void (^)(NSError *))failure
+                   failure:(failureResponse)failure
 {
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_ORGANIZATION_TYPE
                                 byID:ID
@@ -251,7 +251,7 @@
 #pragma mark Message Methods
 +(void) messageWithID:(NSNumber *)ID
               success:(void (^)(SQMessage *room))success
-              failure:(void (^)(NSError *error))failure
+              failure:(failureResponse)failure
 {
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_MESSAGE_TYPE
                                 byID:ID
@@ -262,7 +262,7 @@
 }
 
 +(void) allMessages:(void (^)(NSArray *))success
-            failure:(void (^)(NSError *))failure
+            failure:(failureResponse)failure
 {
     [self allMessagesWithLimit:nil
                  andPageNumber:nil
@@ -273,7 +273,7 @@
 +(void) allMessagesWithLimit:(NSNumber *)limit
                andPageNumber:(NSNumber *)pageNumber
                      success:(void (^)(NSArray *))success
-                     failure:(void (^)(NSError *))failure
+                     failure:(failureResponse)failure
 {
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_MESSAGE_TYPE
                            parameters:@{@"limit": (limit ? limit : @""), \
@@ -286,7 +286,7 @@
 #pragma mark Conversation Methods
 +(void) conversationWithID:(NSNumber *)ID
                    success:(void (^)(SQConversation *))success
-                   failure:(void (^)(NSError *))failure
+                   failure:(failureResponse)failure
 {
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_CONVERSATION_TYPE
                                 byID:ID
@@ -297,7 +297,7 @@
 }
 
 +(void) allConversations:(void (^)(NSArray *))success
-                 failure:(void (^)(NSError *))failure
+                 failure:(failureResponse)failure
 {
     [self allConversationsWithLimit:nil
                       andPageNumber:nil
@@ -308,7 +308,7 @@
 +(void) allConversationsWithLimit:(NSNumber *)limit
                     andPageNumber:(NSNumber *)pageNumber
                           success:(void (^)(NSArray *))success
-                          failure:(void (^)(NSError *))failure
+                          failure:(failureResponse)failure
 {
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_CONVERSATION_TYPE
                            parameters:@{@"limit": (limit ? limit : @""), \
@@ -321,7 +321,7 @@
 #pragma mark Invite Methods
 +(void) inviteWithID:(NSNumber *)ID
              success:(void (^)(SQInvite *))success
-             failure:(void (^)(NSError *))failure
+             failure:(failureResponse)failure
 {
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_INVITE_TYPE
                                 byID:ID
@@ -332,7 +332,7 @@
 }
 
 +(void) allInvites:(void (^)(NSArray *))success
-           failure:(void (^)(NSError *))failure
+           failure:(failureResponse)failure
 {
     [self allInvitesWithLimit:nil
                 andPageNumber:nil
@@ -343,7 +343,7 @@
 +(void) allInvitesWithLimit:(NSNumber *)limit
               andPageNumber:(NSNumber *)pageNumber
                     success:(void (^)(NSArray *))success
-                    failure:(void (^)(NSError *))failure
+                    failure:(failureResponse)failure
 {
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_INVITE_TYPE
                            parameters:@{@"limit": (limit ? limit : @""), \
@@ -358,7 +358,7 @@
 #pragma mark Configuration Methods
 
 +(void) configurationInfoForCurrentSession:(void (^)(SQConfiguration *))success
-                                   failure:(void (^)(NSError *))failure
+                                   failure:(failureResponse)failure
 {
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_CONFIGURATION_TYPE
                            parameters:nil
