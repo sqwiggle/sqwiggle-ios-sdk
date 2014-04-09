@@ -197,7 +197,7 @@ typedef void (^failureResponse)(NSError *error);
 + (void)sendMessage:(NSString*)message
 			 roomID:(uint)roomID
 			success:(void (^)(id responseObject))success
-			failure:(void (^)(NSError *error))failure;
+			failure:(failureResponse)failure;
 
 
 #pragma mark Organization Methods

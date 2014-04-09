@@ -287,7 +287,7 @@
 + (void)sendMessage:(NSString*)message
 			 roomID:(uint)roomID
 			success:(void (^)(id responseObject))success
-			failure:(void (^)(NSError *error))failure
+			failure:(failureResponse)failure
 {
 	[SQJuggernaut sendItemOfType:SQWIGGLE_MESSAGE_TYPE
 					  parameters:@{ @"room_id" : @(roomID),
