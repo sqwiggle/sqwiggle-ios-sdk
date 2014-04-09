@@ -170,6 +170,32 @@
     
     WaitUntilBlockCompletes();
 }
+- (void)testSendMessage
+{
+    [self testAuth];
+    
+    StartBlock();
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return [request.URL.relativePath containsString:@"messages"];
+    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+        return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeMessage] statusCode:200 headers:nil]
+                requestTime:1.0 responseTime:1.0];
+    }];
+    waitingForBlock = YES;
+    
+	[Sqwiggle sendMessage:@"Test message"
+				   roomID:1
+				  success:^(id responseObject) {
+					  EndBlock();
+					  XCTAssertTrue(YES, @"Did succeed");
+				  }
+				  failure:^(NSError *error) {
+					  EndBlock();
+					  XCTFail(@"Error returned for test %@", error);
+				  }];
+
+    WaitUntilBlockCompletes();
+}
 
 -(void)testAttachment
 {
