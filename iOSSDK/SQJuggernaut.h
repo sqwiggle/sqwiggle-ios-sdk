@@ -32,6 +32,19 @@
                    success:(void (^)(id item))success
                    failure:(void (^)(NSError *error))failure;
 
++(void) sendItemOfType:(SQWIGGLE_TYPE)type
+			parameters:(NSDictionary *)parameters
+			 authToken:(NSString *)auth
+			   success:(void (^)(id item))success
+			   failure:(void (^)(NSError *error))failure;
+
++(void) sendItemOfType:(SQWIGGLE_TYPE)type
+				  byID:(id)ID
+			parameters:(NSDictionary *)parameters
+			 authToken:(NSString *)auth
+			   success:(void (^)(id item))success
+			   failure:(void (^)(NSError *error))failure;
+
 /*
  * Sets current API Endpoint you are using.
  */
