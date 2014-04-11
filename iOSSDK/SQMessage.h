@@ -17,7 +17,8 @@
 @property (nonatomic, readonly) NSNumber *roomID;
 @property (nonatomic, readonly) NSNumber *organziationID;
 @property (nonatomic, readonly) NSArray *mentions;
-@property (nonatomic, readonly) NSString *message;
+@property (nonatomic, readonly) NSString *text;
+@property (nonatomic, readonly) NSString *type;
 @property (nonatomic, readonly) SQUser *user;
 
 @end
