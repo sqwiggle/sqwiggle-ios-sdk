@@ -6,5 +6,6 @@ language: objective-c
 before_install:
     - brew update
     - brew uninstall xctool && brew install xctool --HEAD
+  	- gem install cocoapods -v '0.31.1'
 
 script: xctool -workspace SqwiggleSDK.xcworkspace -scheme 'iOSSDK' -sdk iphonesimulator -configuration Release test -test-sdk iphonesimulator
