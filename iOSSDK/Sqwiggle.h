@@ -25,7 +25,7 @@ typedef void (^failureResponse)(NSError *error);
 
 #pragma Sqwiggle Session Methods
 
-/*
+/*!
  * Initializes Sqwiggle API Session locally with username/password.
  */
 +(void) startSqwigglingWithUsername:(NSString *)username
@@ -33,58 +33,58 @@ typedef void (^failureResponse)(NSError *error);
                             success:(void (^)(BOOL user))success
                             failure:(failureResponse)failure;
 
-/*
+/*!
  * Initializes Sqwiggle API Session locally with API Key.
  */
 +(void) startSqwigglingWithAuthenticationToken:(NSString *)authToken;
 
-/*
+/*!
  * Removes Sqwiggle data from local device
  */
 +(void) stopSqwiggling;
 
-/*
+/*!
  * Checks to see if valid authentication token exists
  */
 +(BOOL) isLoggedIn;
 
-/*
+/*!
  * Current authentication token
  */
 +(NSString *) authToken;
 
 #pragma mark User Methods
 
-/*
+/*!
  * Current user, stored locally. If nil, call getCurrentUser and currentUser will be automatically updated
  */
 +(SQUser *) currentUser;
 
-/*
+/*!
  *Current rooms, stored locally. If nil, call allRooms and the variable will be automatically updated.
  */
 +(NSArray *) currentUserRooms;
 
-/*
+/*!
  * Retreives authenticated user, if authentication with username/pw has been used.
  */
 +(void) currentUserForSession:(void (^)(SQUser *user))success
                       failure:(failureResponse)failure;
 
-/*
+/*!
  * Retreives specific user.
  */
 +(void) userWithID:(NSNumber *)ID
            success:(void (^)(SQUser *user))success
            failure:(failureResponse)failure;
                         
-/* 
+/*! 
  * Retreives all users accessible via current authenticated session.
  */
 +(void) allUsers:(void (^)(NSArray *users))success
          failure:(failureResponse)failure;
 
-/*
+/*!
  * Retreives all users accessible via current authenticated session with the option to limit # of objects return.
  * Able to limit number of items returned, as well as being able to set page number.
  */
@@ -95,7 +95,7 @@ typedef void (^failureResponse)(NSError *error);
 
 
 #pragma mark Attachment Methods
-/*
+/*!
  * Updates the specified attachment by setting the values of the parameters passed. 
  * Note that changes made via the API will be immediately reflected in the interface of all connected clients.
  */
@@ -103,14 +103,14 @@ typedef void (^failureResponse)(NSError *error);
                success:(void (^)(SQAttachment *attachment))success
                failure:(failureResponse)failure;
 
-/*
+/*!
  * Returns a list of all attachments in the current organization.
  * The attachments are returned in reverse date order by default.
  */
 +(void) allAttachments:(void (^)(NSArray *attachments))success
                failure:(failureResponse)failure;
 
-/*
+/*!
  * Returns a list of all attachments in the current organization. 
  * Able to limit number of items returned, as well as being able to set page number.
  * The attachments are returned in reverse date order by default.
@@ -122,7 +122,7 @@ typedef void (^failureResponse)(NSError *error);
 
 
 #pragma mark Room Methods
-/*
+/*!
  * Retrieves the details of any room that the token has access to.
  * Supply a room ID and Sqwiggle will return the corresponding room details.
  */
@@ -130,14 +130,14 @@ typedef void (^failureResponse)(NSError *error);
            success:(void (^)(SQRoom *room))success
            failure:(failureResponse)failure;
 
-/*
+/*!
  * Returns a list of all rooms in the current organization.
  * The rooms are returned in sorted alphabetical order by default.
  */
 +(void) allRooms:(void (^)(NSArray *rooms))success
          failure:(failureResponse)failure;
 
-/*
+/*!
  * Returns a list of all rooms in the current organization. 
  * The rooms are returned in sorted alphabetical order by default.
  * Able to limit number of items returned, as well as being able to set page number.
@@ -147,14 +147,14 @@ typedef void (^failureResponse)(NSError *error);
                   success:(void (^)(NSArray *rooms))success
                   failure:(failureResponse)failure;
 
-/*
+/*!
  * Retreives all Messages associated with RoomID
  */
 +(void) messagesForRoomID:(NSNumber *)ID
                   success:(void (^)(NSArray *user))success
                   failure:(failureResponse)failure;
 
-/*
+/*!
  * Retreives all Messages associated with RoomID
  * Able to limit number of items returned, as well as being able to set page number.
  */
@@ -165,20 +165,20 @@ typedef void (^failureResponse)(NSError *error);
                   failure:(failureResponse)failure;
 
 #pragma mark Message Methods
-/*
+/*!
  * Retreives specific message for session.
  */
 +(void) messageWithID:(NSNumber *)ID
               success:(void (^)(SQMessage *room))success
               failure:(failureResponse)failure;
 
-/*
+/*!
  * Retreives all Messages for session
  */
 +(void) allMessages:(void (^)(NSArray *messages))success
             failure:(failureResponse)failure;
 
-/*
+/*!
  * Retreives all Messages for session
  * Able to limit number of items returned, as well as being able to set page number.
  */
@@ -187,7 +187,7 @@ typedef void (^failureResponse)(NSError *error);
                      success:(void (^)(NSArray *messages))success
                      failure:(failureResponse)failure;
 
-/*! 
+/*!
  *	Sends a message to the room with the given room ID.
  *	@param message The message to send.
  *	@param roomID The room ID
@@ -201,7 +201,7 @@ typedef void (^failureResponse)(NSError *error);
 
 
 #pragma mark Organization Methods
-/*
+/*!
  * Returns a list of all organizations the current token has access to.
  * At this time each user can only belong to a single organization and
  * all API requests are scoped by a single organization.
@@ -210,7 +210,7 @@ typedef void (^failureResponse)(NSError *error);
 +(void) allOrganizations:(void (^)(NSArray *organizations))success
                  failure:(failureResponse)failure;
 
-/* 
+/*! 
  * Retrieves the details of an organization that the token has access to.
  * At this time each user can only belong to a single organization and 
  * all API requests are scoped by a single organization.
@@ -224,7 +224,7 @@ typedef void (^failureResponse)(NSError *error);
 +(void) allConversations:(void (^)(NSArray *conversations))success
                  failure:(failureResponse)failure;
 
-/*
+/*!
  * Returns a list of all conversations within the organization
  * associated with the provided token. This includes both finished and ongoing.
  * Able to limit number of items returned, as well as being able to set page number.
@@ -234,7 +234,7 @@ typedef void (^failureResponse)(NSError *error);
                           success:(void (^)(NSArray *conversations))success
                           failure:(failureResponse)failure;
 
-/*
+/*!
  * Retrieves the details of a specific conversation provided the conversation is accessible 
  * via the provided token. Supply a conversation ID and Sqwiggle will return the 
  * corresponding conversation information.
@@ -245,13 +245,13 @@ typedef void (^failureResponse)(NSError *error);
 
 
 #pragma mark Invite Methods
-/* 
+/*! 
  * Returns a list of all outstanging invites in the current organization. 
  */
 +(void) allInvites:(void (^)(NSArray *rooms))success
            failure:(failureResponse)failure;
 
-/*
+/*!
  * Returns a list of all outstanding invites in the current organization.
  * Able to limit number of items returned, as well as being able to set page number.
  */
@@ -260,7 +260,7 @@ typedef void (^failureResponse)(NSError *error);
                     success:(void (^)(NSArray *invites))success
                     failure:(failureResponse)failure;
 
-/*
+/*!
  * Retrieves the details of any invite that has been previously created.
  * Supply an invite ID to get details of the invite.
  */
@@ -271,7 +271,7 @@ typedef void (^failureResponse)(NSError *error);
 
 #pragma mark Configuration Methods
 
-/*
+/*!
  * Returns configuration information for Sqwiggle clients, such as where to store file uploads, 
  * limits, ice servers and other misc details that are required.
  */ 
@@ -279,13 +279,13 @@ typedef void (^failureResponse)(NSError *error);
                                    failure:(failureResponse)failure;
 
 #pragma mark Debug Methods
-/*
+/*!
  * Update current Sqwiggle API Endpoint you are using. Generally you will
  * never need to call this.
  */
 +(void) setAPIEndpoint:(NSString *)endpoint;
 
-/*
+/*!
  * Returns current API endpoint used in SDK.
  */
 +(NSString *) currentAPIEndpoint;
