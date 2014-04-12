@@ -20,7 +20,7 @@
 
 -(BOOL) containsUser:(SQUser *)user;
 {
-    for (id rawUser in self.participatingUsers) {
+    for (id rawUser in self.participatingUsersContainer) {
         SQUser *currentUser = [SQUser objectWithDictionary:rawUser];
         if ([user.ID isEqualToNumber:currentUser.ID])
         {

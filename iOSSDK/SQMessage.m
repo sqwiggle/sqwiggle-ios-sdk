@@ -13,9 +13,14 @@
 
 -(NSDictionary *) modelDefinition
 {
-    return @{@"ID": @"id", @"_updatedAt" : @"updated_at", @"createdAt": @"created_at",
-             @"roomID" : @"room_id", @"mentions": @"mentions",
-             @"message": @"message", @"user": @"user"};
+    return @{@"ID": @"id",
+			 @"updatedAt" : @"updated_at",
+			 @"createdAt": @"created_at",
+             @"roomID" : @"room_id",
+			 @"mentions" : @"mentions",
+             @"text" : @"text",
+			 @"type" : @"type",
+			 @"user": @"author"};
 }
 
 @end
