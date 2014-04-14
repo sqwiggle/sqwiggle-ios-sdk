@@ -37,6 +37,10 @@
  */
 - (BOOL)isValidObject:(id)object;
 
+/*! Check whether the object coming from the server is a valid NSDictionary.
+ */
+- (BOOL)isValidDictionary:(id)object;
+
 #pragma mark API State Methods
 /*!
  * Updates current object or saves new one in database.

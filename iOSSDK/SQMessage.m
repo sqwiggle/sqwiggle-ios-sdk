@@ -35,7 +35,7 @@
 		 if ([self isValidObject:incomingObject])
 		 {
 			 // Special handling for user objects.
-			 if ([[incomingObject key] isEqualToString:@"author"])
+			 if ([self isValidDictionary:incomingObject] && [key isEqualToString:@"author"])
 			 {
 				 _user = [[SQUser alloc] initObjectWithDictionary:incomingObject];
 			 }
