@@ -6,7 +6,11 @@
 //  Copyright (c) 2013 Sqwiggle. All rights reserved.
 //
 
-#define SQWIGGLE_SDK_VERION @"0.1.2"
+
+
+#ifndef Sqwiggle_sqconstants_h
+#define Sqwiggle_sqconstants_h
+
 
 //Creating for Semantics sake
 #define SQWIGGLE_TYPE NSString*
@@ -37,5 +41,4 @@ SQWIGGLE_CONFIGURATION_TYPE: @"info/configuration"}
 #define SQWIGGLE_STATUS_OFFLINE @"offline"
 #define SQWIGGLE_DEFAULT_BUSY_STATUS @"I'm Busy"
 
-#import <ObjectiveSugar/ObjectiveSugar.h>
-#import <AFNetworking/AFNetworking.h>
+#endif
