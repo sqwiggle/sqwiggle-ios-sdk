@@ -15,6 +15,10 @@
 
 @end
 
+
+/// Date formatter is cached since creating it is slow.
+static NSDateFormatter *sharedDateFormatter = nil;
+
 @implementation SQObject
 
 -(id) initObjectWithDictionary:(NSDictionary *)dictionary
@@ -28,6 +32,18 @@
         [self mapObject:self withValues:dictionary];
     }
     return self;
+}
+
++ (NSDateFormatter*)dateFormatter
+{
+	if (!sharedDateFormatter)
+	{
+		sharedDateFormatter = [[NSDateFormatter alloc] init];
+		[sharedDateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+		[sharedDateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
+	}
+	
+	return sharedDateFormatter;
 }
 
 -(id) mapObject:(id)object withValues:(NSDictionary *)dictionary
@@ -66,6 +82,13 @@
 		return YES;
 	
 	return NO;
+}
+
+
++ (NSDate*)dateWithString:(NSString*)dateString
+{
+	NSDate *date = [[SQObject dateFormatter] dateFromString:dateString];
+	return date;
 }
 
 

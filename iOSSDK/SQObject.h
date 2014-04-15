@@ -45,6 +45,10 @@
  */
 + (BOOL)isValidArray:(id)object;
 
+/*! Returns an NSDate object given a date string.
+ */
++ (NSDate*)dateWithString:(NSString*)dateString;
+
 
 #pragma mark API State Methods
 /*!

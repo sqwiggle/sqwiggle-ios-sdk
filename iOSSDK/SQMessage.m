@@ -36,9 +36,9 @@
 		 {
 			 // Special handling for user objects.
 			 if ([SQObject isValidDictionary:incomingObject] && [key isEqualToString:@"user"])
-			 {
 				 _user = [[SQUser alloc] initObjectWithDictionary:incomingObject];
-			 }
+			 else if ([key isEqualToString:@"createdAt"])
+				 _createdAt = [SQObject dateWithString:incomingObject];
 			 else
 				 [object setValue:incomingObject forKey:key];
 		 }
