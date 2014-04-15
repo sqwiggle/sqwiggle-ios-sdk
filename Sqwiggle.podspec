@@ -14,5 +14,6 @@ Pod::Spec.new do |s|
 
   s.dependency 'AFNetworking', "~> 2.0.3"
   s.dependency "ObjectiveSugar", '~> 0.9'
+  s.prefix_header_contents = '#import <ObjectiveSugar/ObjectiveSugar.h>', '#import <AFNetworking/AFNetworking.h>'
 
 end

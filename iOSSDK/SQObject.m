@@ -52,6 +52,14 @@
 	return YES;
 }
 
+- (BOOL)isValidDictionary:(id)object
+{
+	if (object && [object isKindOfClass:[NSDictionary class]] && ([[object allKeys] count] > 0))
+		return YES;
+	
+	return NO;
+}
+
 //Short-hand init
 +(id) objectWithDictionary:(NSDictionary *)dictionary
 {
