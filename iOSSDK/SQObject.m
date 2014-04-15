@@ -37,14 +37,14 @@
      {
 		 // Validate incoming object. NSNull objects should not be stored.
 		 id incomingObject = [dictionary valueForKeyPath:value];
-		 if ([self isValidObject:incomingObject])
+		 if ([SQObject isValidObject:incomingObject])
 			 [object setValue:incomingObject forKey:key];
      }];
     
     return object;
 }
 
-- (BOOL)isValidObject:(id)object
++ (BOOL)isValidObject:(id)object
 {
 	if (!object || [object isKindOfClass:[NSNull class]])
 		return NO;
@@ -52,13 +52,22 @@
 	return YES;
 }
 
-- (BOOL)isValidDictionary:(id)object
++ (BOOL)isValidDictionary:(id)object
 {
 	if (object && [object isKindOfClass:[NSDictionary class]] && ([[object allKeys] count] > 0))
 		return YES;
 	
 	return NO;
 }
+
++ (BOOL)isValidArray:(id)object
+{
+	if (object && [object isKindOfClass:[NSArray class]] && ([object count] > 0))
+		return YES;
+	
+	return NO;
+}
+
 
 //Short-hand init
 +(id) objectWithDictionary:(NSDictionary *)dictionary
@@ -105,24 +114,24 @@
           parameters:[self dictionaryFormat]
              success:^(AFHTTPRequestOperation *operation, id responseObject) {
                  success(responseObject);
-            
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            failure(failure);
-        }];
+				 
+			 } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+				 failure(failure);
+			 }];
     }
     else
     {
         //No ID. Let's attempt to create a new one.
         url = [NSString stringWithFormat:@"%@/%@", [Sqwiggle currentAPIEndpoint], _relativeURL];
         [manager POST:url
-          parameters:[self dictionaryFormat]
-             success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                 [self mapObject:self withValues:responseObject];
-                 success(responseObject);
-                 
-             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                 failure(failure);
-             }];
+		   parameters:[self dictionaryFormat]
+			  success:^(AFHTTPRequestOperation *operation, id responseObject) {
+				  [self mapObject:self withValues:responseObject];
+				  success(responseObject);
+				  
+			  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+				  failure(failure);
+			  }];
     }
     
 }
@@ -138,12 +147,12 @@
     [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:[Sqwiggle authToken]
                                                               password:SUPER_SECRET_PASSWORD];
     [manager DELETE:url
-      parameters:[self dictionaryFormat]
-         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             success();
-         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             failure(failure);
-         }];
+		 parameters:[self dictionaryFormat]
+			success:^(AFHTTPRequestOperation *operation, id responseObject) {
+				success();
+			} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+				failure(failure);
+			}];
 }
 #pragma mark NSObject methods for storage/etc
 - (void)encodeWithCoder:(NSCoder *)coder {
@@ -153,7 +162,7 @@
             [encodeDictionary setObject:[self valueForKey:key] forKey:key];
     }];
     [coder encodeObject:encodeDictionary forKey:NSStringFromClass([self class])];
-
+	
 }
 
 //Handy override function to make sure our stuff can be stored offline :)

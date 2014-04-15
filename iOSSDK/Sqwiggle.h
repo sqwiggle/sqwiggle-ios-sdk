@@ -77,8 +77,8 @@ typedef void (^failureResponse)(NSError *error);
 +(void) userWithID:(NSNumber *)ID
            success:(void (^)(SQUser *user))success
            failure:(failureResponse)failure;
-                        
-/*! 
+
+/*!
  * Retreives all users accessible via current authenticated session.
  */
 +(void) allUsers:(void (^)(NSArray *users))success
@@ -96,7 +96,7 @@ typedef void (^failureResponse)(NSError *error);
 
 #pragma mark Attachment Methods
 /*!
- * Updates the specified attachment by setting the values of the parameters passed. 
+ * Updates the specified attachment by setting the values of the parameters passed.
  * Note that changes made via the API will be immediately reflected in the interface of all connected clients.
  */
 +(void) attachmentByID:(NSNumber *)ID
@@ -111,7 +111,7 @@ typedef void (^failureResponse)(NSError *error);
                failure:(failureResponse)failure;
 
 /*!
- * Returns a list of all attachments in the current organization. 
+ * Returns a list of all attachments in the current organization.
  * Able to limit number of items returned, as well as being able to set page number.
  * The attachments are returned in reverse date order by default.
  */
@@ -138,7 +138,7 @@ typedef void (^failureResponse)(NSError *error);
          failure:(failureResponse)failure;
 
 /*!
- * Returns a list of all rooms in the current organization. 
+ * Returns a list of all rooms in the current organization.
  * The rooms are returned in sorted alphabetical order by default.
  * Able to limit number of items returned, as well as being able to set page number.
  */
@@ -175,7 +175,7 @@ typedef void (^failureResponse)(NSError *error);
  * Retreives all Messages associated with RoomID
  */
 +(void) messagesForRoomID:(NSNumber *)ID
-                  success:(void (^)(NSArray *user))success
+                  success:(void (^)(NSArray *messages))success
                   failure:(failureResponse)failure;
 
 /*!
@@ -185,7 +185,7 @@ typedef void (^failureResponse)(NSError *error);
 +(void) messagesForRoomID:(NSNumber *)ID
                 withLimit:(NSNumber *)limit
               andBeforeID:(NSNumber *)beforeID
-                  success:(void (^)(NSArray *))success
+                  success:(void (^)(NSArray *messages))success
                   failure:(failureResponse)failure;
 
 /*!
@@ -211,9 +211,9 @@ typedef void (^failureResponse)(NSError *error);
 +(void) allOrganizations:(void (^)(NSArray *organizations))success
                  failure:(failureResponse)failure;
 
-/*! 
+/*!
  * Retrieves the details of an organization that the token has access to.
- * At this time each user can only belong to a single organization and 
+ * At this time each user can only belong to a single organization and
  * all API requests are scoped by a single organization.
  */
 +(void) organizationWithID:(NSNumber *)ID
@@ -236,8 +236,8 @@ typedef void (^failureResponse)(NSError *error);
                           failure:(failureResponse)failure;
 
 /*!
- * Retrieves the details of a specific conversation provided the conversation is accessible 
- * via the provided token. Supply a conversation ID and Sqwiggle will return the 
+ * Retrieves the details of a specific conversation provided the conversation is accessible
+ * via the provided token. Supply a conversation ID and Sqwiggle will return the
  * corresponding conversation information.
  */
 +(void) conversationWithID:(NSNumber *)ID
@@ -246,8 +246,8 @@ typedef void (^failureResponse)(NSError *error);
 
 
 #pragma mark Invite Methods
-/*! 
- * Returns a list of all outstanging invites in the current organization. 
+/*!
+ * Returns a list of all outstanging invites in the current organization.
  */
 +(void) allInvites:(void (^)(NSArray *rooms))success
            failure:(failureResponse)failure;
@@ -273,9 +273,9 @@ typedef void (^failureResponse)(NSError *error);
 #pragma mark Configuration Methods
 
 /*!
- * Returns configuration information for Sqwiggle clients, such as where to store file uploads, 
+ * Returns configuration information for Sqwiggle clients, such as where to store file uploads,
  * limits, ice servers and other misc details that are required.
- */ 
+ */
 +(void) configurationInfoForCurrentSession:(void (^)(SQConfiguration *))success
                                    failure:(failureResponse)failure;
 

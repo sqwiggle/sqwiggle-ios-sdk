@@ -273,11 +273,19 @@
                   success:(void (^)(NSArray *))success
                   failure:(failureResponse)failure
 {
+	NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+	
+	if (limit)
+		params[@"limit"] = limit;
+	
+	if (beforeID)
+		params[@"before_id"] = beforeID;
+	
     //Yep, this is hacky with messages for room, but gets the job done
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_ROOM_TYPE
+						   mapToType:SQWIGGLE_MESSAGE_TYPE
                                 byID:NSStringWithFormat(@"%@/messages", ID)
-                          parameters:@{@"limit": (limit ? limit : @""), \
-                                       @"before_id": (beforeID ? beforeID : @"")}
+                          parameters:params
                            authToken:[self authToken]
                              success:success
                              failure:failure];
