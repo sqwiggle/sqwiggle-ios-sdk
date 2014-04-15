@@ -147,22 +147,6 @@ typedef void (^failureResponse)(NSError *error);
                   success:(void (^)(NSArray *rooms))success
                   failure:(failureResponse)failure;
 
-/*!
- * Retreives all Messages associated with RoomID
- */
-+(void) messagesForRoomID:(NSNumber *)ID
-                  success:(void (^)(NSArray *user))success
-                  failure:(failureResponse)failure;
-
-/*!
- * Retreives all Messages associated with RoomID
- * Able to limit number of items returned, as well as being able to set page number.
- */
-+(void) messagesForRoomID:(NSNumber *)ID
-                withLimit:(NSNumber *)limit
-            andPageNumber:(NSNumber *) pageNumber
-                  success:(void (^)(NSArray *messages))success
-                  failure:(failureResponse)failure;
 
 #pragma mark Message Methods
 /*!
@@ -183,9 +167,26 @@ typedef void (^failureResponse)(NSError *error);
  * Able to limit number of items returned, as well as being able to set page number.
  */
 +(void) allMessagesWithLimit:(NSNumber *)limit
-               andPageNumber:(NSNumber *) pageNumber
+                 andBeforeID:(NSNumber *)beforeID
                      success:(void (^)(NSArray *messages))success
                      failure:(failureResponse)failure;
+
+/*!
+ * Retreives all Messages associated with RoomID
+ */
++(void) messagesForRoomID:(NSNumber *)ID
+                  success:(void (^)(NSArray *user))success
+                  failure:(failureResponse)failure;
+
+/*!
+ * Retreives all Messages associated with RoomID
+ * Able to limit number of items returned, as well as being able to set page number.
+ */
++(void) messagesForRoomID:(NSNumber *)ID
+                withLimit:(NSNumber *)limit
+              andBeforeID:(NSNumber *)beforeID
+                  success:(void (^)(NSArray *))success
+                  failure:(failureResponse)failure;
 
 /*!
  *	Sends a message to the room with the given room ID.
