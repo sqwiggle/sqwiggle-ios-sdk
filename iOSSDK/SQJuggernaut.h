@@ -20,6 +20,21 @@
 
 /* Retreival Methods */
 +(void) retreiveItemsOfType:(SQWIGGLE_TYPE)type
+				  mapToType:(SQWIGGLE_TYPE)mapType
+                 parameters:(NSDictionary *)parameters
+                  authToken:(id)auth
+                    success:(void (^)(id items))success
+                    failure:(void (^)(NSError *error))failure;
+
++(void) retreiveItemOfType:(SQWIGGLE_TYPE)type
+				 mapToType:(SQWIGGLE_TYPE)mapType
+                      byID:(id)ID
+                parameters:(NSDictionary *)parameters
+                 authToken:(NSString *)auth
+                   success:(void (^)(id item))success
+                   failure:(void (^)(NSError *error))failure;
+
++(void) retreiveItemsOfType:(SQWIGGLE_TYPE)type
                  parameters:(NSDictionary *)parameters
                   authToken:(id)auth
                     success:(void (^)(id items))success
@@ -31,6 +46,7 @@
                  authToken:(NSString *)auth
                    success:(void (^)(id item))success
                    failure:(void (^)(NSError *error))failure;
+
 
 +(void) sendItemOfType:(SQWIGGLE_TYPE)type
 			parameters:(NSDictionary *)parameters

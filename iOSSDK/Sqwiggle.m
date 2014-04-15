@@ -198,34 +198,6 @@
                               failure:failure];
 }
 
-
-+(void) messagesForRoomID:(NSNumber *)ID
-                  success:(void (^)(NSArray *))success
-                  failure:(failureResponse)failure
-{
-    [self messagesForRoomID:ID
-                  withLimit:nil
-              andPageNumber:nil
-                    success:success
-                    failure:failure];
-}
-
-+(void) messagesForRoomID:(NSNumber *)ID
-                withLimit:(NSNumber *)limit
-            andPageNumber:(NSNumber *) pageNumber
-                  success:(void (^)(NSArray *))success
-                  failure:(failureResponse)failure
-{
-    //Yep, this is hacky with messages for room, but gets the job done
-    [SQJuggernaut retreiveItemOfType:SQWIGGLE_ROOM_TYPE
-                                byID:NSStringWithFormat(@"%@/messages", ID)
-                          parameters:@{@"limit": (limit ? limit : @""), \
-                                       @"page": (pageNumber ? pageNumber : @"")}
-                           authToken:[self authToken]
-                             success:success
-                             failure:failure];
-}
-
 #pragma mark Organization Methods
 +(void) allOrganizations:(void (^)(NSArray *))success
                  failure:(failureResponse)failure
@@ -265,24 +237,59 @@
             failure:(failureResponse)failure
 {
     [self allMessagesWithLimit:nil
-                 andPageNumber:nil
+                   andBeforeID:nil
                        success:success
                        failure:failure];
 }
 
 +(void) allMessagesWithLimit:(NSNumber *)limit
-               andPageNumber:(NSNumber *)pageNumber
+                 andBeforeID:(NSNumber *)beforeID
                      success:(void (^)(NSArray *))success
                      failure:(failureResponse)failure
 {
     [SQJuggernaut retreiveItemsOfType:SQWIGGLE_MESSAGE_TYPE
                            parameters:@{@"limit": (limit ? limit : @""), \
-                                        @"page": (pageNumber ? pageNumber : @"")}
+                                        @"before_id": (beforeID ? beforeID : @"")}
                             authToken:[self authToken]
                               success:success
                               failure:failure];
 }
 
+
++(void) messagesForRoomID:(NSNumber *)ID
+                  success:(void (^)(NSArray *))success
+                  failure:(failureResponse)failure
+{
+    [self messagesForRoomID:ID
+                  withLimit:nil
+                andBeforeID:nil
+                    success:success
+                    failure:failure];
+}
+
++(void) messagesForRoomID:(NSNumber *)ID
+                withLimit:(NSNumber *)limit
+              andBeforeID:(NSNumber *) beforeID
+                  success:(void (^)(NSArray *))success
+                  failure:(failureResponse)failure
+{
+	NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+	
+	if (limit)
+		params[@"limit"] = limit;
+	
+	if (beforeID)
+		params[@"before_id"] = beforeID;
+	
+    //Yep, this is hacky with messages for room, but gets the job done
+    [SQJuggernaut retreiveItemOfType:SQWIGGLE_ROOM_TYPE
+						   mapToType:SQWIGGLE_MESSAGE_TYPE
+                                byID:NSStringWithFormat(@"%@/messages", ID)
+                          parameters:params
+                           authToken:[self authToken]
+                             success:success
+                             failure:failure];
+}
 
 + (void)sendMessage:(NSString*)message
 			 roomID:(uint)roomID

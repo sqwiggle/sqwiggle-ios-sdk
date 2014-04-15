@@ -35,11 +35,20 @@
 
 /*! Check whether the object coming from the server is a valid, assignable object.
  */
-- (BOOL)isValidObject:(id)object;
++ (BOOL)isValidObject:(id)object;
 
 /*! Check whether the object coming from the server is a valid NSDictionary.
  */
-- (BOOL)isValidDictionary:(id)object;
++ (BOOL)isValidDictionary:(id)object;
+
+/*! Check whether the object coming from the server is a valid NSArray.
+ */
++ (BOOL)isValidArray:(id)object;
+
+/*! Returns an NSDate object given a date string.
+ */
++ (NSDate*)dateWithString:(NSString*)dateString;
+
 
 #pragma mark API State Methods
 /*!
@@ -54,6 +63,6 @@
  * Removes object.
  */
 -(void) delete:(void (^)(void))success
-       failure:(void (^)(NSError *error))failure;
+failure:(void (^)(NSError *error))failure;
 
 @end

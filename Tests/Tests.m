@@ -136,13 +136,13 @@
     waitingForBlock = YES;
     
     [Sqwiggle messageWithID:@1
-                        success:^(SQMessage *message) {
-                            EndBlock();
-                            XCTAssertTrue(YES, @"Did succeed");
-                        } failure:^(NSError *error) {
-                            EndBlock();
-                            XCTFail(@"Error returned for test %@", error);
-                        }];
+                    success:^(SQMessage *message) {
+                        EndBlock();
+                        XCTAssertTrue(YES, @"Did succeed");
+                    } failure:^(NSError *error) {
+                        EndBlock();
+                        XCTFail(@"Error returned for test %@", error);
+                    }];
     
     WaitUntilBlockCompletes();
 }
@@ -170,6 +170,34 @@
     
     WaitUntilBlockCompletes();
 }
+
+- (void)testGetMessagesForPage
+{
+    [self testAuth];
+    
+    StartBlock();
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return [request.URL.relativePath containsString:@"messages"];
+    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+        return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeMessages] statusCode:200 headers:nil]
+                requestTime:1.0 responseTime:1.0];
+    }];
+    waitingForBlock = YES;
+    
+    [Sqwiggle messagesForRoomID:@1
+                      withLimit:@5
+                    andBeforeID:@6
+                        success:^(NSArray *items) {
+                            EndBlock();
+                            XCTAssertTrue(YES, @"Did succeed");
+                        } failure:^(NSError *error) {
+                            EndBlock();
+                            XCTFail(@"Error returned for test %@", error);
+                        }];
+    
+    WaitUntilBlockCompletes();
+}
+
 - (void)testSendMessage
 {
     [self testAuth];

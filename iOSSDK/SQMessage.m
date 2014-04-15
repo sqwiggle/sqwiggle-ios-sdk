@@ -32,13 +32,13 @@
      {
 		 // Validate incoming object. NSNull objects should not be stored.
 		 id incomingObject = [dictionary valueForKeyPath:value];
-		 if ([self isValidObject:incomingObject])
+		 if ([SQObject isValidObject:incomingObject])
 		 {
 			 // Special handling for user objects.
-			 if ([self isValidDictionary:incomingObject] && [key isEqualToString:@"author"])
-			 {
+			 if ([SQObject isValidDictionary:incomingObject] && [key isEqualToString:@"user"])
 				 _user = [[SQUser alloc] initObjectWithDictionary:incomingObject];
-			 }
+			 else if ([key isEqualToString:@"createdAt"])
+				 _createdAt = [SQObject dateWithString:incomingObject];
 			 else
 				 [object setValue:incomingObject forKey:key];
 		 }
