@@ -12,13 +12,13 @@
 
 @interface SQMessage : SQObject
 
-@property (nonatomic, readonly) NSDate *createdAt;
-@property (nonatomic, readonly) NSDate *updatedAt;
-@property (nonatomic, readonly) NSNumber *roomID;
-@property (nonatomic, readonly) NSNumber *organziationID;
-@property (nonatomic, readonly) NSArray *mentions;
-@property (nonatomic, readonly) NSString *text;
-@property (nonatomic, readonly) NSString *type;
-@property (nonatomic, readonly) SQUser *user;
+@property (nonatomic, copy) NSDate *createdAt;
+@property (nonatomic, copy) NSDate *updatedAt;
+@property (nonatomic, copy) NSNumber *roomID;
+@property (nonatomic, copy) NSNumber *organziationID;
+@property (nonatomic, strong) NSArray *mentions;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic, copy) NSString *type;
+@property (nonatomic, strong) SQUser *user;
 
 @end
