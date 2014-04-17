@@ -40,7 +40,8 @@ static NSDateFormatter *sharedDateFormatter = nil;
 	{
 		sharedDateFormatter = [[NSDateFormatter alloc] init];
 		[sharedDateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
-		[sharedDateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
+		// Timezone from server is always GMT.
+		[sharedDateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
 	}
 	
 	return sharedDateFormatter;
