@@ -16,14 +16,15 @@
 #define SQWIGGLE_TYPE NSString*
 
 //More Semantics stuff
-#define SQWIGGLE_USER_TYPE @"SQUser"
-#define SQWIGGLE_ORGANIZATION_TYPE @"SQOrganization"
-#define SQWIGGLE_MESSAGE_TYPE @"SQMessage"
-#define SQWIGGLE_ROOM_TYPE @"SQRoom"
-#define SQWIGGLE_INVITE_TYPE @"SQInvite"
-#define SQWIGGLE_ATTACHMENT_TYPE @"SQAttachment"
-#define SQWIGGLE_CONVERSATION_TYPE @"SQConversation"
-#define SQWIGGLE_CONFIGURATION_TYPE @"SQConfiguration"
+#define SQWIGGLE_USER_TYPE			@"SQUser"
+#define SQWIGGLE_ORGANIZATION_TYPE	@"SQOrganization"
+#define SQWIGGLE_MESSAGE_TYPE		@"SQMessage"
+#define SQWIGGLE_ROOM_TYPE			@"SQRoom"
+#define SQWIGGLE_STREAM_TYPE		@"SQStream"
+#define SQWIGGLE_INVITE_TYPE		@"SQInvite"
+#define SQWIGGLE_ATTACHMENT_TYPE	@"SQAttachment"
+#define SQWIGGLE_CONVERSATION_TYPE	@"SQConversation"
+#define SQWIGGLE_CONFIGURATION_TYPE	@"SQConfiguration"
 
 #define SUPER_SECRET_PASSWORD @"x"
 
@@ -31,6 +32,7 @@
 SQWIGGLE_ORGANIZATION_TYPE: @"organizations", \
 SQWIGGLE_CONVERSATION_TYPE: @"conversations",\
 SQWIGGLE_ROOM_TYPE: @"rooms",\
+SQWIGGLE_STREAM_TYPE: @"streams", \
 SQWIGGLE_INVITE_TYPE: @"invites", \
 SQWIGGLE_ATTACHMENT_TYPE : @"attachments", \
 SQWIGGLE_MESSAGE_TYPE: @"messages",\

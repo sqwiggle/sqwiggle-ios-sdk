@@ -148,6 +148,13 @@ typedef void (^failureResponse)(NSError *error);
                   failure:(failureResponse)failure;
 
 
+#pragma mark - Stream Methods
+/*! Returns a list of all streams that the current user can subscribe to.
+ */
++ (void)allStreams:(void (^)(NSArray *rooms))success
+		   failure:(failureResponse)failure;
+
+
 #pragma mark Message Methods
 /*!
  * Retreives specific message for session.
