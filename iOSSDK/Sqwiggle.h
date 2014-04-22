@@ -16,6 +16,7 @@
 #import "SQConversation.h"
 #import "SQConfiguration.h"
 #import "SQAttachment.h"
+#import "SQStream.h"
 
 
 typedef void (^failureResponse)(NSError *error);
@@ -151,7 +152,7 @@ typedef void (^failureResponse)(NSError *error);
 #pragma mark - Stream Methods
 /*! Returns a list of all streams that the current user can subscribe to.
  */
-+ (void)allStreams:(void (^)(NSArray *rooms))success
++ (void)allStreams:(void (^)(NSArray *streams))success
 		   failure:(failureResponse)failure;
 
 

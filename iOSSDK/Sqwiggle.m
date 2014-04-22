@@ -201,7 +201,7 @@
 
 #pragma mark - Stream Methods
 
-+ (void)allStreams:(void (^)(NSArray *rooms))success
++ (void)allStreams:(void (^)(NSArray *streams))success
 		   failure:(failureResponse)failure
 {
 	[SQJuggernaut retreiveItemsOfType:SQWIGGLE_STREAM_TYPE
