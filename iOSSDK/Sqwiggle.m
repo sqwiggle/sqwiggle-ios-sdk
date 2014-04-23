@@ -198,6 +198,20 @@
                               failure:failure];
 }
 
+
+#pragma mark - Stream Methods
+
++ (void)allStreams:(void (^)(NSArray *streams))success
+		   failure:(failureResponse)failure
+{
+	[SQJuggernaut retreiveItemsOfType:SQWIGGLE_STREAM_TYPE
+						   parameters:nil
+							authToken:[self authToken]
+							  success:success
+							  failure:failure];
+}
+
+
 #pragma mark Organization Methods
 +(void) allOrganizations:(void (^)(NSArray *))success
                  failure:(failureResponse)failure

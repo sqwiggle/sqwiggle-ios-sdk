@@ -16,6 +16,7 @@
 #import "SQConversation.h"
 #import "SQConfiguration.h"
 #import "SQAttachment.h"
+#import "SQStream.h"
 
 
 typedef void (^failureResponse)(NSError *error);
@@ -146,6 +147,13 @@ typedef void (^failureResponse)(NSError *error);
             andPageNumber:(NSNumber *) pageNumber
                   success:(void (^)(NSArray *rooms))success
                   failure:(failureResponse)failure;
+
+
+#pragma mark - Stream Methods
+/*! Returns a list of all streams that the current user can subscribe to.
+ */
++ (void)allStreams:(void (^)(NSArray *streams))success
+		   failure:(failureResponse)failure;
 
 
 #pragma mark Message Methods

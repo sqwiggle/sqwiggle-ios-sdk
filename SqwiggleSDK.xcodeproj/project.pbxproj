@@ -39,6 +39,7 @@
 		40AF7B0718848B0100E65B9B /* SQAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 40AF7B0518848B0100E65B9B /* SQAttachment.m */; };
 		40B20F15184CE5C1008006C3 /* ResponseFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B20F14184CE5C1008006C3 /* ResponseFactory.m */; };
 		40DC64831833CB300045B5F3 /* Sqwiggle.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DC64821833CB300045B5F3 /* Sqwiggle.m */; };
+		AB08FBAA1907237A0071A5E1 /* SQStream.m in Sources */ = {isa = PBXBuildFile; fileRef = AB08FBA91907237A0071A5E1 /* SQStream.m */; };
 		AEB72E66D37E4E4A831FBF41 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D47E91C25AFE40128D776D3A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +114,8 @@
 		40B20F13184CE5C1008006C3 /* ResponseFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseFactory.h; sourceTree = "<group>"; };
 		40B20F14184CE5C1008006C3 /* ResponseFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseFactory.m; sourceTree = "<group>"; };
 		40DC64821833CB300045B5F3 /* Sqwiggle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sqwiggle.m; sourceTree = "<group>"; };
+		AB08FBA81907237A0071A5E1 /* SQStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQStream.h; sourceTree = "<group>"; };
+		AB08FBA91907237A0071A5E1 /* SQStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQStream.m; sourceTree = "<group>"; };
 		BE77B0992983466A80B2EDDF /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD097FBA5D048878F38FADA /* Pods-Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.xcconfig"; path = "Pods/Pods-Tests.xcconfig"; sourceTree = "<group>"; };
 		D47E91C25AFE40128D776D3A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -281,6 +284,8 @@
 				409446DA18340727005C69B0 /* SQUser.m */,
 				4026789B189EB1DB00BA781C /* SQConfiguration.h */,
 				4026789C189EB1DB00BA781C /* SQConfiguration.m */,
+				AB08FBA81907237A0071A5E1 /* SQStream.h */,
+				AB08FBA91907237A0071A5E1 /* SQStream.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -457,6 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40AF0656183BBA840092882B /* SQJuggernaut.m in Sources */,
+				AB08FBAA1907237A0071A5E1 /* SQStream.m in Sources */,
 				409446E818341C41005C69B0 /* SQInvite.m in Sources */,
 				409446EC18341D15005C69B0 /* SQRoom.m in Sources */,
 				409446DF183417F6005C69B0 /* SQConversation.m in Sources */,
