@@ -9,13 +9,6 @@
 #import "SQObject.h"
 #import "Sqwiggle.h"
 
-@interface SQObject ()
-
-@property (nonatomic, copy) NSString *urlEndpoint;
-
-@end
-
-
 /// Date formatter is cached since creating it is slow.
 static NSDateFormatter *sharedDateFormatter = nil;
 
