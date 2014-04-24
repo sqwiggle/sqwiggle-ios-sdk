@@ -320,4 +320,25 @@
     }];
 }
 
+-(void)testGetAllActivities
+{
+    [self testAuth];
+    
+    StartBlock();
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return [request.URL.relativePath containsString:@"activities"];
+    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+        return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeActivities] statusCode:200 headers:nil]
+                requestTime:1.0 responseTime:1.0];
+    }];
+    waitingForBlock = YES;
+    
+    [Sqwiggle allActivities:^(NSArray *activities) {
+        EndBlock();
+        XCTAssertTrue(YES, @"Did succeed");
+    } failure:^(NSError *error) {
+        EndBlock();
+        XCTFail(@"Error returned for test %@", error);
+    }];
+}
 @end
