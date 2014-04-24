@@ -171,6 +171,7 @@ static NSDateFormatter *sharedDateFormatter = nil;
 				failure(failure);
 			}];
 }
+
 #pragma mark NSObject methods for storage/etc
 - (void)encodeWithCoder:(NSCoder *)coder {
     NSMutableDictionary *encodeDictionary = [NSMutableDictionary new];
@@ -196,8 +197,12 @@ static NSDateFormatter *sharedDateFormatter = nil;
 }
 
 #pragma mark SQObject Description method
-- (NSString *)description {
-    return [NSString stringWithFormat:@"%@ - ID: %@", [self class], self.ID];
+- (NSString *) description {
+    __block NSString *desc = @"";
+    [[self modelDefinition] each:^(id key, id value) {
+        desc = [NSString stringWithFormat:@"%@%@: %@\n", desc, key, [self valueForKey:key]];
+    }];
+    return desc;
 }
 
 

@@ -10,4 +10,8 @@
 
 @interface SQActivity : SQObject
 
+@property (nonatomic, copy) NSArray *recipients;
+@property (nonatomic, copy) 
+
+
 @end

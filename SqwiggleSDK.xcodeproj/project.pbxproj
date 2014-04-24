@@ -39,6 +39,8 @@
 		40AF7B0718848B0100E65B9B /* SQAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 40AF7B0518848B0100E65B9B /* SQAttachment.m */; };
 		40B20F15184CE5C1008006C3 /* ResponseFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B20F14184CE5C1008006C3 /* ResponseFactory.m */; };
 		40DC64831833CB300045B5F3 /* Sqwiggle.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DC64821833CB300045B5F3 /* Sqwiggle.m */; };
+		40FC56EC19095E6A00B11730 /* SQActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FC56EB19095E6A00B11730 /* SQActivity.m */; };
+		40FC56ED19095E6A00B11730 /* SQActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FC56EB19095E6A00B11730 /* SQActivity.m */; };
 		AB08FBAA1907237A0071A5E1 /* SQStream.m in Sources */ = {isa = PBXBuildFile; fileRef = AB08FBA91907237A0071A5E1 /* SQStream.m */; };
 		AEB72E66D37E4E4A831FBF41 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D47E91C25AFE40128D776D3A /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -114,6 +116,8 @@
 		40B20F13184CE5C1008006C3 /* ResponseFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseFactory.h; sourceTree = "<group>"; };
 		40B20F14184CE5C1008006C3 /* ResponseFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseFactory.m; sourceTree = "<group>"; };
 		40DC64821833CB300045B5F3 /* Sqwiggle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sqwiggle.m; sourceTree = "<group>"; };
+		40FC56EA19095E6A00B11730 /* SQActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQActivity.h; sourceTree = "<group>"; };
+		40FC56EB19095E6A00B11730 /* SQActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQActivity.m; sourceTree = "<group>"; };
 		AB08FBA81907237A0071A5E1 /* SQStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQStream.h; sourceTree = "<group>"; };
 		AB08FBA91907237A0071A5E1 /* SQStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQStream.m; sourceTree = "<group>"; };
 		BE77B0992983466A80B2EDDF /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -268,6 +272,8 @@
 			isa = PBXGroup;
 			children = (
 				409446F618343847005C69B0 /* Base Model */,
+				40FC56EA19095E6A00B11730 /* SQActivity.h */,
+				40FC56EB19095E6A00B11730 /* SQActivity.m */,
 				40AF7B0418848B0100E65B9B /* SQAttachment.h */,
 				40AF7B0518848B0100E65B9B /* SQAttachment.m */,
 				409446DD183417F6005C69B0 /* SQConversation.h */,
@@ -464,6 +470,7 @@
 				40AF0656183BBA840092882B /* SQJuggernaut.m in Sources */,
 				AB08FBAA1907237A0071A5E1 /* SQStream.m in Sources */,
 				409446E818341C41005C69B0 /* SQInvite.m in Sources */,
+				40FC56EC19095E6A00B11730 /* SQActivity.m in Sources */,
 				409446EC18341D15005C69B0 /* SQRoom.m in Sources */,
 				409446DF183417F6005C69B0 /* SQConversation.m in Sources */,
 				409446F9183439DF005C69B0 /* SQObject.m in Sources */,
@@ -490,6 +497,7 @@
 				409446FA183439DF005C69B0 /* SQObject.m in Sources */,
 				409446DC18340727005C69B0 /* SQUser.m in Sources */,
 				4082A7561833CD6B009FBC9B /* Tests.m in Sources */,
+				40FC56ED19095E6A00B11730 /* SQActivity.m in Sources */,
 				4026789E189EB1DB00BA781C /* SQConfiguration.m in Sources */,
 				409446E5183418E7005C69B0 /* SQOrganization.m in Sources */,
 				40B20F15184CE5C1008006C3 /* ResponseFactory.m in Sources */,
