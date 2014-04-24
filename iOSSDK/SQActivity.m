@@ -10,4 +10,11 @@
 
 @implementation SQActivity
 
+-(NSDictionary *) modelDefinition
+{
+    return @{@"ID": @"id", @"recipients" : @"recipient_ids", @"message": @"message",
+             @"subjectID": @"subject_id",
+             @"subjectType": @"subject_type"};
+}
+
 @end

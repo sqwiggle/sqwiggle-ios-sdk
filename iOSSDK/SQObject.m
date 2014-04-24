@@ -180,7 +180,6 @@ static NSDateFormatter *sharedDateFormatter = nil;
             [encodeDictionary setObject:[self valueForKey:key] forKey:key];
     }];
     [coder encodeObject:encodeDictionary forKey:NSStringFromClass([self class])];
-	
 }
 
 //Handy override function to make sure our stuff can be stored offline :)
@@ -204,6 +203,5 @@ static NSDateFormatter *sharedDateFormatter = nil;
     }];
     return desc;
 }
-
 
 @end

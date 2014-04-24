@@ -8,10 +8,16 @@
 
 #import "SQObject.h"
 
+#define MENTION_ACTIVITY @"mention"
+#define SIGN_OUT_ACTIVITY @"sign_out"
+#define SIGN_IN_ACTIVITY @"sign_in"
+#define CONVERSATION_ACTIVITY @"conversation"
+
 @interface SQActivity : SQObject
 
 @property (nonatomic, copy) NSArray *recipients;
-@property (nonatomic, copy) 
-
+@property (nonatomic, copy) NSString *message;
+@property (nonatomic, copy) NSNumber *subjectID;
+@property (nonatomic, copy) NSString *subjectType;
 
 @end
