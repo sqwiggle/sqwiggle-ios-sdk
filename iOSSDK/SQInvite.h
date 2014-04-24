@@ -13,10 +13,10 @@
 
 @interface SQInvite : SQObject
 
-@property (nonatomic, readonly) NSNumber *fromID;
-@property (nonatomic, readonly) NSDate *createdAt;
-@property (nonatomic, readonly) NSString *email;
-@property (nonatomic, readonly) NSString *avatar;
-@property (nonatomic, readonly) NSString *path;
+@property (nonatomic, copy) NSNumber *fromID;
+@property (nonatomic, copy) NSDate *createdAt;
+@property (nonatomic, copy) NSString *email;
+@property (nonatomic, copy) NSString *avatar;
+@property (nonatomic, copy) NSString *path;
 
 @end

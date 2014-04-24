@@ -20,12 +20,12 @@
 
 @interface SQConversation : SQObject
 
-@property (nonatomic, readonly) NSNumber *organziationID;
-@property (nonatomic, readonly) NSNumber *roomID;
-@property (nonatomic, readonly) NSNumber *colorID;
-@property (nonatomic, readonly) UIColor *color;
+@property (nonatomic, copy) NSNumber *organziationID;
+@property (nonatomic, copy) NSNumber *roomID;
+@property (nonatomic, copy) NSNumber *colorID;
+@property (nonatomic, copy) UIColor *color;
 // participatingUsers setter and getter methods are declared for KVC compliance.
-@property (nonatomic, readonly) NSArray *participatingUsersContainer;
+@property (nonatomic, copy) NSArray *participatingUsersContainer;
 
 //Checks to see if given user is in conversation
 -(BOOL) containsUser:(SQUser *)user;
