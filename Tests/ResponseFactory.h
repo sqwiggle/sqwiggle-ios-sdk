@@ -20,5 +20,6 @@
 +(NSDictionary *) fakeConversations;
 +(NSDictionary *) fakeOrganizations;
 +(NSDictionary *) fakeConfiguration;
++(NSDictionary *) fakeActivities;
 
 @end

@@ -87,4 +87,12 @@
     return [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 }
 
++(NSDictionary *) fakeActivities
+{
+    NSString *resp = @"[{\"id\": 363,\"recipient_ids\": [],\"message\": \"@[Cam](user:3) came online\",\"subject_id\": 3,\"subject_type\": \"sign_in\"},{\"id\": 364,\"recipient_ids\": [],\"message\": \"@[Cam](user:3) went offline\",\"subject_id\": 3,\"subject_type\": \"sign_out\"}]";
+    
+    NSData *data = [resp dataUsingEncoding:NSUTF8StringEncoding];
+    return [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+}
+
 @end

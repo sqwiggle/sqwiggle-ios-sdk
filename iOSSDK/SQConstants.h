@@ -25,6 +25,7 @@
 #define SQWIGGLE_ATTACHMENT_TYPE	@"SQAttachment"
 #define SQWIGGLE_CONVERSATION_TYPE	@"SQConversation"
 #define SQWIGGLE_CONFIGURATION_TYPE	@"SQConfiguration"
+#define SQWIGGLE_ACTIVITY_TYPE      @"SQActivity"
 
 #define SUPER_SECRET_PASSWORD @"x"
 
