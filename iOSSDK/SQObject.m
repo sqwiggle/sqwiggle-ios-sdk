@@ -9,13 +9,6 @@
 #import "SQObject.h"
 #import "Sqwiggle.h"
 
-@interface SQObject ()
-
-@property (nonatomic, copy) NSString *urlEndpoint;
-
-@end
-
-
 /// Date formatter is cached since creating it is slow.
 static NSDateFormatter *sharedDateFormatter = nil;
 
@@ -178,6 +171,7 @@ static NSDateFormatter *sharedDateFormatter = nil;
 				failure(failure);
 			}];
 }
+
 #pragma mark NSObject methods for storage/etc
 - (void)encodeWithCoder:(NSCoder *)coder {
     NSMutableDictionary *encodeDictionary = [NSMutableDictionary new];
@@ -186,7 +180,6 @@ static NSDateFormatter *sharedDateFormatter = nil;
             [encodeDictionary setObject:[self valueForKey:key] forKey:key];
     }];
     [coder encodeObject:encodeDictionary forKey:NSStringFromClass([self class])];
-	
 }
 
 //Handy override function to make sure our stuff can be stored offline :)
@@ -203,9 +196,12 @@ static NSDateFormatter *sharedDateFormatter = nil;
 }
 
 #pragma mark SQObject Description method
-- (NSString *)description {
-    return [NSString stringWithFormat:@"%@ - ID: %@", [self class], self.ID];
+- (NSString *) description {
+    __block NSString *desc = @"";
+    [[self modelDefinition] each:^(id key, id value) {
+        desc = [NSString stringWithFormat:@"%@%@: %@\n", desc, key, [self valueForKey:key]];
+    }];
+    return desc;
 }
-
 
 @end

@@ -408,6 +408,30 @@
     return [[NSUserDefaults standardUserDefaults] objectForKey:SQWIGGLE_AUTH_KEY];
 }
 
+#pragma mark Activity Methods
++(void) allActivities:(void (^)(NSArray *activities))success
+              failure:(failureResponse)failure
+{
+    [SQJuggernaut retreiveItemsOfType:SQWIGGLE_ACTIVITY_TYPE
+                           parameters:nil
+                            authToken:[self authToken]
+                              success:success
+                              failure:failure];
+}
+
++(void) allActivitiesWithLimit:(NSNumber *)limit
+                 andPageNumber:(NSNumber *)pageNumber
+                       success:(void (^)(NSArray *))success
+                       failure:(failureResponse)failure
+{
+    [SQJuggernaut retreiveItemsOfType:SQWIGGLE_ACTIVITY_TYPE
+                           parameters:@{@"limit": (limit ? limit : @""), \
+                                        @"page": (pageNumber ? pageNumber : @"")}
+                            authToken:[self authToken]
+                              success:success
+                              failure:failure];
+}
+
 #pragma mark private methods
 +(void) setAuthToken:(NSString *)authToken
 {

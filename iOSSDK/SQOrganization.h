@@ -11,11 +11,11 @@
 
 @interface SQOrganization : SQObject
 
-@property (nonatomic, readonly) NSDate *createdAt;
-@property (nonatomic, readonly) NSNumber *ownerID;
-@property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) NSString *path;
-@property (nonatomic, readonly) NSDictionary *billing;
-@property (nonatomic, readonly) NSDictionary *security;
+@property (nonatomic, copy) NSDate *createdAt;
+@property (nonatomic, copy) NSNumber *ownerID;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *path;
+@property (nonatomic, copy) NSDictionary *billing;
+@property (nonatomic, copy) NSDictionary *security;
 
 @end

@@ -11,9 +11,9 @@
 
 @interface SQRoom : SQObject
 
-@property (nonatomic, readonly) NSNumber *createdByID;
-@property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) NSString *path;
-@property (nonatomic, readonly) NSNumber *userCount;
+@property (nonatomic, copy) NSNumber *createdByID;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *path;
+@property (nonatomic, copy) NSNumber *userCount;
 
 @end

@@ -10,10 +10,10 @@
 
 @interface SQAttachment : SQObject
 
-@property (nonatomic, readonly) NSString *title;
-@property (nonatomic, readonly) NSString *description;
-@property (nonatomic, readonly) NSString *url;
-@property (nonatomic, readonly) NSString *image;
-@property (nonatomic, readonly) NSString *status;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *description;
+@property (nonatomic, copy) NSString *url;
+@property (nonatomic, copy) NSString *image;
+@property (nonatomic, copy) NSString *status;
 
 @end

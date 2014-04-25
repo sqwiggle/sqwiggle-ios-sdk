@@ -23,8 +23,6 @@
 			 @"user": @"author"};
 }
 
-
-
 - (id)mapObject:(id)object withValues:(NSDictionary *)dictionary
 {
     self.relativeURL = [SQWIGGLE_RELATIVE_URLS objectForKey:NSStringFromClass([object class])];

@@ -13,7 +13,7 @@
 -(NSDictionary *) modelDefinition
 {
     return @{@"ID": @"id", @"fromID": @"from_id",
-            @"createdAt": @"created_at", @"email": @"email",
+             @"createdAt": @"created_at", @"email": @"email",
              @"avatar": @"avatar", @"path": @"path"};
 }
 

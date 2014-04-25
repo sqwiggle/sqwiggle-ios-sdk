@@ -287,6 +287,22 @@ typedef void (^failureResponse)(NSError *error);
 +(void) configurationInfoForCurrentSession:(void (^)(SQConfiguration *))success
                                    failure:(failureResponse)failure;
 
+#pragma mark Activity Methods
+/*!
+ * Returns a list of all activities in the current organization.
+ */
++(void) allActivities:(void (^)(NSArray *activities))success
+              failure:(failureResponse)failure;
+
+/*!
+ * Returns a list of all activities in the current organization.
+ * Able to limit number of items returned, as well as being able to set page number.
+ */
++(void) allActivitiesWithLimit:(NSNumber *)limit
+                 andPageNumber:(NSNumber *) pageNumber
+                       success:(void (^)(NSArray *activities))success
+                       failure:(failureResponse)failure;
+
 #pragma mark Debug Methods
 /*!
  * Update current Sqwiggle API Endpoint you are using. Generally you will

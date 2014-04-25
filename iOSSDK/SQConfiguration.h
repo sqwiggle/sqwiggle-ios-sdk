@@ -11,7 +11,7 @@
 
 @interface SQConfiguration : SQObject
 
-@property (nonatomic, readonly) NSMutableArray *iceServers;
-@property (nonatomic, readonly) NSMutableDictionary *storage;
-@property (nonatomic, readonly) NSString *maxUploadFilesize;
+@property (nonatomic, copy) NSMutableArray *iceServers;
+@property (nonatomic, copy) NSMutableDictionary *storage;
+@property (nonatomic, copy) NSString *maxUploadFilesize;
 @end

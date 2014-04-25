@@ -25,6 +25,7 @@
 #define SQWIGGLE_ATTACHMENT_TYPE	@"SQAttachment"
 #define SQWIGGLE_CONVERSATION_TYPE	@"SQConversation"
 #define SQWIGGLE_CONFIGURATION_TYPE	@"SQConfiguration"
+#define SQWIGGLE_ACTIVITY_TYPE      @"SQActivity"
 
 #define SUPER_SECRET_PASSWORD @"x"
 
@@ -36,7 +37,8 @@ SQWIGGLE_STREAM_TYPE: @"streams", \
 SQWIGGLE_INVITE_TYPE: @"invites", \
 SQWIGGLE_ATTACHMENT_TYPE : @"attachments", \
 SQWIGGLE_MESSAGE_TYPE: @"messages",\
-SQWIGGLE_CONFIGURATION_TYPE: @"info/configuration"}
+SQWIGGLE_CONFIGURATION_TYPE: @"info/configuration", \
+SQWIGGLE_ACTIVITY_TYPE: @"activites" }
 
 #define SQWIGGLE_STATUS_BUSY @"busy"
 #define SQWIGGLE_STATUS_AVAILABLE @"available"
