@@ -41,7 +41,7 @@
         return [request.URL.relativePath isEqualToString:@"/auth/token"];
     } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
         return [[OHHTTPStubsResponse responseWithJSONObject:@{@"token": @"ROYGBIV"} statusCode:200 headers:nil]
-                requestTime:1.0 responseTime:1.0];
+                requestTime:0.5 responseTime:0.5];
     }];
     
     [Sqwiggle startSqwigglingWithUsername:TEST_EMAIL password:TEST_PASSWORD success:^(BOOL signedIn) {
@@ -62,18 +62,17 @@
         return [request.URL.relativePath isEqualToString:@"/users/me"];
     } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
         return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeUserResponse] statusCode:200 headers:nil]
-                requestTime:1.0 responseTime:1.0];
+                requestTime:0.5 responseTime:0.5];
     }];
-    waitingForBlock = YES;
     
     [Sqwiggle currentUserForSession:^(SQUser *user)
-    {
-                        EndBlock();
-                        XCTAssertTrue(user.ID, @"Did succeed");
-                  } failure:^(NSError *error) {
-                        EndBlock();
-                        XCTFail(@"Error returned for test %@", error);
-    }];
+     {
+         EndBlock();
+         XCTAssertTrue(user.ID, @"Did succeed");
+     } failure:^(NSError *error) {
+         EndBlock();
+         XCTFail(@"Error returned for test %@", error);
+     }];
     
     WaitUntilBlockCompletes();
 }
@@ -85,9 +84,9 @@
         return [request.URL.relativePath isEqualToString:@"/users"];
     } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
         return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeUsers] statusCode:200 headers:nil]
-                requestTime:1.0 responseTime:1.0];
+                requestTime:0.5 responseTime:0.5];
     }];
-    waitingForBlock = YES;
+    
     [Sqwiggle allUsers:^(NSArray *users)
      {
          EndBlock();
@@ -107,9 +106,8 @@
         return [request.URL.relativePath isEqualToString:@"/rooms"];
     } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
         return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeRooms] statusCode:200 headers:nil]
-                requestTime:1.0 responseTime:1.0];
+                requestTime:0.5 responseTime:0.5];
     }];
-    waitingForBlock = YES;
     
     [Sqwiggle allRooms:^(id item) {
         EndBlock();
@@ -131,9 +129,8 @@
         return [request.URL.relativePath containsString:@"messages"];
     } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
         return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeMessage] statusCode:200 headers:nil]
-                requestTime:1.0 responseTime:1.0];
+                requestTime:0.5 responseTime:0.5];
     }];
-    waitingForBlock = YES;
     
     [Sqwiggle messageWithID:@1
                     success:^(SQMessage *message) {
@@ -155,17 +152,16 @@
         return [request.URL.relativePath containsString:@"messages"];
     } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
         return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeMessages] statusCode:200 headers:nil]
-                requestTime:1.0 responseTime:1.0];
+                requestTime:0.5 responseTime:0.5];
     }];
-    waitingForBlock = YES;
     
     [Sqwiggle messagesForRoomID:@1
                         success:^(NSArray *items) {
-                           EndBlock();
-                           XCTAssertTrue(YES, @"Did succeed");
+                            EndBlock();
+                            XCTAssertTrue(YES, @"Did succeed");
                         } failure:^(NSError *error) {
-                           EndBlock();
-                        XCTFail(@"Error returned for test %@", error);
+                            EndBlock();
+                            XCTFail(@"Error returned for test %@", error);
                         }];
     
     WaitUntilBlockCompletes();
@@ -180,9 +176,8 @@
         return [request.URL.relativePath containsString:@"messages"];
     } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
         return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeMessages] statusCode:200 headers:nil]
-                requestTime:1.0 responseTime:1.0];
+                requestTime:0.5 responseTime:0.5];
     }];
-    waitingForBlock = YES;
     
     [Sqwiggle messagesForRoomID:@1
                       withLimit:@5
@@ -207,21 +202,20 @@
         return [request.URL.relativePath containsString:@"messages"];
     } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
         return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeMessage] statusCode:200 headers:nil]
-                requestTime:1.0 responseTime:1.0];
+                requestTime:0.5 responseTime:0.5];
     }];
-    waitingForBlock = YES;
     
-	[Sqwiggle sendMessage:@"Test message"
-				   roomID:1
-				  success:^(id responseObject) {
-					  EndBlock();
-					  XCTAssertTrue(YES, @"Did succeed");
-				  }
-				  failure:^(NSError *error) {
-					  EndBlock();
-					  XCTFail(@"Error returned for test %@", error);
-				  }];
-
+    [Sqwiggle sendMessage:@"Test message"
+                   roomID:1
+                  success:^(id responseObject) {
+                      EndBlock();
+                      XCTAssertTrue(YES, @"Did succeed");
+                  }
+                  failure:^(NSError *error) {
+                      EndBlock();
+                      XCTFail(@"Error returned for test %@", error);
+                  }];
+    
     WaitUntilBlockCompletes();
 }
 
@@ -234,9 +228,8 @@
         return [request.URL.relativePath containsString:@"attachments"];
     } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
         return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeAttachment] statusCode:200 headers:nil]
-                requestTime:1.0 responseTime:1.0];
+                requestTime:0.5 responseTime:0.5];
     }];
-    waitingForBlock = YES;
     
     [Sqwiggle attachmentByID:@1 success:^(SQAttachment *attachment) {
         EndBlock();
@@ -259,9 +252,8 @@
         return [request.URL.relativePath containsString:@"conversations"];
     } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
         return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeConversation] statusCode:200 headers:nil]
-                requestTime:1.0 responseTime:1.0];
+                requestTime:0.5 responseTime:0.5];
     }];
-    waitingForBlock = YES;
     
     [Sqwiggle conversationWithID:@1 success:^(SQConversation *attachment) {
         EndBlock();
@@ -284,9 +276,8 @@
         return [request.URL.relativePath containsString:@"conversations"];
     } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
         return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeConversations] statusCode:200 headers:nil]
-                requestTime:1.0 responseTime:1.0];
+                requestTime:0.5 responseTime:0.5];
     }];
-    waitingForBlock = YES;
     
     [Sqwiggle allConversations:^(NSArray *conversations) {
         EndBlock();
@@ -307,9 +298,8 @@
         return [request.URL.relativePath containsString:@"invites"];
     } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
         return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeAttachment] statusCode:200 headers:nil]
-                requestTime:1.0 responseTime:1.0];
+                requestTime:0.5 responseTime:0.5];
     }];
-    waitingForBlock = YES;
     
     [Sqwiggle allInvites:^(NSArray *invites) {
         EndBlock();
@@ -318,6 +308,8 @@
         EndBlock();
         XCTFail(@"Error returned for test %@", error);
     }];
+    
+    WaitUntilBlockCompletes();
 }
 
 -(void)testGetAllActivities
@@ -329,9 +321,8 @@
         return [request.URL.relativePath containsString:@"activities"];
     } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
         return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeActivities] statusCode:200 headers:nil]
-                requestTime:1.0 responseTime:1.0];
+                requestTime:0.5 responseTime:0.5];
     }];
-    waitingForBlock = YES;
     
     [Sqwiggle allActivities:^(NSArray *activities) {
         EndBlock();
@@ -340,5 +331,34 @@
         EndBlock();
         XCTFail(@"Error returned for test %@", error);
     }];
+    
+    WaitUntilBlockCompletes();
+}
+
+
+-(void)testGetAllStreams
+{
+    [self testAuth];
+    
+    StartBlock();
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return [request.URL.relativePath containsString:@"streams"];
+    }
+						withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+							return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeStreams] statusCode:200 headers:nil]
+									requestTime:0.5
+									responseTime:0.5];
+						}];
+    
+    [Sqwiggle allStreams:^(NSArray *streams) {
+        EndBlock();
+        XCTAssertTrue(YES, @"Did succeed");
+    }
+                 failure:^(NSError *error) {
+                     EndBlock();
+                     XCTFail(@"Error returned for test %@", error);
+                 }];
+    
+    WaitUntilBlockCompletes();
 }
 @end

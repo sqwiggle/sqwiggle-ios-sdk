@@ -42,6 +42,7 @@
 		40FC56EC19095E6A00B11730 /* SQActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FC56EB19095E6A00B11730 /* SQActivity.m */; };
 		40FC56ED19095E6A00B11730 /* SQActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FC56EB19095E6A00B11730 /* SQActivity.m */; };
 		AB08FBAA1907237A0071A5E1 /* SQStream.m in Sources */ = {isa = PBXBuildFile; fileRef = AB08FBA91907237A0071A5E1 /* SQStream.m */; };
+		AB4A59F1190B2A21002B38FC /* SQStream.m in Sources */ = {isa = PBXBuildFile; fileRef = AB08FBA91907237A0071A5E1 /* SQStream.m */; };
 		AEB72E66D37E4E4A831FBF41 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D47E91C25AFE40128D776D3A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -502,6 +503,7 @@
 				409446E5183418E7005C69B0 /* SQOrganization.m in Sources */,
 				40B20F15184CE5C1008006C3 /* ResponseFactory.m in Sources */,
 				409446F118342106005C69B0 /* SQMessage.m in Sources */,
+				AB4A59F1190B2A21002B38FC /* SQStream.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
