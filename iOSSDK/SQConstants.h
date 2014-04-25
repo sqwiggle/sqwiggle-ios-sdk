@@ -37,7 +37,8 @@ SQWIGGLE_STREAM_TYPE: @"streams", \
 SQWIGGLE_INVITE_TYPE: @"invites", \
 SQWIGGLE_ATTACHMENT_TYPE : @"attachments", \
 SQWIGGLE_MESSAGE_TYPE: @"messages",\
-SQWIGGLE_CONFIGURATION_TYPE: @"info/configuration"}
+SQWIGGLE_CONFIGURATION_TYPE: @"info/configuration", \
+SQWIGGLE_ACTIVITY_TYPE: "activites" }
 
 #define SQWIGGLE_STATUS_BUSY @"busy"
 #define SQWIGGLE_STATUS_AVAILABLE @"available"

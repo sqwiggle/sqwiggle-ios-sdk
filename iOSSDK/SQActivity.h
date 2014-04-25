@@ -12,6 +12,7 @@
 #define SIGN_OUT_ACTIVITY @"sign_out"
 #define SIGN_IN_ACTIVITY @"sign_in"
 #define CONVERSATION_ACTIVITY @"conversation"
+#define PING_ACTIVITY @"ping"
 
 @interface SQActivity : SQObject
 
