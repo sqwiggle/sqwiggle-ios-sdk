@@ -8,11 +8,11 @@
 
 #import "SQObject.h"
 
-#define MENTION_ACTIVITY @"mention"
-#define SIGN_OUT_ACTIVITY @"sign_out"
-#define SIGN_IN_ACTIVITY @"sign_in"
-#define CONVERSATION_ACTIVITY @"conversation"
-#define PING_ACTIVITY @"ping"
+#define SQ_MENTION_ACTIVITY @"mention"
+#define SQ_SIGN_OUT_ACTIVITY @"sign_out"
+#define SQ_SIGN_IN_ACTIVITY @"sign_in"
+#define SQ_CONVERSATION_ACTIVITY @"conversation"
+#define SQ_PING_ACTIVITY @"ping"
 
 @interface SQActivity : SQObject
 
