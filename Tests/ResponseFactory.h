@@ -21,5 +21,6 @@
 +(NSDictionary *) fakeOrganizations;
 +(NSDictionary *) fakeConfiguration;
 +(NSDictionary *) fakeActivities;
++(NSDictionary *) fakeStreams;
 
 @end
