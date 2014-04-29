@@ -212,7 +212,7 @@ typedef void (^failureResponse)(NSError *error);
  */
 +(void) messagesForRoomID:(NSNumber *)ID
                   success:(void (^)(NSArray *messages))success
-                  failure:(failureResponse)failure;
+                  failure:(failureResponse)failure SQ_DEPRECATED;
 
 /*!
  * Retreives all Messages associated with RoomID
@@ -222,7 +222,7 @@ typedef void (^failureResponse)(NSError *error);
                 withLimit:(NSNumber *)limit
               andBeforeID:(NSNumber *)beforeID
                   success:(void (^)(NSArray *messages))success
-                  failure:(failureResponse)failure;
+                  failure:(failureResponse)failure SQ_DEPRECATED;
 
 /*!
  *	Sends a message to the room with the given room ID.
@@ -234,7 +234,7 @@ typedef void (^failureResponse)(NSError *error);
 + (void)sendMessage:(NSString*)message
 			 roomID:(uint)roomID
 			success:(void (^)(id responseObject))success
-			failure:(failureResponse)failure;
+			failure:(failureResponse)failure SQ_DEPRECATED;
 
 
 #pragma mark Organization Methods

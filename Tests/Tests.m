@@ -336,29 +336,78 @@
 }
 
 
--(void)testGetAllStreams
+- (void)testGetAllStreams
 {
     [self testAuth];
     
     StartBlock();
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         return [request.URL.relativePath containsString:@"streams"];
-    }
-						withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
-							return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeStreams] statusCode:200 headers:nil]
-									requestTime:0.5
-									responseTime:0.5];
-						}];
+    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+		return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeStreams] statusCode:200 headers:nil]
+				requestTime:0.5
+				responseTime:0.5];
+	}];
     
     [Sqwiggle allStreams:^(NSArray *streams) {
         EndBlock();
         XCTAssertTrue(YES, @"Did succeed");
-    }
-                 failure:^(NSError *error) {
-                     EndBlock();
-                     XCTFail(@"Error returned for test %@", error);
-                 }];
+    } failure:^(NSError *error) {
+		EndBlock();
+		XCTFail(@"Error returned for test %@", error);
+	}];
     
     WaitUntilBlockCompletes();
 }
+
+- (void)testGetAllMessagesForStream
+{
+    [self testAuth];
+    
+    StartBlock();
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return [request.URL.relativePath containsString:@"messages"];
+    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+        return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeMessages] statusCode:200 headers:nil]
+                requestTime:0.5 responseTime:0.5];
+    }];
+    
+    [Sqwiggle messagesForStreamID:@1
+						  success:^(NSArray *items) {
+							  EndBlock();
+							  XCTAssertTrue(YES, @"Did succeed");
+						  } failure:^(NSError *error) {
+							  EndBlock();
+							  XCTFail(@"Error returned for test %@", error);
+						  }];
+    
+    WaitUntilBlockCompletes();
+}
+
+- (void)testGetPagedMessagesForStream
+{
+    [self testAuth];
+    
+    StartBlock();
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return [request.URL.relativePath containsString:@"messages"];
+    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+        return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory fakeMessages] statusCode:200 headers:nil]
+                requestTime:0.5 responseTime:0.5];
+    }];
+    
+    [Sqwiggle messagesForStreamID:@1
+						withLimit:@5
+					  andBeforeID:@6
+						  success:^(NSArray *items) {
+							  EndBlock();
+							  XCTAssertTrue(YES, @"Did succeed");
+						  } failure:^(NSError *error) {
+							  EndBlock();
+							  XCTFail(@"Error returned for test %@", error);
+						  }];
+    
+    WaitUntilBlockCompletes();
+}
+
 @end

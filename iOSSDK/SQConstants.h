@@ -45,4 +45,7 @@ SQWIGGLE_ACTIVITY_TYPE: @"activities" }
 #define SQWIGGLE_STATUS_OFFLINE @"offline"
 #define SQWIGGLE_DEFAULT_BUSY_STATUS @"I'm Busy"
 
+
+#define SQ_DEPRECATED	__attribute__((deprecated("Check https://github.com/sqwiggle/sqwiggle-ios-sdk for more details")))
+
 #endif
