@@ -160,7 +160,7 @@ typedef void (^failureResponse)(NSError *error);
 /*! Retrieves all messages associated with the given stream ID.
  */
 +(void) messagesForStreamID:(NSNumber *)ID
-					success:(void (^)(NSArray *))success
+					success:(void (^)(NSArray *messages))success
 					failure:(failureResponse)failure;
 
 /*! Retrieves all messages associated with the given stream ID.
@@ -169,9 +169,20 @@ typedef void (^failureResponse)(NSError *error);
 +(void) messagesForStreamID:(NSNumber *)ID
 				  withLimit:(NSNumber *)limit
 				andBeforeID:(NSNumber *) beforeID
-					success:(void (^)(NSArray *))success
+					success:(void (^)(NSArray *messages))success
 					failure:(failureResponse)failure;
 
+/*!
+ *	Sends a message to the room with the given room ID.
+ *	@param message The message to send.
+ *	@param streamID The stream ID
+ *	@param success A block object to be executed when the request operation finishes successfully. This block has no return value and takes one argument: the response object
+ *	@param A block object to be executed when the request operation finishes unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data. This block has no return value and takes a one arguments: the error
+ */
++ (void)sendMessage:(NSString*)message
+		   streamID:(NSNumber*)streamID
+			success:(void (^)(id responseObject))success
+			failure:(failureResponse)failure;
 
 
 /*!

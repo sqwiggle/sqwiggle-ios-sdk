@@ -236,7 +236,7 @@
 }
 #pragma mark Message Methods
 +(void) messagesForStreamID:(NSNumber *)ID
-					success:(void (^)(NSArray *))success
+					success:(void (^)(NSArray *messages))success
 					failure:(failureResponse)failure
 {
     [self messagesForStreamID:ID
@@ -249,7 +249,7 @@
 +(void) messagesForStreamID:(NSNumber *)ID
 				  withLimit:(NSNumber *)limit
 				andBeforeID:(NSNumber *) beforeID
-					success:(void (^)(NSArray *))success
+					success:(void (^)(NSArray *messages))success
 					failure:(failureResponse)failure
 {
 	NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
@@ -268,6 +268,20 @@
                            authToken:[self authToken]
                              success:success
                              failure:failure];
+}
+
+
++ (void)sendMessage:(NSString*)message
+		   streamID:(NSNumber*)streamID
+			success:(void (^)(id responseObject))success
+			failure:(failureResponse)failure
+{
+	[SQJuggernaut sendItemOfType:SQWIGGLE_MESSAGE_TYPE
+					  parameters:@{ @"room_id" : streamID,
+									@"text" : message }
+					   authToken:[self authToken]
+						 success:success
+						 failure:failure];
 }
 
 
