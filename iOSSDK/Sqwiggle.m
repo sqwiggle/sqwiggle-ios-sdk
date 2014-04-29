@@ -235,6 +235,42 @@
                              failure:failure];
 }
 #pragma mark Message Methods
++(void) messagesForStreamID:(NSNumber *)ID
+					success:(void (^)(NSArray *))success
+					failure:(failureResponse)failure
+{
+    [self messagesForStreamID:ID
+					withLimit:nil
+				  andBeforeID:nil
+					  success:success
+					  failure:failure];
+}
+
++(void) messagesForStreamID:(NSNumber *)ID
+				  withLimit:(NSNumber *)limit
+				andBeforeID:(NSNumber *) beforeID
+					success:(void (^)(NSArray *))success
+					failure:(failureResponse)failure
+{
+	NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+	
+	if (limit)
+		params[@"limit"] = limit;
+	
+	if (beforeID)
+		params[@"before_id"] = beforeID;
+	
+    //Yep, this is hacky with messages for room, but gets the job done
+    [SQJuggernaut retreiveItemOfType:SQWIGGLE_STREAM_TYPE
+						   mapToType:SQWIGGLE_MESSAGE_TYPE
+                                byID:NSStringWithFormat(@"%@/messages", ID)
+                          parameters:params
+                           authToken:[self authToken]
+                             success:success
+                             failure:failure];
+}
+
+
 +(void) messageWithID:(NSNumber *)ID
               success:(void (^)(SQMessage *room))success
               failure:(failureResponse)failure

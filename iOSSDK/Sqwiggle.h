@@ -157,6 +157,23 @@ typedef void (^failureResponse)(NSError *error);
 
 
 #pragma mark Message Methods
+/*! Retrieves all messages associated with the given stream ID.
+ */
++(void) messagesForStreamID:(NSNumber *)ID
+					success:(void (^)(NSArray *))success
+					failure:(failureResponse)failure;
+
+/*! Retrieves all messages associated with the given stream ID.
+ *	Able to limit number of items returned, as well as being able to set the ID of the first message to retrieve.
+ */
++(void) messagesForStreamID:(NSNumber *)ID
+				  withLimit:(NSNumber *)limit
+				andBeforeID:(NSNumber *) beforeID
+					success:(void (^)(NSArray *))success
+					failure:(failureResponse)failure;
+
+
+
 /*!
  * Retreives specific message for session.
  */
