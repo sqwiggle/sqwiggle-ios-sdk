@@ -157,6 +157,34 @@ typedef void (^failureResponse)(NSError *error);
 
 
 #pragma mark Message Methods
+/*! Retrieves all messages associated with the given stream ID.
+ */
++(void) messagesForStreamID:(NSNumber *)ID
+					success:(void (^)(NSArray *messages))success
+					failure:(failureResponse)failure;
+
+/*! Retrieves all messages associated with the given stream ID.
+ *	Able to limit number of items returned, as well as being able to set the ID of the first message to retrieve.
+ */
++(void) messagesForStreamID:(NSNumber *)ID
+				  withLimit:(NSNumber *)limit
+				andBeforeID:(NSNumber *) beforeID
+					success:(void (^)(NSArray *messages))success
+					failure:(failureResponse)failure;
+
+/*!
+ *	Sends a message to the room with the given room ID.
+ *	@param message The message to send.
+ *	@param streamID The stream ID
+ *	@param success A block object to be executed when the request operation finishes successfully. This block has no return value and takes one argument: the response object
+ *	@param A block object to be executed when the request operation finishes unsuccessfully, or that finishes successfully, but encountered an error while parsing the response data. This block has no return value and takes a one arguments: the error
+ */
++ (void)sendMessage:(NSString*)message
+		   streamID:(NSNumber*)streamID
+			success:(void (^)(id responseObject))success
+			failure:(failureResponse)failure;
+
+
 /*!
  * Retreives specific message for session.
  */
@@ -184,7 +212,7 @@ typedef void (^failureResponse)(NSError *error);
  */
 +(void) messagesForRoomID:(NSNumber *)ID
                   success:(void (^)(NSArray *messages))success
-                  failure:(failureResponse)failure;
+                  failure:(failureResponse)failure SQ_DEPRECATED;
 
 /*!
  * Retreives all Messages associated with RoomID
@@ -194,7 +222,7 @@ typedef void (^failureResponse)(NSError *error);
                 withLimit:(NSNumber *)limit
               andBeforeID:(NSNumber *)beforeID
                   success:(void (^)(NSArray *messages))success
-                  failure:(failureResponse)failure;
+                  failure:(failureResponse)failure SQ_DEPRECATED;
 
 /*!
  *	Sends a message to the room with the given room ID.
@@ -206,7 +234,7 @@ typedef void (^failureResponse)(NSError *error);
 + (void)sendMessage:(NSString*)message
 			 roomID:(uint)roomID
 			success:(void (^)(id responseObject))success
-			failure:(failureResponse)failure;
+			failure:(failureResponse)failure SQ_DEPRECATED;
 
 
 #pragma mark Organization Methods
