@@ -15,7 +15,7 @@
     return @{@"ID": @"id",
 			 @"name": @"name",
              @"icon" : @"icon",
-			 @"color" : @"color",
+			 @"color" : @"icon_color",
 			 @"subscribed": @"subscribed"};
 }
 
