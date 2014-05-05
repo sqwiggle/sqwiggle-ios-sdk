@@ -26,9 +26,8 @@
 @property (nonatomic, copy) NSString *avatar;
 @property (nonatomic, strong) UIImage *currentStill;
 @property (nonatomic, strong) UIImage *previousStill;
-@property (nonatomic, copy) id company;
+@property (nonatomic, assign) BOOL confirmed;
+@property (nonatomic, assign) BOOL isContact;
 
-//Needed to do as helper method because bool doesn't have a ns counterpart.
--(BOOL) confirmed;
 
 @end

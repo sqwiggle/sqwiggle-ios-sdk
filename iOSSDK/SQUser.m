@@ -24,12 +24,7 @@
              @"email": @"email", @"confirmedObject": @"confirmed",
              @"timeZone": @"time_zone", @"timeZoneOffset": @"time_zone_offset",
              @"createdAt": @"created_at", @"lastActiveAt": @"last_active_at",
-             @"avatar": @"avatar", @"company": @"company", @"message": @"message" };
-}
-
--(BOOL) confirmed
-{
-    return [_confirmedObject boolValue];
+             @"avatar": @"avatar", @"message": @"message" };
 }
 
 -(BOOL) isEqual:(id)object
