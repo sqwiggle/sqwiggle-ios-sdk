@@ -17,6 +17,23 @@
 
 @implementation SQUser
 
+-(id) initObjectWithDictionary:(NSDictionary *)dictionary
+{
+    self = [super initObjectWithDictionary:dictionary];
+    
+    if (self)
+    {
+        NSDictionary *contactDictionary = [dictionary objectForKey:@"contact"];
+        if (contactDictionary)
+        {
+            SQContact *contact = [SQContact objectWithDictionary:contactDictionary];
+            self.contact = contact;
+        }
+    }
+    
+    return self;
+}
+
 -(NSDictionary *) modelDefinition
 {
     return @{@"ID": @"id", @"role" : @"role",
