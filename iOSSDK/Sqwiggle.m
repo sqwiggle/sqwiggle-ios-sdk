@@ -115,6 +115,17 @@
                               failure:failure];
 }
 
++(void) allContacts:(void (^)(NSArray *users))success
+                    failure:(failureResponse)failure
+{
+    [SQJuggernaut retreiveItemsOfType:SQWIGGLE_USER_TYPE
+                           parameters: @{@"limit": @"", \
+                                         @"page": @""}
+                            authToken:[self authToken]
+                              success:success
+                              failure:failure];
+}
+
 +(void) userWithID:(NSNumber *)ID
            success:(void (^)(SQUser *))success
            failure:(failureResponse)failure

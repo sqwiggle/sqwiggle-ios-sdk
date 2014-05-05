@@ -94,6 +94,9 @@ typedef void (^failureResponse)(NSError *error);
                   success:(void (^)(NSArray *users))success
                   failure:(failureResponse)failure;
 
+#pragma mark Contact Method
++(void) allContacts:(void (^)(NSArray *users))success
+            failure:(failureResponse)failure;
 
 #pragma mark Attachment Methods
 /*!
