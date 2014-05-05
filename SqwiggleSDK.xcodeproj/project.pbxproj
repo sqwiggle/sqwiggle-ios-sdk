@@ -13,6 +13,8 @@
 		4026789D189EB1DB00BA781C /* SQConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4026789C189EB1DB00BA781C /* SQConfiguration.m */; };
 		4026789E189EB1DB00BA781C /* SQConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4026789C189EB1DB00BA781C /* SQConfiguration.m */; };
 		403DFEDF18ECBF85004258A9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 403DFEDE18ECBF85004258A9 /* MobileCoreServices.framework */; };
+		403F82001917E86300E831EB /* SQContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 403F81FF1917E86300E831EB /* SQContact.m */; };
+		403F82011917E86300E831EB /* SQContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 403F81FF1917E86300E831EB /* SQContact.m */; };
 		407A12A81832D06B00819225 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407A12A71832D06B00819225 /* Foundation.framework */; };
 		407A12AD1832D06B00819225 /* Sqwiggle.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 407A12AC1832D06B00819225 /* Sqwiggle.h */; };
 		4082A74C1833CD6B009FBC9B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 407A12B51832D06B00819225 /* XCTest.framework */; };
@@ -85,6 +87,8 @@
 		4026789B189EB1DB00BA781C /* SQConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQConfiguration.h; sourceTree = "<group>"; };
 		4026789C189EB1DB00BA781C /* SQConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQConfiguration.m; sourceTree = "<group>"; };
 		403DFEDE18ECBF85004258A9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		403F81FE1917E86300E831EB /* SQContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQContact.h; sourceTree = "<group>"; };
+		403F81FF1917E86300E831EB /* SQContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQContact.m; sourceTree = "<group>"; };
 		407A12A41832D06B00819225 /* libSqwiggleSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSqwiggleSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		407A12A71832D06B00819225 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		407A12AB1832D06B00819225 /* SqwiggleSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SqwiggleSDK-Prefix.pch"; sourceTree = "<group>"; };
@@ -277,6 +281,8 @@
 				40FC56EB19095E6A00B11730 /* SQActivity.m */,
 				40AF7B0418848B0100E65B9B /* SQAttachment.h */,
 				40AF7B0518848B0100E65B9B /* SQAttachment.m */,
+				403F81FE1917E86300E831EB /* SQContact.h */,
+				403F81FF1917E86300E831EB /* SQContact.m */,
 				409446DD183417F6005C69B0 /* SQConversation.h */,
 				409446DE183417F6005C69B0 /* SQConversation.m */,
 				409446E618341C41005C69B0 /* SQInvite.h */,
@@ -470,6 +476,7 @@
 			files = (
 				40AF0656183BBA840092882B /* SQJuggernaut.m in Sources */,
 				AB08FBAA1907237A0071A5E1 /* SQStream.m in Sources */,
+				403F82001917E86300E831EB /* SQContact.m in Sources */,
 				409446E818341C41005C69B0 /* SQInvite.m in Sources */,
 				40FC56EC19095E6A00B11730 /* SQActivity.m in Sources */,
 				409446EC18341D15005C69B0 /* SQRoom.m in Sources */,
@@ -492,6 +499,7 @@
 				40224CF7183AD2360024AE77 /* Sqwiggle+TestHelper.m in Sources */,
 				409446E918341C41005C69B0 /* SQInvite.m in Sources */,
 				40AF7B0718848B0100E65B9B /* SQAttachment.m in Sources */,
+				403F82011917E86300E831EB /* SQContact.m in Sources */,
 				409446ED18341D15005C69B0 /* SQRoom.m in Sources */,
 				409446E0183417F6005C69B0 /* SQConversation.m in Sources */,
 				40AF0657183BBA840092882B /* SQJuggernaut.m in Sources */,
