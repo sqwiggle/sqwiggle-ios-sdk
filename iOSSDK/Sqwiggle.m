@@ -120,8 +120,8 @@
 {
     [SQJuggernaut retreiveItemOfType:SQWIGGLE_CONTACT_TYPE
 						   mapToType:SQWIGGLE_USER_TYPE
-                                byID:nil
-                          parameters:nil
+                                byID:@""
+                          parameters:@{}
                            authToken:[self authToken]
                              success:success
                              failure:failure];

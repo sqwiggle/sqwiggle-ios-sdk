@@ -25,7 +25,7 @@
 @property (nonatomic, copy) NSDate *createdAt;
 @property (nonatomic, copy) NSDate *lastActiveAt;
 @property (nonatomic, copy) NSString *avatar;
-@property (nonatomic, copy) SQContact *contact;
+@property (nonatomic) SQContact *contact;
 @property (nonatomic, strong) UIImage *currentStill;
 @property (nonatomic, strong) UIImage *previousStill;
 @property (nonatomic, assign) BOOL confirmed;
