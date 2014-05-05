@@ -118,12 +118,13 @@
 +(void) allContacts:(void (^)(NSArray *users))success
                     failure:(failureResponse)failure
 {
-    [SQJuggernaut retreiveItemsOfType:SQWIGGLE_USER_TYPE
-                           parameters: @{@"limit": @"", \
-                                         @"page": @""}
-                            authToken:[self authToken]
-                              success:success
-                              failure:failure];
+    [SQJuggernaut retreiveItemOfType:SQWIGGLE_CONTACT_TYPE
+						   mapToType:SQWIGGLE_USER_TYPE
+                                byID:nil
+                          parameters:nil
+                           authToken:[self authToken]
+                             success:success
+                             failure:failure];
 }
 
 +(void) userWithID:(NSNumber *)ID
