@@ -15,7 +15,8 @@
 -(NSDictionary *) modelDefinition
 {
     return @{@"ID": @"id", @"colorID": @"color_id",
-             @"roomID": @"room_id", @"participatingUsers": @"participating"};
+             @"roomID": @"room_id", @"participatingUsers": @"participating",
+             @"status": @"status"};
 }
 
 -(BOOL) containsUser:(SQUser *)user;
