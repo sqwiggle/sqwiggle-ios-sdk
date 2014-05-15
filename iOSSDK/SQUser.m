@@ -77,9 +77,8 @@
         NSMutableDictionary *mediaItems = [[NSMutableDictionary alloc] init];
         
         [_media each:^(NSString *key, SQMedia *mediaItem) {
-            [mediaItems setObject:[mediaItem dictionaryFormat]  forKey:key];
+            [mediaItems setObject:[mediaItem dictionaryFormat] forKey:key];
         }];
-        
         
         [manager PUT:url
           parameters:@{@"media": mediaItems}
@@ -88,7 +87,8 @@
 				 
 			 } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 				 failure(failure);
-			 }];
+			 }
+         ];
     }
 }
 
