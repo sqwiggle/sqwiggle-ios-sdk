@@ -7,6 +7,7 @@
 //
 
 #import "SQUser.h"
+#import "Sqwiggle.h"
 
 
 @interface SQUser ()
@@ -60,5 +61,35 @@
     return [self.ID isEqualToNumber:((SQUser *)object).ID];
 }
 
+-(void) saveMediaToServer:(void (^)(id object))success
+                  failure:(void (^)(NSError *error))failure
+{
+    NSString *url;
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
+    [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
+    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:[Sqwiggle authToken]
+                                                              password:SUPER_SECRET_PASSWORD];
+    if (self.ID)
+    {
+        url = [NSString stringWithFormat:@"%@/%@/%@", [Sqwiggle currentAPIEndpoint], self.relativeURL, self.ID];
+        NSMutableDictionary *mediaItems = [[NSMutableDictionary alloc] init];
+        
+        [_media each:^(NSString *key, SQMedia *mediaItem) {
+            [mediaItems setObject:[mediaItem dictionaryFormat]  forKey:key];
+        }];
+        
+        
+        [manager PUT:url
+          parameters:@{@"media": mediaItems}
+             success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                 success(responseObject);
+				 
+			 } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+				 failure(failure);
+			 }];
+    }
+}
 
 @end

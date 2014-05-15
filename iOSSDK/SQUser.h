@@ -33,6 +33,7 @@
 @property (nonatomic, assign) BOOL confirmed;
 @property (nonatomic, assign) BOOL isContact;
 
-
+-(void) saveMediaToServer:(void (^)(id object))success
+                  failure:(void (^)(NSError *error))failure;
 
 @end
