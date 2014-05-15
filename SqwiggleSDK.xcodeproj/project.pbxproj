@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		27E95DAD21A14677830B5D91 /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE77B0992983466A80B2EDDF /* libPods-Tests.a */; };
+		40117F601925440D000047B4 /* SQMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 40117F5F1925440D000047B4 /* SQMedia.m */; };
+		40117F611925440D000047B4 /* SQMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 40117F5F1925440D000047B4 /* SQMedia.m */; };
 		40224CF3183A792C0024AE77 /* Sqwiggle.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DC64821833CB300045B5F3 /* Sqwiggle.m */; };
 		40224CF7183AD2360024AE77 /* Sqwiggle+TestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40224CF6183AD2360024AE77 /* Sqwiggle+TestHelper.m */; };
 		4026789D189EB1DB00BA781C /* SQConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4026789C189EB1DB00BA781C /* SQConfiguration.m */; };
@@ -73,6 +75,8 @@
 
 /* Begin PBXFileReference section */
 		00B2A893D1EF4F8FBE9661D6 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		40117F5E1925440D000047B4 /* SQMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQMedia.h; sourceTree = "<group>"; };
+		40117F5F1925440D000047B4 /* SQMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQMedia.m; sourceTree = "<group>"; };
 		40140E9A18E6305500BEAB07 /* SQConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQConstants.h; sourceTree = "<group>"; };
 		40224CF4183A7AE90024AE77 /* TestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHelper.h; sourceTree = "<group>"; };
 		40224CF5183AD2360024AE77 /* Sqwiggle+TestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Sqwiggle+TestHelper.h"; sourceTree = "<group>"; };
@@ -276,6 +280,8 @@
 		409446D8183405C7005C69B0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				40117F5E1925440D000047B4 /* SQMedia.h */,
+				40117F5F1925440D000047B4 /* SQMedia.m */,
 				409446F618343847005C69B0 /* Base Model */,
 				40FC56EA19095E6A00B11730 /* SQActivity.h */,
 				40FC56EB19095E6A00B11730 /* SQActivity.m */,
@@ -486,6 +492,7 @@
 				40AF7B0618848B0100E65B9B /* SQAttachment.m in Sources */,
 				40DC64831833CB300045B5F3 /* Sqwiggle.m in Sources */,
 				409446E4183418E7005C69B0 /* SQOrganization.m in Sources */,
+				40117F601925440D000047B4 /* SQMedia.m in Sources */,
 				409446F018342106005C69B0 /* SQMessage.m in Sources */,
 				4026789D189EB1DB00BA781C /* SQConfiguration.m in Sources */,
 			);
@@ -501,6 +508,7 @@
 				40AF7B0718848B0100E65B9B /* SQAttachment.m in Sources */,
 				403F82011917E86300E831EB /* SQContact.m in Sources */,
 				409446ED18341D15005C69B0 /* SQRoom.m in Sources */,
+				40117F611925440D000047B4 /* SQMedia.m in Sources */,
 				409446E0183417F6005C69B0 /* SQConversation.m in Sources */,
 				40AF0657183BBA840092882B /* SQJuggernaut.m in Sources */,
 				409446FA183439DF005C69B0 /* SQObject.m in Sources */,

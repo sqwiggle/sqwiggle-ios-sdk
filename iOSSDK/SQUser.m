@@ -29,6 +29,17 @@
             SQContact *contact = [SQContact objectWithDictionary:contactDictionary];
             self.contact = contact;
         }
+        
+        NSDictionary *mediaDictionary = [dictionary objectForKey:@"media"];
+        if (mediaDictionary)
+        {
+            _media = [[NSMutableDictionary alloc] init];
+            [dictionary each:^(id key, id value) {
+                SQMedia *mediaItem = [SQMedia objectWithDictionary:value];
+                mediaItem.type = key;
+                [_media setObject:mediaItem forKey:key];
+            }];
+        }
     }
     
     return self;
