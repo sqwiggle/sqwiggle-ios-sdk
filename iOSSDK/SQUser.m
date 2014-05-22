@@ -36,9 +36,9 @@
         if (mediaDictionary)
         {
             _media = [[NSMutableDictionary alloc] init];
-            [dictionary each:^(id key, id value) {
+            [mediaDictionary each:^(id key, id value) {
                 SQMedia *mediaItem = [SQMedia objectWithDictionary:value];
-                mediaItem.type = key;
+				[mediaItem setType:key];
                 [_media setObject:mediaItem forKey:key];
             }];
         }
@@ -54,13 +54,14 @@
              @"status" : @"status",
 			 @"name": @"name",
              @"email": @"email",
-			 @"confirmedObject": @"confirmed",
              @"timeZone": @"time_zone",
 			 @"timeZoneOffset": @"time_zone_offset",
              @"createdAt": @"created_at",
 			 @"lastActiveAt": @"last_active_at",
              @"avatar": @"avatar",
-			 @"message": @"message" };
+			 @"message": @"message",
+			 @"confirmed": @"confirmed",
+			 @"isContact" : @"is_contact"};
 }
 
 -(BOOL) isEqual:(id)object
