@@ -8,6 +8,7 @@
 
 #import "SQUser.h"
 #import "Sqwiggle.h"
+#import "SQMedia.h"
 
 
 @interface SQUser ()
@@ -48,12 +49,18 @@
 
 -(NSDictionary *) modelDefinition
 {
-    return @{@"ID": @"id", @"role" : @"role",
-             @"status" : @"status", @"name": @"name",
-             @"email": @"email", @"confirmedObject": @"confirmed",
-             @"timeZone": @"time_zone", @"timeZoneOffset": @"time_zone_offset",
-             @"createdAt": @"created_at", @"lastActiveAt": @"last_active_at",
-             @"avatar": @"avatar", @"message": @"message" };
+    return @{@"ID": @"id",
+			 @"role" : @"role",
+             @"status" : @"status",
+			 @"name": @"name",
+             @"email": @"email",
+			 @"confirmedObject": @"confirmed",
+             @"timeZone": @"time_zone",
+			 @"timeZoneOffset": @"time_zone_offset",
+             @"createdAt": @"created_at",
+			 @"lastActiveAt": @"last_active_at",
+             @"avatar": @"avatar",
+			 @"message": @"message" };
 }
 
 -(BOOL) isEqual:(id)object
@@ -61,11 +68,10 @@
     return [self.ID isEqualToNumber:((SQUser *)object).ID];
 }
 
--(void) saveMediaToServer:(void (^)(id object))success
-                  failure:(void (^)(NSError *error))failure
+
+- (void)updateAppState:(void (^)(id responseObject))success
+			   failure:(failureResponse)failure
 {
-    NSString *url;
-    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager setRequestSerializer:[AFHTTPRequestSerializer serializer]];
     [manager setResponseSerializer:[AFJSONResponseSerializer serializer]];
@@ -73,7 +79,7 @@
                                                               password:SUPER_SECRET_PASSWORD];
     if (self.ID)
     {
-        url = [NSString stringWithFormat:@"%@/%@/%@", [Sqwiggle currentAPIEndpoint], self.relativeURL, self.ID];
+        NSString *url = [NSString stringWithFormat:@"%@/%@/%@", [Sqwiggle currentAPIEndpoint], self.relativeURL, self.ID];
         NSMutableDictionary *mediaItems = [[NSMutableDictionary alloc] init];
         
         [_media each:^(NSString *key, SQMedia *mediaItem) {
@@ -91,5 +97,6 @@
          ];
     }
 }
+
 
 @end

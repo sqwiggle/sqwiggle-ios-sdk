@@ -8,19 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import <ObjectiveSugar/ObjectiveSugar.h>
-#import "SQOrganization.h"
-#import "SQUser.h"
-#import "SQMessage.h"
-#import "SQRoom.h"
-#import "SQInvite.h"
-#import "SQConversation.h"
-#import "SQConfiguration.h"
-#import "SQAttachment.h"
-#import "SQStream.h"
+#import "SQObject.h"
 
 
-typedef void (^failureResponse)(NSError *error);
-
+@class SQUser;
+@class SQAttachment;
+@class SQMessage;
+@class SQInvite;
+@class SQConversation;
+@class SQConfiguration;
+@class SQRoom;
+@class SQOrganization;
 
 @interface Sqwiggle : NSObject
 

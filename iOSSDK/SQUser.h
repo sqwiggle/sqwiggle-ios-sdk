@@ -10,7 +10,6 @@
 #import <UIKit/UIKit.h>
 #import "SQObject.h"
 #import "SQContact.h"
-#import "SQMedia.h"
 
 @interface SQUser : SQObject
 
@@ -33,7 +32,6 @@
 @property (nonatomic, assign) BOOL confirmed;
 @property (nonatomic, assign) BOOL isContact;
 
--(void) saveMediaToServer:(void (^)(id object))success
-                  failure:(void (^)(NSError *error))failure;
-
+- (void)updateAppState:(void (^)(id responseObject))success
+			   failure:(failureResponse)failure;
 @end
