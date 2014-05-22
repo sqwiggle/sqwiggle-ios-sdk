@@ -7,8 +7,8 @@
 //
 
 #import "SQUser.h"
-#import "Sqwiggle.h"
 #import "SQMedia.h"
+#import "Sqwiggle.h"
 
 
 @interface SQUser ()

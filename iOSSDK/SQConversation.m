@@ -7,7 +7,6 @@
 //
 
 #import "SQConversation.h"
-#import "Sqwiggle.h"
 
 
 @implementation SQConversation
