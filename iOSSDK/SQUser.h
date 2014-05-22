@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "SQObject.h"
 #import "SQContact.h"
+#import "SQMedia.h"
 
 @interface SQUser : SQObject
 
@@ -26,11 +27,13 @@
 @property (nonatomic, copy) NSDate *lastActiveAt;
 @property (nonatomic, copy) NSString *avatar;
 @property (nonatomic) SQContact *contact;
+@property (nonatomic) NSMutableDictionary *media;
 @property (nonatomic, strong) UIImage *currentStill;
 @property (nonatomic, strong) UIImage *previousStill;
 @property (nonatomic, assign) BOOL confirmed;
 @property (nonatomic, assign) BOOL isContact;
 
-
+-(void) saveMediaToServer:(void (^)(id object))success
+                  failure:(void (^)(NSError *error))failure;
 
 @end

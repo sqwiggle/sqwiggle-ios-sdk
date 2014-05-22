@@ -27,6 +27,7 @@
 #define SQWIGGLE_CONFIGURATION_TYPE	@"SQConfiguration"
 #define SQWIGGLE_ACTIVITY_TYPE      @"SQActivity"
 #define SQWIGGLE_CONTACT_TYPE       @"SQContact"
+#define SQWIGGLE_MEDIA_TYPE         @"SQMedia"
 
 #define SUPER_SECRET_PASSWORD @"x"
 
