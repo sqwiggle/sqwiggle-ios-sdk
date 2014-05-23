@@ -13,11 +13,11 @@
 #define SQ_CONVERSATION_STATUS_OPEN @"open"
 #define SQ_CONVERSATION_STATUS_CLOSED @"closed"
 
-#define COLOR_ONE [UIColor colorWithRed:0.0/255 green:147.0/255 blue:255.0/255.0 alpha:0.45]
-#define COLOR_TWO [UIColor colorWithRed:224.0/255 green:78.0/255 blue:97.0/255.0 alpha:0.45]
-#define COLOR_THREE [UIColor colorWithRed:224.0/255 green:188.0/255 blue:78.0/255.0 alpha:0.45]
-#define COLOR_FOUR [UIColor colorWithRed:0.0/255 green:204.0/255 blue:0.0/255.0 alpha:0.45]
-#define COLOR_FIVE [UIColor colorWithRed:159.0/255 green:89.0/255 blue:160.0/255.0 alpha:0.45]
+#define COLOR_ONE [UIColor colorWithRed:0.0/255 green:147.0/255 blue:255.0/255.0 alpha:0.65]
+#define COLOR_TWO [UIColor colorWithRed:224.0/255 green:78.0/255 blue:97.0/255.0 alpha:0.65]
+#define COLOR_THREE [UIColor colorWithRed:224.0/255 green:188.0/255 blue:78.0/255.0 alpha:0.65]
+#define COLOR_FOUR [UIColor colorWithRed:0.0/255 green:204.0/255 blue:0.0/255.0 alpha:0.65]
+#define COLOR_FIVE [UIColor colorWithRed:159.0/255 green:89.0/255 blue:160.0/255.0 alpha:0.65]
 
 #define COLOR_DEFS @{ @1: COLOR_ONE, @2: COLOR_TWO, @3: COLOR_THREE, @4: COLOR_FOUR, @5: COLOR_FIVE}
 
