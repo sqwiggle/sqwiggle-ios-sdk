@@ -91,7 +91,7 @@
 
 #pragma mark Contact Method
 +(void) allContacts:(void (^)(NSArray *users))success
-            failure:(failureResponse)failure;
+            failure:(failureResponse)failure SQ_DEPRECATED;
 
 #pragma mark Attachment Methods
 /*!
