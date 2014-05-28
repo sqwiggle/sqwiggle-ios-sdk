@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "SQConstants.h"
 
+typedef void (^failureResponse)(NSError *error);
+
+
 @interface SQObject : NSObject
 
 /* Properties */

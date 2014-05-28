@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Sqwiggle. All rights reserved.
 //
 
-#import "SQObject.h"
 #import "Sqwiggle.h"
+#import "SQObject.h"
 
 /// Date formatter is cached since creating it is slow.
 static NSDateFormatter *sharedDateFormatter = nil;

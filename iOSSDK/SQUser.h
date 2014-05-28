@@ -26,11 +26,12 @@
 @property (nonatomic, copy) NSDate *lastActiveAt;
 @property (nonatomic, copy) NSString *avatar;
 @property (nonatomic) SQContact *contact;
+@property (nonatomic) NSMutableDictionary *media;
 @property (nonatomic, strong) UIImage *currentStill;
 @property (nonatomic, strong) UIImage *previousStill;
-@property (nonatomic, assign) BOOL confirmed;
-@property (nonatomic, assign) BOOL isContact;
+@property (nonatomic, copy) NSNumber *confirmed;
+@property (nonatomic, copy) NSNumber *isContact;
 
-
-
+- (void)updateAppState:(void (^)(id responseObject))success
+			   failure:(failureResponse)failure;
 @end

@@ -6,8 +6,7 @@
 //  Copyright (c) 2013 Sqwiggle. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <ObjectiveSugar/ObjectiveSugar.h>
+#import "SQObject.h"
 #import "SQOrganization.h"
 #import "SQUser.h"
 #import "SQMessage.h"
@@ -17,10 +16,6 @@
 #import "SQConfiguration.h"
 #import "SQAttachment.h"
 #import "SQStream.h"
-
-
-typedef void (^failureResponse)(NSError *error);
-
 
 @interface Sqwiggle : NSObject
 
@@ -96,7 +91,7 @@ typedef void (^failureResponse)(NSError *error);
 
 #pragma mark Contact Method
 +(void) allContacts:(void (^)(NSArray *users))success
-            failure:(failureResponse)failure;
+            failure:(failureResponse)failure SQ_DEPRECATED;
 
 #pragma mark Attachment Methods
 /*!
