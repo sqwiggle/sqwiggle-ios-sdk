@@ -89,6 +89,17 @@
                   success:(void (^)(NSArray *users))success
                   failure:(failureResponse)failure;
 
+/**
+ *  Pings the user with the given user ID. Users should generally be pinged if their status is not currently set to available.
+ *
+ *  @param userID The user ID of the user to ping.
+ *	@param success The success callback.
+ *	@param failure The failure callback with the associated error response.
+ */
++ (void)pingUser:(NSNumber*)userID
+		 success:(void(^)(void))success
+		 failure:(failureResponse)failure;
+
 #pragma mark Contact Method
 +(void) allContacts:(void (^)(NSArray *users))success
             failure:(failureResponse)failure SQ_DEPRECATED;
