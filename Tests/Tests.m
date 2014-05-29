@@ -434,4 +434,25 @@
     WaitUntilBlockCompletes();
 }
 
+- (void)testPing
+{
+	StartBlock();
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return [request.URL.relativePath containsString:@"ping"];
+    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+		return [[OHHTTPStubsResponse responseWithData:nil statusCode:204 headers:nil] requestTime:0.5 responseTime:0.5];
+    }];
+    
+    [Sqwiggle pingUser:@0
+			   success:^{
+				   EndBlock();
+				   XCTAssertTrue(YES, @"Did succeed");
+			   } failure:^(NSError *error) {
+				   EndBlock();
+				   XCTFail(@"Error returned for test %@", error);
+			   }];
+    
+    WaitUntilBlockCompletes();
+}
+
 @end

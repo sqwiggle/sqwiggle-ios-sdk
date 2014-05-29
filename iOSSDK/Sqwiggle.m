@@ -115,6 +115,30 @@
                               failure:failure];
 }
 
++ (void)pingUser:(NSNumber*)userID
+		 success:(void(^)(void))success
+		 failure:(failureResponse)failure
+{
+	if (!userID)
+	{
+		NSError *error = [NSError errorWithDomain:@"User ID is not valid" code:-1 userInfo:nil];
+		if (failure)
+			failure(error);
+		return;
+	}
+	
+	NSString *url = NSStringWithFormat(@"%@/users/%@/ping", [self currentAPIEndpoint], userID);
+	[[AFHTTPRequestOperationManager manager] POST:url
+									   parameters:nil
+										  success:^(AFHTTPRequestOperation *operation, id responseObject) {
+											  if (success)
+												  success();
+										  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+											  if (failure)
+												  failure(error);
+										  }];
+}
+
 +(void) allContacts:(void (^)(NSArray *users))success
                     failure:(failureResponse)failure
 {
