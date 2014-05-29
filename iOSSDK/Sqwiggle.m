@@ -127,16 +127,20 @@
 		return;
 	}
 	
+	AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:[self authToken]
+															  password:SUPER_SECRET_PASSWORD];
+	
 	NSString *url = NSStringWithFormat(@"%@/users/%@/ping", [self currentAPIEndpoint], userID);
-	[[AFHTTPRequestOperationManager manager] POST:url
-									   parameters:nil
-										  success:^(AFHTTPRequestOperation *operation, id responseObject) {
-											  if (success)
-												  success();
-										  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-											  if (failure)
-												  failure(error);
-										  }];
+	[manager POST:url
+	   parameters:nil
+		  success:^(AFHTTPRequestOperation *operation, id responseObject) {
+			  if (success)
+				  success();
+		  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+			  if (failure)
+				  failure(error);
+		  }];
 }
 
 +(void) allContacts:(void (^)(NSArray *users))success
