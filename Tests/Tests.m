@@ -54,6 +54,26 @@
     WaitUntilBlockCompletes();
 }
 
+-(void) testFailingAuth
+{
+    StartBlock();
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return [request.URL.relativePath isEqualToString:@"/auth/token"];
+    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+        return [[OHHTTPStubsResponse responseWithJSONObject:[ResponseFactory failingAuthResponse] statusCode:400 headers:nil]
+                requestTime:0.5 responseTime:0.5];
+    }];
+    
+    [Sqwiggle startSqwigglingWithUsername:TEST_EMAIL password:TEST_PASSWORD success:^(BOOL signedIn) {
+        EndBlock();
+        XCTFail(@"Test returned success when failure should have occured");
+    } failure:^(NSError *error) {
+        EndBlock();
+    }];
+    
+    WaitUntilBlockCompletes();
+}
+
 -(void) testGetCurrentUser
 {
     [self testAuth];

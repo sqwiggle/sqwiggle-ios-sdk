@@ -27,7 +27,7 @@
 +(void) startSqwigglingWithUsername:(NSString *) username
                            password:(NSString *) password
                             success:(void (^)(BOOL signedIn))success
-                            failure:(failureResponse)failure
+                            failure:(void (^)(id responseObject))failure
 {
     static NSString *tokenKey = @"token";
     static NSString *emailKey = @"email";
@@ -46,7 +46,7 @@
               [self setAuthToken:[responseObject objectForKey:tokenKey]];
               success(YES);
           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              failure(error);
+              failure(operation.responseObject);
           }];
 }
 

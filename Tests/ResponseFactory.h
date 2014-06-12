@@ -11,6 +11,7 @@
 @interface ResponseFactory : NSObject
 
 +(NSDictionary *) fakeUserResponse;
++(NSDictionary *) failingAuthResponse;
 +(NSDictionary *) fakeUsers;
 +(NSDictionary *) fakeRooms;
 +(NSDictionary *) fakeMessage;
