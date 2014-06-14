@@ -27,7 +27,7 @@
 +(void) startSqwigglingWithUsername:(NSString *)username
                            password:(NSString *)password
                             success:(void (^)(BOOL user))success
-                            failure:(failureResponse)failure;
+                            failure:(void (^)(id responseObject))failure;
 
 /*!
  * Initializes Sqwiggle API Session locally with API Key.
