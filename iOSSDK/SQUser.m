@@ -83,8 +83,8 @@
         NSString *url = [NSString stringWithFormat:@"%@/%@/%@", [Sqwiggle currentAPIEndpoint], self.relativeURL, self.ID];
         NSMutableDictionary *mediaItems = [[NSMutableDictionary alloc] init];
         
-        [_media each:^(NSString *key, SQMedia *mediaItem) {
-            [mediaItems setObject:[mediaItem dictionaryFormat] forKey:key];
+        [_media each:^(NSString *key, NSDictionary *mediaItem) {
+            [mediaItems setObject:mediaItem forKey:key];
         }];
         
         [manager PUT:url
@@ -93,7 +93,7 @@
                  success(responseObject);
 				 
 			 } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-				 failure(failure);
+				 failure(error);
 			 }
          ];
     }
