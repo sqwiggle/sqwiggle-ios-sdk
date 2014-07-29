@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.public_header_files = "iOSSDK/*.h"
   s.source_files = "iOSSDK/*.{h,m}"
 
-  s.dependency 'AFNetworking', "~> 2.0.3"
+  s.dependency 'AFNetworking', "~> 2.3.1"
   s.dependency "ObjectiveSugar", '~> 0.9'
   s.prefix_header_contents = '#import <ObjectiveSugar/ObjectiveSugar.h>', '#import <AFNetworking/AFNetworking.h>'
 
