@@ -31,6 +31,7 @@
 @property (nonatomic, strong) UIImage *previousStill;
 @property (nonatomic, copy) NSNumber *confirmed;
 @property (nonatomic, copy) NSNumber *isContact;
+@property (nonatomic, copy) NSString *snapshot;
 
 - (void)updateAppState:(void (^)(id responseObject))success
 			   failure:(failureResponse)failure;

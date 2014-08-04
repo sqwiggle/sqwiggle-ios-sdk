@@ -49,19 +49,20 @@
 
 -(NSDictionary *) modelDefinition
 {
-    return @{@"ID": @"id",
-			 @"role" : @"role",
-             @"status" : @"status",
-			 @"name": @"name",
-             @"email": @"email",
-             @"timeZone": @"time_zone",
-			 @"timeZoneOffset": @"time_zone_offset",
-             @"createdAt": @"created_at",
-			 @"lastActiveAt": @"last_active_at",
-             @"avatar": @"avatar",
-			 @"message": @"message",
-			 @"confirmed": @"confirmed",
-			 @"isContact" : @"is_contact"};
+    return @{ @"ID": @"id",
+			  @"role" : @"role",
+			  @"status" : @"status",
+			  @"name": @"name",
+			  @"email": @"email",
+			  @"timeZone": @"time_zone",
+			  @"timeZoneOffset": @"time_zone_offset",
+			  @"createdAt": @"created_at",
+			  @"lastActiveAt": @"last_active_at",
+			  @"avatar": @"avatar",
+			  @"message": @"message",
+			  @"confirmed": @"confirmed",
+			  @"isContact" : @"is_contact",
+			  @"snapshot" : @"snapshot" };
 }
 
 -(BOOL) isEqual:(id)object
