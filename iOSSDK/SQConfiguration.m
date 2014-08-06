@@ -15,7 +15,8 @@
 -(NSDictionary *) modelDefinition
 {
     return @{@"iceServers": @"iceservers", @"storage": @"storage", \
-             @"maxUploadFilesize": @"max_upload_filesize"};
+             @"maxUploadFilesize": @"max_upload_filesize", \
+             @"releases": @"releases"};
 }
 
 @end
