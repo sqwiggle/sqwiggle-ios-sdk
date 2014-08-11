@@ -39,7 +39,7 @@ SQWIGGLE_STREAM_TYPE: @"streams", \
 SQWIGGLE_INVITE_TYPE: @"invites", \
 SQWIGGLE_ATTACHMENT_TYPE : @"attachments", \
 SQWIGGLE_MESSAGE_TYPE: @"messages",\
-SQWIGGLE_CONFIGURATION_TYPE: @"configuration", \
+SQWIGGLE_CONFIGURATION_TYPE: @"info", \
 SQWIGGLE_ACTIVITY_TYPE: @"activities",\
 SQWIGGLE_CONTACT_TYPE: @"contacts"}
 
