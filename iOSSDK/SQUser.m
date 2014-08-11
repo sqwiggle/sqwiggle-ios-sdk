@@ -89,7 +89,7 @@
         }];
         
         [manager PUT:url
-          parameters:@{@"media": mediaItems}
+          parameters:mediaItems
              success:^(AFHTTPRequestOperation *operation, id responseObject) {
                  success(responseObject);
 				 
