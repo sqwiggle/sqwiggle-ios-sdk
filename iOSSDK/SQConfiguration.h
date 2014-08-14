@@ -14,4 +14,5 @@
 @property (nonatomic, copy) NSMutableArray *iceServers;
 @property (nonatomic, copy) NSMutableDictionary *storage;
 @property (nonatomic, copy) NSString *maxUploadFilesize;
+@property (nonatomic, copy) NSMutableDictionary *releases;
 @end
