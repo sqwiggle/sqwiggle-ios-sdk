@@ -10,9 +10,6 @@
 #import "SQRoom.h"
 #import "SQOrganization.h"
 
-#define SQ_CONVERSATION_STATUS_OPEN @"open"
-#define SQ_CONVERSATION_STATUS_CLOSED @"closed"
-
 #define COLOR_ONE [UIColor colorWithRed:0.0/255 green:147.0/255 blue:255.0/255.0 alpha:0.65]
 #define COLOR_TWO [UIColor colorWithRed:224.0/255 green:78.0/255 blue:97.0/255.0 alpha:0.65]
 #define COLOR_THREE [UIColor colorWithRed:224.0/255 green:188.0/255 blue:78.0/255.0 alpha:0.65]
@@ -23,7 +20,6 @@
 
 @interface SQConversation : SQObject
 
-@property (nonatomic, copy) NSString *status;
 @property (nonatomic, copy) NSNumber *organziationID;
 @property (nonatomic, copy) NSNumber *roomID;
 @property (nonatomic, copy) NSNumber *colorID;

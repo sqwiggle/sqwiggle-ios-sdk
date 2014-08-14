@@ -81,7 +81,6 @@
 		40224CF4183A7AE90024AE77 /* TestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestHelper.h; sourceTree = "<group>"; };
 		40224CF5183AD2360024AE77 /* Sqwiggle+TestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Sqwiggle+TestHelper.h"; sourceTree = "<group>"; };
 		40224CF6183AD2360024AE77 /* Sqwiggle+TestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Sqwiggle+TestHelper.m"; sourceTree = "<group>"; };
-		40224D54183B067F0024AE77 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		40224D57183B067F0024AE77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		40224D58183B067F0024AE77 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		40224D59183B067F0024AE77 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -98,7 +97,6 @@
 		407A12AB1832D06B00819225 /* SqwiggleSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SqwiggleSDK-Prefix.pch"; sourceTree = "<group>"; };
 		407A12AC1832D06B00819225 /* Sqwiggle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sqwiggle.h; sourceTree = "<group>"; };
 		407A12B51832D06B00819225 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		407A12B81832D06B00819225 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		4082A74B1833CD6B009FBC9B /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4082A7511833CD6B009FBC9B /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		4082A7531833CD6B009FBC9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -214,9 +212,7 @@
 				403DFEDE18ECBF85004258A9 /* MobileCoreServices.framework */,
 				407A12A71832D06B00819225 /* Foundation.framework */,
 				407A12B51832D06B00819225 /* XCTest.framework */,
-				407A12B81832D06B00819225 /* UIKit.framework */,
 				BE77B0992983466A80B2EDDF /* libPods-Tests.a */,
-				40224D54183B067F0024AE77 /* Cocoa.framework */,
 				40224D56183B067F0024AE77 /* Other Frameworks */,
 				D47E91C25AFE40128D776D3A /* libPods.a */,
 			);
