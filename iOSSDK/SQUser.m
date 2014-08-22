@@ -62,8 +62,7 @@
 			  @"message": @"message",
 			  @"confirmed": @"confirmed",
 			  @"isContact" : @"is_contact",
-			  @"snapshot" : @"snapshot",
-			  @"idleAt" : @"idle_at" };
+			  @"snapshot" : @"snapshot" };
 }
 
 -(BOOL) isEqual:(id)object
