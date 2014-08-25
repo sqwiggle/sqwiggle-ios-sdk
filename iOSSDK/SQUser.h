@@ -32,6 +32,7 @@
 @property (nonatomic, copy) NSNumber *confirmed;
 @property (nonatomic, copy) NSNumber *isContact;
 @property (nonatomic, copy) NSString *snapshot;
+@property (nonatomic, copy) NSString *idleAt;
 
 - (void)updateAppState:(void (^)(id responseObject))success
 			   failure:(failureResponse)failure;
