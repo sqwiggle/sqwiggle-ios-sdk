@@ -63,6 +63,7 @@
 			  @"confirmed": @"confirmed",
 			  @"isContact" : @"is_contact",
 			  @"snapshot" : @"snapshot",
+			  @"snapshotInterval" : @"snapshot_interval",
 			  @"idleAt" : @"idle_at" };
 }
 
