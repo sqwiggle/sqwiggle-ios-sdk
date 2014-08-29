@@ -34,6 +34,8 @@
 @property (nonatomic, copy) NSString *snapshot;
 @property (nonatomic, copy) NSNumber *snapshotInterval;
 @property (nonatomic, copy) NSString *idleAt;
+@property (nonatomic, copy) NSMutableDictionary *features;
+@property (nonatomic, copy) NSMutableDictionary *notifications;
 
 - (void)updateAppState:(void (^)(id responseObject))success
 			   failure:(failureResponse)failure;

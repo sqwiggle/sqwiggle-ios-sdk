@@ -64,7 +64,9 @@
 			  @"isContact" : @"is_contact",
 			  @"snapshot" : @"snapshot",
 			  @"snapshotInterval" : @"snapshot_interval",
-			  @"idleAt" : @"idle_at" };
+			  @"idleAt" : @"idle_at",
+              @"features" : @"features",
+              @"notifications": @"notifications"};
 }
 
 -(BOOL) isEqual:(id)object
