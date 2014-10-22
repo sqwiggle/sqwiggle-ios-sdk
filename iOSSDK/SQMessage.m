@@ -37,6 +37,8 @@
 				 _user = [[SQUser alloc] initObjectWithDictionary:incomingObject];
 			 else if ([key isEqualToString:@"createdAt"])
 				 _createdAt = [SQObject dateWithString:incomingObject];
+			 else if ([key isEqualToString:@"updatedAt"])
+				 _updatedAt = [SQObject dateWithString:incomingObject];
 			 else
 				 [object setValue:incomingObject forKey:key];
 		 }
